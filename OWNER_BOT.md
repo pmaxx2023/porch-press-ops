@@ -1,5 +1,19 @@
 # Porch Press — Owner_Bot handoff
 
+## Latest operating checkpoint — September 5, 2026
+This checkpoint supersedes older provisional-lead and no-spending-authority statements below.
+- Baby in a Basket is the selected hero. Shopify_Bot reported desktop/mobile hero and ordering complete in issue #3.
+- PM authorized Owner_Bot to build the business using only a $100 gift card as new capital; the Shopify subscription is already paid. PM retains and enters card details directly. Existing tools only; no new recurring charges.
+- Current allocation: $30 all-in first acquisition test, $50 held for evidence-based follow-up, $20 reserve. No spending or card funding has occurred in this run.
+- Continue existing PP-BABY-ADS-001, do not recreate it. [Current campaign](marketing/Baby-in-a-Basket/PP-BABY-ADS-001/CAMPAIGN.md) and [capital ledger](CAPITAL_LEDGER.md) govern.
+- Latest execution assignment: https://github.com/pmaxx2023/porch-press-ops/issues/3#issuecomment-5554033773. It authorizes the specific Baby listing/mapping corrections and non-charging owner-only delivery verification, plus Meta draft preparation. Read it before acting.
+- Owner_Bot directly observed Baby at $9.99 USD, variant 52494545486122, working add-to-cart and checkout entry. No order/payment submitted. Checkout displayed PayPal/Venmo, with no native card field visible; guest-card availability remains unknown.
+- Live Baby description was older than approved Storefront-Listing.md, including unverified playtime/difficulty. Correction is assigned, not yet reported complete.
+- Current blockers: actual customer delivery proof, ad-account/tracking access, gift-card acceptance/funding, bounded draft settings. No Meta campaign creation or activation is verified.
+- Connector_Bot receipt for this revision remains pending at this checkpoint. No automatic Owner_Bot wake-up is claimed.
+- Exact next action: read new issue #3 receipts; review listing/payment/delivery results and actual Meta draft. Release only the bounded first test after campaign prerequisites are evidenced; do not ask PM to repeat the existing budget authority. Do not spend the remaining $70 automatically.
+
+
 **Current operating instructions · September 5, 2026 · GitHub is the communication channel**
 
 This replaces the stopped **Create Shopify Designer Agent** thread. PM stopped that run and requested a new thread that continues as Owner_Bot for Grok.
