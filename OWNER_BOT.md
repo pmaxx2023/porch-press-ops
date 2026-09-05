@@ -242,7 +242,7 @@ Relevant project skills, if available to Owner_Bot: build-genealogy-mystery, bui
 
 This sequence continues the existing authorized task; it is not a record of steps already completed.
 
-1. Read CURRENT_RULES.md, this handoff, and the current Grok implementation instructions. Refresh issue #3, branches, recent commits, and the current tree.
+1. Read the governing rules at the top of this file, this handoff, and the current Grok implementation instructions in the appendix. Refresh issue #3, branches, recent commits, and the current tree.
 2. Confirm whether any late upload or other Bot action has completed part of the task. Do not repeat completed work or the bridge handshake.
 3. Recover the current series manifest/audit and customer/source files using the identifiers above. Build a current-complete-only selection rather than forcing the old 84-file count.
 4. Owner_Bot compares the Roscoe copies first and selects the authoritative complete authored release. Resolve other content/file differences. Grok may report technical facts but must not decide canon or rewrite the content.
