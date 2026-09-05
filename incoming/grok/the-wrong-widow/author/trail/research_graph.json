@@ -1,0 +1,169 @@
+{
+  "dataset": "wrong-widow-canon",
+  "stage": "trail",
+  "candidate_universe": {
+    "note": "Elimination is of wrong adjudications and wrong identities — not Baby-style infant culls.",
+    "soldier_identity_candidates": [
+      {
+        "id": "CAND_SOLDIER_ELIAS",
+        "person_id": "P001",
+        "label": "Elias M. / Eli Corbett, Co. C 36th Indiana",
+        "status": "true_identity",
+        "support_docs": ["D001", "D007", "D008", "D010", "D011"]
+      },
+      {
+        "id": "CAND_SOLDIER_SILAS",
+        "person_id": "P015",
+        "label": "Silas M. Corbit, Co. B 83rd Indiana (Dearborn)",
+        "status": "decoy_true_1863_death",
+        "eliminate_by": ["unit Co.B 83rd ≠ Co.C 36th", "residence Dearborn", "age ≈23 ≠ Elias ~27 in 1863", "different given name Silas"],
+        "document_id": "D015",
+        "fairness": "Eliminators must be visible on the decoy exhibit — never hide company/age/residence."
+      }
+    ],
+    "widow_adjudication_candidates": [
+      {
+        "id": "CAND_WIDOW_MARTHA",
+        "person_id": "P002",
+        "label": "Martha Jane (Ashby) Corbett",
+        "status": "correct_supportable",
+        "path": ["D005", "D014", "D012", "PRV07"]
+      },
+      {
+        "id": "CAND_WIDOW_LYDIA",
+        "person_id": "P003",
+        "label": "Lydia Ann (Briggs) Corbett",
+        "status": "wrong_as_supportable_but_domestically_real",
+        "temptation_docs": ["D004", "D013", "D006", "D010", "D011", "D003"],
+        "eliminate_as_supportable_by": "prior undissolved marriage + living first spouse + no divorce"
+      }
+    ],
+    "dissolution_candidates": [
+      {
+        "id": "CAND_DIV_NONE",
+        "label": "No divorce for Elias+Martha",
+        "status": "correct",
+        "document_id": "D014"
+      },
+      {
+        "id": "CAND_DIV_CORBIN",
+        "label": "1865 Ripley decree Eli Corbin / Martha Ann Ashley",
+        "status": "false_divorce_temptation",
+        "person_ids": ["P019", "P020"],
+        "document_id": "D016",
+        "eliminate_by": ["Corbin ≠ Corbett", "Ashley ≠ Ashby"],
+        "fairness": "Surname mismatches must stay readable in Binder render (no tiny/blurred type as the only distinguisher)."
+      }
+    ],
+    "remarriage_teaching": [
+      {
+        "id": "CAND_REMARRY_HARRIET",
+        "person_ids": ["P016", "P017", "P018"],
+        "document_id": "D017",
+        "status": "red_herring_rule_teacher",
+        "lesson": "Remarriage can affect widow pension eligibility — and this is NOT Martha.",
+        "eliminate_as_martha_by": "different names; not a claimant on Elias’s file"
+      }
+    ]
+  },
+  "research_moves": [
+    {
+      "move_id": "M_VERIFY_MARRIAGES",
+      "verb": "pull marriage registers",
+      "unlocks": ["D005", "D006"],
+      "from": "opening D002/D003 date+county cues",
+      "circularity_guard": "Opening claims already give dates/places — player need not know hidden surnames to find registers."
+    },
+    {
+      "move_id": "M_MARTHA_HOUSEHOLD",
+      "verb": "rebuild Martha postwar census",
+      "unlocks": ["D012"],
+      "cue": "Ripley + Martha Corbett + children from D002"
+    },
+    {
+      "move_id": "M_WAR_PAPER",
+      "verb": "pull hospital + company muster for Co. C 36th",
+      "unlocks": ["D007", "D008"],
+      "cue": "Soldier unit from D001"
+    },
+    {
+      "move_id": "M_SAME_NAME_SCAN",
+      "verb": "check similar Corbett/Corbit hospital deaths",
+      "unlocks": ["D015"],
+      "outcome": "eliminate Silas; keep Elias conflict live"
+    },
+    {
+      "move_id": "M_POSTWAR_LYDIA",
+      "verb": "find Elias alive Jefferson with Lydia",
+      "unlocks": ["D010", "D011"],
+      "cue": "Jefferson + Lydia from D003/D006"
+    },
+    {
+      "move_id": "M_DEATH_NAMING",
+      "verb": "confirm burial/death naming",
+      "unlocks": ["D013"],
+      "already_have": ["D004"]
+    },
+    {
+      "move_id": "M_DIVORCE_SEARCH",
+      "verb": "search dissolution Elias+Martha",
+      "unlocks": ["D014"],
+      "side_temptation": "D016 false decree — eliminate by surname lettering"
+    },
+    {
+      "move_id": "M_REMARRIAGE_RULE",
+      "verb": "optional neighboring pension note",
+      "unlocks": ["D017"],
+      "purpose": "teach remarriage rule without spoiling Martha"
+    },
+    {
+      "move_id": "M_SEALED",
+      "verb": "open sealed after submit",
+      "unlocks": ["D018"],
+      "gate": "post_submit"
+    }
+  ],
+  "elimination_matrix": [
+    {
+      "wrong_idea": "Lydia is supportable because death cert names her",
+      "killed_by": ["D005", "D014", "D012"],
+      "teach": "named widow ≠ supportable widow"
+    },
+    {
+      "wrong_idea": "1866 ceremony proves lawful marriage",
+      "killed_by": ["D005", "D014", "OBS009 widower false given living prior spouse"],
+      "teach": "ceremony ≠ lawful status"
+    },
+    {
+      "wrong_idea": "Elias died 1863 (hospital gospel)",
+      "killed_by": ["D008", "D010", "D011", "D004"],
+      "teach": "muster language is evidence, not gospel; records conflict"
+    },
+    {
+      "wrong_idea": "Silas hospital death is Elias",
+      "killed_by": ["D015 eliminators vs D001/D007 unit"],
+      "teach": "require more than shared surname"
+    },
+    {
+      "wrong_idea": "Corbin/Ashley decree dissolved Elias+Martha",
+      "killed_by": ["readable surname mismatches", "D014"],
+      "teach": "near-name ≠ same persons"
+    },
+    {
+      "wrong_idea": "Martha remarried and lost standing",
+      "killed_by": ["D012 no remarriage", "D017 is Harriet not Martha"],
+      "teach": "neighboring case teaches rule only"
+    },
+    {
+      "wrong_idea": "Corbit spelling / Wife / age-off prove fraud",
+      "killed_by": "design rule — ordinary noise",
+      "teach": "do not treat noise as adjudication keys"
+    }
+  ],
+  "decoy_handling_summary": {
+    "Silas": "Visible unit/age/residence eliminators on D015; actually died — fair same-name noise.",
+    "Corbin_Ashley": "Readable Corbin/Ashley vs Corbett/Ashby; D014 is true negative.",
+    "Harriet": "Separate file; teaches remarriage; never a claimant on Elias.",
+    "Noise": "Corbit, Eli, age-off, Wife — present in exhibits, never tipped as clues in player UI/copy."
+  }
+}

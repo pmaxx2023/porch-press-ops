@@ -1,0 +1,287 @@
+{
+  "dataset": "wrong-widow-canon",
+  "observations": [
+    {
+      "observation_id": "OBS001",
+      "document_id": "D001",
+      "person_ids": [
+        "P001",
+        "P002",
+        "P003"
+      ],
+      "recorded": {
+        "two_widow_claims": true,
+        "soldier": "Elias M. Corbett",
+        "status": "contested"
+      },
+      "canonical": {
+        "supportable_widow": "P002",
+        "reason": "undissolved prior lawful marriage"
+      },
+      "notes": "Opening conflict. Adjudication is for the player."
+    },
+    {
+      "observation_id": "OBS002",
+      "document_id": "D002",
+      "person_ids": [
+        "P002",
+        "P001"
+      ],
+      "recorded": {
+        "marriage": "1858-03-12 Ripley",
+        "asserted_death": "wartime disease",
+        "claimant_belief": "widow by wartime death"
+      },
+      "canonical": {
+        "marriage_lawful_undissolved": true,
+        "soldier_actually_died_1863": false,
+        "soldier_deserted": true
+      },
+      "notes": "Martha asserts wartime death; marriage claim is correct."
+    },
+    {
+      "observation_id": "OBS003",
+      "document_id": "D003",
+      "person_ids": [
+        "P003",
+        "P001"
+      ],
+      "recorded": {
+        "marriage": "1866-06-04 Jefferson",
+        "asserted_death": "1887-02-14",
+        "told_by_elias": "first wife died of fever"
+      },
+      "canonical": {
+        "ceremony_real": true,
+        "marriage_lawful": false,
+        "lydia_sincere": true,
+        "lydia_lied_to": true
+      },
+      "notes": "Lydia sincere; ceremony real; not lawful."
+    },
+    {
+      "observation_id": "OBS004",
+      "document_id": "D004",
+      "person_ids": [
+        "P001",
+        "P003"
+      ],
+      "recorded": {
+        "widow_named": "Lydia Corbett",
+        "death_date": "1887-02-14",
+        "cause": "pneumonia"
+      },
+      "canonical": {
+        "death_date": "1887-02-14",
+        "lawful_widow_for_claim": "P002",
+        "naming_practice": "household/informant wife Lydia"
+      },
+      "notes": "Named widow \u2260 only possible / supportable widow."
+    },
+    {
+      "observation_id": "OBS005",
+      "document_id": "D007",
+      "person_ids": [
+        "P001"
+      ],
+      "recorded": {
+        "status": "dead of disease",
+        "date": "1863-11-12"
+      },
+      "canonical": {
+        "died_1863": false,
+        "deserted": true,
+        "actual_death": "1887-02-14"
+      },
+      "notes": "Hospital line is recorded observation only."
+    },
+    {
+      "observation_id": "OBS006",
+      "document_id": "D008",
+      "person_ids": [
+        "P001"
+      ],
+      "recorded": {
+        "name": "Eli Corbett",
+        "status": "deserted / missing supposed dead",
+        "date": "1863-12-01"
+      },
+      "canonical": {
+        "deserted": true,
+        "returned_to_regiment": false,
+        "returned_to_martha": false
+      },
+      "notes": "Muster aligns with canonical desertion; name variant Eli."
+    },
+    {
+      "observation_id": "OBS007",
+      "document_id": "D010",
+      "person_ids": [
+        "P001",
+        "P003"
+      ],
+      "recorded": {
+        "head_name": "Elias Corbit",
+        "lydia_relationship": "Wife",
+        "alive_1870": true
+      },
+      "canonical": {
+        "identity": "Elias M. Corbett",
+        "lydia_legal_status": "ceremony_only",
+        "surname_canonical": "Corbett"
+      },
+      "noise": true,
+      "noise_label": "NOT A CLUE",
+      "notes": "Noise: Corbett/Corbit variant. Lydia Wife = socially true, legally incomplete \u2014 NOT A CLUE label."
+    },
+    {
+      "observation_id": "OBS008",
+      "document_id": "D011",
+      "person_ids": [
+        "P001"
+      ],
+      "recorded": {
+        "name": "Eli Corbett",
+        "age": 43
+      },
+      "canonical": {
+        "name": "Elias M. Corbett",
+        "birth_date": "1836-05-09",
+        "canonical_age_on_1880_06_01": 44
+      },
+      "noise": true,
+      "noise_label": "NOT A CLUE",
+      "notes": "Noise: age ~1yr off; Eli/Elias variant."
+    },
+    {
+      "observation_id": "OBS009",
+      "document_id": "D006",
+      "person_ids": [
+        "P001",
+        "P003"
+      ],
+      "recorded": {
+        "groom_status": "widower",
+        "ceremony_date": "1866-06-04"
+      },
+      "canonical": {
+        "was_widower": false,
+        "martha_still_living": true,
+        "prior_marriage_undissolved": true
+      },
+      "notes": "Widower claim on license is Eliass misrepresentation."
+    },
+    {
+      "observation_id": "OBS010",
+      "document_id": "D014",
+      "person_ids": [
+        "P001",
+        "P002"
+      ],
+      "recorded": {
+        "divorce_found": false
+      },
+      "canonical": {
+        "divorce_ever_existed": false,
+        "marriage_undissolved_until_death": true
+      },
+      "notes": "No divorce for Elias+Martha."
+    },
+    {
+      "observation_id": "OBS011",
+      "document_id": "D015",
+      "person_ids": [
+        "P015"
+      ],
+      "recorded": {
+        "name": "Silas M. Corbit",
+        "unit": "Co. B, 83rd Indiana",
+        "dead": true
+      },
+      "canonical": {
+        "is_elias": false,
+        "actually_died_1863": true,
+        "eliminators": [
+          "company",
+          "age",
+          "residence Dearborn"
+        ]
+      },
+      "notes": "Decoy non-collision with Elias."
+    },
+    {
+      "observation_id": "OBS012",
+      "document_id": "D016",
+      "person_ids": [
+        "P019",
+        "P020"
+      ],
+      "recorded": {
+        "divorce": "1865-08-08",
+        "names": "Eli Corbin & Martha Ann Ashley"
+      },
+      "canonical": {
+        "is_elias_and_martha": false,
+        "surname_mismatch": "Corbin\u2260Corbett; Ashley\u2260Ashby"
+      },
+      "notes": "False-divorce temptation; eliminable."
+    },
+    {
+      "observation_id": "OBS013",
+      "document_id": "D018",
+      "person_ids": [
+        "P021",
+        "P001",
+        "P002",
+        "P003"
+      ],
+      "recorded": {
+        "affiant": "Benjamin F. Corbett",
+        "states_desertion": true,
+        "states_knew_martha_living": true,
+        "states_lied_to_lydia": true
+      },
+      "canonical": {
+        "desertion": true,
+        "knowledge_at_remarriage": true,
+        "lydia_lied_to": true,
+        "lydia_not_villain": true
+      },
+      "notes": "Sealed confirmation only. Open records already show desertion + overlap."
+    },
+    {
+      "observation_id": "OBS014",
+      "document_id": "D012",
+      "person_ids": [
+        "P002"
+      ],
+      "recorded": {
+        "martha_as_widow_head": true,
+        "remarriage_on_census": false
+      },
+      "canonical": {
+        "martha_never_remarried": true,
+        "supportable_widow": true
+      },
+      "notes": "Martha continuity as widow; never remarries."
+    },
+    {
+      "observation_id": "OBS015",
+      "document_id": "D017",
+      "person_ids": [
+        "P016",
+        "P017",
+        "P018"
+      ],
+      "recorded": {
+        "widow_remarried": true,
+        "pension_effect": "remarriage affects eligibility"
+      },
+      "canonical": {
+        "is_martha": false,
+        "teaching_purpose": "pension remarriage rule"
+      },
+      "notes": "Red herring. NOT Martha."
+    }
+  ]
+}

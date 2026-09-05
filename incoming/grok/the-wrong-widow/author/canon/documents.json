@@ -1,0 +1,574 @@
+{
+  "dataset": "wrong-widow-canon",
+  "documents": [
+    {
+      "document_id": "D001",
+      "title": "Pension conflict cover / bureau note \u2014 dual widow claims",
+      "type": "pension_bureau_note",
+      "date": "1890-01-15",
+      "place": "U.S. Pension Bureau",
+      "person_ids": [
+        "P001",
+        "P002",
+        "P003"
+      ],
+      "availability": "opening",
+      "recorded_fields": {
+        "soldier": "Elias M. Corbett, Pvt, Co. C, 36th Indiana Infantry",
+        "claimant_a": "Martha Jane Corbett (widow claim)",
+        "claimant_b": "Lydia Ann Corbett (widow claim)",
+        "status": "both pending / contested"
+      },
+      "must_not_say": [
+        "Must not adjudicate which claim is supportable.",
+        "Must not mention desertion or bigamy.",
+        "Must not name sealed brother affidavit."
+      ],
+      "notes": "Cold-open stakes. Two widows, one soldier."
+    },
+    {
+      "document_id": "D002",
+      "title": "Martha Jane Corbett \u2014 widow's pension claim excerpt",
+      "type": "pension_claim",
+      "date": "1888-03-20",
+      "place": "Ripley County, Indiana",
+      "person_ids": [
+        "P002",
+        "P001",
+        "P004",
+        "P005"
+      ],
+      "availability": "opening",
+      "recorded_fields": {
+        "claimant": "Martha Jane Corbett",
+        "maiden_name": "Ashby",
+        "marriage_date": "1858-03-12",
+        "marriage_place": "Ripley County, Indiana",
+        "asserted_soldier_death": "wartime death of disease (hospital word)",
+        "children_named": [
+          "Sarah Elizabeth Corbett",
+          "James William Corbett"
+        ]
+      },
+      "must_not_say": [
+        "Must not state that Elias deserted.",
+        "Must not reveal he lived with Lydia.",
+        "Must not call Martha the supportable widow in prose."
+      ],
+      "notes": "Witness A. Asserts 1858 marriage + supposed wartime death."
+    },
+    {
+      "document_id": "D003",
+      "title": "Lydia Ann Corbett \u2014 widow's pension claim excerpt",
+      "type": "pension_claim",
+      "date": "1888-05-12",
+      "place": "Jefferson County, Indiana",
+      "person_ids": [
+        "P003",
+        "P001",
+        "P006",
+        "P007",
+        "P008"
+      ],
+      "availability": "opening",
+      "recorded_fields": {
+        "claimant": "Lydia Ann Corbett",
+        "maiden_name": "Briggs",
+        "marriage_date": "1866-06-04",
+        "marriage_place": "Jefferson County, Indiana",
+        "asserted_soldier_death": "1887-02-14 pneumonia",
+        "children_named": [
+          "Mary Ellen Corbett",
+          "John Henry Corbett",
+          "Anna Belle Corbett"
+        ],
+        "belief": "first wife died of fever before they met (as told by Elias)"
+      },
+      "must_not_say": [
+        "Must not label Lydia a knowing bigamist.",
+        "Must not reveal sealed knowledge that Elias lied.",
+        "Must not adjudicate claim."
+      ],
+      "notes": "Witness B. Sincere claimant; lied-to."
+    },
+    {
+      "document_id": "D004",
+      "title": "1887 Jefferson County death register \u2014 Elias Corbett",
+      "type": "death_register",
+      "date": "1887-02-14",
+      "place": "Jefferson County, Indiana",
+      "person_ids": [
+        "P001",
+        "P003",
+        "P022"
+      ],
+      "availability": "opening",
+      "recorded_fields": {
+        "decedent": "Elias Corbett",
+        "death_date": "1887-02-14",
+        "cause": "pneumonia",
+        "widow_or_informant_wife": "Lydia Corbett",
+        "physician": "Dr. Horace Mead",
+        "place": "Madison area, Jefferson County"
+      },
+      "must_not_say": [
+        "Must not state Lydia is the lawful widow.",
+        "Must not mention Martha.",
+        "Must not mention desertion."
+      ],
+      "notes": "Neutral hook. Names Lydia \u2014 death-certificate primacy trap."
+    },
+    {
+      "document_id": "D005",
+      "title": "1858 Ripley County marriage register \u2014 Corbett / Ashby",
+      "type": "marriage_register",
+      "date": "1858-03-12",
+      "place": "Ripley County, Indiana",
+      "person_ids": [
+        "P001",
+        "P002"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "groom": "Elias M. Corbett",
+        "bride": "Martha Jane Ashby",
+        "date": "1858-03-12",
+        "county": "Ripley"
+      },
+      "must_not_say": [
+        "Must not annotate as the lawful undissolved marriage in player-facing prose.",
+        "Must not mention Lydia."
+      ],
+      "notes": "Proves earlier marriage exists."
+    },
+    {
+      "document_id": "D006",
+      "title": "1866 Jefferson County marriage \u2014 Corbett / Briggs (groom: widower)",
+      "type": "marriage_register",
+      "date": "1866-06-04",
+      "place": "Jefferson County, Indiana",
+      "person_ids": [
+        "P001",
+        "P003",
+        "P024"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "groom": "Elias M. Corbett",
+        "groom_status": "widower",
+        "bride": "Lydia Ann Briggs",
+        "date": "1866-06-04",
+        "officiant": "Rev. Josiah Hale",
+        "county": "Jefferson"
+      },
+      "must_not_say": [
+        "Must not state the widower claim is false in the register itself.",
+        "Must not name Martha on this document."
+      ],
+      "notes": "Ceremony real; recorded status widower is a lie Elias told."
+    },
+    {
+      "document_id": "D007",
+      "title": "Hospital line \u2014 Elias M. Corbett dead of disease",
+      "type": "hospital_register",
+      "date": "1863-11-12",
+      "place": "U.S. General Hospital No. 8 / convalescent barracks, Nashville, Tennessee",
+      "person_ids": [
+        "P001"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "name": "Elias M. Corbett",
+        "unit": "Co. C, 36th Indiana Infantry",
+        "status": "dead of disease",
+        "date": "1863-11-12",
+        "admitted": "1863-10-20"
+      },
+      "must_not_say": [
+        "Must not correct the line to say he lived.",
+        "Must not mention desertion on this document.",
+        "Must not conflate with Silas Corbit death paper."
+      ],
+      "notes": "RECORDED claim only. Canonical: Elias did not die in 1863."
+    },
+    {
+      "document_id": "D008",
+      "title": "Company muster \u2014 deserted / missing supposed dead",
+      "type": "muster_roll",
+      "date": "1863-12-01",
+      "place": "Co. C, 36th Indiana Infantry",
+      "person_ids": [
+        "P001",
+        "P023"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "name": "Eli Corbett",
+        "unit": "Co. C, 36th Indiana Infantry",
+        "status": "deserted / missing \u2014 supposed dead",
+        "context": "after leaving convalescence, Nashville",
+        "approx_date": "1863-12-01"
+      },
+      "must_not_say": [
+        "Must not narrate motive.",
+        "Must not confirm he knowingly abandoned Martha in this roll."
+      ],
+      "notes": "Conflicts with D007. Name variant Eli. Open records already show desertion trail."
+    },
+    {
+      "document_id": "D009",
+      "title": "1860 Federal Census \u2014 Elias + Martha household, Ripley Co.",
+      "type": "census",
+      "date": "1860-06-01",
+      "place": "Ripley County, Indiana",
+      "person_ids": [
+        "P001",
+        "P002",
+        "P004"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "household": [
+          {
+            "person_id": "P001",
+            "name": "Elias Corbett",
+            "age": 24,
+            "relationship": "Head"
+          },
+          {
+            "person_id": "P002",
+            "name": "Martha Corbett",
+            "age": 20,
+            "relationship": "Wife"
+          },
+          {
+            "person_id": "P004",
+            "name": "Sarah E. Corbett",
+            "age": 1,
+            "relationship": "Daughter"
+          }
+        ]
+      },
+      "must_not_say": [
+        "Must not mention future desertion or Lydia."
+      ],
+      "notes": "Pre-war first household. James not yet born."
+    },
+    {
+      "document_id": "D010",
+      "title": "1870 Federal Census \u2014 Elias + Lydia household, Jefferson Co.",
+      "type": "census",
+      "date": "1870-06-01",
+      "place": "Jefferson County, Indiana",
+      "person_ids": [
+        "P001",
+        "P003",
+        "P006",
+        "P007"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "household": [
+          {
+            "person_id": "P001",
+            "name": "Elias Corbit",
+            "age": 35,
+            "relationship": "Head"
+          },
+          {
+            "person_id": "P003",
+            "name": "Lydia Corbett",
+            "age": 25,
+            "relationship": "Wife"
+          },
+          {
+            "person_id": "P006",
+            "name": "Mary E. Corbett",
+            "age": 2,
+            "relationship": "Daughter"
+          },
+          {
+            "person_id": "P007",
+            "name": "John H. Corbett",
+            "age": "3/12",
+            "relationship": "Son"
+          }
+        ],
+        "noise": "surname Corbit on head; Lydia labeled Wife"
+      },
+      "must_not_say": [
+        "Must not label Wife as a clue in notes for players.",
+        "Must not mention Martha on this schedule."
+      ],
+      "notes": "Postwar life with Lydia. Surname variant Corbit. Lydia as Wife = social truth, legally incomplete."
+    },
+    {
+      "document_id": "D011",
+      "title": "1880 Federal Census \u2014 Elias + Lydia household, Jefferson Co.",
+      "type": "census",
+      "date": "1880-06-01",
+      "place": "Jefferson County, Indiana",
+      "person_ids": [
+        "P001",
+        "P003",
+        "P006",
+        "P007",
+        "P008"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "household": [
+          {
+            "person_id": "P001",
+            "name": "Eli Corbett",
+            "age": 43,
+            "relationship": "Head"
+          },
+          {
+            "person_id": "P003",
+            "name": "Lydia Corbett",
+            "age": 35,
+            "relationship": "Wife"
+          },
+          {
+            "person_id": "P006",
+            "name": "Mary Ellen Corbett",
+            "age": 12,
+            "relationship": "Daughter"
+          },
+          {
+            "person_id": "P007",
+            "name": "John Henry Corbett",
+            "age": 10,
+            "relationship": "Son"
+          },
+          {
+            "person_id": "P008",
+            "name": "Anna Belle Corbett",
+            "age": 5,
+            "relationship": "Daughter"
+          }
+        ],
+        "noise": "Eli vs Elias; Elias age recorded 43 (canonical age on 1880-06-01 is 44)"
+      },
+      "must_not_say": [
+        "Must not flag age offset as a clue.",
+        "Must not mention Martha."
+      ],
+      "notes": "Noise: age ~1yr off; Eli variant. Lydia Wife again."
+    },
+    {
+      "document_id": "D012",
+      "title": "1870/1880 Federal Census \u2014 Martha Corbett widow household, Ripley Co.",
+      "type": "census_set",
+      "date": "1870-06-01",
+      "place": "Ripley County, Indiana",
+      "person_ids": [
+        "P002",
+        "P004",
+        "P005",
+        "P025"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "1870": [
+          {
+            "person_id": "P002",
+            "name": "Martha Corbett",
+            "age": 30,
+            "relationship": "Head",
+            "marital_status_implied": "widow"
+          },
+          {
+            "person_id": "P004",
+            "name": "Sarah Corbett",
+            "age": 10,
+            "relationship": "Daughter"
+          },
+          {
+            "person_id": "P005",
+            "name": "James Corbett",
+            "age": 8,
+            "relationship": "Son"
+          }
+        ],
+        "1880": [
+          {
+            "person_id": "P002",
+            "name": "Martha Corbett",
+            "age": 40,
+            "relationship": "Head",
+            "marital_status_implied": "widow"
+          },
+          {
+            "person_id": "P005",
+            "name": "James W. Corbett",
+            "age": 18,
+            "relationship": "Son"
+          },
+          {
+            "person_id": "P025",
+            "name": "Abigail Ashby",
+            "age": 38,
+            "relationship": "Sister"
+          }
+        ],
+        "remarriage": "none recorded"
+      },
+      "must_not_say": [
+        "Must not state Elias is alive elsewhere on this schedule.",
+        "Must not adjudicate pension."
+      ],
+      "notes": "Martha postwar widow census continuity; never remarries."
+    },
+    {
+      "document_id": "D013",
+      "title": "1887 burial / death certificate naming Lydia",
+      "type": "burial_record",
+      "date": "1887-02-16",
+      "place": "Jefferson County, Indiana",
+      "person_ids": [
+        "P001",
+        "P003",
+        "P022"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "decedent": "Elias M. Corbett",
+        "burial_date": "1887-02-16",
+        "widow": "Lydia Corbett",
+        "cause": "pneumonia"
+      },
+      "must_not_say": [
+        "Must not erase Marthas marriage.",
+        "Must not say only possible widow."
+      ],
+      "notes": "Death-certificate primacy trap reinforcement."
+    },
+    {
+      "document_id": "D014",
+      "title": "Divorce-search negative \u2014 Elias M. Corbett & Martha Jane Ashby",
+      "type": "court_search_result",
+      "date": "1891-06-01",
+      "place": "Ripley County and Jefferson County, Indiana",
+      "person_ids": [
+        "P001",
+        "P002"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "parties_searched": "Elias M. Corbett / Eli Corbett & Martha Jane Ashby / Martha J. Corbett",
+        "counties": [
+          "Ripley",
+          "Jefferson"
+        ],
+        "years_searched": "1858\u20131887",
+        "result": "NO divorce / dissolution located"
+      },
+      "must_not_say": [
+        "Must not invent a decree for this couple.",
+        "Must not conflate with Corbin/Ashley decree (D016)."
+      ],
+      "notes": "Key proveable: no divorce for Elias+Martha."
+    },
+    {
+      "document_id": "D015",
+      "title": "Decoy hospital death \u2014 Silas M. Corbit, Co. B 83rd Indiana",
+      "type": "hospital_register",
+      "date": "1863-11-09",
+      "place": "Nashville, Tennessee",
+      "person_ids": [
+        "P015"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "name": "Silas M. Corbit",
+        "unit": "Co. B, 83rd Indiana Infantry",
+        "residence": "Dearborn County, Indiana",
+        "age_approx": 23,
+        "status": "dead of disease",
+        "date": "1863-11-09"
+      },
+      "must_not_say": [
+        "Must not present as Elias.",
+        "Must not hide eliminators (company/age/residence)."
+      ],
+      "notes": "Same-name soldier decoy. Eliminable. He DID die."
+    },
+    {
+      "document_id": "D016",
+      "title": "False divorce decree \u2014 Eli Corbin & Martha Ann Ashley",
+      "type": "divorce_decree",
+      "date": "1865-08-08",
+      "place": "Ripley County, Indiana",
+      "person_ids": [
+        "P019",
+        "P020"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "husband": "Eli Corbin",
+        "wife": "Martha Ann Ashley",
+        "decree_date": "1865-08-08",
+        "county": "Ripley"
+      },
+      "must_not_say": [
+        "Must not alter names to match Corbett/Ashby.",
+        "Must not present as proof Elias divorced Martha."
+      ],
+      "notes": "Similar names; wrong identities. Eliminable false-divorce temptation."
+    },
+    {
+      "document_id": "D017",
+      "title": "Remarriage red-herring paper \u2014 Harriet Whitcomb Keller pension note",
+      "type": "pension_note",
+      "date": "1869-02-01",
+      "place": "Jefferson County, Indiana",
+      "person_ids": [
+        "P016",
+        "P017",
+        "P018"
+      ],
+      "availability": "research",
+      "recorded_fields": {
+        "widow": "Harriet Whitcomb",
+        "first_husband": "George Whitcomb (died in service 1864)",
+        "remarriage": "Amos Keller, 1868-09-22",
+        "effect": "widow pension eligibility affected by remarriage"
+      },
+      "must_not_say": [
+        "Must not imply Martha remarried.",
+        "Must not make Harriet a claimant on Eliass file."
+      ],
+      "notes": "Teaches pension remarriage rule. NOT Martha."
+    },
+    {
+      "document_id": "D018",
+      "title": "Sealed \u2014 Benjamin F. Corbett affidavit (desertion + knowledge + lie)",
+      "type": "affidavit",
+      "date": "1891-11-02",
+      "place": "Ripley County, Indiana",
+      "person_ids": [
+        "P021",
+        "P001",
+        "P002",
+        "P003"
+      ],
+      "availability": "sealed",
+      "recorded_fields": {
+        "affiant": "Benjamin F. Corbett (brother)",
+        "confirms": [
+          "Elias left convalescence and did not return to the regiment",
+          "Elias knew Martha was living when he married Lydia",
+          "Elias told Lydia his first wife had died of fever"
+        ]
+      },
+      "must_not_say": [
+        "Must not be available before submit.",
+        "Must not invent murder or third wife.",
+        "Must not make Lydia a co-conspirator."
+      ],
+      "notes": "Sealed ending color. Confirms knowledge + lie. Not required to solve."
+    }
+  ]
+}

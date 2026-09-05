@@ -1,0 +1,498 @@
+{
+  "case": "The Wrong Widow",
+  "edition": "1.0",
+  "artifacts": [
+    {
+      "id": "customer-start-here",
+      "path": "customer/START-HERE.md",
+      "audience": "customer",
+      "kind": "file"
+    },
+    {
+      "id": "customer-player",
+      "path": "customer/player.pdf",
+      "audience": "customer",
+      "kind": "pdf",
+      "pages": 27
+    },
+    {
+      "id": "customer-hints",
+      "path": "customer/hints.pdf",
+      "audience": "customer",
+      "kind": "pdf",
+      "pages": 2
+    },
+    {
+      "id": "customer-sealed-solution",
+      "path": "customer/sealed-solution.pdf",
+      "audience": "customer",
+      "kind": "pdf",
+      "pages": 5
+    },
+    {
+      "id": "marketing-ad-01-two-widows",
+      "path": "marketing/ad-01-two-widows.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "id": "marketing-ad-02-records-disagree",
+      "path": "marketing/ad-02-records-disagree.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "id": "marketing-ad-03-one-night",
+      "path": "marketing/ad-03-one-night.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "id": "marketing-cover-the-wrong-widow",
+      "path": "marketing/cover-the-wrong-widow.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "id": "marketing-preview-page-01",
+      "path": "marketing/preview-page-01.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1275,
+      "height": 1650
+    },
+    {
+      "id": "marketing-preview-page-02",
+      "path": "marketing/preview-page-02.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1275,
+      "height": 1650
+    },
+    {
+      "id": "marketing-preview-page-03",
+      "path": "marketing/preview-page-03.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1275,
+      "height": 1650
+    },
+    {
+      "id": "marketing-preview-page-04",
+      "path": "marketing/preview-page-04.png",
+      "audience": "marketing",
+      "kind": "image",
+      "width": 1275,
+      "height": 1650
+    },
+    {
+      "id": "marketing-ad-copy",
+      "path": "marketing/ad-copy.md",
+      "audience": "marketing",
+      "kind": "file"
+    },
+    {
+      "id": "marketing-listing-copy",
+      "path": "marketing/listing-copy.md",
+      "audience": "marketing",
+      "kind": "file"
+    },
+    {
+      "id": "marketing-preview-recommendations",
+      "path": "marketing/preview-recommendations.md",
+      "audience": "marketing",
+      "kind": "file"
+    },
+    {
+      "id": "author-BRIEF-md",
+      "path": "author/BRIEF.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-README-md",
+      "path": "author/canon/README.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-canonical-truth-md",
+      "path": "author/canon/canonical_truth.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-documents-json",
+      "path": "author/canon/documents.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-events-json",
+      "path": "author/canon/events.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-observations-json",
+      "path": "author/canon/observations.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-people-json",
+      "path": "author/canon/people.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-relationships-json",
+      "path": "author/canon/relationships.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-validate-py",
+      "path": "author/canon/validate.py",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-canon-validation-report-md",
+      "path": "author/canon/validation_report.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-packet-BINDER-REPORT-md",
+      "path": "author/packet/BINDER_REPORT.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-packet-START-HERE-md",
+      "path": "author/packet/START-HERE.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-packet-build-meta-json",
+      "path": "author/packet/_build_meta.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-packet-build-packet-py",
+      "path": "author/packet/build_packet.py",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-pitch-PITCH-REPORT-md",
+      "path": "author/pitch/PITCH_REPORT.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-pitch-ad-copy-md",
+      "path": "author/pitch/ad-copy.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-pitch-listing-copy-md",
+      "path": "author/pitch/listing-copy.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-pitch-preview-recommendations-md",
+      "path": "author/pitch/preview-recommendations.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-proof-VERIFICATION-REPORT-md",
+      "path": "author/proof/VERIFICATION_REPORT.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-proof-blind-playtest-md",
+      "path": "author/proof/blind-playtest.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-proof-reasoning-reconstruction-md",
+      "path": "author/proof/reasoning_reconstruction.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-proof-structural-checks-json",
+      "path": "author/proof/structural_checks.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-DESIGN-md",
+      "path": "author/trail/DESIGN.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-README-md",
+      "path": "author/trail/README.md",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-evidence-map-json",
+      "path": "author/trail/evidence_map.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-hint-ladder-json",
+      "path": "author/trail/hint_ladder.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-player-start-json",
+      "path": "author/trail/player_start.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-research-graph-json",
+      "path": "author/trail/research_graph.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-solution-path-json",
+      "path": "author/trail/solution_path.json",
+      "audience": "author",
+      "kind": "file"
+    },
+    {
+      "id": "author-trail-solution-rubric-json",
+      "path": "author/trail/solution_rubric.json",
+      "audience": "author",
+      "kind": "file"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle-customer-print",
+      "path": "customer/the-wrong-widow-print-bundle.zip",
+      "audience": "customer",
+      "members": [
+        {
+          "artifact_id": "customer-start-here",
+          "name": "START-HERE.md"
+        },
+        {
+          "artifact_id": "customer-player",
+          "name": "player.pdf"
+        },
+        {
+          "artifact_id": "customer-hints",
+          "name": "hints.pdf"
+        },
+        {
+          "artifact_id": "customer-sealed-solution",
+          "name": "sealed-solution.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bundle-marketing-ads",
+      "path": "marketing/the-wrong-widow-ad-assets.zip",
+      "audience": "marketing",
+      "members": [
+        {
+          "artifact_id": "marketing-ad-01-two-widows",
+          "name": "ad-01-two-widows.png"
+        },
+        {
+          "artifact_id": "marketing-ad-02-records-disagree",
+          "name": "ad-02-records-disagree.png"
+        },
+        {
+          "artifact_id": "marketing-ad-03-one-night",
+          "name": "ad-03-one-night.png"
+        },
+        {
+          "artifact_id": "marketing-cover-the-wrong-widow",
+          "name": "cover-the-wrong-widow.png"
+        },
+        {
+          "artifact_id": "marketing-ad-copy",
+          "name": "ad-copy.md"
+        },
+        {
+          "artifact_id": "marketing-listing-copy",
+          "name": "listing-copy.md"
+        },
+        {
+          "artifact_id": "marketing-preview-recommendations",
+          "name": "preview-recommendations.md"
+        },
+        {
+          "artifact_id": "marketing-preview-page-01",
+          "name": "preview-page-01.png"
+        },
+        {
+          "artifact_id": "marketing-preview-page-02",
+          "name": "preview-page-02.png"
+        },
+        {
+          "artifact_id": "marketing-preview-page-03",
+          "name": "preview-page-03.png"
+        },
+        {
+          "artifact_id": "marketing-preview-page-04",
+          "name": "preview-page-04.png"
+        }
+      ]
+    },
+    {
+      "id": "bundle-author-source",
+      "path": "author/the-wrong-widow-author-source.zip",
+      "audience": "author",
+      "members": [
+        {
+          "artifact_id": "author-BRIEF-md",
+          "name": "BRIEF.md"
+        },
+        {
+          "artifact_id": "author-canon-README-md",
+          "name": "canon/README.md"
+        },
+        {
+          "artifact_id": "author-canon-canonical-truth-md",
+          "name": "canon/canonical_truth.md"
+        },
+        {
+          "artifact_id": "author-canon-documents-json",
+          "name": "canon/documents.json"
+        },
+        {
+          "artifact_id": "author-canon-events-json",
+          "name": "canon/events.json"
+        },
+        {
+          "artifact_id": "author-canon-observations-json",
+          "name": "canon/observations.json"
+        },
+        {
+          "artifact_id": "author-canon-people-json",
+          "name": "canon/people.json"
+        },
+        {
+          "artifact_id": "author-canon-relationships-json",
+          "name": "canon/relationships.json"
+        },
+        {
+          "artifact_id": "author-canon-validate-py",
+          "name": "canon/validate.py"
+        },
+        {
+          "artifact_id": "author-canon-validation-report-md",
+          "name": "canon/validation_report.md"
+        },
+        {
+          "artifact_id": "author-packet-BINDER-REPORT-md",
+          "name": "packet/BINDER_REPORT.md"
+        },
+        {
+          "artifact_id": "author-packet-START-HERE-md",
+          "name": "packet/START-HERE.md"
+        },
+        {
+          "artifact_id": "author-packet-build-meta-json",
+          "name": "packet/_build_meta.json"
+        },
+        {
+          "artifact_id": "author-packet-build-packet-py",
+          "name": "packet/build_packet.py"
+        },
+        {
+          "artifact_id": "author-pitch-PITCH-REPORT-md",
+          "name": "pitch/PITCH_REPORT.md"
+        },
+        {
+          "artifact_id": "author-pitch-ad-copy-md",
+          "name": "pitch/ad-copy.md"
+        },
+        {
+          "artifact_id": "author-pitch-listing-copy-md",
+          "name": "pitch/listing-copy.md"
+        },
+        {
+          "artifact_id": "author-pitch-preview-recommendations-md",
+          "name": "pitch/preview-recommendations.md"
+        },
+        {
+          "artifact_id": "author-proof-VERIFICATION-REPORT-md",
+          "name": "proof/VERIFICATION_REPORT.md"
+        },
+        {
+          "artifact_id": "author-proof-blind-playtest-md",
+          "name": "proof/blind-playtest.md"
+        },
+        {
+          "artifact_id": "author-proof-reasoning-reconstruction-md",
+          "name": "proof/reasoning_reconstruction.md"
+        },
+        {
+          "artifact_id": "author-proof-structural-checks-json",
+          "name": "proof/structural_checks.json"
+        },
+        {
+          "artifact_id": "author-trail-DESIGN-md",
+          "name": "trail/DESIGN.md"
+        },
+        {
+          "artifact_id": "author-trail-README-md",
+          "name": "trail/README.md"
+        },
+        {
+          "artifact_id": "author-trail-evidence-map-json",
+          "name": "trail/evidence_map.json"
+        },
+        {
+          "artifact_id": "author-trail-hint-ladder-json",
+          "name": "trail/hint_ladder.json"
+        },
+        {
+          "artifact_id": "author-trail-player-start-json",
+          "name": "trail/player_start.json"
+        },
+        {
+          "artifact_id": "author-trail-research-graph-json",
+          "name": "trail/research_graph.json"
+        },
+        {
+          "artifact_id": "author-trail-solution-path-json",
+          "name": "trail/solution_path.json"
+        },
+        {
+          "artifact_id": "author-trail-solution-rubric-json",
+          "name": "trail/solution_rubric.json"
+        }
+      ]
+    }
+  ]
+}

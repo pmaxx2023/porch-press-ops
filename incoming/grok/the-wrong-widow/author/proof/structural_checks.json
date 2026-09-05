@@ -1,0 +1,85 @@
+{
+  "case": "The Wrong Widow",
+  "stage": 5,
+  "agent": "Proof",
+  "checked_at_utc": "2026-09-05T12:05:22.315060+00:00",
+  "page_counts": {
+    "player": 27,
+    "hints": 2,
+    "sealed-solution": 5
+  },
+  "expected_page_counts": {
+    "player": 27,
+    "hints": 2,
+    "sealed-solution": 5
+  },
+  "page_counts_match": true,
+  "exhibits_player": [
+    "D001",
+    "D002",
+    "D003",
+    "D004",
+    "D005",
+    "D006",
+    "D007",
+    "D008",
+    "D009",
+    "D010",
+    "D011",
+    "D012",
+    "D013",
+    "D014",
+    "D015",
+    "D016",
+    "D017"
+  ],
+  "d018_in_player": false,
+  "d018_in_hints": false,
+  "d018_in_sealed": true,
+  "hints_h1_h8": [
+    "H1",
+    "H2",
+    "H3",
+    "H4",
+    "H5",
+    "H6",
+    "H7",
+    "H8"
+  ],
+  "d015_critical": {
+    "Silas M. Corbit": true,
+    "Co. B, 83rd Indiana Infantry": true,
+    "Dearborn County": true,
+    "age 23": true,
+    "note": "Confirmed in player text extract and grayscale render of D015 (large centered 23)."
+  },
+  "d016_critical": {
+    "Eli Corbin": true,
+    "Martha Ann Ashley": true,
+    "letter-by-letter footnote": true
+  },
+  "sealed_spoilers_absent_from_player_hints": {
+    "Benjamin": true,
+    "knew Martha": true,
+    "told Lydia": true,
+    "left convalescence": true
+  },
+  "chronology_spine_dates_in_player": {
+    "1858-03-12": true,
+    "1866-06-04": true,
+    "1863-11-12": true,
+    "1863-12-01": true,
+    "1887-02-14": true
+  },
+  "final_questions_A_D_present": true,
+  "meta_labels_on_exhibits": {
+    "D015_header_contains_Decoy": true,
+    "D016_header_contains_False": true
+  },
+  "director_locks_respected": {
+    "facsimile_ok_v1": true,
+    "explicit_catalog_ok": true,
+    "d016_footnote_stays": true,
+    "three_pdfs_stay": true
+  }
+}

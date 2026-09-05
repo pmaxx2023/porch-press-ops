@@ -1,0 +1,167 @@
+{
+  "dataset": "wrong-widow-canon",
+  "stage": "trail",
+  "session_target": "one evening / bingeable acts",
+  "rhythm": "ask → pull 1–3 records → update theory → next ask",
+  "acts": [
+    {
+      "act": "I",
+      "title": "Both claims look real",
+      "dna_beat": "cold open + records as conflicting witnesses",
+      "loops": [
+        {
+          "loop_id": "L1",
+          "ask": "What does each woman assert about the same soldier?",
+          "records": ["D001", "D002", "D003"],
+          "theory_update": "Two sincere-looking widow files; different marriage dates and different asserted deaths.",
+          "payoff": "Stakes: this is an open dispute, not a family-history chapter."
+        },
+        {
+          "loop_id": "L2",
+          "ask": "Can both marriages be verified as recorded events?",
+          "records": ["D005", "D006"],
+          "optional_support": ["D009"],
+          "theory_update": "1858 Ripley Corbett/Ashby and 1866 Jefferson Corbett/Briggs (groom: widower) both exist on paper.",
+          "payoff": "This isn’t a clerical mix-up. Two real wedding papers."
+        }
+      ],
+      "act_payoff": "Two real wedding papers.",
+      "player_moment": "Both marriages are real events."
+    },
+    {
+      "act": "II",
+      "title": "The war paper splits",
+      "dna_beat": "escalating reveal — you thought you knew how he died",
+      "loops": [
+        {
+          "loop_id": "L3",
+          "ask": "What happened to Martha’s household after the war?",
+          "records": ["D012"],
+          "teaching_side": "D017 (Harriet remarriage) optional — teaches pension remarriage rule without being Martha",
+          "theory_update": "Martha remains Corbett widow-head in Ripley; children continuous; no remarriage on census.",
+          "payoff": "Martha’s file isn’t abandoned; she lives as a soldier’s widow."
+        },
+        {
+          "loop_id": "L4",
+          "ask": "What do the military papers say about Elias’s wartime fate?",
+          "records": ["D007", "D008"],
+          "decoy_branch": {
+            "if_player_pulls": "D015",
+            "handle": "Silas M. Corbit — eliminate by Co. B 83rd Indiana, Dearborn residence, age ≠ Elias; he DID die. Do not conflate with D007."
+          },
+          "theory_update": "Hospital line (D007): dead of disease ~1863-11-12. Muster (D008): Eli Corbett deserted / missing — supposed dead after leaving convalescence. Records disagree.",
+          "payoff": "You thought you knew how he died. The muster doesn’t agree with the hospital line."
+        }
+      ],
+      "act_payoff": "War paper self-conflicts.",
+      "player_moment": "The war paper doesn’t agree with itself."
+    },
+    {
+      "act": "III",
+      "title": "He’s alive in the paper",
+      "dna_beat": "escalating reveal — dead soldier in census with another wife",
+      "loops": [
+        {
+          "loop_id": "L5",
+          "ask": "Does Elias appear alive after 1863?",
+          "records": ["D010", "D011"],
+          "identity_bridge": "Same man cluster: age band, Jefferson, Lydia + children matching D003, continuity from D006 widower ceremony",
+          "noise_handling": "Corbit/Eli/age-off/Wife are ordinary record noise — never labeled clues",
+          "theory_update": "Postwar Jefferson censuses show Elias/Eli with Lydia as Wife and their children — after the hospital ‘death’ line.",
+          "payoff": "The ‘dead’ soldier is in the census with another wife."
+        },
+        {
+          "loop_id": "L5b",
+          "ask": "Does death naming reinforce Lydia’s domestic standing?",
+          "records": ["D004", "D013"],
+          "theory_update": "1887 death/burial name Lydia — strong for household standing, not yet decisive for marriage law.",
+          "payoff": "Death paper backs Lydia’s lived claim (primacy trap still live)."
+        }
+      ],
+      "act_payoff": "Postwar life with Lydia is real on paper.",
+      "player_moment": "He’s in the census with the second wife."
+    },
+    {
+      "act": "IV",
+      "title": "Adjudication",
+      "dna_beat": "death certificate isn’t the marriage law",
+      "loops": [
+        {
+          "loop_id": "L6",
+          "ask": "Was the 1858 marriage ever dissolved?",
+          "records": ["D014"],
+          "decoy_branch": {
+            "if_player_pulls": "D016",
+            "handle": "Eli Corbin & Martha Ann Ashley divorce 1865 — surname mismatches Corbin≠Corbett, Ashley≠Ashby must stay readable. Not our couple. Return to D014 negative."
+          },
+          "theory_update": "No divorce/dissolution for Elias+Martha in supplied Ripley+Jefferson search.",
+          "payoff": "There’s no divorce."
+        },
+        {
+          "loop_id": "L7",
+          "ask": "Weigh named widow on death paper vs undissolved prior marriage",
+          "records": ["D004", "D013", "D005", "D014", "D012", "D006"],
+          "theory_update": "Ceremony real; widower status on D006 false given living undissolved prior spouse; Lydia domestically true, legally secondary.",
+          "payoff": "The death certificate isn’t the marriage law."
+        },
+        {
+          "loop_id": "L8",
+          "ask": "Adjudicate supportable widow + why both claims look real",
+          "records": ["D002", "D003", "D007", "D008", "D010", "D011"],
+          "commit": {
+            "A_supportable_widow": "Martha Jane (Ashby) Corbett (P002)",
+            "B_claimant_beliefs": "Martha: wartime death word + true 1858 marriage. Lydia: told first wife died of fever + true ceremony + death naming her.",
+            "C_what_happened": "Desertion after conflicting dead paper; lived with Lydia until 1887 death.",
+            "D_why_both_look_real": "Martha backed by early marriage + children + no divorce; Lydia backed by long cohabitation + ceremony + death paper — without collapsing record-says into happened."
+          },
+          "payoff": "Martha supportable; Lydia’s file domestically true and legally secondary."
+        }
+      ],
+      "act_payoff": "Adjudication complete from open set.",
+      "player_moment": "The death certificate isn’t the marriage law."
+    },
+    {
+      "act": "Close",
+      "title": "Satisfying ending (not a cliffhanger)",
+      "loops": [
+        {
+          "loop_id": "L9",
+          "ask": "Submit → sealed confirmation",
+          "records": ["D018"],
+          "availability": "sealed_post_submit",
+          "theory_update": "Brother’s affidavit confirms desertion knowledge + lie to Lydia. Color/motive only.",
+          "payoff": "This case resolves cleanly. Sealed deepens motive; does not reopen a new mystery.",
+          "player_moment": "I finished — and I want the next case."
+        }
+      ],
+      "act_payoff": "Case closed; series appetite from craft/tone."
+    }
+  ],
+  "fail_paths": [
+    {
+      "id": "FAIL_DEATH_CERT",
+      "error": "Pick Lydia solely because D004/D013 name her",
+      "recovery_hint_rung": "H3–H5"
+    },
+    {
+      "id": "FAIL_CEREMONY_EQ_LAWFUL",
+      "error": "Treat D006 ceremony as proof of lawful marriage",
+      "recovery_hint_rung": "H4–H6"
+    },
+    {
+      "id": "FAIL_SINGLE_MUSTER",
+      "error": "Treat one of D007/D008 as definitive without the conflict + postwar life",
+      "recovery_hint_rung": "H2–H3"
+    },
+    {
+      "id": "FAIL_SILO_AS_ELIAS",
+      "error": "Merge Silas D015 into Elias identity",
+      "recovery": "Force unit/age/residence comparison"
+    },
+    {
+      "id": "FAIL_CORBIN_DIVORCE",
+      "error": "Treat D016 as Elias–Martha divorce",
+      "recovery": "Force letter-by-letter surname compare → D014"
+    }
+  ]
+}

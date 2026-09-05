@@ -1,0 +1,510 @@
+{
+  "dataset": "wrong-widow-canon",
+  "relationships": [
+    {
+      "type": "spouse",
+      "person_ids": [
+        "P001",
+        "P002"
+      ],
+      "spouse_ids": [
+        "P001",
+        "P002"
+      ],
+      "legal_status": "lawful_undissolved",
+      "date_start": "1858-03-12",
+      "date_end": "1887-02-14",
+      "notes": "Lawful marriage Ripley Co. NEVER dissolved. No divorce. Ends only by Elias death for widowhood purposes. Martha is supportable widow.",
+      "relationship_id": "REL_001",
+      "document_id": null
+    },
+    {
+      "type": "ceremony_spouse",
+      "person_ids": [
+        "P001",
+        "P003"
+      ],
+      "spouse_ids": [
+        "P001",
+        "P003"
+      ],
+      "legal_status": "ceremony_only",
+      "date_start": "1866-06-04",
+      "date_end": "1887-02-14",
+      "notes": "Ceremony real (Jefferson Co.); NOT lawful \u2014 prior spouse Martha living and marriage undissolved. Elias claimed widower status.",
+      "relationship_id": "REL_002",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P001",
+        "P004"
+      ],
+      "parent_id": "P001",
+      "child_id": "P004",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_003",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P002",
+        "P004"
+      ],
+      "parent_id": "P002",
+      "child_id": "P004",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_004",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P001",
+        "P005"
+      ],
+      "parent_id": "P001",
+      "child_id": "P005",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_005",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P002",
+        "P005"
+      ],
+      "parent_id": "P002",
+      "child_id": "P005",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_006",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P001",
+        "P006"
+      ],
+      "parent_id": "P001",
+      "child_id": "P006",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_007",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P003",
+        "P006"
+      ],
+      "parent_id": "P003",
+      "child_id": "P006",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_008",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P001",
+        "P007"
+      ],
+      "parent_id": "P001",
+      "child_id": "P007",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_009",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P003",
+        "P007"
+      ],
+      "parent_id": "P003",
+      "child_id": "P007",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_010",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P001",
+        "P008"
+      ],
+      "parent_id": "P001",
+      "child_id": "P008",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_011",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P003",
+        "P008"
+      ],
+      "parent_id": "P003",
+      "child_id": "P008",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_012",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P009",
+        "P001"
+      ],
+      "parent_id": "P009",
+      "child_id": "P001",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_013",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P010",
+        "P001"
+      ],
+      "parent_id": "P010",
+      "child_id": "P001",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_014",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P009",
+        "P021"
+      ],
+      "parent_id": "P009",
+      "child_id": "P021",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_015",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P010",
+        "P021"
+      ],
+      "parent_id": "P010",
+      "child_id": "P021",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_016",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P011",
+        "P002"
+      ],
+      "parent_id": "P011",
+      "child_id": "P002",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_017",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P011",
+        "P025"
+      ],
+      "parent_id": "P011",
+      "child_id": "P025",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_018",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P012",
+        "P002"
+      ],
+      "parent_id": "P012",
+      "child_id": "P002",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_019",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P012",
+        "P025"
+      ],
+      "parent_id": "P012",
+      "child_id": "P025",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_020",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P013",
+        "P003"
+      ],
+      "parent_id": "P013",
+      "child_id": "P003",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_021",
+      "document_id": null
+    },
+    {
+      "type": "parent-child",
+      "person_ids": [
+        "P014",
+        "P003"
+      ],
+      "parent_id": "P014",
+      "child_id": "P003",
+      "biological": true,
+      "date_start": null,
+      "date_end": null,
+      "notes": null,
+      "relationship_id": "REL_022",
+      "document_id": null
+    },
+    {
+      "type": "sibling",
+      "person_ids": [
+        "P001",
+        "P021"
+      ],
+      "date_start": null,
+      "date_end": null,
+      "notes": "Brothers. Benjamin authors sealed affidavit.",
+      "relationship_id": "REL_023",
+      "document_id": null
+    },
+    {
+      "type": "sibling",
+      "person_ids": [
+        "P002",
+        "P025"
+      ],
+      "date_start": null,
+      "date_end": null,
+      "notes": "Sisters.",
+      "relationship_id": "REL_024",
+      "document_id": null
+    },
+    {
+      "type": "spouse",
+      "person_ids": [
+        "P016",
+        "P017"
+      ],
+      "spouse_ids": [
+        "P016",
+        "P017"
+      ],
+      "legal_status": "lawful_ended_by_death",
+      "date_start": "1859-05-10",
+      "date_end": "1864-05-15",
+      "notes": "Harriet + George Whitcomb. Ended by George's death in service. RED HERRING cast \u2014 not Martha.",
+      "relationship_id": "REL_025",
+      "document_id": null
+    },
+    {
+      "type": "spouse",
+      "person_ids": [
+        "P016",
+        "P018"
+      ],
+      "spouse_ids": [
+        "P016",
+        "P018"
+      ],
+      "legal_status": "lawful_remarriage",
+      "date_start": "1868-09-22",
+      "date_end": null,
+      "notes": "Harriet remarries Amos Keller. Teaches pension remarriage rule. NOT Martha.",
+      "relationship_id": "REL_026",
+      "document_id": null
+    },
+    {
+      "type": "spouse",
+      "person_ids": [
+        "P019",
+        "P020"
+      ],
+      "spouse_ids": [
+        "P019",
+        "P020"
+      ],
+      "legal_status": "divorced",
+      "date_start": "1860-02-14",
+      "date_end": "1865-08-08",
+      "notes": "FALSE DIVORCE decoy: Eli Corbin & Martha Ann Ashley, Ripley Co. Similar names; NOT Elias Corbett & Martha Jane Ashby.",
+      "relationship_id": "REL_027",
+      "document_id": null
+    },
+    {
+      "type": "spouse",
+      "person_ids": [
+        "P009",
+        "P010"
+      ],
+      "spouse_ids": [
+        "P009",
+        "P010"
+      ],
+      "legal_status": "lawful",
+      "date_start": "1834-06-01",
+      "date_end": "1878-06-11",
+      "notes": "Parents of Elias/Benjamin.",
+      "relationship_id": "REL_028",
+      "document_id": null
+    },
+    {
+      "type": "spouse",
+      "person_ids": [
+        "P011",
+        "P012"
+      ],
+      "spouse_ids": [
+        "P011",
+        "P012"
+      ],
+      "legal_status": "lawful",
+      "date_start": "1835-10-20",
+      "date_end": "1871-04-22",
+      "notes": "Parents of Martha/Abigail.",
+      "relationship_id": "REL_029",
+      "document_id": null
+    },
+    {
+      "type": "spouse",
+      "person_ids": [
+        "P013",
+        "P014"
+      ],
+      "spouse_ids": [
+        "P013",
+        "P014"
+      ],
+      "legal_status": "lawful",
+      "date_start": "1843-04-12",
+      "date_end": "1889-03-17",
+      "notes": "Parents of Lydia.",
+      "relationship_id": "REL_030",
+      "document_id": null
+    },
+    {
+      "type": "household",
+      "person_ids": [
+        "P001",
+        "P002",
+        "P004",
+        "P005"
+      ],
+      "date_start": "1858-03-12",
+      "date_end": "1863-12-01",
+      "place": "Ripley County, Indiana",
+      "notes": "First household Elias+Martha+children until Elias deserts.",
+      "relationship_id": "REL_031",
+      "document_id": null
+    },
+    {
+      "type": "household",
+      "person_ids": [
+        "P002",
+        "P004",
+        "P005"
+      ],
+      "date_start": "1863-12-01",
+      "date_end": null,
+      "place": "Ripley County, Indiana",
+      "notes": "Martha postwar widow household (Ripley). Never remarries.",
+      "relationship_id": "REL_032",
+      "document_id": null
+    },
+    {
+      "type": "household",
+      "person_ids": [
+        "P001",
+        "P003",
+        "P006",
+        "P007",
+        "P008"
+      ],
+      "date_start": "1866-06-04",
+      "date_end": "1887-02-14",
+      "place": "Jefferson County, Indiana",
+      "notes": "Second household Elias+Lydia+children. Socially marriage; legally ceremony-only.",
+      "relationship_id": "REL_033",
+      "document_id": null
+    }
+  ]
+}

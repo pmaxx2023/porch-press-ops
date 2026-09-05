@@ -1,0 +1,85 @@
+{
+  "dataset": "wrong-widow-canon",
+  "stage": "trail",
+  "matches_brief": "§3 Core experience / what counts as solving",
+  "solved_when": "Player can support A–D from the open record set (not from sealed D018).",
+  "elements": [
+    {
+      "element": "A",
+      "name": "Supportable widow",
+      "player_must_establish": "Which claimant’s marriage is the undissolved prior union that controls widow status",
+      "correct": {
+        "person_id": "P002",
+        "name": "Martha Jane (Ashby) Corbett",
+        "basis": "1858 lawful marriage undissolved; Martha never remarried; prior spouse living through 1866–1887"
+      },
+      "required_citations_min": ["D005", "D014", "D012"],
+      "helpful": ["D002", "D009"],
+      "incorrect_if": [
+        "Chooses Lydia solely because D004/D013 name her",
+        "Chooses Lydia because ceremony + cohabitation feel more ‘real’ without addressing prior marriage"
+      ]
+    },
+    {
+      "element": "B",
+      "name": "Claimant beliefs",
+      "player_must_establish": "What each woman believed or asserted in her file (sincere vs knowingly false is a separate layer)",
+      "correct": {
+        "Martha": "Asserts 1858 marriage + soldier’s wartime death of disease; lives as widow on wartime word — marriage claim correct; death timing incorrect",
+        "Lydia": "Asserts 1866 marriage + 1887 death as his widow; believes first wife died of fever (as told by Elias) — sincere on open evidence"
+      },
+      "required_citations_min": ["D002", "D003"],
+      "helpful": ["D004", "D007"],
+      "not_required": "Proving Lydia knew about Martha during the marriage (sealed may color; open default is lied-to)"
+    },
+    {
+      "element": "C",
+      "name": "What happened",
+      "player_must_establish": "Soldier’s wartime fate from conflicting military paper + postwar life",
+      "correct": {
+        "wartime": "Did not die in 1863; desertion / left convalescence after conflicting dead vs deserted paper",
+        "postwar": "Lived with Lydia in Jefferson until death 1887-02-14 pneumonia",
+        "canonical_death_only": "1887"
+      },
+      "required_citations_min": ["D007", "D008", "D010", "D011", "D004"],
+      "incorrect_if": [
+        "Treats D007 alone as definitive death",
+        "Ignores D008 conflict",
+        "Merges Silas D015 into Elias"
+      ]
+    },
+    {
+      "element": "D",
+      "name": "Why both claims look real",
+      "player_must_establish": "Which documents legitimately support each file without collapsing ‘record says X’ into ‘X happened’",
+      "correct": {
+        "Martha_file_supports": ["D005 early marriage", "D009/D012 children + widow continuity", "D014 no divorce", "D007 wartime death word"],
+        "Lydia_file_supports": ["D006 ceremony", "D010/D011 long cohabitation Wife", "D004/D013 death naming", "D003 children"],
+        "teaching": "Both documentary stories are real witnesses; only one is supportable under undissolved prior marriage"
+      },
+      "required_citations_min": ["D005", "D006", "D004", "D014"]
+    }
+  ],
+  "explicitly_not_required": [
+    "Every private motive",
+    "Modern legal advice / full pension-law treatise",
+    "Sealed ending document D018",
+    "Knowing Elias’s cruelty level beyond quiet new-life desertion"
+  ],
+  "fail_incomplete_if": [
+    "Picks widow solely because death certificate names her",
+    "Conflates ceremony happened with marriage was lawful",
+    "Treats a single muster/hospital line as definitive without addressing the conflicting roll + postwar life"
+  ],
+  "sealed_after_submit": {
+    "document_id": "D018",
+    "scores": "confirmation / color only",
+    "does_not_change": "A–D open-set adjudication",
+    "player_should_feel": "Confirmation, not a new legal theory"
+  },
+  "grading_notes_for_proof": {
+    "pass": "A–D supported with exhibit IDs from open set; uncertainty preserved on sealed motives",
+    "partial": "Correct widow but no conflict reconstruction, or correct desertion story but Lydia chosen as supportable",
+    "fail": "Any fail_incomplete_if pattern"
+  }
+}

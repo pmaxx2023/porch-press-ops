@@ -1,0 +1,85 @@
+{
+  "dataset": "wrong-widow-canon",
+  "stage": "trail",
+  "purpose": "Unstick players; teach record-vs-truth without spoiling adjudication.",
+  "rules": [
+    "Hints escalate from attention → comparison → method → soft direction. Never name Martha as the answer before the player commits.",
+    "Never say ‘desertion is the hinge’ or ‘supportable widow is Martha’ in early rungs.",
+    "Never label Corbit/Eli/age-off/Wife as clues.",
+    "Sealed D018 never appears in hints.",
+    "Separate hint packet from player packet (Binder)."
+  ],
+  "rungs": [
+    {
+      "rung": "H1",
+      "when_stuck": "Overwhelmed by dual claims / death paper naming Lydia",
+      "hint": "List what each claimant asserts in her own words — marriage date, death claim, and what would make her file look strong. Don’t decide yet.",
+      "teaches": "Affidavits are assertions.",
+      "does_not_spoil": "Who wins"
+    },
+    {
+      "rung": "H2",
+      "when_stuck": "Hasn’t verified marriages or treats claims as proof",
+      "hint": "Find the marriage registers for the dates and counties each woman cites. Treat each register as a witness to a ceremony — not yet as the final law.",
+      "points_to_moves": ["M_VERIFY_MARRIAGES"],
+      "teaches": "Ceremony as recorded event.",
+      "does_not_spoil": "Lawfulness"
+    },
+    {
+      "rung": "H3",
+      "when_stuck": "Accepts hospital death as settled / ignores muster",
+      "hint": "Pull both the hospital line and the company muster for the same man. Write down how each describes his fate. If they disagree, that disagreement is evidence.",
+      "points_to_moves": ["M_WAR_PAPER"],
+      "teaches": "Records conflict; muster ≠ gospel.",
+      "does_not_spoil": "Desertion as canonical truth wording"
+    },
+    {
+      "rung": "H4",
+      "when_stuck": "Stuck on death-certificate primacy (Lydia named)",
+      "hint": "A death register naming a wife tells you who the household presented as widow. Separately ask: was there an earlier marriage, and was it ever dissolved?",
+      "points_to_moves": ["M_VERIFY_MARRIAGES", "M_DIVORCE_SEARCH", "M_MARTHA_HOUSEHOLD"],
+      "teaches": "Named widow ≠ only possible / supportable widow.",
+      "does_not_spoil": "Martha wins"
+    },
+    {
+      "rung": "H5",
+      "when_stuck": "Hasn’t found postwar life / still thinks 1863 death",
+      "hint": "After the wartime papers, look for the soldier in later censuses in the county of the second marriage. Ask whether a man marked dead can still appear as head of household.",
+      "points_to_moves": ["M_POSTWAR_LYDIA"],
+      "teaches": "Recorded death vs continued life on paper.",
+      "does_not_spoil": "Motive / sealed knowledge"
+    },
+    {
+      "rung": "H6",
+      "when_stuck": "Tempted by Corbin/Ashley divorce or unsure about dissolution",
+      "hint": "When a divorce decree looks close, compare every letter of both surnames to the couple you care about. Then check the search result that names your exact parties.",
+      "points_to_moves": ["M_DIVORCE_SEARCH"],
+      "teaches": "Near-name ≠ same persons; use the negative search for the right couple.",
+      "does_not_spoil": "Final adjudication prose"
+    },
+    {
+      "rung": "H7",
+      "when_stuck": "Confused by Silas Corbit hospital death",
+      "hint": "Same-ish surnames aren’t identity. Match unit, age, and home county before merging two hospital lines.",
+      "points_to_moves": ["M_SAME_NAME_SCAN"],
+      "teaches": "Require more than a shared name.",
+      "does_not_spoil": "Answer"
+    },
+    {
+      "rung": "H8",
+      "when_stuck": "Ready to commit but conflating ceremony with lawful status",
+      "hint": "Separate three questions: (1) Did each ceremony happen? (2) Did an earlier undissolved marriage still bind? (3) Who does the death paper name? Answer each from paper before you pick a supportable widow.",
+      "teaches": "Ceremony ≠ lawful; death naming ≠ marriage law.",
+      "soft_direction": "Still does not name Martha; forces the three-question frame that yields Martha."
+    }
+  ],
+  "anti_spoiler": {
+    "forbidden_in_player_hints": [
+      "Martha is the supportable widow",
+      "Elias deserted (as narrated truth)",
+      "Elias knowingly lied",
+      "open D018",
+      "Corbit/Wife/age-off are the keys"
+    ]
+  }
+}
