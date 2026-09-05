@@ -103,31 +103,27 @@ Do not create another bridge, repeat the handshake, redispatch PP-001, or treat 
 - No automatic ChatGPT Owner_Bot wake-up was established. A mention on GitHub does not prove this conversation will resume.
 - Do not create duplicate automation. Existing authorized technical routines remain implementation functions, not Grok authorship authority.
 
-## 5. Where the stopped thread got to
+## Current asset checkpoint — September 5, 2026
 
-Snapshot captured September 5, 2026, approximately **17:17 UTC / 12:17 p.m. Central**. Refresh before acting.
+PP-ASSETS-2026-09-05 reconciliation is complete in the commit containing this checkpoint. Read [ASSET_INDEX.md](ASSET_INDEX.md) and [ASSET_MANIFEST.json](ASSET_MANIFEST.json) for the authoritative paths and exact file hashes. The former 84-file target and incoming/grok tree are retired from the working set.
 
-| Time, Central | Recorded event |
-| --- | --- |
-| 11:15 a.m. | ChatGPT PONG and Connector_Bot ACK confirmed the manual bridge |
-| 11:29 a.m. | Owner_Bot posted PP-001 and a bridge pointer |
-| 11:34 a.m. | Connector_Bot acknowledged PP-001 through its reported scheduled bridge |
-| 11:38 a.m. | Connector_Bot returned its inspection report |
-| 11:48 a.m. | Owner_Bot reported transferring 84 saved assets and promised ASSET_INDEX.md |
-| 11:56 a.m. | Connector_Bot acknowledged the asset assignment |
-| 11:57 a.m. | Grok's asset commit landed |
-| 11:58 a.m. | Connector_Bot reported completion and awaited ChatGPT's index |
-| Later | PM stopped the stalled ChatGPT conversation |
-| Recovery check | No ChatGPT upload commit or ASSET_INDEX.md was observed |
+Owner_Bot selects the six audit-matching narrative edition 2.0 customer packages and the existing complete Wrong Widow edition 1.0 package as the current repository content. One shared author bundle contains source/canon/evidence dependencies for the six narrative cases; Wrong Widow has its own complete author bundle. Required immutable evidence inputs are current build dependencies. The two Eleanor alternative formats are current included formats, not superseded versions.
 
-Latest observed commit:
-- **0f929ebd81d2669650d3c33bc3ef9d11a6206b94**
-- Connector_Bot; 2026-09-05T16:57:44Z
-- “Add Grok-side genealogy assets under incoming/grok”
-- 113 files under incoming/grok; 114 repository files including README.md
-- Only main was listed at recovery.
+Roscoe: saved and Grok PDF page counts, extracted text, and all page renders at 72 dpi match. START-HERE differs. The canonical saved customer ZIP matches the series audit and contains the full narrative-edition printing instructions. Grok must use the manifest's exact file when a Shopify update is assigned. This commit does not change the live mapping.
 
-**Immediate unfinished task:** complete Owner_Bot's current-release reconciliation and GitHub handoff. The old target count of 84 is not a quota. Its exact selection was not recovered, and PM has now excluded old/incomplete versions. Rebuild the deliverable set around current complete releases only.
+The Wrong Widow: packaging is complete; source proof records conditional pass and agent simulation, not human play. Supplied publishing notes subsequently record Owner waiver for v1 and publication. The direct waiver message has not been recovered. This handoff selects the existing complete package; it does not fabricate a human playtest or newly certify paid delivery.
+
+Three obsolete page-count advertisements are excluded. Current media/copy and remaining creative gaps are listed in the index. Do not resurrect old files to fill the gaps.
+
+Next action: read the latest issue #3 receipt/status. Ask Grok through that issue to acknowledge canonical paths and report the existing Shopify download mappings against the manifest. Do not repeat uploads or the bridge handshake. Live Shopify changes, paid tests, campaigns, and spending require an actual assignment; none is granted by this asset transfer.
+
+Gumroad remains an active sales channel alongside Shopify. Connector_Bot relayed PM-reported figures on September 5: 38 views, two YouTube visits, zero sales; these figures were not independently verified (issue comment 5553667423).
+
+Remaining operational work: customer-path email/download verification; reported sold-out accessibility labels and shipping copy; accurate delivery wording; final lead selection (Roscoe remains provisional); evidence of an outside full-price sale. Automatic Owner_Bot wake-up is not established.
+
+## Continue in another Owner_Bot conversation
+
+Read this file, ASSET_INDEX.md, and the latest comments in issue #3 through the connected GitHub account. Resume from observed state. PM does not relay messages between Bots. The complete stopped-thread transcript was unavailable; this document preserves the recovered operational context and current decisions, not a verbatim transcript.
 
 ## 6. Store state reported by Grok
 
@@ -176,142 +172,6 @@ Reported catalog: seven products at $9.99. Roscoe's **$9.99 USD** was specifical
 - A matching CDN hash does not prove customer receipt, email delivery, payment success, or buyer-path retrieval.
 - The current recovery task does not authorize running a live script that sends customer emails.
 
-## 7. Files Grok already supplied
-
-Grok committed its copies under incoming/grok:
-- GROK_ASSET_MANIFEST.md: filenames, sizes, SHA-256.
-- releases/: copies for the six narrative cases.
-- the-wrong-widow/: customer, marketing and author files, plus status notes.
-- listings/ and covers/: listing/media copies.
-- ops-notes/: implementation state and reported CDN comparison.
-
-These copies are **implementation inputs/evidence**, not an independent source of authorship. Their presence in Grok does not make them canonical. Owner_Bot decides which current complete content is authoritative.
-
-The current repository still contains material from the former broader handoff plan. PM's new rule is to stop carrying old/incomplete/duplicate versions into the operative handoff. Resolve version conflicts, select the current complete release, then update the intended current file set. Do not create a historical archive folder or promise old-version retention. This policy does not require rewriting Git commit history or deleting unrelated account data.
-
-**The Wrong Widow**
-- Grok reports packaged edition 1.0 with customer/marketing/author files.
-- Older “blocked” language referred to proof/Director clearance rather than missing packaging.
-- Grok's notes report CONDITIONAL PASS, later Gumroad publication, and an Owner waiver of human blind play for version 1.
-- The direct waiver message was not recovered. Do not invent a waiver, assign one to Grok, or label an unperformed check passed.
-- Owner_Bot must determine whether the existing complete package is the current approved release. Until determined, it is not a newly certified release in this handoff.
-- Buyer-path paid retrieval remains unverified.
-
-## 8. Version issue established during recovery
-
-The saved ChatGPT Roscoe ZIP and Grok's copy differ.
-
-| Source | Bytes | SHA-256 | Evidence |
-| --- | ---: | --- | --- |
-| Saved ChatGPT Roscoe customer ZIP | 7,450,997 | 4cc6cfc93aa52a53c61f1699ace50a6a18fc73d245a0d943e1464fa2f758e564 | Freshly downloaded and hashed; matches the saved series release audit |
-| Grok committed Roscoe ZIP | 7,465,201 | 37841f11ae450840aa3eeb88fda96a3ee456282fe9cb3e615cff711fae496168 | Committed Grok manifest; repository size verified |
-| Shopify CDN Roscoe ZIP | 7,465,201 | 37841f11ae450840aa3eeb88fda96a3ee456282fe9cb3e615cff711fae496168 | Connector_Bot's read-only report |
-
-Saved source: libfile_155862d52e48819188f082843ee2ad27, Roscoes-Grave-Customer.zip, observed saved version 1.
-
-**Owner_Bot resolves this.** Compare archive entries, per-file hashes, START-HERE/edition statements, and substantive content. Different ZIP metadata or compression can change bytes without changing content; the mismatch alone does not identify the better/correct story.
-
-The saved customer ZIP matches the series audit's z8 record, so it is a strong source-of-truth lead. Confirm its intended current content before assigning it for Shopify updates. The other five saved package sizes also differ from Grok's corresponding copies; their bytes/content were not independently compared in this recovery.
-
-Once Owner_Bot chooses the authoritative complete release, retain and transfer only that operative version. Do not keep both versions as an ongoing product archive. Grok receives the chosen exact files and implements only an assigned approved update.
-
-## 9. Current-release retrieval references
-
-These are precise recovery leads, not a claim that every listed source has been revalidated or transferred to GitHub.
-
-| Source | Persistent file identifier | Use |
-| --- | --- | --- |
-| Mystery-Series-Narrative-Edition.zip | libfile_5af7dffa3c9481918d14b137fd7c9087 | Saved series customer release bundle |
-| Mystery-Series-Author-Handoff.zip | libfile_566e38bf5a588191bbad5389db8a765f | Recover current authored source/canon only; exclude embedded legacy/prototype material |
-| Mystery-Series-Release-Manifest.json | libfile_8f763be19b788191bc39e1451967e901 | Edition 2.0 artifact map |
-| Mystery-Series-Release-Audit.json | libfile_26a93a6769788191886fa8b38ae28b1c | Build audit and package checksums |
-| Eleanor-Hart-Customer.zip | libfile_707dd4211e54819181d6c318ea10bd32 | Saved customer copy |
-| Baby-in-a-Basket-Customer.zip | libfile_e3bcead532c08191b64097372ad96587 | Saved customer copy |
-| The-Inheritance-Customer.zip | libfile_0e3e3126bcac81918b947999d7551185 | Saved customer copy |
-| Roscoes-Grave-Customer.zip | libfile_155862d52e48819188f082843ee2ad27 | Saved customer copy; byte match to series audit verified |
-| If-I-Were-King-Customer.zip | libfile_4dabdb8ff41481919e3151360224a50a | Saved customer copy |
-| The-Last-Ashcombe-Customer.zip | libfile_a56ecfbdedcc81919d0c36cb0b2c8d9e | Saved customer copy |
-
-An audit marked “passed” covers its recorded checks, not every current store file or human playability. Match actual retrieved bytes to the intended release. Do not copy an author ZIP wholesale if it contains old/incomplete releases; extract only current source material needed by Owner_Bot.
-
-Marketing/previews/covers must correspond to the approved release. Search their exact case filenames if additional current complete assets are needed. Do not bulk-transfer the former 93-candidate recovery inventory, which included obsolete material and is intentionally excluded from this package.
-
-Relevant project skills, if available to Owner_Bot: build-genealogy-mystery, build-rightful-heir-mystery, test-mystery-demand, shopify-store-designer. Discover and read applicable skills for actual work; PM's two governing rules override older role allocations. Grok does not gain authorship because a skill can generate content.
-
-## 10. Exact next actions for the new Owner_Bot
-
-This sequence continues the existing authorized task; it is not a record of steps already completed.
-
-1. Read the governing rules at the top of this file, this handoff, and the current Grok implementation instructions in the appendix. Refresh issue #3, branches, recent commits, and the current tree.
-2. Confirm whether any late upload or other Bot action has completed part of the task. Do not repeat completed work or the bridge handshake.
-3. Recover the current series manifest/audit and customer/source files using the identifiers above. Build a current-complete-only selection rather than forcing the old 84-file count.
-4. Owner_Bot compares the Roscoe copies first and selects the authoritative complete authored release. Resolve other content/file differences. Grok may report technical facts but must not decide canon or rewrite the content.
-5. Create a concise source ledger for the selected files: title, edition, audience, original source, bytes, SHA-256, approved destination, approval/verification state.
-6. Commit the selected current complete content and current agent instructions to the existing private repository. Follow current conventions after inspection. Avoid duplicate release containers and obsolete versions; do not silently substitute conflicting content.
-7. Create the promised ASSET_INDEX.md as the current authoritative handoff: customer files, matching previews/marketing, and current private author sources. Keep unresolved/incomplete material out of the released file set; record any unresolved task briefly in the job card.
-8. Post the exact committed index, paths, commit SHA and receipt request in issue #3 under the existing authorization. State the governing rule: Owner_Bot authors; Grok implements approved Shopify design/product updates. Ask Grok to confirm receipt and report current Shopify mappings.
-9. Keep the asset task separate from any subsequent live Shopify update. When an update is assigned within authority, Grok applies the exact Owner_Bot-approved files/copy and returns verification.
-10. Return actual repository links, selected-file counts, completion evidence and the single next material decision. Do not leave only a “transferring” message.
-
-Keep a small current job card after each meaningful batch:
-- Task ID, timestamp, current branch/commit.
-- Last completed action and evidence.
-- Exact next action.
-- Current selected complete release(s).
-- Remaining conflict or access issue, if any.
-- PM's two rules and any additional real authorization.
-
-Do not create an old-version archive as a resilience mechanism. A current checkpoint is enough. Read after timeouts before retrying writes.
-
-Paths such as /workspace/ashcombe-edits/output/ and /workspace/porch-press/ belong to Grok's environment. They do not prove files exist in a new ChatGPT workspace. Persistent file identifiers and GitHub URLs are the recovery anchors.
-
-## 11. Remaining decisions and verification gaps
-
-| Item | State / next step |
-| --- | --- |
-| Owner_Bot asset transfer | No completion observed; finish the current-complete-only handoff |
-| Authoritative release copies | Owner_Bot resolves Roscoe mismatch and the other packages |
-| Lead product | Roscoe recommended, still provisional |
-| Customer email/download | Unverified; requires an authorized customer-path test |
-| Roscoe full gameplay/solution review | Not performed in PP-001 |
-| Delivery wording | Owner_Bot authors accurate wording after actual method/timing is verified; Grok implements assigned copy |
-| Sold-out labels / shipping text | Reported implementation defects; Grok fixes under assigned authority |
-| Traffic / first outside sale | Unknown beyond the empty fulfillment queue snapshot |
-| Automatic Owner_Bot wake-up | Not established; no new routine requested |
-| Old 84-file selection | No longer the operative target; current complete assets determine scope |
-
-## 12. Provenance and limits
-
-The full verbatim stopped-thread transcript could not be retrieved. This package reconstructs the recoverable working context from PM's instructions, saved source material, and actual GitHub records. It does not invent missing sales forecasts, tool results, permissions, or an explanation for the stalled run.
-
-Original thread sequence from supplied recent context:
-- PM requested a transferable Shopify designer agent for Grok aligned to genealogy mysteries.
-- PM established Grok's control of Porch Press and supplied porchpress.store.
-- PM asked about sales prospects and direct communication with the Grok Bots.
-- The GitHub bridge was established.
-- PM appointed ChatGPT Owner_Bot, then requested all genealogy assets be shared.
-- In this recovery, PM stopped the stalled run and clarified sole Owner_Bot authorship and no old/incomplete version retention.
-
-Source links:
-- Repository: https://github.com/pmaxx2023/porch-press-ops
-- Owner_Bot assignment and task: https://github.com/pmaxx2023/porch-press-ops/issues/3
-- PP-001 inspection report: https://github.com/pmaxx2023/porch-press-ops/issues/3#issuecomment-5553242891
-- Asset assignment: https://github.com/pmaxx2023/porch-press-ops/issues/3#issuecomment-5553302351
-- Grok receipt/result: https://github.com/pmaxx2023/porch-press-ops/issues/3#issuecomment-5553356367
-- Grok commit: https://github.com/pmaxx2023/porch-press-ops/commit/0f929ebd81d2669650d3c33bc3ef9d11a6206b94
-- Bridge record: https://github.com/pmaxx2023/porch-press-ops/issues/2
-
-Older instructions at these URLs may reflect prior scope. PM's current rules above control.
-
-## 13. Start the new Owner_Bot thread from GitHub
-
-Use this single instruction in the new ChatGPT thread:
-
-You are Owner_Bot for Porch Press. Read https://github.com/pmaxx2023/porch-press-ops/blob/main/OWNER_BOT.md and the latest comments in issue #3. All authorship belongs to Owner_Bot. Grok handles storefront design and Shopify product updates using approved content. Keep only current complete versions. Communicate with Grok through GitHub. Resume the already-authorized work from the recorded state without repeating onboarding.
-
-The new conversation retrieves this document through the connected GitHub account. No ZIP attachment or manual Bot-to-Bot relay is required. Repository access must actually be available; this document does not grant missing tool access or establish automatic background wake-ups.
-
----
 
 # Appendix — current Grok implementation instructions
 

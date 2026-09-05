@@ -1,0 +1,1152 @@
+{
+  "schema": 1,
+  "date": "2026-09-05",
+  "task": "PP-ASSETS-2026-09-05",
+  "authority": "Owner_Bot",
+  "scope": "Current complete repository assets. No live deployment or paid retrieval asserted. Index and manifest omit their own hashes to avoid self-reference.",
+  "assets": [
+    {
+      "path": "OWNER_BOT.md",
+      "bytes": 23501,
+      "git_blob_sha": "066729b2a787c6e3cf593acc100b3cb0697c27f9",
+      "sha256": "8397ce2de53a45540b546e98bdb9f4f23ff95032b5095c19544b75b26b46b322",
+      "authorship": "Owner_Bot",
+      "audience": "private-operations"
+    },
+    {
+      "path": "README.md",
+      "bytes": 961,
+      "git_blob_sha": "640b9d6dc538b375f3a407a34500e3660b1e7efd",
+      "sha256": "5ac3ea2013a421f589ed41f97541caae985628569914a4a644faac511bd5ce5b",
+      "authorship": "Owner_Bot",
+      "audience": "private-operations"
+    },
+    {
+      "path": "author/Mystery-Series-Author.zip",
+      "bytes": 19951999,
+      "git_blob_sha": "2b529e2e5e85f259ef564ebe5e582a8e33b18032",
+      "sha256": "4f311c56eafd2072b8b27ee6ea1b9023af2759f7f8bb1f46fd1d7571a085a410",
+      "authorship": "Owner_Bot",
+      "audience": "private-author",
+      "members": [
+        {
+          "path": "source/package_editions.py",
+          "bytes": 19563,
+          "sha256": "38619c1d68cca26cc086d00661c91fdd1b2ad2b369431ef574a5a2df84e3289e"
+        },
+        {
+          "path": "source/verify_render.py",
+          "bytes": 2396,
+          "sha256": "3aa5cf5647b20c1d820388799eb50ab8fca6d65c993ae8c1de018a5888a5bbdb"
+        },
+        {
+          "path": "source/build_editions.py",
+          "bytes": 26215,
+          "sha256": "4f2f7c7c976aafb7a7442ff6100ace3f65a860493ff857961136fc944086ce14"
+        },
+        {
+          "path": "source/fonts/DejaVuSerif-Bold.ttf",
+          "bytes": 356668,
+          "sha256": "847b33e13925f19ff87e4d934d6b3cf7cac35ce16424f6f670e40c2f377cf2df"
+        },
+        {
+          "path": "source/fonts/DejaVuSans.ttf",
+          "bytes": 759720,
+          "sha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+        },
+        {
+          "path": "source/fonts/DejaVuSerif.ttf",
+          "bytes": 380660,
+          "sha256": "8f2c103bfa3fd5de71f1b92b18f21906b5a26871fb7e19a9a4c9af539c3cc7ab"
+        },
+        {
+          "path": "source/fonts/LICENSE.txt",
+          "bytes": 3859,
+          "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+        },
+        {
+          "path": "source/fonts/DejaVuSans-Bold.ttf",
+          "bytes": 708920,
+          "sha256": "5c1247acef7f2b8522a31742c76d6adcb5569bacc0be7ceaa4dc39dd252ce895"
+        },
+        {
+          "path": "source/stories/baby.md",
+          "bytes": 10885,
+          "sha256": "2fecee28e4850938112a91fcfe5f06ced72fac2edeca6cc7f7683706db0a7820"
+        },
+        {
+          "path": "source/stories/eleanor.md",
+          "bytes": 10975,
+          "sha256": "0250a39959299dce3714ccdc513fa0879e850dc455b7dae9b9fa5cc26b6ccb07"
+        },
+        {
+          "path": "source/stories/king.md",
+          "bytes": 10804,
+          "sha256": "cce27da98c4f717684be559711baf211471501c41c5be2a1a95aca26c52f7ff3"
+        },
+        {
+          "path": "source/stories/roscoe.md",
+          "bytes": 10550,
+          "sha256": "35191ef81d0786e5ce9ce6ae61e7e1cff90df9c07c5dab43138929a6fb114dcc"
+        },
+        {
+          "path": "source/stories/ashcombe.md",
+          "bytes": 10811,
+          "sha256": "fa3e1cffbd01e362a88931da3a86a5215783aec602aa6e98ca6c369a61f29bcf"
+        },
+        {
+          "path": "source/stories/inheritance.md",
+          "bytes": 10598,
+          "sha256": "6b3b732ba6c3f1e6fc1baf06f0dc496e111ce0da25b306e42c5243de7243dd45"
+        },
+        {
+          "path": "originals/ashcombe-player.pdf",
+          "bytes": 4470152,
+          "sha256": "629801f39f9ef006f165fecc35bdae902c7a773f79a522e869bbd814fec61c86",
+          "pages": 25
+        },
+        {
+          "path": "originals/king-solution.pdf",
+          "bytes": 85805,
+          "sha256": "0d81fec31f4a41df98345f6d804545e5dc5f775e695a5c360f28a1484c6c8711",
+          "pages": 4
+        },
+        {
+          "path": "originals/eleanor-hints.pdf",
+          "bytes": 123394,
+          "sha256": "b0d915857a85b70fa4709ee62000bcc48290fbb185b59d7932cbe059ff15fef5",
+          "pages": 4
+        },
+        {
+          "path": "originals/eleanor-book.pdf",
+          "bytes": 184304,
+          "sha256": "b1b5d63b75f814c560caae4d1c940463e1483226c3d504509aa91258e2dff63f",
+          "pages": 48
+        },
+        {
+          "path": "originals/king-player.pdf",
+          "bytes": 4017202,
+          "sha256": "98d95337acdefdc2676e0992c7017f408ea87fee1c16a430f94d9f798303a905",
+          "pages": 25
+        },
+        {
+          "path": "originals/roscoe-hints.pdf",
+          "bytes": 67915,
+          "sha256": "be96be3ffd34957d6e38d780dd8281840853626f79f41eef3c900373041dedc2",
+          "pages": 3
+        },
+        {
+          "path": "originals/inheritance-hints.pdf",
+          "bytes": 68390,
+          "sha256": "243846e3b3b13f75990f29d2f2a78ef877662d471ef0b4d30717a964c87aeecc",
+          "pages": 3
+        },
+        {
+          "path": "originals/inheritance-solution.pdf",
+          "bytes": 85473,
+          "sha256": "e02eb413ae32b43e0d875f222b3f73f827b565e12927bc9ac03fcafc7aa74ccd",
+          "pages": 4
+        },
+        {
+          "path": "originals/baby-player.pdf",
+          "bytes": 4394760,
+          "sha256": "22518d29aec3db1e66bdf023644b2eaab3d8dcb3579950afe24f2cf31b07dc7e",
+          "pages": 32
+        },
+        {
+          "path": "originals/ashcombe-solution.pdf",
+          "bytes": 121815,
+          "sha256": "26aa68cf0c9cf15e053cf87c8711cee5ddaefb672b17bcf2927d9ae91627c6a2",
+          "pages": 5
+        },
+        {
+          "path": "originals/ashcombe-hints.pdf",
+          "bytes": 94629,
+          "sha256": "9c22f82d46d4f763b7f1b2bf1e0f3aa2e258ad6a2e36f44aa0d38f1045446ff1",
+          "pages": 3
+        },
+        {
+          "path": "originals/king-hints.pdf",
+          "bytes": 68196,
+          "sha256": "349d7baba04d636155567c039c9192705a7b19343674ab0e832c5b25c5184cb4",
+          "pages": 3
+        },
+        {
+          "path": "originals/baby-solution.pdf",
+          "bytes": 175847,
+          "sha256": "5d52eecdbcfede6fd3e9e62950b78e3705e0373153269d825ec94cd7ac4eeac3",
+          "pages": 6
+        },
+        {
+          "path": "originals/eleanor-solution.pdf",
+          "bytes": 129017,
+          "sha256": "d7205c0fbec523a71a0e1509cdbbfa30aa8a9c0b44f53dbcc09aa33f977bf354",
+          "pages": 6
+        },
+        {
+          "path": "originals/roscoe-solution.pdf",
+          "bytes": 85193,
+          "sha256": "d0ee65b5c4b42ba24917b6112e68d00cb94bc383b9f5599af92605c5bddd9526",
+          "pages": 4
+        },
+        {
+          "path": "originals/eleanor-archive.pdf",
+          "bytes": 273151,
+          "sha256": "724649ad87801cda3f055161797e267e2cd14f7c4418555906938fa86a5cae44",
+          "pages": 80
+        },
+        {
+          "path": "originals/eleanor-player.pdf",
+          "bytes": 159669,
+          "sha256": "06b568d71d095ccfba7f8a38780bc1e2cafb012f0b9bc637b27d4667f8124bd2",
+          "pages": 26
+        },
+        {
+          "path": "originals/baby-hints.pdf",
+          "bytes": 168892,
+          "sha256": "9ab4d80e34076a3702000858734b64e10e7104377688fae608f9f258af243e58",
+          "pages": 4
+        },
+        {
+          "path": "originals/roscoe-player.pdf",
+          "bytes": 4431839,
+          "sha256": "210e4a5073eb98c1ce4e4c1bfe31a2411894b68d4b28a38645dc4a1e19bed2e9",
+          "pages": 22
+        },
+        {
+          "path": "originals/inheritance-player.pdf",
+          "bytes": 3818031,
+          "sha256": "cda37a80fcbc003c04d365f372c5880a1de6a07f4f20962ff09e6f0eb0a0eecc",
+          "pages": 21
+        },
+        {
+          "path": "case-notes/eleanor.json",
+          "bytes": 13956,
+          "sha256": "e62266f6059c742b590e7fd7ca790c9444e06bf7485ed7cd772ec3bb9672abac"
+        },
+        {
+          "path": "case-notes/baby.json",
+          "bytes": 13751,
+          "sha256": "047f0cfd3d6e01ae2febe9964753741533f1057923b42ee77ce75a887e404101"
+        },
+        {
+          "path": "case-notes/inheritance.json",
+          "bytes": 13528,
+          "sha256": "40b835c2df1f3cf530f7e547e850408bb8e7afa35fa9561a04a0db9e5b0485de"
+        },
+        {
+          "path": "case-notes/roscoe.json",
+          "bytes": 13366,
+          "sha256": "7b400acf14e19cd952422ecd6c8a454331def67b05797245af43fc5ff8fc2571"
+        },
+        {
+          "path": "case-notes/king.json",
+          "bytes": 13485,
+          "sha256": "8fba957d2a533c58608ee3488e79bc99ba84c9b19d110462f4560cdad4762e80"
+        },
+        {
+          "path": "case-notes/ashcombe.json",
+          "bytes": 13706,
+          "sha256": "953771b8f931056199a17277b0a266482e91d5ae4a0603e0c3f3819c3af98bed"
+        },
+        {
+          "path": "build-report.json",
+          "bytes": 20226,
+          "sha256": "4ad159129c1bb205502f4e5fa69611e7c342814ecc8c59f5e74e32c8db7901d4"
+        },
+        {
+          "path": "blind-review.json",
+          "bytes": 1122,
+          "sha256": "7379ac15e86e0818f0df4ce88f1ee0d07ef731cf30744ca9b5d8ed5b5700cd11"
+        },
+        {
+          "path": "structural-review.json",
+          "bytes": 72,
+          "sha256": "98d4af1669d359abbf68d9506cbc59edcb2ef5bdb19ae663e5cd6c82723ddcf7"
+        },
+        {
+          "path": "visual-review-manifest.json",
+          "bytes": 125128,
+          "sha256": "2b7b95892b627e69728811618161331ef72c69a3488f4662bdfcad2e30674d24"
+        },
+        {
+          "path": "README.md",
+          "bytes": 1247,
+          "sha256": "612224f568f8eb2aa6a1beae9087d50b2a13cffd9287a820b23f0f1661656dc9"
+        }
+      ]
+    },
+    {
+      "path": "author/The-Wrong-Widow-Author.zip",
+      "bytes": 73305,
+      "git_blob_sha": "d11937b47787461fd98ae292ce8bd56bfcf6414f",
+      "sha256": "63878b0e81137e744f4c7c5c4cf100049f559093740986703fcf51909fa06a0f",
+      "authorship": "Owner_Bot",
+      "audience": "private-author",
+      "members": [
+        {
+          "path": "BRIEF.md",
+          "bytes": 24125,
+          "sha256": "df225e37731746eebaf0c6a6686ec7452fada2f66e3d2860776ea3bf3d584bc6"
+        },
+        {
+          "path": "canon/README.md",
+          "bytes": 1350,
+          "sha256": "20617e94202c1ddd8085e3903c6bcc0d0f9963db681633f6605cf971ebabb934"
+        },
+        {
+          "path": "canon/canonical_truth.md",
+          "bytes": 3101,
+          "sha256": "8e1e4243e0044d8256bc9e33da8607385641ab75deed96b36872933b30a22b7c"
+        },
+        {
+          "path": "canon/documents.json",
+          "bytes": 17421,
+          "sha256": "8c2b14644775a4c2f982ad45ac98df023b049932b15132fb775b30a8080e2ba8"
+        },
+        {
+          "path": "canon/events.json",
+          "bytes": 16263,
+          "sha256": "a8dd3442050f8293723de80e092fb4cd5a6ee4086320ace48969c4b39b1e615c"
+        },
+        {
+          "path": "canon/observations.json",
+          "bytes": 7201,
+          "sha256": "eab9effc6e3dc1128fa5bd541a39e8a5fb7c32724b39f1fa963858ff6f0f8745"
+        },
+        {
+          "path": "canon/people.json",
+          "bytes": 23273,
+          "sha256": "9b8ca88b8ef09d828cf71430e141841aaf9454554fe4480d582029402e2398fa"
+        },
+        {
+          "path": "canon/relationships.json",
+          "bytes": 11463,
+          "sha256": "0363d5993a14c74cc65a11a4113ec9fa8a4503212e028f8483335248b9a6f61b"
+        },
+        {
+          "path": "canon/validate.py",
+          "bytes": 12569,
+          "sha256": "06064af94e03769fa026a95b5a86a12b07ba2c8266f8d1b9adea870c0d5dc81f"
+        },
+        {
+          "path": "canon/validation_report.md",
+          "bytes": 2900,
+          "sha256": "2019a19a317647cb9663e0d87c10043a3490f4fafe30e582aeda5307871d420c"
+        },
+        {
+          "path": "packet/BINDER_REPORT.md",
+          "bytes": 6243,
+          "sha256": "930542404fb483f3236304a8f8d78619c454511acfb99175f5eac2cdd0b2db50"
+        },
+        {
+          "path": "packet/START-HERE.md",
+          "bytes": 2129,
+          "sha256": "3a51ebe7d3cb505f8b8c265931c4b75d959b403291a3247fb8696f0917eb1261"
+        },
+        {
+          "path": "packet/_build_meta.json",
+          "bytes": 335,
+          "sha256": "4f1ee12fdf229bc35a54fe0552234b9fa64ebf2aa4c3de44a0f1141987be4948"
+        },
+        {
+          "path": "packet/build_packet.py",
+          "bytes": 47798,
+          "sha256": "98a2c157a500209ec137c9288265eb0137f4791b0cdf2f8f85cb4cb6735df586"
+        },
+        {
+          "path": "proof/VERIFICATION_REPORT.md",
+          "bytes": 7802,
+          "sha256": "62d76afa8b24e6744ba3fb8db849b8bd72b07ece1cfd74930190e91212c2f4c0"
+        },
+        {
+          "path": "proof/blind-playtest.md",
+          "bytes": 10173,
+          "sha256": "12ee6cca201b4081f42edabd9932030a515596585de64cede62137509387ac2f"
+        },
+        {
+          "path": "proof/reasoning_reconstruction.md",
+          "bytes": 3517,
+          "sha256": "b6373951b63547cde4ca3381525217c6830a647f67984b068ef898ce87843fe7"
+        },
+        {
+          "path": "proof/structural_checks.json",
+          "bytes": 1733,
+          "sha256": "df463909e1567d86d2a44634cd4ff942675d71d1baca465c993174b1c0476429"
+        },
+        {
+          "path": "trail/DESIGN.md",
+          "bytes": 3081,
+          "sha256": "439555bb7ff1a753cdba03c381dbf6648e06ba59e2e87915836e0e2b742f2915"
+        },
+        {
+          "path": "trail/README.md",
+          "bytes": 417,
+          "sha256": "e503c44bcc821ba8f8b29fda63986e6fdbe8d7066d0434fc3b33905048a7f236"
+        },
+        {
+          "path": "trail/evidence_map.json",
+          "bytes": 5186,
+          "sha256": "8a5c6d7f839c65799e382e20450132b768f41a2bad3757fe1cf8a144bd4db1fb"
+        },
+        {
+          "path": "trail/hint_ladder.json",
+          "bytes": 4307,
+          "sha256": "4a9b333fa31ac5d51970852f7e5064ab1f4c8e735760f47d5c941d57927db653"
+        },
+        {
+          "path": "trail/player_start.json",
+          "bytes": 2714,
+          "sha256": "598925e74952033d73ca309bed4673d01e138d2773cd4757674787bf312736ae"
+        },
+        {
+          "path": "trail/research_graph.json",
+          "bytes": 6173,
+          "sha256": "6865fdbd37e081b8560f5a468ac0d81c2fd1e6b5c8a29f79535194587eaaf47e"
+        },
+        {
+          "path": "trail/solution_path.json",
+          "bytes": 7660,
+          "sha256": "cea98cd6c54fd88111aeb3581a0156c727e509f9ef6e46c874d10999fd9d8dd7"
+        },
+        {
+          "path": "trail/solution_rubric.json",
+          "bytes": 4086,
+          "sha256": "cd7f2b886cd72a1794d42cef9330332f11c5319a01e19615cb2857ee1a672fbc"
+        },
+        {
+          "path": "README.md",
+          "bytes": 724,
+          "sha256": "06c2f212bfb24d5f873ed5ff180dd8ddafa33f25fe2b24f58c8318843c1c8617"
+        }
+      ]
+    },
+    {
+      "path": "marketing/Baby-in-a-Basket/02-who-was-she-before-sutton.png",
+      "bytes": 2621641,
+      "git_blob_sha": "e8966ac7e85c00f696ad3abf40acd48158452b94",
+      "sha256": "97ef7bd95d1a0897a4a78429fa1b258e08207c5d1c499e586810cae87b64f969",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Baby-in-a-Basket/Ad-Copy.md",
+      "bytes": 807,
+      "git_blob_sha": "19c4a38d902695964a436a23823521b0ef789386",
+      "sha256": "a7c8d9d75bf58953997190482bd9b0e61f525a5860868da60d028d3112a4b8da",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Baby-in-a-Basket/Baby-in-a-Basket-Preview.pdf",
+      "bytes": 229271,
+      "git_blob_sha": "a02d26a528a4e5f00eada7c07fbd985e1d0ce85c",
+      "sha256": "004fb40b2f732734ea26fe4079b5a1583198d1cd1a41538cedd052b90b7fdb56",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Baby-in-a-Basket/Storefront-Listing.md",
+      "bytes": 1270,
+      "git_blob_sha": "a9887f7dee54bb833b4fe6ebfcd75ab3f360cf4c",
+      "sha256": "652ea8caf64e0c56f91f7c385048ed547f500d3fc07fd3f0b0a54d72f3b31dda",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Eleanor-Hart/01-shes-missing-paper-trail.png",
+      "bytes": 2553654,
+      "git_blob_sha": "66cd252bb78407e2366ceb72dee410b930531c62",
+      "sha256": "4b41b493cfbb0c9db053ea7e3d428220a833d6255cd9d77cef82de92a93861f2",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Eleanor-Hart/02-every-family-has-a-story.png",
+      "bytes": 2198189,
+      "git_blob_sha": "7d7495ced39337fd50412f976d891f9033a7fc43",
+      "sha256": "877da0d8c8f6170b73e73d5c776dcf720063ec8a82713159a855e4cc68a00ebe",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Eleanor-Hart/Ad-Copy.md",
+      "bytes": 1159,
+      "git_blob_sha": "d2a23f92d41923f43f4f5580a0bf1c3fa8212781",
+      "sha256": "a1b6f9b6943d0bada15b2a87d73c5dd30b9bae58e53e5812c8af374c1dfa9884",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Eleanor-Hart/Eleanor-Hart-Preview.pdf",
+      "bytes": 253876,
+      "git_blob_sha": "1efa0ced5984df0f40f01bd5f46a390b4ea3f215",
+      "sha256": "869f339a932137cdc37748a10c2ccb40798c08e0bcc1c9135a2a2f2108709ade",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Eleanor-Hart/Storefront-Listing.md",
+      "bytes": 1345,
+      "git_blob_sha": "d42d4956996760911f643fa62a084f3b5c7bb7da",
+      "sha256": "51b1bb125dd3f2f6d1ae72fe9fca614d58942376d9d7397e7e37c39e47fc8012",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/01-Premise.png",
+      "bytes": 2061347,
+      "git_blob_sha": "6bf5e2826342be0326c88cc273bd8eb51d6ec068",
+      "sha256": "be209964da344b6a9df932cdab68ea90162a8b640d8e5e7a15493151266ef751",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/02-Investigation.png",
+      "bytes": 2079136,
+      "git_blob_sha": "f19c10073d5851e574de17323a86854a30e8012f",
+      "sha256": "a1cb57d7b2b72868f9910e9f6ed7a7c7a01cb8fe28d0e8298f50a187a6286c68",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/03-At-Home.png",
+      "bytes": 2157623,
+      "git_blob_sha": "5b5cfac9ebc9edbad04a6b5d038d34e3c7422c2b",
+      "sha256": "156abb3a7ad41396c4c373077abf913beb32ee9c1edc7ae05bb95e28ef102e47",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/Ad-Copy.md",
+      "bytes": 1720,
+      "git_blob_sha": "d5c2a9e52663b776f28fbf68e6d2d7ddb3253d6b",
+      "sha256": "63b431abb46644c7170d8d38526e1a0874f53bbf46fcaacd9817cbbdd21dda51",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/Asset-Guide.md",
+      "bytes": 427,
+      "git_blob_sha": "aa84f3c951da177ba133dc2509c43b43ede2bea6",
+      "sha256": "57ccc740b71d5f26c4f0af37db07b2ff64e3ff53a409bb50ed6b08f0e2c5161e",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/If-I-Were-King-Cover.png",
+      "bytes": 2188810,
+      "git_blob_sha": "a11d69a2298d6d0f2dc91a66d40d44e67441b365",
+      "sha256": "272abdd48be15f68d5692d7769143b53fca90c8e2dc2276cd4eb213b5487d9aa",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/If-I-Were-King-Preview-01.png",
+      "bytes": 67354,
+      "git_blob_sha": "d8d85c2bfa8cbd1aa371e9227245a07d031accf2",
+      "sha256": "4cb4086077299b84b25433730d0aa55b46a2397657961c8d457f0785e0dd9a6c",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/If-I-Were-King-Preview-02.png",
+      "bytes": 98313,
+      "git_blob_sha": "3f21913e3ab7147fbfa0f2b2196a64a637b72a0b",
+      "sha256": "fc1ec4dbfd8ead8a31d2c4031ea1eff6d5f9de4d5e6036739d559012999a657b",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/If-I-Were-King-Preview.pdf",
+      "bytes": 194055,
+      "git_blob_sha": "d9290b83cd7760d44effd33a9eb38ed0e0de0d70",
+      "sha256": "fb61bbba608428a64f8bcdd9c22ca48cd34cfd7528219818cb83d05669091af1",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/If-I-Were-King/Storefront-Listing.md",
+      "bytes": 1966,
+      "git_blob_sha": "192d7ab40d2e553277248fbd4aa941ffac75bf5b",
+      "sha256": "fa1f8c841f84ccdc5d0c0c22ceae3d03e10cea2d163e6d31aaf5cf64150a33b6",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/01-Premise.png",
+      "bytes": 2289306,
+      "git_blob_sha": "20a1090e22f91265c6ee39770f8c9826a8c4e831",
+      "sha256": "d9ed5be84e280bc3ae754e377efd23ffe1fd22d0843222c230baaa43a4ea620a",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/02-Investigation.png",
+      "bytes": 2395618,
+      "git_blob_sha": "bdb75e68638ddd2acbe9a38d1e1012fb4ab40924",
+      "sha256": "aece736b82658398a64c4fbd467f8792a2cd8e9e5b52ff8ee99769922e3e6925",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/03-At-Home.png",
+      "bytes": 1998679,
+      "git_blob_sha": "a646ef0012f2929c5b44bd3d19a99b30cae9fe15",
+      "sha256": "12c0f02ddbb6b5e1be02a6275b85abb9245a5eeee4faeac5076956d223db1c0a",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/Ad-Copy.md",
+      "bytes": 1675,
+      "git_blob_sha": "4f00f3b45e85b476922758a626bea5fb5b56b06c",
+      "sha256": "7e54c19d1a507a62109ba2a132aab66fbb18b73d50ac5ea82fd0342680a248d4",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/Asset-Guide.md",
+      "bytes": 426,
+      "git_blob_sha": "e79c5e322df665970f7d9d05e55a7dcf4cf68223",
+      "sha256": "c6ed868a5681d18b555272a4e55bfb3afb638dd1c81c9026ae614d62a6077db0",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/Roscoes-Grave-Cover.png",
+      "bytes": 2795979,
+      "git_blob_sha": "1cc28c1e1dcc5409156f44bcfd3bb19b9a92a1bd",
+      "sha256": "96e005dae7829f6a0611c54ddcda0e429f35f67d5745bc3ee1aa58ad409100c9",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/Roscoes-Grave-Preview-01.png",
+      "bytes": 67942,
+      "git_blob_sha": "6606c34a8354366cfb334801ad6212fd29781b3b",
+      "sha256": "42d19991dc763d47d58f7e48708860d11bc75774a1aa80dd757f9f62aa019ccd",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/Roscoes-Grave-Preview-02.png",
+      "bytes": 82122,
+      "git_blob_sha": "45800c12bc7facf9d8a294409c683dd79d68fe76",
+      "sha256": "1121fefd917092eab23e62ecce351dad6744a9dfb444b4685236bf92f0288e0f",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/Roscoes-Grave-Preview.pdf",
+      "bytes": 193931,
+      "git_blob_sha": "dd3bd3de855623c56589332d7ecc70b693ccd17b",
+      "sha256": "7d07f8b6ec1e525a29dee8ada3079b5327e5fb1bd14e641eaf33732ef4c83ec8",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/Roscoes-Grave/Storefront-Listing.md",
+      "bytes": 1863,
+      "git_blob_sha": "1627f7700e34cf40a70989f0766281db607d067e",
+      "sha256": "dc78f39b0848efd96ff0872e9d7fc927b583b5c2af861e8926489f4dc2aae24a",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/01-Premise.png",
+      "bytes": 2104002,
+      "git_blob_sha": "71f5b322f77465861b9450953f11b143bc8bf30d",
+      "sha256": "c4db3f04681d2aff400bddd0461f3005dd35aa2afe2904130f4fcf4589eaf584",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/02-Investigation.png",
+      "bytes": 2546620,
+      "git_blob_sha": "6ec2be9f2c3aaf4f4d93b86d395754506492e5b0",
+      "sha256": "ab7bb06af34ba582efe5f36fb1e18d547b13df549eb3b9e0d91afdb5459d224b",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/03-At-Home.png",
+      "bytes": 1792285,
+      "git_blob_sha": "0a2a4d6d7e8c1b1aae9935d86142db34a51fe746",
+      "sha256": "70f549a9d4abbb5ecb49344f0d91fde647e156841c09eb67f71d494bf2178c06",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/Ad-Copy.md",
+      "bytes": 2211,
+      "git_blob_sha": "83694d597624f8cff85825ba3b498692b33460da",
+      "sha256": "22a17fce7ba0a04d11896a04f194f5ec76b9d9e6fc6168aff1b4028d5bbd8afa",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/Preview-01-Overview.png",
+      "bytes": 67306,
+      "git_blob_sha": "0f5f0fae07eeed03cf9aa10f516fb1583681b3ee",
+      "sha256": "08019dc4b5aa2b3d183056c96c99853eb48cd4faf3e4d4c154b409225596312e",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/Preview-02-Will.png",
+      "bytes": 98623,
+      "git_blob_sha": "78e93e82c5246a2c80f7ebf07cd9225bec13cad2",
+      "sha256": "4958f82bf71c7f3fbe227410a30d8a7e94daa4c23e25bf328b61566d216b3dad",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/Storefront-Listing.md",
+      "bytes": 2379,
+      "git_blob_sha": "ec5f526b98b3dbe9d5918503c5fe8088659151da",
+      "sha256": "f09c25fb97b68cb41f18bc07fdf773077df0f57096f05a0b7a67c013d315d56e",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/The-Inheritance-Cover.pdf",
+      "bytes": 3668554,
+      "git_blob_sha": "f90f55d63e2acb234e8d128c957e7397cedcde01",
+      "sha256": "6d8a7df32852f131906db739e297f1a05fd7a44c4505b7338c290f8bffa6f019",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/The-Inheritance-Cover.png",
+      "bytes": 2211063,
+      "git_blob_sha": "493d2d00788c6962fa5f84009502a3a01d1d8d27",
+      "sha256": "447876edea20f3b5c10a4ffe48144f24e5c5576539a8b425833e943a96dee3b9",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Inheritance/The-Inheritance-Preview.pdf",
+      "bytes": 194167,
+      "git_blob_sha": "512b07d781480c39b8d422d82e76e544455d3e7d",
+      "sha256": "49f50b461a8a73d9009148a908167d97ee11461320866fa43debf10083790697",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Last-Ashcombe/01-the-house.png",
+      "bytes": 2720752,
+      "git_blob_sha": "993032589c3b62a8454bb33a447cedcc7a4bfa7e",
+      "sha256": "f5b0c76fd183ac14e05ab74ffcd25b9119b81b770f0082bc9f8b142632f05406",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Last-Ashcombe/02-prove-the-claim.png",
+      "bytes": 2212545,
+      "git_blob_sha": "ac613584cbade836972a3c0695cc4c79bf239ffc",
+      "sha256": "c5bc5cfcd7598a52975b08a440333d8e06a1d3914d111b0276bc311a235f7c8d",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Last-Ashcombe/03-investigate-tonight.png",
+      "bytes": 1934874,
+      "git_blob_sha": "8e7ad4b422d42512a9ce36fb3abbabd2117b0798",
+      "sha256": "327c440447a7261f9b6d0c70acdb7bc195d656df6bad6a98a7b5c1d71afb2bf6",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Last-Ashcombe/Ad-Copy.md",
+      "bytes": 2646,
+      "git_blob_sha": "8c6de48ecb32bc0ef80efa7e63861b44210ef671",
+      "sha256": "7d2165a731f43e3bd8bff23f1ab7eab26a84c73af40f13472992460e35050fc4",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Last-Ashcombe/Storefront-Listing.md",
+      "bytes": 2919,
+      "git_blob_sha": "c1454931fee0a81d554d7e98b6190cf22c5553ff",
+      "sha256": "34687cad940ac92ba1314d202eab34bdb5e6de128a3a65fd0120cae5bacf280e",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Last-Ashcombe/The-Last-Ashcombe-Preview.pdf",
+      "bytes": 177211,
+      "git_blob_sha": "513b48630284a094e5bbaeb47cfc2d4233c66e6e",
+      "sha256": "ea5d99083f53130674e8e1e5a2d1cc637ab82ded69ce62c88414e55fd28d4a66",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/ad-01-two-widows.png",
+      "bytes": 1524202,
+      "git_blob_sha": "f3795c838b4126629ca117940c6a1e47a836394e",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/ad-02-records-disagree.png",
+      "bytes": 1377888,
+      "git_blob_sha": "25722e6e3e479796efd56fd748addcbe30cd70e9",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/ad-03-one-night.png",
+      "bytes": 1047761,
+      "git_blob_sha": "7853a7d38ba779228e02f8cf5289b76f512bb696",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/ad-copy.md",
+      "bytes": 3482,
+      "git_blob_sha": "7b7529211c70478625031a20c4beeecb14416283",
+      "sha256": "57e90b12de0c4c994ead3bd163cd2fc51d3b276cfd5628e9bb0b4da4f85cca8c",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/cover-the-wrong-widow.png",
+      "bytes": 1241586,
+      "git_blob_sha": "20ac392181ae01e73fb6435431d17215651a1315",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/listing-copy.md",
+      "bytes": 3203,
+      "git_blob_sha": "babc17bf3d5b7e904ccedb1c5d80049318bc556f",
+      "sha256": "33578e7620fc7ef6c41efe06d744f88118b96fadce45735920358810dfd22ca7",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/preview-page-01.png",
+      "bytes": 79560,
+      "git_blob_sha": "6c3f7f4e3388d830617fc2afe1005b8358397fc4",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/preview-page-02.png",
+      "bytes": 80183,
+      "git_blob_sha": "d1d8a05cc38e4a52c3a026682276cca7d720e303",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/preview-page-03.png",
+      "bytes": 131802,
+      "git_blob_sha": "1769e6353a984b01cf01aec4857c9de9b3018c16",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/preview-page-04.png",
+      "bytes": 105212,
+      "git_blob_sha": "c048328b5677bb5ab48592fe35155881de24e03b",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing",
+      "verification": "Existing GitHub blob retained by exact SHA; no fresh SHA-256 calculation."
+    },
+    {
+      "path": "marketing/The-Wrong-Widow/preview-recommendations.md",
+      "bytes": 876,
+      "git_blob_sha": "f32131e924688f197fb9bbe5b4faf326d7122b39",
+      "sha256": "571ec8b78ecb2df44387ece6c5003558d19c06f68d90b9bec69688e969c36ecd",
+      "authorship": "Owner_Bot",
+      "audience": "public-marketing"
+    },
+    {
+      "path": "releases/Baby-in-a-Basket/Baby-in-a-Basket-Customer.zip",
+      "bytes": 7531605,
+      "git_blob_sha": "bf578efce259e28028a23e6c9f3481dc8094e4b5",
+      "sha256": "60f2386013a096438ca2e772f241e17044b82d56b1bfccab9d32a011ef6b362e",
+      "authorship": "Owner_Bot",
+      "audience": "customer",
+      "members": [
+        {
+          "path": "Baby-in-a-Basket-Player.pdf",
+          "bytes": 4408403,
+          "sha256": "e5fc26b19724fa27ede512519d3b53102fa93c4fc4c6e13be7d6fb6018d446c9",
+          "pages": 36
+        },
+        {
+          "path": "Baby-in-a-Basket-Hints.pdf",
+          "bytes": 130038,
+          "sha256": "373f9c09454f56668243e6b3158df249d84e7861d0ccd0b925e08b5dfccaefb6",
+          "pages": 5
+        },
+        {
+          "path": "Baby-in-a-Basket-Sealed-Solution.pdf",
+          "bytes": 157715,
+          "sha256": "d22533d11064313eb6a28ecadfe862b485378eaf639f414a3b3ad15f7afcc45e",
+          "pages": 8
+        },
+        {
+          "path": "Baby-in-a-Basket-Complete.pdf",
+          "bytes": 4520338,
+          "sha256": "05a2fb560ace153d603cd4457bd7f0e8cf27732bf095d7b2f2aa9c0acfc54a0e",
+          "pages": 52
+        },
+        {
+          "path": "START-HERE.txt",
+          "bytes": 867,
+          "sha256": "20217cf2f6d9daef79a74d6b24eebb699667d5cc7d1131ca11a5dcbd2a74a166"
+        }
+      ]
+    },
+    {
+      "path": "releases/Eleanor-Hart/Eleanor-Hart-Customer.zip",
+      "bytes": 1639295,
+      "git_blob_sha": "2096e3f859cdb6781bd0ed83b6fe5b56e0ab06c5",
+      "sha256": "9383547f51f5d705b6ecec2a9eb1c62a0ffe50d3ea13f86119315131e7203a98",
+      "authorship": "Owner_Bot",
+      "audience": "customer",
+      "members": [
+        {
+          "path": "Eleanor-Hart-Player.pdf",
+          "bytes": 254395,
+          "sha256": "274c314b55f435f2259db2d05b6127695372cd219532706b030a1354dbac3e51",
+          "pages": 30
+        },
+        {
+          "path": "Eleanor-Hart-Hints.pdf",
+          "bytes": 151756,
+          "sha256": "d7293de5f7c5061c88689c18ff36b94b1a96205e192129258a10c1cffb3b84bb",
+          "pages": 5
+        },
+        {
+          "path": "Eleanor-Hart-Sealed-Solution.pdf",
+          "bytes": 195967,
+          "sha256": "d67cc0bf1b5e16857486ad328be6fc9181bfb59e6365eb8747465d8227c01d33",
+          "pages": 8
+        },
+        {
+          "path": "Eleanor-Hart-Complete.pdf",
+          "bytes": 365376,
+          "sha256": "2733c44c07bd69fe2696545b953ec1a4f6a5772478cce7c6cfb7e633b4a00e66",
+          "pages": 46
+        },
+        {
+          "path": "Alternate-editions/Eleanor-Hart-Illustrated-Book.pdf",
+          "bytes": 421994,
+          "sha256": "5bf7b2567c046ab2110008c125109b1b42b151076242fa16340e93568c4e9c5e",
+          "pages": 56
+        },
+        {
+          "path": "Alternate-editions/Eleanor-Hart-200-Entry-Archive.pdf",
+          "bytes": 518644,
+          "sha256": "ea8c4da8a2434ba903e4a1bd5d7ad393e3f674839c7c168029fa8a0b9a19276d",
+          "pages": 87
+        },
+        {
+          "path": "START-HERE.txt",
+          "bytes": 1072,
+          "sha256": "94c0d369d55fb14465921b8716dc9cdbc95f930446e39786d7179a16b2b0c658"
+        }
+      ]
+    },
+    {
+      "path": "releases/If-I-Were-King/If-I-Were-King-Customer.zip",
+      "bytes": 6774948,
+      "git_blob_sha": "1c2f585a206507b3102da22ca65d6a72f28bae97",
+      "sha256": "5a9602ada441ab2db538095fc16e1e7c386b8b1e4747e58a9b594bdd04b8d18f",
+      "authorship": "Owner_Bot",
+      "audience": "customer",
+      "members": [
+        {
+          "path": "If-I-Were-King-Player.pdf",
+          "bytes": 4000925,
+          "sha256": "e175e98618fcb841ce492fd9340423e32da23bf8952db0ce88a9e467c275760c",
+          "pages": 29
+        },
+        {
+          "path": "If-I-Were-King-Hints.pdf",
+          "bytes": 93146,
+          "sha256": "6991eb91797732043a5004d46c00ca02179505be108067eca23bcca64e60510d",
+          "pages": 4
+        },
+        {
+          "path": "If-I-Were-King-Sealed-Solution.pdf",
+          "bytes": 113732,
+          "sha256": "13eff746acd5568030efe5a039dac7cc4ca632d3951e1489a351d7383a4c18fd",
+          "pages": 6
+        },
+        {
+          "path": "If-I-Were-King-Complete.pdf",
+          "bytes": 4120642,
+          "sha256": "906f41af60c0c081a2d46cbc8cd1d9a10a4a51656c1f5f68077edcfa936e27a6",
+          "pages": 42
+        },
+        {
+          "path": "START-HERE.txt",
+          "bytes": 861,
+          "sha256": "a6673f5bf65bd18f7bcbd1e3427761a134996d434a6f6bc1dede684c8cbe3881"
+        }
+      ]
+    },
+    {
+      "path": "releases/Roscoes-Grave/Roscoes-Grave-Customer.zip",
+      "bytes": 7450997,
+      "git_blob_sha": "6dda16249a43e4061ec81c53930bc4c5c0a6c0ad",
+      "sha256": "4cc6cfc93aa52a53c61f1699ace50a6a18fc73d245a0d943e1464fa2f758e564",
+      "authorship": "Owner_Bot",
+      "audience": "customer",
+      "members": [
+        {
+          "path": "Roscoes-Grave-Player.pdf",
+          "bytes": 4416969,
+          "sha256": "6c282a59e5a9dcbd929f403aadde102c2ca0ce6c2f3e5b805a881da48b1fa42d",
+          "pages": 26
+        },
+        {
+          "path": "Roscoes-Grave-Hints.pdf",
+          "bytes": 92920,
+          "sha256": "bc4c824086c3d8c48630bc4d3f5d7a49f2df92b58c7a05d1b665fe2cce5df998",
+          "pages": 4
+        },
+        {
+          "path": "Roscoes-Grave-Sealed-Solution.pdf",
+          "bytes": 113205,
+          "sha256": "611f83c19dc14b61c7ef839f8299f20c059edc0770f3ff9acdfeaa7679730890",
+          "pages": 6
+        },
+        {
+          "path": "Roscoes-Grave-Complete.pdf",
+          "bytes": 4535794,
+          "sha256": "eee36394d75fd37841f629d46aedc783d22081337823e3c7d36e05273fd5db3f",
+          "pages": 38
+        },
+        {
+          "path": "START-HERE.txt",
+          "bytes": 859,
+          "sha256": "6fd8c236ac8e86c91b4d2a725f3aec13e542a0ded894d9fc3f9dbdb33ecd5dc8"
+        }
+      ]
+    },
+    {
+      "path": "releases/The-Inheritance/The-Inheritance-Customer.zip",
+      "bytes": 6476613,
+      "git_blob_sha": "865445f46e88d35203eba672914a05706839c8ba",
+      "sha256": "0f917541ab0ebf4aeae2f08fa7488678f7291131c7978712b507263ba8d2b1c6",
+      "authorship": "Owner_Bot",
+      "audience": "customer",
+      "members": [
+        {
+          "path": "The-Inheritance-Player.pdf",
+          "bytes": 3803932,
+          "sha256": "3f1471997c26fef30d6c01ae5f5ab021df741bc467726fae080f31ee4d62d178",
+          "pages": 25
+        },
+        {
+          "path": "The-Inheritance-Hints.pdf",
+          "bytes": 92066,
+          "sha256": "f59a06f41454a15858ea1939c544b7796965c3b4c5459eb660c0b9161de15df2",
+          "pages": 4
+        },
+        {
+          "path": "The-Inheritance-Sealed-Solution.pdf",
+          "bytes": 113473,
+          "sha256": "2c7188cdb2dad7539ad7c600a5d83471b1da81f3c59c43741e2b65c4be70cf35",
+          "pages": 6
+        },
+        {
+          "path": "The-Inheritance-Complete.pdf",
+          "bytes": 3923658,
+          "sha256": "20c8dad785c49bd086b7a60101d8582d8aeadd5676d5d5c12baf8052884e7530",
+          "pages": 38
+        },
+        {
+          "path": "START-HERE.txt",
+          "bytes": 864,
+          "sha256": "432c2462379c282ff983d49ee48553351654f3001d4c418d451f6454b8352351"
+        }
+      ]
+    },
+    {
+      "path": "releases/The-Last-Ashcombe/The-Last-Ashcombe-Customer.zip",
+      "bytes": 7536147,
+      "git_blob_sha": "565637037d8ee2704565d4eaf16c819a523f6e73",
+      "sha256": "31dd67cf3390adb1c59d0c4753801699dd3eee13e881595e9b0d7ef8a38373a0",
+      "authorship": "Owner_Bot",
+      "audience": "customer",
+      "members": [
+        {
+          "path": "The-Last-Ashcombe-Player.pdf",
+          "bytes": 4452633,
+          "sha256": "61c5a9a42a58661f9808356344429a8676eb748ae55986835f10be6ddd7b4785",
+          "pages": 29
+        },
+        {
+          "path": "The-Last-Ashcombe-Hints.pdf",
+          "bytes": 70658,
+          "sha256": "5cddc0a7c8ad55d243ea8b8ba9215476d357b9740fc0471e646016736ed9b399",
+          "pages": 4
+        },
+        {
+          "path": "The-Last-Ashcombe-Sealed-Solution.pdf",
+          "bytes": 124000,
+          "sha256": "51f2c0cfeb5b9f3e804ab6e4dd1b5e49a3e050a04bbee1c07e61d076d2b02139",
+          "pages": 8
+        },
+        {
+          "path": "The-Last-Ashcombe-Complete.pdf",
+          "bytes": 4604805,
+          "sha256": "37cbb389e72168676457919d5a302195c59e64d3fdcd71b8ff3c5e2c1167ec94",
+          "pages": 44
+        },
+        {
+          "path": "START-HERE.txt",
+          "bytes": 870,
+          "sha256": "9ee12180658e6d9fb818c27dfda354e4886a907bd5966b8787ba0ec7514d878c"
+        }
+      ]
+    },
+    {
+      "path": "releases/The-Wrong-Widow/The-Wrong-Widow-Customer.zip",
+      "bytes": 34943,
+      "git_blob_sha": "02512c60d8014f0f264e552914890961c01aee5d",
+      "sha256": "6c89025d949de3614d4f4222cc20518f058d3dba0aec1d4d0f4136a5fe0a09e4",
+      "authorship": "Owner_Bot",
+      "audience": "customer",
+      "members": [
+        {
+          "path": "START-HERE.md",
+          "bytes": 2129,
+          "sha256": "3a51ebe7d3cb505f8b8c265931c4b75d959b403291a3247fb8696f0917eb1261"
+        },
+        {
+          "path": "player.pdf",
+          "bytes": 38048,
+          "sha256": "29a8ae1f0a7e5ee63d2503e1042abdcf4aa4c4f9506b53e61ff3acff0a195d8b",
+          "pages": 27
+        },
+        {
+          "path": "hints.pdf",
+          "bytes": 5214,
+          "sha256": "038719f952b69c0ac6bfcca95a6ee53418295cd5a37b0f0fb7adba3932bd12b4",
+          "pages": 2
+        },
+        {
+          "path": "sealed-solution.pdf",
+          "bytes": 9664,
+          "sha256": "f9ccd8e381e04813c2f08d3ed0488e4dd2c04f01cabdf0ed618d30755daca701",
+          "pages": 5
+        }
+      ]
+    }
+  ]
+}
