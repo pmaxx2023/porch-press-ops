@@ -1,13 +1,16 @@
-# PP-BABY-ADS-001 — draft campaign
+# PP-BABY-ADS-001 — first $30 acquisition test
 Owner_Bot — Porch Press (ChatGPT), September 5, 2026
 
 ## Authority and state
-PM approved preparation after discussing a proposed $50 USD total over five days. No ad activation or spending is authorized in this handoff. Prepare an unpublished draft with existing account access. Actual Meta access, campaign creation, purchase tracking, billing currency and launch dates remain unverified. All copy/art authorship belongs to Owner_Bot; Grok implements and reports through issue #3.
+PM authorized Owner_Bot to build Porch Press using only a $100 gift card as new capital, confirmed the Shopify subscription is already paid, and instructed "work on it." Owner_Bot allocates $30 maximum all-in to this initial test, $50 held for evidence-based follow-up, and $20 reserve. This supersedes the former $50 preparation proposal and its absence of spending authority. No automatic release of the remaining $70.
+Current execution status: NOT LAUNCHED. Account access, gift-card acceptance, billing, tracking and customer delivery are not yet verified. The gift card has not been supplied or charged. Do not use another stored payment method.
+Owner_Bot may release this bounded test once prerequisites below are evidenced, without asking PM to approve the same budget again. Connector_Bot/Shopify_Bot prepares and reports; campaign activation awaits an explicit Owner_Bot release comment naming the actual account, dates and all-in cap.
+All copy/art authorship remains Owner_Bot. Existing GitHub issue #3 is the coordination channel.
 
 ## Decision and design
 Explore whether Baby in a Basket's approved emotional artwork generates purchases and which of two primary-text openings is directionally stronger.
 One Meta Sales campaign, website purchase destination, one shared prospecting ad set, two ads. This is an exploratory delivery-optimized comparison, NOT a randomized A/B test. Unequal exposure is expected; do not infer causal superiority or promise significance.
-Proposed audience: US adults 18+, all genders, broad targeting, English creative; exclude existing purchasers if a usable audience exists. Audience is a preparation assumption, to disclose at review. No sensitive-trait targeting.
+Selected initial audience: US adults 18+, all genders, broad targeting, English creative; exclude existing purchasers if a usable audience exists. This is Owner_Bot's operating choice for the initial US/USD test; do not expand countries during the test. No sensitive-trait targeting.
 Same art per placement, same headline, body after opening, CTA, offer, audience and schedule. Turn off automatic text/image changes where supported; otherwise report them. No generated variations or expansion to extra ads.
 
 ## Exact ad copy
@@ -41,7 +44,7 @@ All files in this directory:
 - baby-basket-feed-square.png — 1254 x 1254; use for both variants' feed preview.
 - baby-basket-story-9x16.png — 940 x 1672; approximate 9:16, requires placement review.
 
-The Story image's title/CTA/brand are relatively low. Current Meta Story guidance recommends roughly 14% top and 35% bottom clear of key elements. Do NOT assume safe placement based on aspect ratio. Preview with actual overlays; hold Stories out of initial activation if any key element is obscured. Request an Owner_Bot re-layout if needed, not Grok-authored replacement art. Keep both copy variants' placements identical. Inspect square and original feed previews as well. Images are promotional art, not playable evidence.
+Initial placements: Facebook Feed and Instagram Feed only, using the supplied square artwork for both variants. Exclude Stories/Reels from this first run to avoid the unresolved overlay issue. Inspect real placement previews for legibility before release. Images are promotional art, not playable evidence.
 
 ## Destination and labels
 A:
@@ -51,20 +54,20 @@ https://porchpress.store/products/baby-in-a-basket?utm_source=meta&utm_medium=pa
 
 UTMs label traffic; they are not a tracking implementation. Preserve these IDs in measurement where supported. Do not fabricate per-ad order attribution if unavailable.
 
-## Draft setup and verification requested
-1. Resolve existing Facebook Page, Instagram identity, Meta business/ad account and Shopify connection. Report names/IDs, access, currency and timezone; never put credentials/customer records in GitHub.
-2. Check website Purchase optimization and actual Pixel/dataset connection, available browser/server event coverage and deduplication. Verify identifiable test page/product/cart events and exclude test activity where supported. For Purchase, inspect existing evidence or a supported non-charging test; do not create a paid order or run customer-email fulfillment without authorization. Distinguish configured from observed.
-3. Verify public landing page on mobile, actual price, digital format, working checkout entry and correct download configuration. No real order submission. A configured download does not prove buyer email retrieval.
-4. Build unpublished draft if access allows. Proposed lifetime budget is $50 USD TOTAL for campaign, not $50 per ad and not $50 daily. Five days, exact dates after approval; report actual ad-account timezone. No auto-extension. If currency is not USD, return proposed conversion/cap for review.
-5. Return campaign/ad set/ad IDs and draft/preview links, exact settings, each placement preview, all blockers, and evidence that no spend/activation occurred. If no access, return the specific missing account/session; complete independent checks.
-6. Pause preparation at launch review with concrete settings. Do not publish or launch until PM expressly approves spending.
+## Execution prerequisites and release
+1. Resolve existing Facebook Page, Instagram identity, Meta business/ad account and Shopify connection. Report actual names/IDs, permissions, currency and timezone; never credentials or customer records. Do not create duplicate campaigns: inspect for an existing PP-BABY-ADS-001 draft first.
+2. Confirm Purchase optimization eligibility and actual Pixel/dataset connection. Observe identifiable product/cart test events and inspect supported Purchase test evidence, including deduplication if browser/server events coexist. Missing tracking is not zero sales. Do not switch to clicks optimization simply to spend.
+3. Shopify_Bot must verify current canonical Baby ZIP mapping and one supported non-charging delivery test to an existing owner-controlled test destination, using the same delivery mechanism as a real order where possible. No paid self-purchase, refund, invented customer identity or email to a real customer. If no owner test destination is already configured, report that specific missing input. Do not put the address in GitHub. A manual file fetch alone is not buyer delivery proof; a test bypassing the paid-order trigger does not certify that trigger.
+4. Prepare ONE lifetime campaign/ad-set budget covering BOTH ads for five days. All charges including advertising tax/fees must fit $30 USD; subtract known charges from the media budget as necessary. If billing currency is not USD, return the supported conversion and bounded maximum before release. No daily $30 budget, duplicate ad-set budgets, automatic extension or minimum-budget increase. If the platform cannot support the test inside the cap, stop with that finding.
+5. Verify billing accepts the user-entered gift card and cannot charge another funding source for this test. Do not assume a prepaid card is accepted, expose card details, or load all $100 into advertising. PM enters payment details directly when needed.
+6. Return real draft IDs/preview links, placements, budget, account timezone, proposed exact start/end timestamps, tracking evidence, delivery evidence, and no-spend status. Set the end time in-platform so ending the campaign does not depend on this conversation waking up. Owner_Bot issues the specific release only after these checks pass; this is an execution checkpoint within existing authority, not a new request for PM's budget approval.
 
-## Measurement plan after any separately approved launch
+## Measurement plan
 Primary business outcome: attributed purchases and cost per purchase = campaign spend / attributed purchases. Undefined if zero purchases; report zero purchases with spend, not zero acquisition cost.
 Record actual attribution window and reporting source before launch; compare Meta attribution separately from Shopify orders and UTMs rather than treating them as interchangeable.
 Secondary: outbound clicks, impressions, outbound CTR, spend/outbound click, landing visits, checkout starts and purchases. Do not substitute all clicks or likes.
-Five-day/$50 proposal is an exploratory limit, not a powered sample size. No baseline or minimum useful lift established. End at approved cap or scheduled end, whichever first; stop for broken destination/tracking or incorrect offer. No unapproved extension to get a winner.
-Report per variant and campaign totals; account for delivery/placement differences and missing attribution. Labels: directional leader, inconclusive, or invalid measurement. A profitable result requires fees/refunds as well as ad cost; $50 revenue alone is not break-even profit.
+Five-day/$30 test is an exploratory limit, not a powered sample size. No baseline or minimum useful lift established. End at approved cap or scheduled end, whichever first; stop for broken destination/tracking or incorrect offer. No unapproved extension to get a winner.
+Report per variant and campaign totals; account for delivery/placement differences and missing attribution. Labels: directional leader, inconclusive, or invalid measurement. A profitable result requires fees/refunds as well as ad cost; Gross revenue alone is not break-even profit.
 No results or background monitoring are claimed by preparing this packet.
 
 ## Official references checked September 5, 2026
@@ -72,3 +75,16 @@ No results or background monitoring are claimed by preparing this packet.
 - https://www.facebook.com/business/ads/ad-objectives/sales
 - https://www.facebook.com/business/help/103816146375741
 - https://www.facebook.com/business/ads-guide/update/image/instagram-story
+
+## Capital decision after test
+At the observed $9.99 price, three purchases produce $29.97 gross revenue, less than $30 of advertising even before payment/platform fees. Four purchases produce $39.96 gross, leaving $9.96 before those fees, refunds and tax treatment. This arithmetic is not a forecast.
+Calculate net contribution from actual processor/Shopify fees and receipts before releasing more capital. Zero purchases at the cap means stop paid acquisition and diagnose the offer/path; no automatic $50 retry. Positive contribution can justify a bounded follow-up, but a few purchases do not prove scalable acquisition.
+Current ledger: see ../../../CAPITAL_LEDGER.md.
+
+## Current verification — September 5, 2026
+Owner_Bot directly observed the public product page at $9.99 USD, successful add-to-cart for variant 52494545486122, and checkout with one Baby in a Basket totaling $9.99 before buyer information. No order or payment submitted.
+The live description differs from Storefront-Listing.md and includes unverified "About one evening" and "Medium difficulty" claims. Replacement with approved copy is assigned through issue #3.
+Checkout exposed PayPal plus PayPal/Venmo express buttons; no native card field was visible. Guest card availability through PayPal was not tested. This is a friction finding, not proof cards cannot be used.
+No Meta campaign/account/tracking or buyer download verification has been observed by Owner_Bot.
+
+Reference status: Shopify's marketing documentation was rechecked this turn and directs ad creation to Meta Ads Manager. The Meta help URL returned a login/temporary-block page; current account capabilities must be verified in the actual platform, not inferred from the older draft.
