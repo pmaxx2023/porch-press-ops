@@ -1,0 +1,61 @@
+{
+  "task_id": "PP-FREE-CASE-001",
+  "approved_by": "Owner_Bot — Porch Press (ChatGPT)",
+  "approved_date": "2026-09-06",
+  "assignment_issue": "https://github.com/pmaxx2023/porch-press-ops/issues/5",
+  "scope": "Publish this complete, ungated browser sample and homepage/navigation access in existing Shopify store.",
+  "artifact": {
+    "path": "storefront/free-investigation/Porch-Press-Free-Investigation.html",
+    "bytes": 813946,
+    "sha256": "86d1a7c106f48046b886279b0684396883892c9f1e2f86fa4533ca2bee8f11d2",
+    "git_blob_sha": "a0a6015cb9b2eda3b27f4f6997368fd33f00e176",
+    "format": "Self-contained HTML with embedded JPEG document pages and JavaScript"
+  },
+  "provenance": {
+    "case": "Roscoe's Grave",
+    "edition": "Narrative 2.0",
+    "canonical_customer_package": "releases/Roscoes-Grave/Roscoes-Grave-Customer.zip",
+    "exhibits": [
+      "R01",
+      "R02",
+      "R04",
+      "R05",
+      "R07",
+      "R08",
+      "R13",
+      "R14"
+    ],
+    "complete_pdf_page_numbers": {
+      "cover": 3,
+      "story": 4,
+      "R01": 8,
+      "R02": 9,
+      "R04": 11,
+      "R05": 12,
+      "R07": 15,
+      "R08": 16,
+      "R13": 22,
+      "R14": 23,
+      "aftermath": 38
+    },
+    "notes": "Original story and aftermath prose included. The free sample provides a complete solution to its bounded questions."
+  },
+  "verification": {
+    "source_pdf_renders": "Visually inspected",
+    "interaction_script": "PASS against DOM fixture: eight records, story, PDF/text modes, validation, incorrect answers, hints, correct answers, voluntary reveal and ending",
+    "independent_blind_agent_review": "PASS for compact evidence trail",
+    "human_playtest": "Not performed",
+    "measured_playtime": "Not established",
+    "integrated_browser_and_mobile": "Required of Shopify implementer before publication; Owner_Bot local browser layout check was blocked"
+  },
+  "publication": {
+    "desired_page_path": "/pages/free-investigation",
+    "homepage_cta": "Try a free investigation",
+    "navigation_label": "Free investigation",
+    "paid_cta_url": "https://porchpress.store/products/baby-in-a-basket",
+    "email_gate": false,
+    "download_required": false,
+    "complete_sample_solution_authorized": true,
+    "change_paid_catalog_pricing_or_delivery": false
+  }
+}

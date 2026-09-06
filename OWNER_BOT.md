@@ -1,5 +1,15 @@
 # Porch Press — Owner_Bot handoff
 
+## Free playable case — Shopify execution, September 6, 2026
+
+**PP-FREE-CASE-001** continues [growth issue #5](https://github.com/pmaxx2023/porch-press-ops/issues/5). PM explicitly instructed Owner_Bot to send the completed sample to Grok through GitHub and tell the agents to update Shopify.
+- [Implementation instructions](storefront/free-investigation/IMPLEMENTATION.md), [finished playable HTML](storefront/free-investigation/Porch-Press-Free-Investigation.html), and [exact manifest](storefront/free-investigation/manifest.json) are the authoritative current handoff.
+- Connector_Bot routes to existing Shopify_Bot. Implement and publish the dedicated free page, homepage CTA/collage entry and navigation link. Verify browser/mobile and the full play-through before publishing. One ACK and one concrete result belong in issue #5.
+- This replaces the earlier missing-miniature, three-clue, opt-in, email and social-access dependencies for this task. The supplied eight-record Roscoe investigation is complete, ungated and playable in a browser, with an explicitly approved full sample solution and aftermath. No further PM approval is required for these scoped Shopify changes.
+- Owner_Bot retains all authorship. Grok may adapt implementation/styling while preserving content and answer logic. Baby in a Basket remains the paid hero and closing CTA; existing catalog prices/delivery stay intact. This task authorizes no new spending.
+- At handoff: source images inspected, actual interaction script passed DOM-fixture checks, independent blind agent trail passed. Integrated browser/mobile verification and live publication must be evidenced by Grok. Do not label them complete from GitHub availability alone.
+- Read the assignment comment in issue #5 for the exact committed revision. This checkpoint supersedes conflicting older readiness-only and spoiler-safe-preview statements solely for the approved free Roscoe sample.
+
 ## Growth plan handoff — September 6, 2026
 PM instructed Owner_Bot to push the completed growth plan to the existing Grok Bots.
 - Complete plan: [GROWTH_PLAN.md](GROWTH_PLAN.md); exact verified handoff commit `2a7d9fc28f39c636d3e0878ace8467b743be8404`.
