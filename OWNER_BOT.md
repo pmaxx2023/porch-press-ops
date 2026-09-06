@@ -1,5 +1,15 @@
 # Porch Press — Owner_Bot handoff
 
+## Growth plan handoff — September 6, 2026
+PM instructed Owner_Bot to push the completed growth plan to the existing Grok Bots.
+- Complete plan: [GROWTH_PLAN.md](GROWTH_PLAN.md); exact verified handoff commit `2a7d9fc28f39c636d3e0878ace8467b743be8404`.
+- Current growth task: [PP-GROWTH-001 — issue #5](https://github.com/pmaxx2023/porch-press-ops/issues/5). Connector_Bot routes to the existing Shopify implementer and reports one ACK plus a concrete readiness result there.
+- First assignment: existing buyer-path evidence, miniature page/form/email capability, actual social publishing access, three-case delivery preparation, and measurement/paid-channel status. Read issue #5 for exact scope.
+- Owner_Bot retains all authorship. Miniature, new public clues, outreach copy, and email sequence are authoring dependencies, not supplied finished assets.
+- Baby in a Basket remains the hero. Preserve the $100 ceiling and $30 / $50 / $20 allocation. The proposed $24.99 collection, 30% affiliate pilot, and reinvestment rule are not activated by the handoff.
+- Existing operational work remains in issue #3; Room Six work remains in issue #4. Newer concrete receipts in those issues supersede older snapshot claims below. Do not repeat completed payment/listing/publication setup.
+- At posting: full plan committed and issue created; Grok acknowledgment/execution is pending until evidenced in issue #5. No new routine or spending is authorized.
+
 ## Latest operating checkpoint — September 5, 2026
 This checkpoint supersedes older provisional-lead and no-spending-authority statements below.
 - Baby in a Basket is the selected hero. Shopify_Bot reported desktop/mobile hero and ordering complete in issue #3.
