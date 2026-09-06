@@ -1,0 +1,611 @@
+{
+  "case": "The Woman in Room Six",
+  "edition": "1.1",
+  "artifacts": [
+    {
+      "id": "customer/Hints.pdf",
+      "path": "customer/Hints.pdf",
+      "audience": "customer",
+      "kind": "pdf",
+      "sha256": "f3496c36be23fde870d1f795f36c612803c96f90dc8315fadfab3bf06e9e64b2",
+      "bytes": 109182,
+      "pages": 5
+    },
+    {
+      "id": "customer/Player.pdf",
+      "path": "customer/Player.pdf",
+      "audience": "customer",
+      "kind": "pdf",
+      "sha256": "31f5c48065f81286b8907dae5883d7bfa656d204b33fcd44b0ad9d59bb4a66dc",
+      "bytes": 864894,
+      "pages": 38
+    },
+    {
+      "id": "customer/READ-AFTER-PLAY-Complete-Story.pdf",
+      "path": "customer/READ-AFTER-PLAY-Complete-Story.pdf",
+      "audience": "customer",
+      "kind": "pdf",
+      "sha256": "4c84043fa783f3422367846eeb87fc5f02525a5e30dd744ad77ca415fda0097f",
+      "bytes": 133144,
+      "pages": 16
+    },
+    {
+      "id": "customer/SEALED-Solution.pdf",
+      "path": "customer/SEALED-Solution.pdf",
+      "audience": "customer",
+      "kind": "pdf",
+      "sha256": "814bb5210b0e1df89359806acdb7e9f34ba4a87930b7471e6914bf79c924b03e",
+      "bytes": 117283,
+      "pages": 8
+    },
+    {
+      "id": "customer/START-HERE.md",
+      "path": "customer/START-HERE.md",
+      "audience": "customer",
+      "kind": "file",
+      "sha256": "f15e99be09de7a4189be3cb7d60ce64cb8099d364750ab5bf5a7cb3ba25da68d",
+      "bytes": 1851
+    },
+    {
+      "id": "marketing/Preview.pdf",
+      "path": "marketing/Preview.pdf",
+      "audience": "marketing",
+      "kind": "pdf",
+      "sha256": "4f81dae9f942bced691cb0607c78656dbffbbca89ab7294fa4eed842d5f86660",
+      "bytes": 486923,
+      "pages": 5
+    },
+    {
+      "id": "marketing/Storefront-Listing.md",
+      "path": "marketing/Storefront-Listing.md",
+      "audience": "marketing",
+      "kind": "file",
+      "sha256": "4957cb552d51072b45b6d579ac1dbc6a590c559e559e83ca34e369a2552ca536",
+      "bytes": 3701
+    },
+    {
+      "id": "marketing/ad-01-premise.png",
+      "path": "marketing/ad-01-premise.png",
+      "audience": "marketing",
+      "kind": "image",
+      "sha256": "72fa2cbde6701a2369cddaf5a220dceabd8df6920e2eb7370580d4f32d238299",
+      "bytes": 1981758,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "marketing/ad-02-investigate.png",
+      "path": "marketing/ad-02-investigate.png",
+      "audience": "marketing",
+      "kind": "image",
+      "sha256": "d2979a5a2707c070104bb1576ed578dfe9ef1b1ef73b10ba82d02b2641afe8c1",
+      "bytes": 2007913,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "marketing/ad-03-play.png",
+      "path": "marketing/ad-03-play.png",
+      "audience": "marketing",
+      "kind": "image",
+      "sha256": "02ef6bbf9dc23415f72847e0851dd71a5a964041d2871aad2d2d0e3db40b82a0",
+      "bytes": 1953486,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "marketing/ad-copy.md",
+      "path": "marketing/ad-copy.md",
+      "audience": "marketing",
+      "kind": "file",
+      "sha256": "5e7fb3431b73331214d69c8782479c0505a0438178469a5985c776713436968b",
+      "bytes": 2507
+    },
+    {
+      "id": "marketing/cover.png",
+      "path": "marketing/cover.png",
+      "audience": "marketing",
+      "kind": "image",
+      "sha256": "8e348c4df07e6dffd0f693ef39b8f87071236ec23ad9669cb9ed19d7308121aa",
+      "bytes": 2054370,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "marketing/preview-opening.png",
+      "path": "marketing/preview-opening.png",
+      "audience": "marketing",
+      "kind": "image",
+      "sha256": "578690795e772a16e0f577ccae3340b8b6d4908a12d258acb11d06e18e306f00",
+      "bytes": 183898,
+      "width": 1020,
+      "height": 1320
+    },
+    {
+      "id": "marketing/preview-register.png",
+      "path": "marketing/preview-register.png",
+      "audience": "marketing",
+      "kind": "image",
+      "sha256": "16f5a355fa3e56d8f21fa6734d34d0476222d46809997652dc179ce16f2ec7a6",
+      "bytes": 90427,
+      "width": 1020,
+      "height": 1320
+    },
+    {
+      "id": "author/BLIND-REPORT.md",
+      "path": "author/BLIND-REPORT.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "d82484e08abc5f4f97b0efbf0691732fcd8fdb205419c9a4b764de8c725d29d8",
+      "bytes": 18797
+    },
+    {
+      "id": "author/HISTORICAL-NOTES.md",
+      "path": "author/HISTORICAL-NOTES.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "6d542c9398d3ea77738e6fa4d1237948d81d3f66a5b3cd32ccfb37e8ce540a12",
+      "bytes": 2770
+    },
+    {
+      "id": "author/PUBLISHING-HANDOFF.md",
+      "path": "author/PUBLISHING-HANDOFF.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "172da9e19a5ff9c455cd6cceac0649c6280e3012fbdda47453e5da98ade410c3",
+      "bytes": 3553
+    },
+    {
+      "id": "author/QA-BLIND-REPORT.md",
+      "path": "author/QA-BLIND-REPORT.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "bc72fb84d21534afc4e6ba05b81bc22390ad36421f8c269abc4e9bc78b9c6c09",
+      "bytes": 15297
+    },
+    {
+      "id": "author/QA-EDIT-REPORT.md",
+      "path": "author/QA-EDIT-REPORT.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "09d6856c5c9fe48c85d0058da161f3307e07d153e6b82925fa27768a88819ef4",
+      "bytes": 6096
+    },
+    {
+      "id": "author/README.md",
+      "path": "author/README.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "c27d81b98ea6b548b05948821c4e6892804e01d6914d7245c32278545321e57a",
+      "bytes": 2452
+    },
+    {
+      "id": "author/STAGED-REPORT.md",
+      "path": "author/STAGED-REPORT.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "47f35db4b9bf1a3d216415cf4ffab9ebb9b06b4e143e0baf9e74d8338a167b1a",
+      "bytes": 16492
+    },
+    {
+      "id": "author/STRUCTURAL-CHECKS.json",
+      "path": "author/STRUCTURAL-CHECKS.json",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "fcd8e2581648ff08008826549ca30cf7c14728bfdc5f7e8a6c8a81cc3f6c1c71",
+      "bytes": 536
+    },
+    {
+      "id": "author/VERIFICATION.md",
+      "path": "author/VERIFICATION.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "9af3a4443e0f46c2c3dd5048beb3126250fca3b00da8334bb83db1b55604a258",
+      "bytes": 5154
+    },
+    {
+      "id": "author/audit_release.py",
+      "path": "author/audit_release.py",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "4b96037f3b70ee239fc1d7bff8842a82789d32cc5e3b53f171f76d66aa4c3fa9",
+      "bytes": 8617
+    },
+    {
+      "id": "author/author_case.py",
+      "path": "author/author_case.py",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "3af103fabe2fbdde80717d2d0829a633fa242ccf210e90b5deb195ac9a7c5baf",
+      "bytes": 34087
+    },
+    {
+      "id": "author/build_release.py",
+      "path": "author/build_release.py",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "d3d0011285994dc64b9b62f3b6e07ae1df066439953f87eebb2c7b6f561baa86",
+      "bytes": 23554
+    },
+    {
+      "id": "author/canon.json",
+      "path": "author/canon.json",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "d1c5c015a952bb29dbbdbb305e4c7ca96c5e2d0ddf4efef2bdbce202502e1fcf",
+      "bytes": 5968
+    },
+    {
+      "id": "author/case-data.json",
+      "path": "author/case-data.json",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "d52d13420d5668a6c33708ddb5adb7dfb1d1082f75b00837cfa8ebfae760b48b",
+      "bytes": 52766
+    },
+    {
+      "id": "author/evidence-map.json",
+      "path": "author/evidence-map.json",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "d8b89c03f8f19b638f86ef4375671e80c8d70391ce3470e0582f25e44362c6ea",
+      "bytes": 6024
+    },
+    {
+      "id": "author/fonts/DejaVuSans-Bold.ttf",
+      "path": "author/fonts/DejaVuSans-Bold.ttf",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+      "bytes": 704128
+    },
+    {
+      "id": "author/fonts/DejaVuSans.ttf",
+      "path": "author/fonts/DejaVuSans.ttf",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+      "bytes": 756072
+    },
+    {
+      "id": "author/fonts/DejaVuSansMono.ttf",
+      "path": "author/fonts/DejaVuSansMono.ttf",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "602ec86b8948cfcd956482fe64f94c36c867770149ef2f791d4613f443bcecb3",
+      "bytes": 340240
+    },
+    {
+      "id": "author/fonts/DejaVuSerif-Bold.ttf",
+      "path": "author/fonts/DejaVuSerif-Bold.ttf",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "c3753f2ed6bc673f15846dc45addbeb3b9c872f32fb18fd53a21f1bef1ed7676",
+      "bytes": 355692
+    },
+    {
+      "id": "author/fonts/DejaVuSerif-Italic.ttf",
+      "path": "author/fonts/DejaVuSerif-Italic.ttf",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "3e7994fbc54fa10ce3352a42d548fadd7d9cadb69cb1109bc9d960f6dac57f04",
+      "bytes": 345612
+    },
+    {
+      "id": "author/fonts/DejaVuSerif.ttf",
+      "path": "author/fonts/DejaVuSerif.ttf",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "107244956e9962b9e96faccdc551825e0ae0898ae13737133e1b921a2fd35ffa",
+      "bytes": 379740
+    },
+    {
+      "id": "author/fonts/LICENSE_DEJAVU",
+      "path": "author/fonts/LICENSE_DEJAVU",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e",
+      "bytes": 4816
+    },
+    {
+      "id": "author/image-prompts.json",
+      "path": "author/image-prompts.json",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "fa508065294d49ca47db2c352e679135708f8658bb3c1a45e47ede954bc55633",
+      "bytes": 4040
+    },
+    {
+      "id": "author/package_release.py",
+      "path": "author/package_release.py",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "5b0268ad8fc38940f847899a91298fb030f84562e96c93b94b97e64e52ace6c5",
+      "bytes": 2181
+    },
+    {
+      "id": "author/page-counts.json",
+      "path": "author/page-counts.json",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "e4cab9da08c15d053b206f5e8982e0a1216d31d679f0a266d16d8a83714f7b45",
+      "bytes": 132
+    },
+    {
+      "id": "author/portrait.png",
+      "path": "author/portrait.png",
+      "audience": "author",
+      "kind": "image",
+      "sha256": "c231fe12a0d2b6e84826a24d6221987eb6026eedccedd70a459620a6cda51e5c",
+      "bytes": 2021780,
+      "width": 1122,
+      "height": 1402
+    },
+    {
+      "id": "author/story-source.md",
+      "path": "author/story-source.md",
+      "audience": "author",
+      "kind": "file",
+      "sha256": "1bd9245799143b685bfd73f886536d1ce220ae333ebddd8d5a79b90e8db69145",
+      "bytes": 24300
+    }
+  ],
+  "bundles": [
+    {
+      "id": "customer-bundle",
+      "path": "The-Woman-in-Room-Six-Customer.zip",
+      "audience": "customer",
+      "members": [
+        {
+          "artifact_id": "customer/Hints.pdf",
+          "name": "Hints.pdf"
+        },
+        {
+          "artifact_id": "customer/Player.pdf",
+          "name": "Player.pdf"
+        },
+        {
+          "artifact_id": "customer/READ-AFTER-PLAY-Complete-Story.pdf",
+          "name": "READ-AFTER-PLAY-Complete-Story.pdf"
+        },
+        {
+          "artifact_id": "customer/SEALED-Solution.pdf",
+          "name": "SEALED-Solution.pdf"
+        },
+        {
+          "artifact_id": "customer/START-HERE.md",
+          "name": "START-HERE.md"
+        }
+      ],
+      "sha256": "458740d3b231d4c3f117dc143e53e2a64b03295d3fb1afd654ae82355fadf0d6",
+      "bytes": 1023118
+    },
+    {
+      "id": "marketing-bundle",
+      "path": "The-Woman-in-Room-Six-Marketing.zip",
+      "audience": "marketing",
+      "members": [
+        {
+          "artifact_id": "marketing/Preview.pdf",
+          "name": "Preview.pdf"
+        },
+        {
+          "artifact_id": "marketing/Storefront-Listing.md",
+          "name": "Storefront-Listing.md"
+        },
+        {
+          "artifact_id": "marketing/ad-01-premise.png",
+          "name": "ad-01-premise.png"
+        },
+        {
+          "artifact_id": "marketing/ad-02-investigate.png",
+          "name": "ad-02-investigate.png"
+        },
+        {
+          "artifact_id": "marketing/ad-03-play.png",
+          "name": "ad-03-play.png"
+        },
+        {
+          "artifact_id": "marketing/ad-copy.md",
+          "name": "ad-copy.md"
+        },
+        {
+          "artifact_id": "marketing/cover.png",
+          "name": "cover.png"
+        },
+        {
+          "artifact_id": "marketing/preview-opening.png",
+          "name": "preview-opening.png"
+        },
+        {
+          "artifact_id": "marketing/preview-register.png",
+          "name": "preview-register.png"
+        }
+      ],
+      "sha256": "5e690245343a17a93851a2ed27b08e36ac1381a9280862cc93c870a5a8cd8409",
+      "bytes": 8501269
+    },
+    {
+      "id": "author-bundle",
+      "path": "The-Woman-in-Room-Six-Author.zip",
+      "audience": "author",
+      "members": [
+        {
+          "artifact_id": "customer/Hints.pdf",
+          "name": "customer/Hints.pdf"
+        },
+        {
+          "artifact_id": "customer/Player.pdf",
+          "name": "customer/Player.pdf"
+        },
+        {
+          "artifact_id": "customer/READ-AFTER-PLAY-Complete-Story.pdf",
+          "name": "customer/READ-AFTER-PLAY-Complete-Story.pdf"
+        },
+        {
+          "artifact_id": "customer/SEALED-Solution.pdf",
+          "name": "customer/SEALED-Solution.pdf"
+        },
+        {
+          "artifact_id": "customer/START-HERE.md",
+          "name": "customer/START-HERE.md"
+        },
+        {
+          "artifact_id": "marketing/Preview.pdf",
+          "name": "marketing/Preview.pdf"
+        },
+        {
+          "artifact_id": "marketing/Storefront-Listing.md",
+          "name": "marketing/Storefront-Listing.md"
+        },
+        {
+          "artifact_id": "marketing/ad-01-premise.png",
+          "name": "marketing/ad-01-premise.png"
+        },
+        {
+          "artifact_id": "marketing/ad-02-investigate.png",
+          "name": "marketing/ad-02-investigate.png"
+        },
+        {
+          "artifact_id": "marketing/ad-03-play.png",
+          "name": "marketing/ad-03-play.png"
+        },
+        {
+          "artifact_id": "marketing/ad-copy.md",
+          "name": "marketing/ad-copy.md"
+        },
+        {
+          "artifact_id": "marketing/cover.png",
+          "name": "marketing/cover.png"
+        },
+        {
+          "artifact_id": "marketing/preview-opening.png",
+          "name": "marketing/preview-opening.png"
+        },
+        {
+          "artifact_id": "marketing/preview-register.png",
+          "name": "marketing/preview-register.png"
+        },
+        {
+          "artifact_id": "author/BLIND-REPORT.md",
+          "name": "author/BLIND-REPORT.md"
+        },
+        {
+          "artifact_id": "author/HISTORICAL-NOTES.md",
+          "name": "author/HISTORICAL-NOTES.md"
+        },
+        {
+          "artifact_id": "author/PUBLISHING-HANDOFF.md",
+          "name": "author/PUBLISHING-HANDOFF.md"
+        },
+        {
+          "artifact_id": "author/QA-BLIND-REPORT.md",
+          "name": "author/QA-BLIND-REPORT.md"
+        },
+        {
+          "artifact_id": "author/QA-EDIT-REPORT.md",
+          "name": "author/QA-EDIT-REPORT.md"
+        },
+        {
+          "artifact_id": "author/README.md",
+          "name": "author/README.md"
+        },
+        {
+          "artifact_id": "author/STAGED-REPORT.md",
+          "name": "author/STAGED-REPORT.md"
+        },
+        {
+          "artifact_id": "author/STRUCTURAL-CHECKS.json",
+          "name": "author/STRUCTURAL-CHECKS.json"
+        },
+        {
+          "artifact_id": "author/VERIFICATION.md",
+          "name": "author/VERIFICATION.md"
+        },
+        {
+          "artifact_id": "author/audit_release.py",
+          "name": "author/audit_release.py"
+        },
+        {
+          "artifact_id": "author/author_case.py",
+          "name": "author/author_case.py"
+        },
+        {
+          "artifact_id": "author/build_release.py",
+          "name": "author/build_release.py"
+        },
+        {
+          "artifact_id": "author/canon.json",
+          "name": "author/canon.json"
+        },
+        {
+          "artifact_id": "author/case-data.json",
+          "name": "author/case-data.json"
+        },
+        {
+          "artifact_id": "author/evidence-map.json",
+          "name": "author/evidence-map.json"
+        },
+        {
+          "artifact_id": "author/fonts/DejaVuSans-Bold.ttf",
+          "name": "author/fonts/DejaVuSans-Bold.ttf"
+        },
+        {
+          "artifact_id": "author/fonts/DejaVuSans.ttf",
+          "name": "author/fonts/DejaVuSans.ttf"
+        },
+        {
+          "artifact_id": "author/fonts/DejaVuSansMono.ttf",
+          "name": "author/fonts/DejaVuSansMono.ttf"
+        },
+        {
+          "artifact_id": "author/fonts/DejaVuSerif-Bold.ttf",
+          "name": "author/fonts/DejaVuSerif-Bold.ttf"
+        },
+        {
+          "artifact_id": "author/fonts/DejaVuSerif-Italic.ttf",
+          "name": "author/fonts/DejaVuSerif-Italic.ttf"
+        },
+        {
+          "artifact_id": "author/fonts/DejaVuSerif.ttf",
+          "name": "author/fonts/DejaVuSerif.ttf"
+        },
+        {
+          "artifact_id": "author/fonts/LICENSE_DEJAVU",
+          "name": "author/fonts/LICENSE_DEJAVU"
+        },
+        {
+          "artifact_id": "author/image-prompts.json",
+          "name": "author/image-prompts.json"
+        },
+        {
+          "artifact_id": "author/package_release.py",
+          "name": "author/package_release.py"
+        },
+        {
+          "artifact_id": "author/page-counts.json",
+          "name": "author/page-counts.json"
+        },
+        {
+          "artifact_id": "author/portrait.png",
+          "name": "author/portrait.png"
+        },
+        {
+          "artifact_id": "author/story-source.md",
+          "name": "author/story-source.md"
+        }
+      ],
+      "sha256": "02b5f8150a5e34de89884181a1ec90d0a61c8a22ed186b10ba882fdf1b47b2fe",
+      "bytes": 13154911
+    }
+  ],
+  "publishing": {
+    "github": "approved_pending_commit",
+    "shopify_draft": "not_created",
+    "public_url": null,
+    "price_usd": "9.99",
+    "price_approved": true,
+    "checkout_verified": false,
+    "delivery_verified": false
+  }
+}

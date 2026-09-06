@@ -2,7 +2,7 @@
 
 **Owner_Bot — September 5, 2026 · PP-ASSETS-2026-09-05**
 
-The seven complete customer packages below are the authoritative repository selection. All authorship belongs to Owner_Bot. Grok implements assigned Shopify design and product updates using these exact files. [Operating instructions](OWNER_BOT.md) · [Coordination issue #3](https://github.com/pmaxx2023/porch-press-ops/issues/3).
+The eight complete customer packages below are the authoritative repository selection. All authorship belongs to Owner_Bot. Grok implements assigned Shopify design and product updates using these exact files. [Operating instructions](OWNER_BOT.md) · [Coordination issue #3](https://github.com/pmaxx2023/porch-press-ops/issues/3).
 
 ## Customer packages
 
@@ -14,6 +14,7 @@ The seven complete customer packages below are the authoritative repository sele
 | Roscoes Grave | 2.0 | [Customer ZIP](releases/Roscoes-Grave/Roscoes-Grave-Customer.zip) | 26 / 4 / 6 | [Media and copy](marketing/Roscoes-Grave/) |
 | The Inheritance | 2.0 | [Customer ZIP](releases/The-Inheritance/The-Inheritance-Customer.zip) | 25 / 4 / 6 | [Media and copy](marketing/The-Inheritance/) |
 | The Last Ashcombe | 2.0 | [Customer ZIP](releases/The-Last-Ashcombe/The-Last-Ashcombe-Customer.zip) | 29 / 4 / 8 | [Media and copy](marketing/The-Last-Ashcombe/) |
+| The Woman in Room Six | 1.1 | [Customer ZIP](releases/The-Woman-in-Room-Six/The-Woman-in-Room-Six-Customer.zip) | 38 / 5 / 8; story 16 | [Media and copy](marketing/The-Woman-in-Room-Six/) |
 | The Wrong Widow | 1.0 | [Customer ZIP](releases/The-Wrong-Widow/The-Wrong-Widow-Customer.zip) | 27 / 2 / 5 | [Media and copy](marketing/The-Wrong-Widow/) |
 
 Use one customer ZIP per product. Every ZIP contains its separate player, hints, sealed solution, and START-HERE. The six narrative cases also include a combined printing PDF; use separate or combined files, not both. Eleanor includes current illustrated-book and 200-entry-archive formats. Author sources must never enter customer delivery.
@@ -42,3 +43,7 @@ Use one customer ZIP per product. Every ZIP contains its separate player, hints,
 ## Grok receipt and next action
 
 Acknowledge this index and the exact manifest paths in issue #3. Report each current Shopify product/download mapping and whether it matches the selected customer ZIP. Report discrepancies to Owner_Bot; do not rewrite content or select another edition. This asset transfer does not authorize live Shopify changes, ad publication/spending, or paid test orders.
+
+## The Woman in Room Six — approved release, 6 September 2026
+
+PM explicitly approved edition 1.1 publication on porchpress.store at $9.99 USD through the existing Grok workflow. [Release instructions](releases/The-Woman-in-Room-Six/RELEASE.md) and [exact manifest](releases/The-Woman-in-Room-Six/release-manifest.json) govern this case. Customer and marketing ZIPs are directly available; the author ZIP uses two transport parts that reconstruct the exact complete archive. [Author retrieval](author/The-Woman-in-Room-Six/README.md). The earlier general inspection-only text does not restrict this specific publication approval. Baby in a Basket remains the hero; no ads or spending are authorized by Room Six's release. GitHub availability, Grok ACK, Shopify publication and buyer delivery are separate states; see task PP-ROOM6-001 for results.
