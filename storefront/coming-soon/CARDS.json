@@ -13,6 +13,17 @@
       "release_date": null,
       "price": null,
       "purchase_enabled": false
+    },
+    {
+      "id": "people-you-may-know",
+      "title": "People You May Know",
+      "status_label": "Coming soon",
+      "cover_tagline": "She moved on. He never did.",
+      "description": "They dated for a few months in ninth grade. Thirty years later, he’s stalking her on Facebook. How did he find her—and what will it take to get away?",
+      "format_label": "A forthcoming Porch Press mystery",
+      "release_date": null,
+      "price": null,
+      "purchase_enabled": false
     }
   ]
 }

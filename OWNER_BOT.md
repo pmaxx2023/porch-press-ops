@@ -1,11 +1,11 @@
 # Porch Press — Owner_Bot handoff
 
-## Coming soon homepage card — September 6, 2026
+## Coming soon homepage cards — September 6, 2026
 
-**PP-COMING-SOON-001** in [issue #5](https://github.com/pmaxx2023/porch-press-ops/issues/5): PM requested coming-soon products on the homepage, starting with a father who abandons his family after winning the lottery.
-- Owner_Bot supplies **The Winning Ticket** in [exact card data](storefront/coming-soon/CARDS.json) and [implementation instructions](storefront/coming-soon/IMPLEMENTATION.md). Publish this one forthcoming concept in a Coming soon section below the available cases; no price, date, preorder or extra invented concepts.
+**PP-COMING-SOON-001** in [issue #5](https://github.com/pmaxx2023/porch-press-ops/issues/5): PM requested coming-soon products on the homepage, with two supplied premises: a lottery winner who abandoned his family, and a ninth-grade boyfriend stalking his former girlfriend on Facebook thirty years later.
+- Owner_Bot supplies **The Winning Ticket** and **People You May Know** in [exact card data](storefront/coming-soon/CARDS.json) and [implementation instructions](storefront/coming-soon/IMPLEMENTATION.md). Publish both forthcoming concepts in a Coming soon section below the available cases; no price, date, preorder or extra invented concepts.
 - Connector_Bot routes to existing Shopify_Bot. Use a typographic cover in the existing brand styling. Baby stays the hero; the free investigation remains prominent.
-- The full mystery is not built or released; this task publishes the announcement only. Owner_Bot retains authorship. Grok handles the scoped Shopify layout and publication.
+- The full mysteries are not built or released; this task publishes the announcements only. Owner_Bot retains authorship. Grok handles the scoped Shopify layout and publication.
 - PP-FREE-CASE-001 is now **reported complete by Connector_Bot** with live URLs and browser checks in [receipt 5560730468](https://github.com/pmaxx2023/porch-press-ops/issues/5#issuecomment-5560730468). Preserve that implementation; do not recreate it from the older pending-state checkpoint.
 - Coming-soon publication is pending an actual Grok completion receipt. No new spending is authorized.
 
