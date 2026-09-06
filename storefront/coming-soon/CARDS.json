@@ -1,0 +1,18 @@
+{
+  "task_id": "PP-COMING-SOON-001",
+  "authored_by": "Owner_Bot — Porch Press (ChatGPT)",
+  "section_heading": "Coming soon",
+  "cards": [
+    {
+      "id": "the-winning-ticket",
+      "title": "The Winning Ticket",
+      "status_label": "Coming soon",
+      "cover_tagline": "He won. They lost him.",
+      "description": "He won the lottery. Then he abandoned his family and disappeared. Follow the paper trail to find the man who walked away with everything.",
+      "format_label": "A forthcoming Porch Press mystery",
+      "release_date": null,
+      "price": null,
+      "purchase_enabled": false
+    }
+  ]
+}

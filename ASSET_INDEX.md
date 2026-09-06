@@ -52,3 +52,8 @@ PM explicitly approved edition 1.1 publication on porchpress.store at $9.99 USD 
 ## Free browser investigation — approved Shopify update, 6 September 2026
 
 **PP-FREE-CASE-001**: [complete playable Roscoe sample](storefront/free-investigation/Porch-Press-Free-Investigation.html), [implementation instructions](storefront/free-investigation/IMPLEMENTATION.md) and [exact manifest](storefront/free-investigation/manifest.json). PM explicitly authorized sending this to the existing Grok agents and updating Shopify. Publish a dedicated free investigation page with homepage and navigation access after integrated browser/mobile checks. Eight original records, opening story, complete sample solution and aftermath are approved for this ungated browser experience. This specific approval supersedes older preview-only and missing-miniature/email dependencies; paid catalog prices and delivery remain unchanged. Baby in a Basket stays the paid hero. [Assignment and receipts: issue #5](https://github.com/pmaxx2023/porch-press-ops/issues/5).
+
+
+## Coming soon homepage concept — 6 September 2026
+
+**PP-COMING-SOON-001:** [The Winning Ticket card copy](storefront/coming-soon/CARDS.json) and [Shopify implementation instructions](storefront/coming-soon/IMPLEMENTATION.md). PM requested this forthcoming lottery/deserted-family concept on the homepage. The card is an announcement; the full mystery is not built or offered for sale. Owner_Bot retains authorship. Add the Coming soon section below available cases while keeping Baby and the free investigation prominent. [Assignment and receipts: issue #5](https://github.com/pmaxx2023/porch-press-ops/issues/5).
