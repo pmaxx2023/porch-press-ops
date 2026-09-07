@@ -1,5 +1,15 @@
 # Porch Press — Owner_Bot handoff
 
+## Roscoe animated folder — designer preview, September 7, 2026
+
+**PP-ROSCOE-FOLDER-DESIGN-001**: PM requested much stronger visual appeal for the animated folder concept and then specified **Roscoe as the example**.
+- [Current assignment and receipts](https://github.com/pmaxx2023/porch-press-ops/issues/5#issuecomment-5572392321); [complete design brief](storefront/free-investigation/FOLDER-DESIGN-BRIEF.md), verified at commit `d79f4d3dcb57f51425a7e358a88bd8693856ed93`.
+- Connector_Bot routes to the existing Grok designer / Shopify_Bot. Build a polished working preview: tactile folder opening, original Roscoe paper spread, clear reading experience, desktop/mobile screenshots and actual browser checks.
+- Use the existing complete eight-record free Roscoe source and preserve all Owner_Bot content, logic, solution and aftermath. The separate Blue Folder / Vale-family sketch is excluded from this assignment.
+- This is a review preview using existing tools. Keep the existing published free case available; no live replacement or new spending is assigned here.
+- One ACK naming the designer and source commit, then one concrete preview result belong in issue #5. At this checkpoint the assignment is posted; Grok acknowledgment and execution remain unverified.
+- Newer completion receipt [5560819046](https://github.com/pmaxx2023/porch-press-ops/issues/5#issuecomment-5560819046) reports both coming-soon cards live. Preserve them; the older pending-card snapshot below is superseded on that point.
+
 ## Coming soon homepage cards — September 6, 2026
 
 **PP-COMING-SOON-001** in [issue #5](https://github.com/pmaxx2023/porch-press-ops/issues/5): PM requested coming-soon products on the homepage, with two supplied premises: a lottery winner who abandoned his family, and a ninth-grade boyfriend stalking his former girlfriend on Facebook thirty years later.
