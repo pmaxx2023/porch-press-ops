@@ -1,0 +1,314 @@
+{
+  "as_of_ct": "2026-09-10 08:17 CDT",
+  "shop_day": "2026-09-10 (America/New_York ShopifyQL day)",
+  "totals": {
+    "sessions": "44",
+    "sessions_with_cart_additions": "0",
+    "sessions_that_reached_checkout": "0",
+    "sessions_that_completed_checkout": "0"
+  },
+  "qa_sessions_identified": 1,
+  "sessions_minus_known_qa": 43,
+  "by_landing": [
+    {
+      "landing_page_path": "/products/baby-in-a-basket",
+      "sessions": "10",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/pages/genealogy-mystery-case",
+      "sessions": "8",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/",
+      "sessions": "7",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/products/the-wrong-widow",
+      "sessions": "5",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/products/eleanor-hart-is-missing",
+      "sessions": "4",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/products/roscoes-grave",
+      "sessions": "3",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/products/the-last-ashcombe",
+      "sessions": "3",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/products/if-i-were-king",
+      "sessions": "2",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/products/the-inheritance",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    },
+    {
+      "landing_page_path": "/products/the-woman-in-room-six",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0"
+    }
+  ],
+  "by_utm_landing": [
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/",
+      "sessions": "6",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/eleanor-hart-is-missing",
+      "sessions": "4",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": "meta",
+      "utm_medium": "paid_social",
+      "utm_campaign": "pp_baby_ads_001",
+      "landing_page_path": "/products/baby-in-a-basket",
+      "sessions": "4",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": "microsoft",
+      "utm_medium": "cpc",
+      "utm_campaign": "pp_bing_ads_001",
+      "landing_page_path": "/pages/genealogy-mystery-case",
+      "sessions": "4",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "search",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/the-wrong-widow",
+      "sessions": "4",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/pages/genealogy-mystery-case",
+      "sessions": "3",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/roscoes-grave",
+      "sessions": "3",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/baby-in-a-basket",
+      "sessions": "3",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "search",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/the-last-ashcombe",
+      "sessions": "2",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/if-i-were-king",
+      "sessions": "2",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "search",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/baby-in-a-basket",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/the-inheritance",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/the-wrong-widow",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "social",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/the-woman-in-room-six",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/the-last-ashcombe",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "social",
+      "utm_source": "meta",
+      "utm_medium": "paid_social",
+      "utm_campaign": "pp_baby_ads_001",
+      "landing_page_path": "/products/baby-in-a-basket",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "social",
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null,
+      "landing_page_path": "/products/baby-in-a-basket",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": false
+    },
+    {
+      "referrer_source": "direct",
+      "utm_source": "ownerqa",
+      "utm_medium": "qa",
+      "utm_campaign": "pp_audience_channel_exec_001",
+      "landing_page_path": "/pages/genealogy-mystery-case",
+      "sessions": "1",
+      "sessions_with_cart_additions": "0",
+      "sessions_that_reached_checkout": "0",
+      "sessions_that_completed_checkout": "0",
+      "exclude": true
+    }
+  ]
+}
