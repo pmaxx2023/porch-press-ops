@@ -45,3 +45,9 @@
 
 ## Freeze / next
 Stopped state preserved (no restart / no extension / no Off toggle required). No new Meta spend until Mega bounded ceiling + checklist (or explicit Hold).
+
+---
+
+## Mega decision (2026-09-10 ~22:50 CT)
+
+**HOLD — NO NEW SPEND.** Do not restart this campaign or PP-BABY-ADS-001; no budget raise; no new publish until Mega 7-field handoff with hard $ ceiling. Step B repairs remain LIVE (not a spend trigger).
