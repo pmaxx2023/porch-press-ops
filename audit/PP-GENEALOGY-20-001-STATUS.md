@@ -1,50 +1,47 @@
-# PP-GENEALOGY-20-001 — DELIVERY REFRESH (~20:10 CDT ask)
+# PP-GENEALOGY-20-001 — STOP / FINAL
 
 **Bot:** Shopify_Bot  
-**Status enum:** **DELIVERING**  
-**As of (Meta UI):** ~2026-09-10 **8:30 PM CDT** (posted 2026-09-10 20:35 CDT); account timezone **Pacific**; date preset **Maximum**  
-**Read-only:** no mutations
+**Status enum:** **STOPPED — COMPLETED** (schedule ended; Delivery = Completed; not currently delivering)  
+**As of (Meta UI):** ~2026-09-10 **22:49 CT** (posted 2026-09-10 22:50 CDT)  
+**Account:** AFK Designs `1083994074091782` · timezone **Pacific**  
+**Date preset:** Maximum (Aug 10, 2023–Sep 10, 2026)  
+**Read-only:** no pause toggle / budget / schedule / creative mutations (On switches left as-is; schedule end already stopped delivery)
 
-## NEW — PP-GENEALOGY-20-001
+## Objects
+| Object | ID | Effective switch | Delivery (literal) |
+| --- | --- | --- | --- |
+| Campaign | `120249394288760482` | On | **Completed** |
+| Ad set | `120249394288770482` | On | **Completed** |
+| Ad | `120249394288750482` | On | **Completed** |
 
-| Object | ID | Effective / delivery |
-| --- | --- | --- |
-| Campaign | `120249394288760482` | On / **Active** |
-| Ad set | `120249394288770482` | On / **Active** |
-| Ad | `120249394288750482` | On / **Active** |
-
-### Metrics (same across campaign / ad set / ad this pass)
-
+## Final metrics (campaign = ad set = ad)
 | Metric | Value |
-| --- | --- |
-| Amount spent | **$12.89** |
-| Impressions | **285** |
-| Link clicks | **5** |
-| Landing page views | **3** |
+| --- | ---: |
+| Amount spent | **$19.95** |
+| Impressions | **486** |
+| Link clicks | **7** |
+| Landing page views | **5** |
 | Purchases / Results | **UNKNOWN** (`—`; result type Website Purchase) |
 | First delivery time | **UNKNOWN** |
 
-### Budget / schedule
+### Derived (arithmetic only; not a forecast)
+- ~**$2.85** per link click ($19.95 / 7)
+- ~**$3.99** per LPV ($19.95 / 5)
+- Meta-attributed purchases this test: **none evidenced**
+
+## Caps
 | Field | Value |
 | --- | --- |
 | Lifetime budget | **$20.00 USD** (confirmed) |
-| Schedule UI this pass | Sep 10–Sep 10 · “4 hours” · “Ends today” |
-| Exact HH:MM this pass | **UNKNOWN** (clock fields not exposed in table) |
-| Prior confirmed end | Sep 10 **7:50 PM PDT** = **9:50 PM CDT** = Sep 11 **02:50 UTC** (unchanged intent; not re-edited) |
+| Schedule | Ended **Sep 10, 2026** (prior end **9:50 PM CDT** / 7:50 PM PDT) |
+| Currently delivering? | **No** (Delivery = Completed) |
 
-### Warnings (literal, not acted on)
-- “Ends today”
-- “1 recommendation”
-- Ad-account verification nudge (“Make sure your ad account is up to date by verifying…” / “Completing verification helps prevent your ads from pausing…”)
-- No rejection or billing warning visible
+## Old campaign
+`PP-BABY-ADS-001` `120249328905520482`: still **Off** / Delivery **Off**.
 
-## OLD — PP-BABY-ADS-001 `120249328905520482`
-Confirmed **Off** / delivery **Off**. Not toggled.  
-Lifetime UI (historical, not this test): spend **$40.78** · 766 impr · 34 link clicks · 21 LPVs · **1** Website Purchase · lifetime budget **$50** · end Sep 11, 2026.  
-Ledger $30/$50 discrepancy still unresolved separately.
+## Warnings (not acted on)
+- “1 recommendation” on new objects
+- Ad-account verification banner
 
-## Shopify (Owner-supplied; not Meta proof)
-0 sales · 11 `pp_genealogy_20_001` sessions — not used alone to claim paid delivery.
-
-## Freeze
-No budget/date/audience/creative/status/payment/Bing changes. No schedule extension. At scheduled stop: preserve stopped state + final figures (do not restart).
+## Freeze / next
+Stopped state preserved (no restart / no extension / no Off toggle required). No new Meta spend until Mega bounded ceiling + checklist (or explicit Hold).
