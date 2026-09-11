@@ -1,7 +1,7 @@
 # PP-BABY-RETEST-030-001 — PUBLISHED — IN REVIEW
 
 **Bot:** Shopify_Bot  
-**Status enum:** **PUBLISHED — IN REVIEW**  
+**Status enum:** **ACTIVE — DELIVERY NOT YET OBSERVED** (was PUBLISHED — IN REVIEW)  
 **As of:** 2026-09-11 00:04 CDT  
 **Authority:** Mega AUTHORIZE PP-BABY-RETEST-030-001 · PM $30 Facebook spending cap  
 **Account:** AFK Designs `1083994074091782` (Pacific)
@@ -36,3 +36,21 @@
 
 ## Starting metrics
 Spend / impr / clicks / LPVs / purchases: **not yet observed** (in review). Will not call DELIVERING until spend/impr evidence.
+
+
+---
+
+## Status refresh — 2026-09-11 00:11 CDT
+
+### Genealogy preserve check (read-only)
+`PP-GENEALOGY-20-001` `120249394288760482`: Delivery **Completed** · spend still **$19.95** · not delivering.
+
+### Retest objects
+| Object | ID | Delivery (literal) |
+| --- | --- | --- |
+| Campaign | `120249397274570482` | **Ad sets inactive** |
+| Ad set | `120249397274580482` | **Active** |
+| Control ad | `120249397274560482` | **Active** |
+| Challenger ad | `120249397434260482` | **Active** |
+
+**Enum:** **ACTIVE — DELIVERY NOT YET OBSERVED** (ads Active; no spend/impr evidenced this pass → not DELIVERING yet).
