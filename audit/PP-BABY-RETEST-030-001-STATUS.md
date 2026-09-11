@@ -1,76 +1,58 @@
-# PP-BABY-RETEST-030-001 — PUBLISHED — IN REVIEW
+# PP-BABY-RETEST-030-001 — LIVE SNAPSHOT (morning)
 
 **Bot:** Shopify_Bot  
-**Status enum:** **ACTIVE — DELIVERY NOT YET OBSERVED** (was PUBLISHED — IN REVIEW)  
-**As of:** 2026-09-11 00:04 CDT  
-**Authority:** Mega AUTHORIZE PP-BABY-RETEST-030-001 · PM $30 Facebook spending cap  
-**Account:** AFK Designs `1083994074091782` (Pacific)
+**As of:** 2026-09-11 08:19 CDT  
+**Enum:** **STILL ACTIVE — NO DELIVERY** (Meta lifetime metrics all em dash / UNKNOWN; not DELIVERING)  
+**Read-only:** no budget/schedule/status mutations
 
-## Objects
-| Object | Name | ID | Delivery (publish) |
+## Meta — PP-BABY-RETEST-030-001 `120249397274570482`
+| Object | ID | Switch | Delivery |
 | --- | --- | --- | --- |
-| Campaign | `PP-BABY-RETEST-030-001` | `120249397274570482` | In review |
-| Ad set | `PP-BABY-RETEST-030-001-AS` | `120249397274580482` | In review |
-| Ad (control) | `PP-BABY-ID-CONTROL-v1` | `120249397274560482` | In review |
-| Ad (challenger) | `PP-BABY-FINITE-CHALLENGER-v1` | `120249397434260482` | Processing after publish |
+| Campaign | `120249397274570482` | On | **Active** |
+| Ad set | `120249397274580482` | On | **Active** |
+| Control | `120249397274560482` | On | **Active** (1 recommendation) |
+| Challenger | `120249397434260482` | On | **Active** |
 
-## Config verified
-| Field | Value |
+### Lifetime metrics (UI; `—` = UNKNOWN, not zero)
+| Metric | Campaign / ad set / both ads |
 | --- | --- |
-| Objective | Sales → Website → **Purchase** |
-| CTA | **Shop now** |
-| Lifetime budget | **$30.00 USD** (campaign; not daily) |
-| Schedule (UI) | Sep 10, 2026 **9:25 PM** – Sep 18, 2026 **9:59 PM PDT** (~Sep 18 **11:59 PM CDT**) |
-| Audience | US; no new hard interest controls |
-| Control URL | `…/genealogy-mystery-case?utm_source=meta&utm_medium=paid&utm_campaign=pp_baby_retest_030&utm_content=id_control` |
-| Challenger URL | `…/utm_content=finite_challenger` |
+| Amount spent | **UNKNOWN (`—`)** |
+| Impressions | **UNKNOWN (`—`)** |
+| Reach | **UNKNOWN (`—`)** |
+| Link clicks | **UNKNOWN (`—`)** |
+| Landing page views | **UNKNOWN (`—`)** |
+| Purchases / Results | **UNKNOWN (`—`)** · result type Website Purchase |
+| Budget | **$30.00 Lifetime** |
+| End | begins **Sep 18, 2…** (truncated in capture) |
+| Today / last 12–24h split | **unavailable** this pass |
 
-## Creative notes
-- Meta Image ad format accepted **one media item per ad**; control opening-story secondary image **not** added (cover used).
-- Challenger published with census/cover assets as available.
+### Diagnostics (literal)
+- Verification banner: “Make sure your ad account is up to date by verifying” / “Completing verification helps prevent your ads from pausing if verification is required in the future.”
+- Campaign: **3 recommendations**
+- Red notice observed: **“Publish didn't complete. Your items weren't published because they had errors that need to be fixed.”** — details **not** opened; **no fix attempted** (await Mega ACK)
+- No payment/billing reject text captured beyond verification nudge
 
-## Preserve
-- `PP-BABY-ADS-001`: **Off** (confirmed)
-- `PP-GENEALOGY-20-001`: **not restarted by this publish**; UI may still show switch On from prior Completed stop — Delivery must remain Completed / not delivering (verify follow-up if needed)
-- Bing $15 untouched · Baby $19.99 · no partner sends · no store redesign
+## Preserve checks
+| Campaign | Status |
+| --- | --- |
+| `PP-GENEALOGY-20-001` `120249394288760482` | Delivery **Completed** · spend **UNKNOWN** this pass (prior STOP **$19.95**) |
+| `PP-BABY-ADS-001` `120249328905520482` | Switch **Off** · Delivery **Off** |
 
-## Starting metrics
-Spend / impr / clicks / LPVs / purchases: **not yet observed** (in review). Will not call DELIVERING until spend/impr evidence.
+## ShopifyQL (shop day 2026-09-11)
+### Today totals
+| Metric | Value |
+| ---: | ---: |
+| Sessions | **14** |
+| ATC | **0** |
+| Checkout | **0** |
+| Purchase | **0** |
+| Paid orders since 2026-09-10 | **0** |
 
+### Today `utm_campaign=pp_baby_retest_030`
+| utm_content | sessions | ATC |
+| --- | ---: | ---: |
+| `id_control` | **4** | 0 |
+| `finite_challenger` | **2** | 0 |
+| **Retest total** | **6** | **0** |
 
----
-
-## Status refresh — 2026-09-11 00:11 CDT
-
-### Genealogy preserve check (read-only)
-`PP-GENEALOGY-20-001` `120249394288760482`: Delivery **Completed** · spend still **$19.95** · not delivering.
-
-### Retest objects
-| Object | ID | Delivery (literal) |
-| --- | --- | --- |
-| Campaign | `120249397274570482` | **Ad sets inactive** |
-| Ad set | `120249397274580482` | **Active** |
-| Control ad | `120249397274560482` | **Active** |
-| Challenger ad | `120249397434260482` | **Active** |
-
-**Enum:** **ACTIVE — DELIVERY NOT YET OBSERVED** (ads Active; no spend/impr evidenced this pass → not DELIVERING yet).
-
-
----
-
-## Reconcile “Ad sets inactive” vs Active — 2026-09-11 00:20 CDT
-
-**Diagnosis:** transient Ads Manager **rollup lag**. After reload, campaign Delivery = **Active** (matching ad set + ads). No Off/ineligible/schedule/CTA/billing block.
-
-| Object | Switch | Delivery |
-| --- | --- | --- |
-| Campaign `120249397274570482` | On | **Active** |
-| Ad set `120249397274580482` | On | **Active** |
-| Control `120249397274560482` | On | **Active** |
-| Challenger `120249397434260482` | On | **Active** |
-
-- Lifetime budget **$30** confirmed
-- Schedule Sep 10 **9:51 PM** – Sep 18 **9:59 PM PDT** (start past)
-- Spend **$0.00** · impressions **—** (UNKNOWN / none)
-- **Changes:** none
-- **Enum:** **ACTIVE — DELIVERY NOT YET OBSERVED**
+Shopify UTM ≠ Meta delivery proof. Do not call DELIVERING from Shopify alone.
