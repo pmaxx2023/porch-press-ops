@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Fixture Case Portal — PP-ELEANOR-AU-001A</title>
+  <link rel="stylesheet" href="../shared/a11y.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <p class="fixture-banner" role="status">FIXTURE / DEVELOPER PREVIEW — NOT LIVE GAME CONTENT</p>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="portal-wrap">
+    <nav class="portal-nav" aria-label="Fixture navigation">
+      <a href="../index.html">Hub</a>
+      <a href="../archives/northbridge-municipal-clippings/index.html">Northbridge Clippings</a>
+      <a href="../archives/cedar-fork-deed-room/index.html">Cedar Fork Deed Room</a>
+      <a href="../archives/lampblack-industrial-ledger/index.html">Lampblack Ledger</a>
+    </nav>
+
+    <main id="main">
+      <h1>Fixture Case Portal</h1>
+      <p class="lead">
+        Opening lead (fixture only): Sample Clerk reports that <strong>Fixture Subject A</strong>
+        left a paper trail across three obviously fictional repositories. Your job is to collect
+        accession codes, weigh contested inferences, and keep local notes — no live case facts.
+      </p>
+
+      <section class="panel" aria-labelledby="prompt-heading">
+        <h2 id="prompt-heading">Generic research prompt</h2>
+        <p class="muted">Copyable starter prompt for local playtesting. Contains no canon.</p>
+        <div id="research-prompt" class="prompt-box" role="region" aria-label="Research prompt text">Compare clippings, deed-room dockets, and industrial ledger lines that mention Fixture Subject A or Sample Clerk. Record exact FIXTURE-* accession codes. Prefer primary labels over secondary summaries. Do not invent dates or identities beyond the fixture pages.</div>
+        <button type="button" id="copy-prompt-btn" class="secondary">Copy research prompt</button>
+      </section>
+
+      <section aria-labelledby="locker-heading">
+        <h2 id="locker-heading">Evidence locker</h2>
+        <p class="muted">Exact-match validation against six fixture tokens only. Invalid codes are rejected. Duplicate codes are reported without re-adding.</p>
+
+        <div class="panel">
+          <div class="row">
+            <div class="field">
+              <label for="accession-input">Accession code</label>
+              <input id="accession-input" type="text" name="accession" autocomplete="off" spellcheck="false" placeholder="e.g. FIXTURE-NMC-0001" aria-describedby="accession-hint">
+              <p id="accession-hint" class="muted">Valid: FIXTURE-NMC-0001/0002, FIXTURE-CFD-0001/0002, FIXTURE-LIL-0001/0002</p>
+            </div>
+            <button type="button" id="validate-btn">Validate &amp; add</button>
+          </div>
+          <div id="validate-status" class="status info" role="status" aria-live="polite" hidden></div>
+
+          <h3>Recorded tokens</h3>
+          <ul id="token-list" class="token-list" aria-live="polite"></ul>
+
+          <h3><label for="notes-input">Investigator notes</label></h3>
+          <textarea id="notes-input" name="notes" aria-describedby="notes-hint"></textarea>
+          <p id="notes-hint" class="muted">Stored in <code>localStorage</code> key <code>pp-eleanor-au-001a-fixture</code>. Max 8KB; truncated on save.</p>
+        </div>
+      </section>
+
+      <div id="reveal-announce" class="status info" role="status" aria-live="polite" hidden></div>
+
+      <section id="cast-reveal" class="reveal" hidden aria-labelledby="reveal-heading">
+        <h2 id="reveal-heading">Cast reveal (fixture)</h2>
+        <p class="muted">Unlocked because both <code>FIXTURE-NMC-0001</code> and <code>FIXTURE-CFD-0001</code> are in evidence (order independent).</p>
+
+        <div class="panel">
+          <h3>Evidence receipts</h3>
+          <p class="muted">Receipts appear before cast dialogue. The neutral UI does not make either inference.</p>
+          <ul id="receipt-list" class="receipt-list"></ul>
+
+          <article class="claim-block cast-claim" aria-labelledby="claim-a-h">
+            <p class="slate-label">CAST CLAIM</p>
+            <h3 id="claim-a-h">Synthetic role: Investigations editor / Gen X lens</h3>
+            <p>
+              Sample Clerk asserts that Fixture Subject A signed a municipal notice <em>before</em>
+              the Cedar Fork docket stamp on the paired deed-room slip — suggesting a single continuous errand.
+            </p>
+          </article>
+
+          <article class="claim-block contest" aria-labelledby="claim-b-h">
+            <p class="slate-label">CROSS-EXAMINATION</p>
+            <h3 id="claim-b-h">Synthetic role: Provenance editor / Boomer lens</h3>
+            <p>
+              A second fixture voice contests that inference: the Northbridge clipping typesetting date
+              and the Cedar Fork creation stamp need not describe the same calendar day; Sample Clerk
+              may be conflating two routine visits.
+            </p>
+          </article>
+
+          <fieldset>
+            <legend>Classify CAST CLAIM (FX-CLAIM-001)</legend>
+            <div class="classify-group" role="radiogroup" aria-label="Claim classification">
+              <label><input type="radio" name="claim-class" value="supported"> Supported</label>
+              <label><input type="radio" name="claim-class" value="contested"> Contested</label>
+              <label><input type="radio" name="claim-class" value="disproved"> Disproved</label>
+            </div>
+          </fieldset>
+          <div id="claim-status" class="status info" role="status" aria-live="polite" hidden></div>
+
+          <h3>Next research question</h3>
+          <p id="next-research-q">
+            Which Lampblack ledger line, if any, independently timestamps Fixture Subject A on a day
+            that cannot overlap Sample Clerk’s proposed “single errand” window?
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="state-heading">
+        <h2 id="state-heading">Case state</h2>
+        <div class="panel">
+          <p class="muted">Export downloads JSON. Import accepts only matching <code>case_id</code> and <code>schema_version</code> (never <code>eval</code>). Reset asks for confirmation and reminds you to export first.</p>
+          <div class="actions-bar">
+            <button type="button" id="export-btn">Export JSON</button>
+            <label class="btn secondary" for="import-input" style="display:inline-flex; align-items:center; justify-content:center; text-align:center;">
+              Import file
+            </label>
+            <input id="import-input" class="visually-hidden" type="file" accept="application/json,.json">
+            <button type="button" id="reset-btn" class="danger">Reset</button>
+          </div>
+          <div id="import-status" class="status info" role="status" aria-live="polite" hidden></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="portal.js"></script>
+</body>
+</html>
