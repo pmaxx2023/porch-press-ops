@@ -2,20 +2,21 @@
 
 ## Active checkpoint — September 12, 2026
 
-**Current decision:** the live Baby purchase path is verified; next verify control of the exact Reddit thread, then implement and run one authentic, zero-new-spend Roscoe collaborative-play pilot. This checkpoint supersedes older “pending” descriptions where later receipts or live observation conflict.
+**Current decision:** PM approved `PP-BABY-EVIDENCE-SALES-001`, a buyer-optimized replacement that uses only the verified unspent remainder of the existing $30 Meta ceiling. The live Baby purchase path is green. This paid test now precedes the Roscoe collaborative-play pilot. Eleanor Hart Is Missing is being evaluated separately as a future homepage-hero challenger; no hero change is authorized. This checkpoint supersedes older “pending” descriptions where later receipts, live observation, or this explicit PM decision conflict.
 
 ### Confirmed current state
 
 - Shopify has eight active mystery products, each currently listed at **$19.99**. Baby in a Basket remains the paid hero. The ungated Roscoe's Grave browser investigation remains live at [the free investigation](https://porchpress.store/pages/free-investigation).
+- Eleanor Hart Is Missing is active at **$19.99** and has a complete current customer package, but its live Shopify listing is not hero-ready: it contains unverified playtime/difficulty wording, exposes only one product image, and omits the approved page counts and alternative-format proof. The stronger title is a hypothesis, not current conversion evidence.
 - Store evidence for September 8–12 shows one paid order: **$9.99 on September 8**. It does not validate the current $19.99 offer. Later traffic has not produced a confirmed sale.
-- Existing Meta experiment `PP-BABY-LPV-030-001` has a **$30 lifetime ceiling**, LPV optimization, and reported end of September 13 at 9:59 PM PDT. Keep it separate from every Reddit/community result; do not extend or compensate it.
+- Existing Meta experiment `PP-BABY-LPV-030-001` has a **$30 lifetime ceiling**, LPV optimization, and reported end of September 13 at 9:59 PM PDT. PM authorized it to be paused and replaced under [the exact buyer-campaign plan](marketing/PP-BABY-EVIDENCE-SALES-001/PLAN.md) and [issue #6 release](https://github.com/pmaxx2023/porch-press-ops/issues/6#issuecomment-5646295361). Capture actual spend at pause; the replacement cap is $30 minus verified aggregate spend already incurred. No extension, replenishment, or separate Meta budget.
 - On September 12, browser DOM inspection appeared to show empty hidden inputs on [the campaign landing page](https://porchpress.store/pages/genealogy-mystery-case), but actual public submissions proved the inspection layer had redacted form values. Both top and bottom CTAs added Baby variant `52494545486122` at **$19.99**, retained the tracked line behavior, and entered Porch Press checkout at the correct total. No order or payment was submitted.
 - `PP-LP-FORM-HOTFIX-002` is closed as **FORM PATH VERIFIED — NO SHOPIFY CODE CHANGE REQUIRED** in [issue #6](https://github.com/pmaxx2023/porch-press-ops/issues/6#issuecomment-5646063531). The prior pause request is cancelled. Do not classify earlier traffic as invalid on the basis of the redacted inspection.
 - A live r/printandplay candidate thread has at least fourteen distinct public expressions of interest but no visible completed-play theories. Account control is unverified. Do not edit, reply, DM, or represent the thread as Porch Press until Grok proves control.
 
-### One queued experiment
+### Community experiment queued behind the paid replacement
 
-`PP-ROSCOE-COLLAB-001` is the only queued next experiment: [issue #7](https://github.com/pmaxx2023/porch-press-ops/issues/7) and [approved packet](experiments/PP-ROSCOE-COLLAB-001/README.md).
+`PP-ROSCOE-COLLAB-001` remains the approved community experiment, but now follows `PP-BABY-EVIDENCE-SALES-001`: [issue #7](https://github.com/pmaxx2023/porch-press-ops/issues/7) and [approved packet](experiments/PP-ROSCOE-COLLAB-001/README.md). Do not operate both experiments simultaneously.
 
 - State: **PURCHASE-PATH GATE GREEN; BLOCKED ONLY ON VERIFIED REDDIT ACCOUNT CONTROL/PERMISSION BEFORE PUBLICATION.**
 - Shopify draft is complete in unpublished theme `gid://shopify/OnlineStoreTheme/190768349482`. It adds the main and post-finding case-room controls plus the tracked $19.99 Baby bridge. Desktop functional/layout QA passed; live Refresh theme `152900272426` is unchanged. Exact source and receipts are in [issue #7](https://github.com/pmaxx2023/porch-press-ops/issues/7#issuecomment-5646105910). True 390×844 visual acceptance and publication remain open.
@@ -26,11 +27,11 @@
 
 ### Agent order of operations
 
-1. Connector_Bot cancels the erroneous Meta pause request; if Grok already paused solely for that request, it resumes the same campaign without extension or other change.
-2. Existing Grok Reddit operator performs read-only ownership/rule verification for issue #7; no public action until control is proved.
-3. Owner_Bot's unpublished Shopify case-room draft is complete. After Reddit control is proved, complete 390×844 visual acceptance and publish the exact verified files to the then-current theme.
-4. Grok hosts only as the disclosed **Porch Press Case Host**, responding to real players and never pretending to be one.
-5. Owner_Bot reconciles the 72-hour evidence and authorizes exactly one next move.
+1. Existing Grok Meta operator / Mega reads [the issue #6 release](https://github.com/pmaxx2023/porch-press-ops/issues/6#issuecomment-5646295361), captures current spend, pauses `PP-BABY-LPV-030-001`, and proves it can no longer spend.
+2. Grok calculates the replacement cap, verifies the buyer path and deepest viable commerce event, builds the exact two approved ads, and launches only after every plan gate passes. A failed event or cap gate means HOLD and $0 additional spend.
+3. Connector_Bot mirrors one ACK and one concrete execution receipt. An ACK is not evidence of pause, launch, or delivery.
+4. Keep `PP-ROSCOE-COLLAB-001` queued without public action until the paid test is stopped or complete.
+5. Owner_Bot reconciles the paid result, then resolves the separate Eleanor homepage-hero decision before authorizing another experiment.
 
 ## Roscoe animated folder — designer preview, September 7, 2026
 
