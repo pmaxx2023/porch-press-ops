@@ -46,4 +46,4 @@ World ARCHIVE PASS on `3d28ead` still stands (archives untouched since).
 
 - Sticky: `.current-question-bar` at `top:0` @ ≤844px; no fixture-banner sticky.
 - Portal interactive receipts used `?evidenceShot=` hooks (play defaults unchanged).
-- Do not treat `evidence/_harness/` or other tip folders as current receipts.
+- Do not treat local capture harness folders or other tip SHA folders as current receipts.
