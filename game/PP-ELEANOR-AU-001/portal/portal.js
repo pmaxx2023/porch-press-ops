@@ -418,6 +418,12 @@
         $("accession-input").value = "BAD-CODE-99";
         onValidate();
         $("locker").scrollIntoView();
+      } else if (shot === "valid") {
+        state.evidence_tokens = ["CIM-HART-1912-01"];
+        save();
+        renderTokens();
+        setStatus($("validate-status"), "ok", "Recorded CIM-HART-1912-01.");
+        $("locker").scrollIntoView();
       } else if (shot === "duplicate") {
         state.evidence_tokens = ["CIM-HART-1912-01"];
         save();
