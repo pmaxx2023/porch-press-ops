@@ -1,0 +1,4 @@
+interface:
+  display_name: "Porch Press Google Ads"
+  short_description: "Build buyer-intent Google Search campaigns"
+  default_prompt: "Use $run-porch-press-google-ads to design and verify a purchase-focused Google Search campaign for Porch Press."
