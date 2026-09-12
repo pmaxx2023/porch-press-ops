@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "case_id": "PP-ELEANOR-AU-001",
+  "packet_version": "public-batch-E0-E1-1.0",
+  "release_tiers": [
+    "E0",
+    "E1"
+  ],
+  "confidentiality": "PUBLIC_RELEASE_BATCH",
+  "global_rules": [
+    "Preserve every supplied word, date, accession code, and uncertainty label unless Owner_Bot approves a revision.",
+    "Catalog notes speak in the modern archive voice; transcriptions speak only from the record creator's date and knowledge.",
+    "Alt text describes the object and visible layout but does not perform the player's deduction.",
+    "A cropped image must link to its full record or contact sheet when the crop conceals relevant context.",
+    "Related artifact IDs become ordinary editorial citations only after both records are available in the release tier."
+  ],
+  "artifacts": [
+    {
+      "id": "A001",
+      "accession_code": "CIM-HART-1912-01",
+      "release_tier": "E0",
+      "surface": "Cincinnati Industrial Memory Archive",
+      "slug": "/hart-tool-pattern/eleanor-hart-first-disappearance-1912",
+      "record_title": "Research file: the first disappearance of Eleanor Mae Hart",
+      "record_date": "1912-06-18/1912-06-19",
+      "creator": "Cincinnati Industrial Memory Archive research staff",
+      "provenance": "Compiled from the Hart Tool & Pattern Works papers, Byrne family copies, and the existing Porch Press 1912 case edition.",
+      "catalog_note": "This research file summarizes a closed historical reconstruction. On 18 June 1912, Eleanor Hart was confined in the works' lower pattern store by her brother James Hart after she found records establishing that Frank Byrne was their father's eldest surviving son, Francis Hart. James sent a telegram intended to make Eleanor's absence appear voluntary. Eleanor was found the following morning, and the records she assembled restored Frank's place in the family and works history. The file is retained here because the language and method of that first disappearance recur in later Hart collections.",
+      "transcription": "CLOSED RESEARCH SUMMARY — Eleanor Mae Hart, born 4 October 1886. Missing interval: evening 18 June to morning 19 June 1912. Location recovered: lower pattern store, Hart Tool & Pattern Works. Principal false record: telegram presented as Eleanor's voluntary departure. Record outcome: Francis Hart, raised as Frank Byrne, identified as the son of Samuel Hart and Ellen Byrne Hart. Responsible party: James Hart. No claim in this summary concerns Eleanor's later life.",
+      "media_brief": "Reuse a spoiler-reviewed composite of the original 1912 case papers: factory ledger edge, telegram, and Eleanor's notebook. Do not reproduce the complete old solution page as the lead image.",
+      "alt_text": "Composite view of a 1912 factory ledger, telegram, and handwritten notebook from the Eleanor Hart research file.",
+      "related_artifact_ids": [
+        "A015"
+      ],
+      "record_claim_boundary": "A modern closed-case summary; it establishes the 1912 answer but makes no claim about 1948."
+    },
+    {
+      "id": "A002",
+      "accession_code": "OIM-HW-1946-07",
+      "release_tier": "E1",
+      "surface": "Ohio River Industrial Memory Project",
+      "slug": "/collections/hart-works/anniversary-board-portrait-1946",
+      "record_title": "Hart Works fiftieth-anniversary board portrait",
+      "record_date": "1946-05-02",
+      "creator": "Voss Commercial Studio",
+      "provenance": "Print donated with Henry Hart's office papers in 1974. A second crop appeared in the May 1946 employee circular with the same sitter order.",
+      "catalog_note": "Formal board-room portrait made for the works' fiftieth-anniversary circular. The typewritten identification on the reverse and the separately printed employee circular agree on the sitter order. This is the latest verified image of Eleanor Hart in the collection.",
+      "transcription": "Reverse, typewritten: ‘Hart Works — Fifty Years. Board room, 2 May 1946. Left to right: Robert S. Hart, managing president; Henry C. Hart, purchasing; Eleanor M. Hart, records and Byrne trust papers; Lillian Morey, secretary.’ Studio stamp: ‘Voss Commercial, neg. 46-118.’",
+      "media_brief": "Black-and-white 8×10 board-room portrait. Eleanor is 59, seated third from left, with an angular jaw, close-set eyes, silver hair waved above the ears, half-lens spectacles in her right hand, and a small crescent scar at the left temple. Preserve enough resolution for facial comparison. Produce a separately framed reverse image with the typewritten caption and studio stamp.",
+      "alt_text": "Four Hart Works board members pose around a table in a black-and-white 1946 studio photograph; the record includes a separately viewable typed reverse caption.",
+      "related_artifact_ids": [
+        "A003"
+      ],
+      "record_claim_boundary": "The sitter identification has two independent contemporary copies; the visual comparison remains the player's inference."
+    },
+    {
+      "id": "A003",
+      "accession_code": "BHR-PH-1951-17",
+      "release_tier": "E1",
+      "surface": "Bellwether Historical Register",
+      "slug": "/photographs/winter-gathering-woman-labeled-eleanor-hart",
+      "record_title": "Winter gathering portrait of a woman labeled ‘Eleanor Hart’",
+      "record_date": "1951-12-09",
+      "creator": "Joseph Kline, volunteer photographer",
+      "provenance": "Loose print from Director Ada Pike's desk files, transferred to the Bellwether register in 1957. The blue-pencil identification is not in Kline's hand and was added before the transfer date.",
+      "catalog_note": "The print shows a woman at Bellwether's 1951 winter gathering. A blue-pencil note on the reverse reads ‘Eleanor Hart — back for the winter benefit.’ Bellwether's 1948 chronology reports Hart missing three years earlier. The label is retained as a record claim, not a verified identification. The uncropped contact sheet is cataloged separately.",
+      "transcription": "Reverse, blue pencil: ‘Eleanor Hart — back for the winter benefit, 9 Dec. 1951.’ Lower edge, graphite: ‘J.K. 17b.’ No name appears on the image face.",
+      "media_brief": "Black-and-white candid crop of a woman in her early thirties standing near a decorated mantel. She has a softer jaw, wider-set eyes, dark waved hair, and no visible temple scar. A gloved hand rests on a traveling case whose lower edge has been cropped away. The reverse must be separately viewable. Do not put a solved identity in filename or metadata.",
+      "alt_text": "Cropped 1951 black-and-white photograph of a woman beside a decorated mantel, with a handwritten identification visible only on the separately shown reverse.",
+      "related_artifact_ids": [
+        "A002"
+      ],
+      "record_claim_boundary": "The page reports what the later label says and explicitly withholds archive verification of the woman's identity."
+    },
+    {
+      "id": "A004",
+      "accession_code": "RRG-1948-10-18-A",
+      "release_tier": "E1",
+      "surface": "River & Rail Gazette Archive",
+      "slug": "/1948/10/18/hart-heiress-reported-gone-from-bellwether",
+      "record_title": "Hart heiress reported gone from Bellwether House",
+      "record_date": "1948-10-18",
+      "creator": "River & Rail Gazette city desk",
+      "provenance": "Digitized from volume 62, number 244, page 3. This is a newspaper account assembled from named and unnamed witnesses, not an official finding.",
+      "catalog_note": "Contemporary first report of Eleanor Hart's disappearance. Later researchers should distinguish the article's declarative headline from the narrower observations attributed in the body.",
+      "transcription": "HART HEIRESS REPORTED GONE FROM BELLWETHER HOUSE\n\nMiss Eleanor Mae Hart, 62, records trustee for the Hart Works interests, was reported gone yesterday after a woman in Miss Hart's navy coat left Bellwether House shortly before six o'clock. A reservation issued in Hart's name was used aboard the Midland & Western evening train for Chicago.\n\nA house employee said the departing passenger wore a close veil and entered a hired motor at the service drive. A railway porter, reached after midnight, confirmed serving a passenger traveling on the Hart reservation.\n\nHenry Hart received a telegram bearing his sister's initial: ‘I have gone where the Hart name cannot reach me. Do not bring me back. E.’\n\nRobert S. Hart, managing president of Hart Works, said the family had no reason to suspect violence and believed his aunt had left voluntarily after strain connected with family trust records. Bellwether director Ada Pike declined to identify residents or discuss the house's internal register. No witness quoted by the Gazette said that he or she saw Miss Hart's uncovered face during the departure.",
+      "media_brief": "A legible two-column newspaper scan with headline, date, page number, and a small exterior photograph of Bellwether House. Supply HTML transcription alongside the scan.",
+      "alt_text": "Page-three newspaper clipping from 18 October 1948 reporting Eleanor Hart's disappearance from Bellwether House.",
+      "related_artifact_ids": [],
+      "record_claim_boundary": "The headline and Robert's statement are claims; the coat, veil, motor, reservation, porter service, and telegram are attributed observations."
+    },
+    {
+      "id": "A015",
+      "accession_code": "CIM-EH-1912-NB",
+      "release_tier": "E0",
+      "surface": "Cincinnati Industrial Memory Archive",
+      "slug": "/hart-tool-pattern/eleanor-hart-notebook-june-1912",
+      "record_title": "Eleanor Hart notebook leaf concerning Francis Hart",
+      "record_date": "1912-06-17",
+      "creator": "Eleanor Mae Hart",
+      "provenance": "Notebook preserved with the 1912 Hart case papers and authenticated by continuous family custody plus comparison with signed Hart Works correspondence.",
+      "catalog_note": "The leaf records Eleanor's effort to connect Francis Hart with Frank Byrne. It is presented both as a source in the first case and as an authenticated sample of Eleanor's handwriting and phrasing.",
+      "transcription": "17 June — Mr. Kessler remembers Francis being called Frank Byrne after Ellen took rooms near the river. James says the names make it impossible. They make it necessary. A name ought not to be a thing a family can take away. Find Ellen's marriage line before James finds the old ledger.",
+      "media_brief": "Reuse or reconstruct a visually compatible notebook leaf from the 1912 edition only after checking the existing page. The key sentence, letter forms, and small comma-shaped ink blot after ‘name’ must be readable at original size.",
+      "alt_text": "Dated 1912 notebook leaf in Eleanor Hart's handwriting discussing Francis Hart and Frank Byrne.",
+      "related_artifact_ids": [
+        "A001"
+      ],
+      "record_claim_boundary": "Authenticated Eleanor writing; any later-writer comparison is separate analysis."
+    }
+  ]
+}
