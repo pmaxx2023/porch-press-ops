@@ -6,9 +6,10 @@ This backlog is spoiler-safe. Owner_Bot keeps canon, deduction logic, solution c
 
 | Order | Work package | Owner | State | Output required before next gate |
 | --- | --- | --- | --- | --- |
-| 0 | `PP-ELEANOR-HOLD-001` — reversible current-listing hold | Grok / Shopify-capable bot | Authorized | Before/after Admin and public-store receipts; assets and delivery preserved |
-| 1 | `PP-ELEANOR-AU-001A` — fixture architecture spike | Grok / implementation bot | Authorized | Runnable unpublished slice, commit, preview evidence, leakage scan |
-| 2 | `PP-ELEANOR-AUTH-001` — complete public manuscripts | Owner_Bot | Complete; held privately | Approved artifact packets, episode scripts, prompt cards, hints, ending package |
+| 0 | `PP-ELEANOR-HOLD-001` — reversible current-listing hold | Grok / Shopify-capable bot | Complete; accepted | Before/after Admin and public-store receipts; assets and delivery preserved |
+| 1 | `PP-ELEANOR-AU-001A` — fixture architecture spike | Grok / implementation bot | Complete; accepted and merged at `060cc8d` | Runnable unpublished slice, commit, preview evidence, leakage scan |
+| 2 | `PP-ELEANOR-AUTH-001` — complete public manuscripts | Owner_Bot | Complete privately; E0–E1 public batch released | Approved artifact packets, episode scripts, prompt cards, hints, ending package |
+| 2A | `PP-ELEANOR-E01-002A` — E0–E1 implementation slice | E_Build / E_World / E_Portal; Owner_Bot judges | Authorized | Unpublished real-content slice, exact-SHA audit, no deployment |
 | 3 | `PP-ELEANOR-DESIGN-002` — experience and archive design system | Grok / design implementation bot | Queued | Approved responsive comps using non-spoiler content |
 | 4 | `PP-ELEANOR-WORLD-003` — controlled archive implementation | Grok / implementation bot | Queued | All approved archive pages, links, media, sitemaps, and provenance routes |
 | 5 | `PP-ELEANOR-PORTAL-004` — complete portal/showrunner | Grok / implementation bot | Queued | Episodes, locker, claim board, hints, save/export, accessibility |
@@ -18,7 +19,7 @@ This backlog is spoiler-safe. Owner_Bot keeps canon, deduction logic, solution c
 | 9 | `PP-ELEANOR-COMMERCE-008` — package and storefront candidate | Owner_Bot authors; Grok implements | Queued | Correct files, listing, disclosure, access path, cart/checkout test |
 | 10 | `PP-ELEANOR-RELEASE-009` — controlled launch | Owner_Bot approves; Grok executes | Queued | Live URL/customer path receipts; monitoring; rollback state |
 
-Only work packages 0 and 1 are presently executable by Grok.
+Only `PP-ELEANOR-E01-002A` is presently executable by Grok. It authorizes E0–E1 only; packages 3–10 and later episodes remain queued.
 
 ## Repository and secrecy model
 
@@ -68,6 +69,18 @@ Owner_Bot produces and internally validates:
 - prohibited-term and forbidden-fact lists per release tier.
 
 Grok must receive content as locked fields, not a prose invitation to “make it dramatic.”
+
+### 2A — E0–E1 implementation slice
+
+Use [`GROK_JOB_E01_002A.md`](GROK_JOB_E01_002A.md). Execute only from the exact job-card commit named in Owner_Bot's issue #8 authorization.
+
+Current pins:
+
+- accepted Gate A merge: `060cc8dec3794dfd5fadd1b72674d50e6629ab08`;
+- locked E0–E1 public packet: `818d907f80378303b70dbb001c714a991f68f5ae`;
+- authorized job card: `703ce21f51bd3a827d31a744d8dc1684cd77d146`.
+
+This slice combines only the necessary bounded portions of experience design, archive implementation, and portal/showrunner work for E0–E1. Keep the implementation PR Draft. No deployment, indexing, Shopify/DNS change, later episode, sealed ending, spend, or publication is authorized.
 
 ### 3 — Experience design
 
