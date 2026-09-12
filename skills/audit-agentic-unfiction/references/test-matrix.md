@@ -58,6 +58,9 @@
 
 - Desktop and true mobile viewport review.
 - Screenshots name the exact candidate and use current, not pre-revision, source.
+- Evidence distinguishes the capture-source SHA from the later evidence-tip SHA.
+- Current receipt paths include the capture-source SHA prefix; the manifest records that SHA and viewport.
+- A rename, extension change, or container conversion of an old image is not accepted as a recapture.
 - Evidence-manifest paths resolve; placeholders are replaced or explicitly marked `not captured / source-tested`.
 - Image extensions match magic bytes and linked files render at the claimed dimensions.
 - Every archive or portal surface used for a visual PASS has a current-candidate receipt; obsolete images are regression context only.
@@ -67,6 +70,13 @@
 - Evidence images readable at intended zoom.
 - Transcript fidelity and appropriate alt text.
 - Distinct archive identities without sacrificing usability.
+
+## Authorization and side effects
+
+- Full candidate diff matches the exact authorized path and behavior scope.
+- No unrequested helper, executable, deployment configuration, dependency, content, or live-system mutation.
+- Local preview tooling fails safely when its port is occupied and never kills or replaces an existing listener.
+- Evidence-only repairs do not change functional source.
 
 ## End-to-end
 

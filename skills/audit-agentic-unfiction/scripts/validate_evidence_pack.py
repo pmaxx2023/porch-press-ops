@@ -72,6 +72,10 @@ def main() -> int:
     parser.add_argument("--root", required=True, type=Path, help="Candidate or experiment root")
     parser.add_argument("--notes", type=Path, help="Evidence manifest/notes Markdown")
     parser.add_argument(
+        "--capture-source-sha",
+        help="Exact functional-source Git SHA used to capture required-current receipts",
+    )
+    parser.add_argument(
         "--required-current",
         action="append",
         default=[],
@@ -83,6 +87,10 @@ def main() -> int:
     errors: list[str] = []
     image_count = 0
     referenced_count = 0
+    capture_sha = (args.capture_source_sha or "").strip().lower()
+
+    if capture_sha and not re.fullmatch(r"[0-9a-f]{7,40}", capture_sha):
+        errors.append("capture-source SHA must be 7 to 40 lowercase hexadecimal characters")
 
     if not root.is_dir():
         print(f"HOLD: evidence root not found: {root}", file=sys.stderr)
@@ -107,6 +115,10 @@ def main() -> int:
             continue
         if "pre-revision" in {part.lower() for part in candidate.parts}:
             errors.append(f"required-current path is pre-revision evidence: {value}")
+        if capture_sha and capture_sha[:7] not in value.lower():
+            errors.append(
+                f"required-current path does not name capture-source {capture_sha[:7]}: {value}"
+            )
         if not candidate.is_file():
             errors.append(f"required-current evidence missing: {value}")
 
@@ -118,6 +130,8 @@ def main() -> int:
             text = notes.read_text(encoding="utf-8")
             if "_(parent)_" in text:
                 errors.append("evidence notes contain _(parent)_ placeholder")
+            if capture_sha and capture_sha not in text.lower() and capture_sha[:7] not in text.lower():
+                errors.append(f"evidence notes do not name capture-source {capture_sha[:7]}")
             for value in note_targets(text):
                 target = resolve_local(root, notes, value)
                 if target is None:
@@ -142,6 +156,8 @@ def main() -> int:
     print(f"images={image_count}")
     print(f"referenced_paths={referenced_count}")
     print(f"required_current={len(args.required_current)}")
+    if capture_sha:
+        print(f"capture_source={capture_sha}")
     return 0
 
 

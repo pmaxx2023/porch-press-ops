@@ -88,10 +88,18 @@ Treat any client-delivered answer as public even if it is hidden, encoded, minif
 
 Treat the QA packet as versioned evidence, not decoration. Every claimed screenshot must represent the exact candidate under review. Pre-revision images may document a regression but cannot prove the repaired state.
 
+Record two version pins when evidence is committed after the implementation:
+
+- **capture-source SHA** — the exact functional source rendered or exercised;
+- **evidence-tip SHA** — the later commit containing the receipts and manifest.
+
+The manifest must say which pin each receipt proves. Renaming an old file or converting its image container does not make it a current capture. When provenance is uncertain, compare it with the acknowledged earlier image; identical decoded pixels are evidence of reuse, not recapture.
+
 Require:
 
 - exact repository-relative paths instead of placeholders;
 - a current-candidate image for every surface used to claim visual acceptance;
+- the exact capture-source SHA beside current screenshot paths and viewport dimensions;
 - viewport dimensions where responsive behavior is claimed;
 - file extensions that match image magic bytes;
 - working links at the named commit;
@@ -104,11 +112,14 @@ When an evidence directory is available, run:
 python3 scripts/validate_evidence_pack.py \
   --root /path/to/candidate \
   --notes /path/to/candidate/EVIDENCE_NOTES.md \
-  --required-current evidence/final/mobile-390.png \
-  --required-current evidence/final/archive-a.png
+  --capture-source-sha 0123456789abcdef0123456789abcdef01234567 \
+  --required-current evidence/0123456/mobile-390.png \
+  --required-current evidence/0123456/archive-a.png
 ```
 
-The script checks placeholders, referenced local paths, required-current placement, and image extension/magic consistency. It does not decide whether an image visually proves the claim; inspect each receipt.
+With `--capture-source-sha`, each required-current path must include that SHA's seven-character prefix, and the notes must name the SHA. The script also checks placeholders, referenced local paths, required-current placement, and image extension/magic consistency. It does not decide whether an image visually proves the claim; inspect each receipt.
+
+Before judging a candidate, compare its complete file diff with the authorized job scope. An unexpected helper, executable, deployment file, network call, process action, content file, or live-system change is a HOLD even when the requested files pass. A local preview helper must report an occupied port and stop; it must never terminate or replace an existing listener.
 
 ## Release decision
 
