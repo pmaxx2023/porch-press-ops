@@ -1,0 +1,165 @@
+{% comment %} PP-ROSCOE-FOLDER-DESIGN-001 — navy folder free investigation {% endcomment %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+{{ 'pp-roscoe-sample.css' | asset_url | stylesheet_tag }}
+{{ 'pp-roscoe-case-room.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign pp_case_room_enabled = true
+  assign pp_case_room_url = 'https://www.reddit.com/r/printandplay/comments/1wbl9l6/playtesters_wanted_a_documentbased_detective/'
+-%}
+<div id="pp-folder-experience">
+<div id="pp-folder-closed" class="pp-stage" data-view="folder-closed">
+  <div class="pp-stage-brand"><strong>porch press</strong><span>free investigation</span></div>
+  <div class="pp-closed-layout">
+    <div class="pp-closed-copy">
+      <p class="pp-eyebrow">Briarport, Maine · 1937</p>
+      <h1>Roscoe’s Grave</h1>
+      <p class="pp-lead">His name is on the stone. Someone else is in the book.</p>
+      <p class="pp-premise">Ada wants her mother’s name added beside her father’s. Then the cemetery records stop the mason’s chisel.</p>
+      <div class="pp-closed-actions">
+        <button class="pp-btn pp-btn-primary" type="button" data-action="open-folder">Open the folder</button>
+        <button class="pp-btn pp-btn-secondary" type="button" data-action="story-from-closed">Read Ada’s story</button>
+      </div>
+      <p class="pp-support">Free to play. No download or sign-up.</p>
+      <div class="pp-closed-actions" style="margin-top:8px">
+        <button class="pp-btn-ghost" type="button" data-action="skip-animation">Skip animation</button>
+      </div>
+    </div>
+    <div class="pp-folder-stage" aria-hidden="false">
+      <div class="pp-folder" id="pp-folder-object" aria-label="Archival case folder labeled Roscoe’s Grave">
+        <div class="pp-folder-base">
+          <div class="pp-folder-spine"></div>
+          <div class="pp-folder-edge"></div>
+          <div class="pp-folder-papers" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="pp-folder-wear"></div>
+        </div>
+        <div class="pp-folder-cover">
+          <div class="pp-folder-tab"></div>
+          <div class="pp-folder-label">
+            <p class="pp-label-file">Case file</p>
+            <h2 class="pp-label-title">Roscoe’s Grave</h2>
+            <div class="pp-label-rule"></div>
+            <p class="pp-label-meta">Briarport, Maine · 1937</p>
+          </div>
+          <div class="pp-folder-wear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pp-roscoe-sample" hidden data-view="investigation" data-assets-url="{{ 'pp-roscoe-assets.json' | asset_url }}">
+  <header class="pp-top"><span class="pp-brand">porch press</span><span class="pp-eyebrow">a free investigation</span></header>
+  <main class="pp-main">
+    <section data-screen="desk">
+      <div class="pp-desk-back"><button class="pp-link" type="button" data-action="back-folder">← Back to the folder</button></div>
+      <div class="pp-hero">
+        <div>
+          <div class="pp-eyebrow">Briarport, Maine · 1937</div>
+          <h1>Roscoe’s<br>Grave</h1>
+          <p class="pp-lead">His name is on the stone.<br>Someone else is in the book.</p>
+          <p>Ada wants her mother’s name added beside her father’s. Then the cemetery records stop the mason’s chisel.</p>
+          <div class="pp-actions"><button class="pp-primary" type="button" data-action="story">Read Ada’s story</button></div>
+          <div class="pp-read-note">Eight records. One family secret.<br>Read, compare, and reach your own answer.</div>
+        </div>
+        <div>
+          <div class="pp-open-folder">
+            <div class="pp-open-label-chip">Roscoe’s Grave</div>
+            <div class="pp-spread" aria-label="Open a page from the case">
+              <button type="button" data-action="story" aria-label="Open Ada’s story"><img data-asset="cover" alt="Roscoe’s Grave cover: a weathered stone above a misty coast"></button>
+              <button type="button" data-record="R01" data-badge="R01 · mason’s order" aria-label="Read the mason’s work order"><img data-asset="R01" alt="Actual PDF page: the mason’s work order"></button>
+              <button type="button" data-record="R02" data-badge="R02 · cemetery index" aria-label="Read the cemetery working index"><img data-asset="R02" alt="Actual PDF page: the cemetery working index"></button>
+            </div>
+            <p class="pp-caption">Open any paper to read it.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pp-section-head"><h2>The evidence is on the table.</h2><span class="pp-eyebrow" data-read-count>0 of 8 opened</span></div>
+      {%- if pp_case_room_enabled and pp_case_room_url != blank -%}
+        <section class="pp-case-room" aria-labelledby="pp-case-room-heading">
+          <p class="pp-case-room__eyebrow">THE ROSCOE CASE ROOM IS OPEN</p>
+          <h2 id="pp-case-room-heading">Solve beside other players.</h2>
+          <p>Read the eight records here. Then bring your finding to the live case thread. A Porch Press case host will organize the competing theories and answer spoiler-safe evidence questions.</p>
+          <a class="pp-primary pp-case-room__button" href="{{ pp_case_room_url }}" target="_blank" rel="noopener noreferrer">Join the live case thread</a>
+          <p class="pp-case-room__support">Reddit account required to comment. Reading the discussion does not require a Porch Press account.</p>
+        </section>
+      {%- endif -%}
+      <div class="pp-records" data-record-grid></div>
+      <div class="pp-bottom"><p>Who is recorded beneath Roscoe’s stone—and why is his name still there?</p><button class="pp-primary" type="button" data-action="answer">Make your finding →</button></div>
+      <div class="pp-actions"><button class="pp-link" type="button" data-action="hint">Need a first clue?</button></div>
+      <div class="pp-hint" data-hint hidden aria-live="polite"></div>
+    </section>
+    <section data-screen="reader" hidden>
+      <div class="pp-reader-nav"><button class="pp-link" type="button" data-action="desk">← Back to the folder</button><span class="pp-eyebrow" data-reader-label></span></div>
+      <h2 data-reader-title></h2>
+      <div class="pp-toggle" aria-label="Document view"><button class="pp-secondary" type="button" data-mode="page" aria-pressed="true">Original PDF page</button><button class="pp-secondary" type="button" data-mode="text" aria-pressed="false">Readable text</button></div>
+      <div data-reader-page class="pp-image-page"></div>
+      <div data-reader-text class="pp-paper" hidden></div>
+      <div class="pp-reader-nav"><button class="pp-secondary" type="button" data-action="previous">← Previous paper</button><button class="pp-secondary" type="button" data-action="next">Next paper →</button></div>
+    </section>
+    <section data-screen="story" hidden>
+      <div class="pp-reader-nav"><button class="pp-link" type="button" data-action="desk">← Back to the folder</button><span class="pp-eyebrow">from the player PDF</span></div>
+      <div class="pp-paper"><div class="pp-eyebrow">The story begins</div><h2>Before the chisel</h2><div data-opening></div></div>
+      <div class="pp-actions"><button class="pp-primary" type="button" data-record="R01">Open the mason’s order →</button><button class="pp-secondary" type="button" data-action="story-page">See the original story page</button></div>
+      <div class="pp-paper"><h3>Your commission</h3><p>Identify the person whose burial is documented in G17, establish their relationship to Roscoe, and explain the name on the stone.</p><p data-bounds></p><p>Start with the work order and cemetery index. Compare the references, names, and instructions. Everything needed for this short investigation is on the table.</p></div>
+    </section>
+    <section data-screen="answer" hidden>
+      <div class="pp-reader-nav"><button class="pp-link" type="button" data-action="desk">← Check the evidence</button><span class="pp-eyebrow">Your finding</span></div>
+      <div class="pp-answer"><h2>What should Ada believe?</h2><p>Choose the explanation the records support. You can return to any document before committing.</p>
+        <form data-answer-form>
+          <fieldset><legend>1. Whose burial is documented in G17?</legend>
+            <label class="pp-choice"><input type="radio" name="occupant" value="roscoe">Roscoe Hale</label>
+            <label class="pp-choice"><input type="radio" name="occupant" value="miriam">Miriam Cross</label>
+            <label class="pp-choice"><input type="radio" name="occupant" value="mabel">Mabel Cross</label>
+          </fieldset>
+          <fieldset><legend>2. Who was that person to Roscoe?</legend>
+            <label class="pp-choice"><input type="radio" name="relationship" value="wife">His wife</label>
+            <label class="pp-choice"><input type="radio" name="relationship" value="stranger">Someone unrelated to him</label>
+            <label class="pp-choice"><input type="radio" name="relationship" value="mother">His mother</label>
+          </fieldset>
+          <fieldset><legend>3. Why does the stone bear Roscoe’s name?</legend>
+            <label class="pp-choice"><input type="radio" name="explanation" value="swap">The undertaker exchanged two coffins.</label>
+            <label class="pp-choice"><input type="radio" name="explanation" value="memorial">It began as a memorial without his remains. A later burial was authorized while his name was retained.</label>
+            <label class="pp-choice"><input type="radio" name="explanation" value="error">The cemetery accidentally entered the wrong name in its burial book.</label>
+          </fieldset>
+          <div data-feedback class="pp-feedback" role="status" hidden></div>
+          <div class="pp-actions"><button class="pp-primary" type="submit">Check my finding</button><button class="pp-secondary" type="button" data-action="answer-hint">Give me a hint</button></div>
+        </form>
+        <div data-answer-hint class="pp-hint" aria-live="polite" hidden></div>
+        <div class="pp-actions"><button class="pp-link" type="button" data-action="reveal-gate">I’m ready to read the solution</button></div>
+        <div data-reveal-gate class="pp-feedback" hidden><p>This opens the complete answer and ending.</p><button class="pp-primary" type="button" data-action="reveal">Open the solution</button></div>
+        {%- if pp_case_room_enabled and pp_case_room_url != blank -%}
+          <aside class="pp-case-room pp-case-room--compact" aria-labelledby="pp-case-room-finding-heading">
+            <p class="pp-case-room__eyebrow">COMPARE YOUR FINDING</p>
+            <h2 id="pp-case-room-finding-heading">What do the records prove?</h2>
+            <p>Bring your theory to the live thread before you open the solution. Name the two records carrying the most weight.</p>
+            <a class="pp-primary pp-case-room__button" href="{{ pp_case_room_url }}" target="_blank" rel="noopener noreferrer">Join the live case thread</a>
+          </aside>
+        {%- endif -%}
+      </div>
+    </section>
+    <section data-screen="solution" hidden>
+      <div class="pp-reader-nav"><button class="pp-link" type="button" data-action="desk">← Return to the case</button><span class="pp-eyebrow" data-solution-status>The solution</span></div>
+      <div class="pp-paper pp-conclusion"><div class="pp-eyebrow">The person beneath the memorial</div><h2>It was his mother.</h2><p>Miriam Cross is the documented occupant of G17. Roscoe’s name was a memorial. Her burial came later, with Edith’s permission.</p>
+        <ol>
+          <li><strong>Follow the delivery.</strong> The interment entry R04 gives I-431, account U-572, and seal S44. R05 connects all three to Miriam Cross, delivered to G17. Mabel’s separate account is U-573, seal S45, at North Field B6.</li>
+          <li><strong>Connect the family.</strong> Roscoe’s marriage record, R13, names his mother as “Miriam Cross, formerly Hale, born Dale.”</li>
+          <li><strong>Separate a memorial from a burial.</strong> R07 orders a stone and foundation, with no remains delivered. R08 records no identifiable human remains recovered from the loss of the Mercy.</li>
+          <li><strong>Read the request.</strong> In R14, Miriam asks to be buried in G17 while Roscoe’s name stays on the stone. Edith’s permission authorizes that burial under U-572. R02 distinguishes the stone reference S-64 from interment I-431.</li>
+        </ol>
+        <blockquote>“He should not lose his place in the world because the sea did not send him home.”</blockquote>
+        <p class="pp-read-note">Miriam’s letter to Edith · R14</p>
+        <h3>A name preserved. Another overlooked.</h3><p>The records support an authorized burial beneath an existing memorial. They do not require a coffin swap or a false burial entry. They also do not establish Roscoe’s exact fate, the location of his remains, or why Ada was not told.</p>
+        <button class="pp-secondary" type="button" data-action="aftermath">Read Ada’s ending →</button>
+      </div>
+      <div data-aftermath class="pp-paper" hidden><div class="pp-eyebrow">From the sealed solution PDF</div><h2>Enough room for both</h2><div data-aftermath-text></div></div>
+      <div class="pp-paper"><h2>Want a case no one in the room has solved for you?</h2><p>Baby in a Basket is a complete printable investigation with 20 fictional exhibits, six deductions, progressive hints, and a sealed solution. Play it solo or compare findings with someone else.</p><a class="pp-primary" href="https://porchpress.store/products/baby-in-a-basket?utm_source=roscoe_case&amp;utm_medium=community&amp;utm_campaign=pp_roscoe_collab_001&amp;utm_content=case_complete" target="_blank" rel="noopener noreferrer">Open Baby in a Basket — $19.99</a><p class="pp-read-note">Digital download. Printable PDFs are emailed after checkout. Nothing ships.</p></div>
+    </section>
+  </main>
+  <footer class="pp-footer">A complete short investigation adapted from Roscoe’s Grave, Narrative Edition 2.0. Original case pages; fictional people, places, and records. No download or sign-up required.</footer>
+
+  
+</div>
+</div>
+<script src="{{ 'pp-roscoe-sample.js' | asset_url }}" defer></script>
