@@ -414,26 +414,38 @@
       var params = new URLSearchParams(location.search || "");
       var shot = params.get("evidenceShot");
       if (!shot) return;
+      function isolate(sel) {
+        var keep = document.querySelector(sel);
+        Array.prototype.forEach.call(document.querySelectorAll(".portal-wrap > *, .dev-banner, .portal-nav, .current-question-bar"), function (el) {
+          if (keep && (el === keep || keep.contains(el))) return;
+          if (el.id === "main" || el.tagName === "MAIN") return;
+          el.style.display = "none";
+        });
+        if (keep) {
+          keep.style.display = "";
+          keep.scrollIntoView({ block: "start" });
+        }
+      }
       if (shot === "invalid") {
+        isolate("#locker");
         $("accession-input").value = "BAD-CODE-99";
         onValidate();
-        $("locker").scrollIntoView();
       } else if (shot === "valid") {
+        isolate("#locker");
         state.evidence_tokens = ["CIM-HART-1912-01"];
         save();
         renderTokens();
         setStatus($("validate-status"), "ok", "Recorded CIM-HART-1912-01.");
-        $("locker").scrollIntoView();
       } else if (shot === "duplicate") {
+        isolate("#locker");
         state.evidence_tokens = ["CIM-HART-1912-01"];
         save();
         renderTokens();
         $("accession-input").value = "CIM-HART-1912-01";
         onValidate();
-        $("locker").scrollIntoView();
       } else if (shot === "focus") {
+        isolate("#locker");
         $("validate-btn").focus();
-        $("locker").scrollIntoView();
       } else if (shot === "comparison" || shot === "trail") {
         state.active_episode = "E1";
         state.episode_opened.E1 = true;
@@ -452,12 +464,13 @@
         updateQuestion();
         pickScene();
         renderTokens();
-        $("scene").scrollIntoView();
+        isolate("#scene");
       } else if (shot === "sticky") {
         state.active_episode = "E1";
         state.episode_opened.E1 = true;
         save();
         updateQuestion();
+        Array.prototype.forEach.call(document.querySelectorAll(".portal-wrap"), function (el) { el.style.paddingTop = "0"; });
         window.scrollTo(0, 0);
       }
     } catch (e) {
