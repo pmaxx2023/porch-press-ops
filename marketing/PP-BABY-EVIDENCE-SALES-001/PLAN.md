@@ -2,7 +2,7 @@
 
 Owner_Bot — Porch Press (ChatGPT)  
 Prepared: September 12, 2026  
-State: AUTHORIZED SEPTEMBER 12, 2026 — CONDITIONAL PAUSE, BUILD, AND LAUNCH RELEASE
+State: AUTHORIZED SEPTEMBER 12, 2026 — AMENDED CONDITIONAL PAUSE, BUILD, AND LAUNCH RELEASE
 
 ## Commercial verdict
 
@@ -22,9 +22,9 @@ This is a completely new ad set:
 
 Commercial question:
 
-Can a cold U.S. prospect who sees a real family-record contradiction or the substance of the printable case produce at least one attributable, non-test purchase of Baby in a Basket at $19.99, through the existing campaign page, within only the unspent portion of the current $30 Meta ceiling?
+Can cold U.S. prospects who see a real family-record contradiction or the substance of the printable case produce attributable, paid, non-test purchases of Baby in a Basket at $19.99, through the existing campaign page, within only the unspent portion of the current $30 Meta ceiling?
 
-Primary business outcome: one attributable, paid, non-test Baby in a Basket order at $19.99.
+Primary campaign outcome: attributable, paid, non-test Baby in a Basket orders at $19.99. PM's September 12 operating goal is two completed, paid, non-test, non-owner/agent/QA orders by 11:59 PM Central. That goal is a reporting target, not a purchase-count stop condition.
 
 Optimization event: the deepest verified event that can deliver, in this fixed order:
 
@@ -73,6 +73,8 @@ Do not describe current traffic as fake without bot or reconciliation evidence. 
 | Budget | Fixed lifetime cap equal to $30 minus actual PP-BABY-LPV-030-001 spend at pause | If the remainder is below the platform minimum or cannot be hard-capped, HOLD |
 
 Illustrative budget arithmetic only: the last receipt would imply $21.98 remaining. Because the old campaign may still spend, Grok must use actual filtered spend at the moment of an authorized pause. No separate or additional budget is included in this plan.
+
+There is no purchase-count stop trigger. Once activated, the campaign continues within the existing lifetime cap until the fixed platform end, verified budget exhaustion, or a claim, path, event, overlap, or spend-control defect requires HOLD. A purchase is an outcome and reconciliation checkpoint, not an automatic pause.
 
 ## Treatment held constant
 
@@ -241,7 +243,8 @@ Report the primary business outcome first, then mechanism diagnostics.
 
 | Observed result | Label / next diagnosis |
 | --- | --- |
-| At least one attributable paid $19.99 order | Directional positive; pause or hold and review contribution before any scale |
+| At least one attributable paid $19.99 order | Buyer signal; reconcile attribution and continue within the existing cap and fixed end. Do not stop solely because a purchase occurs. |
+| Two qualifying paid store orders on September 12 | Today's operating goal met; report it immediately. Campaign timing remains governed by its existing cap, fixed end, and defect gates. |
 | Add-to-cart or checkout, no order | Downstream signal; inspect value, trust, delivery, cart, and checkout before changing hook |
 | Impressions, little outbound response | Inspect buyer relevance and ad comprehension |
 | Outbound clicks, weak human arrivals | Inspect redirect, load, tracking, and traffic quality |
@@ -255,13 +258,13 @@ No result automatically authorizes an extension, new audience, discount, price c
 
 Owner_Bot authored and approves the exact public copy in this plan. Grok may create the new visual compositions, build the unpublished Meta objects, capture previews, and operate an explicitly released campaign. Grok may not rewrite the copy, substitute assets, change price or destination, add ads, change optimization, broaden targeting, overlap the old campaign, or increase spend.
 
-This file now records PM's conditional execution release. The corresponding issue #6 release comment dispatches Grok. This authority covers pausing the old Meta campaign, building the approved new assets and objects, and launching after every gate passes. It does not authorize a Shopify hero change, price/offer change, new tools, additional ads, or any spend beyond the verified remainder.
+This file now records PM's amended conditional execution release. The corresponding issue #6 correction dispatches Grok. This authority covers pausing the old Meta campaign, building the approved new assets and objects, and launching at the earliest moment every gate passes. Eleanor hero publication is a separate gate-based release and must not change this campaign's Baby destination. This campaign authority does not authorize a price/offer change, new tools, additional ads, or any spend beyond the verified remainder.
 
 ## Release decision — approved
 
 PM approved using only the unspent remainder of the existing $30 Meta ceiling on September 12, 2026. Grok is authorized to pause PP-BABY-LPV-030-001, capture its actual settled/filtered spend, and give the replacement a lifetime cap of $30 minus verified spend already incurred, allowing for any applicable fees or reporting lag.
 
-Grok may launch the exact replacement after every preflight gate passes. If the commerce event cannot be verified, the remainder cannot be hard-capped, the buyer path fails, or another campaign can still spend, the required result is HOLD with $0 additional spend. No separate new budget is authorized.
+Grok may launch the exact replacement at the earliest moment every preflight gate passes; there is no arbitrary clock delay and no purchase-count stop trigger. If the commerce event cannot be verified, the remainder cannot be hard-capped, the buyer path fails, or another campaign can still spend, the required result is HOLD with $0 additional spend. No separate new budget is authorized.
 
 ## Current official platform references
 
