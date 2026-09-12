@@ -2,22 +2,22 @@
 
 ## Active checkpoint — September 12, 2026
 
-**Current decision:** repair and prove the live Baby purchase path before releasing more traffic; then run one authentic, zero-new-spend Roscoe collaborative-play pilot. This checkpoint supersedes older “pending” descriptions where later receipts or live observation conflict.
+**Current decision:** the live Baby purchase path is verified; next verify control of the exact Reddit thread, then implement and run one authentic, zero-new-spend Roscoe collaborative-play pilot. This checkpoint supersedes older “pending” descriptions where later receipts or live observation conflict.
 
 ### Confirmed current state
 
 - Shopify has eight active mystery products, each currently listed at **$19.99**. Baby in a Basket remains the paid hero. The ungated Roscoe's Grave browser investigation remains live at [the free investigation](https://porchpress.store/pages/free-investigation).
 - Store evidence for September 8–12 shows one paid order: **$9.99 on September 8**. It does not validate the current $19.99 offer. Later traffic has not produced a confirmed sale.
 - Existing Meta experiment `PP-BABY-LPV-030-001` has a **$30 lifetime ceiling**, LPV optimization, and reported end of September 13 at 9:59 PM PDT. Keep it separate from every Reddit/community result; do not extend or compensate it.
-- On September 12, Owner_Bot inspected both live `/cart/add` forms on [the campaign landing page](https://porchpress.store/pages/genealogy-mystery-case). The buttons displayed Baby and $19.99, but the required hidden values—including variant ID and quantity—were empty. Treat all pre-repair purchase-funnel data from that landing page as invalid measurement.
-- Owner_Bot dispatched `PP-LP-FORM-HOTFIX-002` in [issue #6](https://github.com/pmaxx2023/porch-press-ops/issues/6#issuecomment-5645952748): pause the same Meta campaign, find the regression, repair both forms with Baby variant `52494545486122`, verify a real clean-session cart and checkout, and resume only after a pass. **Dispatch is confirmed; pause and repair completion are not yet confirmed.**
+- On September 12, browser DOM inspection appeared to show empty hidden inputs on [the campaign landing page](https://porchpress.store/pages/genealogy-mystery-case), but actual public submissions proved the inspection layer had redacted form values. Both top and bottom CTAs added Baby variant `52494545486122` at **$19.99**, retained the tracked line behavior, and entered Porch Press checkout at the correct total. No order or payment was submitted.
+- `PP-LP-FORM-HOTFIX-002` is closed as **FORM PATH VERIFIED — NO SHOPIFY CODE CHANGE REQUIRED** in [issue #6](https://github.com/pmaxx2023/porch-press-ops/issues/6#issuecomment-5646063531). The prior pause request is cancelled. Do not classify earlier traffic as invalid on the basis of the redacted inspection.
 - A live r/printandplay candidate thread has at least fourteen distinct public expressions of interest but no visible completed-play theories. Account control is unverified. Do not edit, reply, DM, or represent the thread as Porch Press until Grok proves control.
 
 ### One queued experiment
 
 `PP-ROSCOE-COLLAB-001` is the only queued next experiment: [issue #7](https://github.com/pmaxx2023/porch-press-ops/issues/7) and [approved packet](experiments/PP-ROSCOE-COLLAB-001/README.md).
 
-- State: **BLOCKED** until the buy-path hotfix is green.
+- State: **PURCHASE-PATH GATE GREEN; BLOCKED ONLY ON VERIFIED REDDIT ACCOUNT CONTROL/PERMISSION BEFORE PUBLICATION.**
 - Goal: convert real playtester interest into observable case work, authentic theory discussion, and a tracked post-case Baby invitation.
 - Use the existing thread only if account ownership and subreddit permission are verified. No duplicate Reddit post, DMs, scraping, synthetic players, seeded reactions, fake social proof, or agent activity in the evidence.
 - Preserve the existing Roscoe case and Baby at $19.99. Add no product, app, discount, campaign, or spend.
@@ -25,9 +25,9 @@
 
 ### Agent order of operations
 
-1. Existing Shopify/Meta executor returns **PAUSED + ROOT CAUSE**, then **FORM REPAIR LIVE**, or a precise blocker, in issue #6.
-2. Existing Grok Reddit operator may perform read-only ownership/rule verification for issue #7 while waiting; no public action.
-3. After the hotfix passes, Shopify_Bot implements and verifies the bounded case-room layer from the committed packet.
+1. Connector_Bot cancels the erroneous Meta pause request; if Grok already paused solely for that request, it resumes the same campaign without extension or other change.
+2. Existing Grok Reddit operator performs read-only ownership/rule verification for issue #7; no public action until control is proved.
+3. Owner_Bot implements and verifies the bounded Shopify case-room layer after the exact permitted thread URL is confirmed.
 4. Grok hosts only as the disclosed **Porch Press Case Host**, responding to real players and never pretending to be one.
 5. Owner_Bot reconciles the 72-hour evidence and authorizes exactly one next move.
 
