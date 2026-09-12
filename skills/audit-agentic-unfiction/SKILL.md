@@ -31,10 +31,13 @@ When the author package uses the supported JSON shape, run:
 ```bash
 python3 scripts/validate_case_bundle.py \
   --canon /protected/path/canon.json \
-  --graph /protected/path/evidence-graph.json
+  --graph /protected/path/evidence-graph.json \
+  --content /protected/path/public-content.json \
+  --scripts /protected/path/episode-scripts.json \
+  --envelope /protected/path/sealed-envelope.json
 ```
 
-The script checks identifiers, references, discovery-route counts, and dependency cycles. It cannot judge whether evidence semantically proves the conclusion.
+Only `--canon` and `--graph` are required; the remaining packets are optional until authored. The script checks identifiers, references, discovery-route counts, dependency cycles, manuscript coverage, scene/token/claim integrity, cast references, and final evidence dimensions without printing canonical values. It cannot judge whether evidence semantically proves the conclusion.
 
 ## Reconstruct from player-visible material
 

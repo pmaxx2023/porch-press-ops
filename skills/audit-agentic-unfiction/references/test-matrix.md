@@ -8,6 +8,9 @@
 - Dependency graph is acyclic unless an intentional loop has an independent entry.
 - Every required deduction has visible support and a defined strength.
 - Every episode has an opening state, closing state, trigger, and next question.
+- Every manuscript artifact matches the graph accession and has provenance, transcript, media, alt-text, and claim-boundary fields.
+- Every showrunner scene references valid evidence tokens, cast speakers, claims, state effects, and episode gates.
+- Every protected final-answer key is among the displayed options and every evidence dimension is satisfiable from valid tokens.
 
 ## Semantic reasoning
 
