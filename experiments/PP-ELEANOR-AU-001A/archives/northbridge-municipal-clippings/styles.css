@@ -1,0 +1,219 @@
+/* Northbridge Municipal Clippings — River & Rail–like newsprint FIXTURE */
+:root {
+  --bg: #ebe4d4;
+  --ink: #111;
+  --rule: #1a1a1a;
+  --accent: #8b1a1a;
+  --panel: #f7f1e3;
+  --muted: #4a4034;
+  --hairline: #9a8f78;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 23px, rgba(0,0,0,0.03) 24px),
+    var(--bg);
+  color: var(--ink);
+  line-height: 1.45;
+  font-size: 16px;
+}
+a { color: var(--accent); }
+.masthead {
+  background: #f3ecd9;
+  color: var(--ink);
+  padding: 0.85rem 1rem 0.35rem;
+  text-align: center;
+  border-bottom: none;
+}
+.masthead .nameplate {
+  border-top: 3px double var(--rule);
+  border-bottom: 3px double var(--rule);
+  padding: 0.55rem 0.5rem 0.7rem;
+  margin: 0 auto;
+  max-width: 36rem;
+}
+.masthead .name {
+  font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 4.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.15;
+}
+.masthead .tag {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem; /* >=14px */
+  font-family: system-ui, sans-serif;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.masthead .edition-rule {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 36rem;
+  margin: 0.45rem auto 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.35rem;
+}
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.15rem;
+  justify-content: center;
+  background: transparent;
+  padding: 0.45rem 0.75rem 0.65rem;
+  border-bottom: 2px solid var(--rule);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.55rem;
+  border-right: 1px solid var(--hairline);
+}
+.site-nav a:last-child { border-right: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.wrap {
+  max-width: 34rem; /* narrow newspaper measure */
+  margin: 0 auto;
+  padding: 1.1rem 1rem 3rem;
+}
+h1 {
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(1.4rem, 4vw, 1.85rem);
+  margin: 0 0 0.35rem;
+  line-height: 1.2;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 0.35rem;
+}
+h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.2rem;
+  margin-top: 1.5rem;
+}
+.kicker {
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 0.25rem;
+}
+.panel {
+  background: var(--panel);
+  border: none;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  border-radius: 0;
+  padding: 0.85rem 0;
+  margin: 0.75rem 0;
+}
+.date-browse {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.date-browse li {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dotted var(--hairline);
+  align-items: start;
+}
+.date-browse .date-col {
+  font-family: ui-monospace, "Courier New", monospace;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+.date-browse a {
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.date-browse a:hover { border-bottom-color: var(--accent); }
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem 1rem;
+  font-size: 0.875rem; /* >=14px secondary */
+  font-family: system-ui, sans-serif;
+}
+@media (min-width: 520px) {
+  .meta-grid { grid-template-columns: 10rem 1fr; }
+}
+.meta-grid dt { font-weight: 700; color: var(--muted); }
+.meta-grid dd { margin: 0; }
+.accession {
+  font-family: ui-monospace, "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+}
+button.copy-acc, button, .btn, a.btn {
+  font: inherit;
+  font-family: system-ui, sans-serif;
+  font-weight: 650;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 2px;
+}
+.transcript {
+  white-space: pre-wrap;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 0.95rem;
+  background: transparent;
+  border-left: 3px solid var(--rule);
+  padding: 0.35rem 0 0.35rem 0.85rem;
+  border-radius: 0;
+}
+.muted { color: var(--muted); font-size: 0.875rem; font-family: system-ui, sans-serif; }
+.footer-note {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--rule);
+  font-size: 0.875rem;
+  font-family: system-ui, sans-serif;
+  color: var(--muted);
+}
+@media (max-width: 390px) {
+  .wrap { padding: 1rem 0.7rem 2rem; }
+  .date-browse li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .site-nav a { border-right: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

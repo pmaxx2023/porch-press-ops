@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>FIXTURE-LIL-0002 — Lampblack Industrial Ledger (FIXTURE)</title>
+  <link rel="stylesheet" href="../../../shared/a11y.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <p class="fixture-banner" role="status">FIXTURE / DEVELOPER PREVIEW — NOT LIVE GAME CONTENT <a class="fixture-only-link" href="../../../index.html">Dev return: Fixture Hub</a></p>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="blueprint-bar" aria-hidden="true"></div>
+      <div class="mast-copy">
+        <p class="name">Lampblack Sample Works</p>
+        <p class="tag">Industrial Ledger · volunteer database (FIXTURE)</p>
+      </div>
+    </div>
+  </header>
+  <nav class="site-nav" aria-label="Industrial database navigation">
+      <a href="../index.html">Companies</a>
+      <a href="../collections.html#people">People</a>
+      <a href="../collections.html" aria-current="page">Record Groups</a>
+      <a href="../about.html">Technical Drawings</a>
+  </nav>
+  <main id="main" class="wrap">
+    <h1>Abutters Margin: Sample Parcel FX-17</h1>
+    <p class="accession" id="accession-code">FIXTURE-LIL-0002</p>
+    <button type="button" class="copy-acc" data-accession="FIXTURE-LIL-0002">Copy accession</button>
+    <div id="copy-status" class="muted" role="status" aria-live="polite"></div>
+
+    <h2>Record metadata</h2>
+    <dl class="meta-grid panel">
+      <dt>Accession</dt><dd class="accession">FIXTURE-LIL-0002</dd>
+      <dt>Institution</dt><dd>Lampblack Sample Works Archive (FIXTURE)</dd>
+      <dt>Event date</dt><dd>1888-03-14 (fixture)</dd>
+      <dt>Creation date</dt><dd>1888-03-14 (fixture)</dd>
+      <dt>Digitization date</dt><dd>2026-01-10</dd>
+      <dt>Provenance</dt><dd>Volunteer DB export row FX-PARCEL-17.</dd>
+    </dl>
+
+    <h2>Body</h2>
+    <div class="panel"><p>An abutters margin line mentions Sample Parcel FX-17. Cross-links to the Cedar Fork index card for citation testing only.</p></div>
+
+    <h2>Transcript</h2>
+    <pre class="transcript">[FIXTURE TRANSCRIPT]
+LAMPBLACK SAMPLE WORKS · ABUTTERS
+Parcel FX-17 · Margin note · See CFD index · RG-LIL-PARCEL</pre>
+
+    <h2>Related citation</h2>
+    <p class="panel">See also: <a href="../../cedar-fork-deed-room/artifacts/fixture-cfd-0002.html">FIXTURE-CFD-0002 (Cedar Fork index card)</a></p>
+
+    <script>
+    (function () {
+      var btn = document.querySelector(".copy-acc");
+      var status = document.getElementById("copy-status");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var code = btn.getAttribute("data-accession") || "";
+        function done(ok) {
+          if (status) status.textContent = ok ? "Copied " + code : "Select and copy: " + code;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(code).then(function () { done(true); }, function () { done(false); });
+        } else {
+          done(false);
+        }
+      });
+    })();
+    </script>
+
+    <p class="footer-note">FIXTURE accession content only. No Porch Press checkout links. Not live game content.</p>
+  </main>
+</body>
+</html>

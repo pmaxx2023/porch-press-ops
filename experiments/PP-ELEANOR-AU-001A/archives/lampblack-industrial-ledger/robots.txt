@@ -1,0 +1,3 @@
+# FIXTURE spike — disallow all crawlers
+User-agent: *
+Disallow: /

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>FIXTURE-CFD-0002 — Cedar Fork Deed Room (FIXTURE)</title>
+  <link rel="stylesheet" href="../../../shared/a11y.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <p class="fixture-banner" role="status">FIXTURE / DEVELOPER PREVIEW — NOT LIVE GAME CONTENT <a class="fixture-only-link" href="../../../index.html">Dev return: Fixture Hub</a></p>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <div class="bookplate">
+      <p class="name">Cedar Fork Sample Registry</p>
+      <p class="tag">Deed Room · small-house register (FIXTURE)</p>
+      <p class="room-ref">Room 2 · Box CFD · Shelf B</p>
+    </div>
+  </header>
+  <nav class="site-nav" aria-label="Register navigation">
+      <a href="../index.html">The House</a>
+      <a href="../collections.html" aria-current="page">Registers</a>
+      <a href="../collections.html#photographs">Photographs</a>
+      <a href="../about.html#correspondence">Correspondence</a>
+      <a href="../about.html">About the Record</a>
+  </nav>
+  <main id="main" class="wrap">
+    <span class="box-label">Room 2 · Box -0002</span>
+    <h1>Index Card: Sample Parcel Margin Note</h1>
+    <p class="accession" id="accession-code">FIXTURE-CFD-0002</p>
+    <button type="button" class="copy-acc" data-accession="FIXTURE-CFD-0002">Copy accession</button>
+    <div id="copy-status" class="muted" role="status" aria-live="polite"></div>
+
+    <h2>Record metadata</h2>
+    <dl class="meta-grid panel">
+      <dt>Accession</dt><dd class="accession">FIXTURE-CFD-0002</dd>
+      <dt>Institution</dt><dd>Cedar Fork Sample Registry Deed Room (FIXTURE)</dd>
+      <dt>Room / Box</dt><dd>Room 2 / Box CFD</dd>
+      <dt>Event date</dt><dd>1888-03-14 (fixture)</dd>
+      <dt>Creation date</dt><dd>1888-03-14 (fixture)</dd>
+      <dt>Digitization date</dt><dd>2026-01-09</dd>
+      <dt>Provenance</dt><dd>Typed onto fixture index stock; Box CFD-2.</dd>
+    </dl>
+
+    <h2>Body</h2>
+    <div class="panel"><p>An index card carries a margin note about Sample Parcel FX-17. Fixture Subject A is not named. Used to exercise a second CFD token and room/box labeling.</p></div>
+
+    <h2>Transcript</h2>
+    <pre class="transcript">[FIXTURE TRANSCRIPT]
+CEDAR FORK SAMPLE REGISTRY — INDEX
+Parcel FX-17 · Margin: “see abutters ledger” · Clerk initials: SC
+Room 2 · Box CFD-2</pre>
+
+    <h2>Related citation</h2>
+    <p class="panel">See also: <a href="../../lampblack-industrial-ledger/artifacts/fixture-lil-0002.html">FIXTURE-LIL-0002 (Lampblack abutters margin)</a></p>
+
+    <script>
+    (function () {
+      var btn = document.querySelector(".copy-acc");
+      var status = document.getElementById("copy-status");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var code = btn.getAttribute("data-accession") || "";
+        function done(ok) {
+          if (status) status.textContent = ok ? "Copied " + code : "Select and copy: " + code;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(code).then(function () { done(true); }, function () { done(false); });
+        } else {
+          done(false);
+        }
+      });
+    })();
+    </script>
+
+    <p class="footer-note">FIXTURE accession content only. No Porch Press checkout links. Not live game content.</p>
+  </main>
+</body>
+</html>
