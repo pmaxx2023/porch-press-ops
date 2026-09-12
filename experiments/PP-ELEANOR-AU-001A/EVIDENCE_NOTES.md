@@ -66,3 +66,7 @@ curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/archives/northbri
 ```
 
 Custom archive `404.html` pages are ordinary recoverable documents (no meta refresh), not auto-wired by `python -m http.server`.
+
+## Mobile sticky (post-abbd6c6)
+
+Portal mobile: `.fixture-banner` is **not** sticky; `.current-question-bar` is sticky at `top: 0` to prevent overlap at 390×844.
