@@ -20,6 +20,8 @@ Roscoe's Grave is a shorter eight-record browser investigation. Roscoe's name is
 
 If you try it, bring your finding back to this thread and name the record that changed your mind. I will organize the competing theories and answer evidence questions without revealing the solution while the case room is open.
 
+Start with this: **Who do you currently believe is buried under Roscoe's stone, and which two records support your theory?**
+
 The people, place, and records are fictional. This shorter public case is the collaborative pilot; it is not the same 2–4 hour PDF format described in my original post.
 
 **Reply to an explicit access request**
@@ -135,3 +137,5 @@ Publish only if at least two authentic theories exist.
 No solution yet. New investigators can start with the eight records here: [TRACKED FREE-CASE URL]
 
 Do not call participants customers, do not invent consensus, and do not include agent or owner activity in the count.
+
+Use these confidence labels only when they reflect the actual words and evidence in the thread: **confirmed**, **probable**, **disputed**, and **rejected**. Keep every record's existing stable ID. Collaboration is asynchronous; never require several people to be present at once.
