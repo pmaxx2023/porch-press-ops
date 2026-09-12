@@ -1,28 +1,5 @@
 # PP-ELEANOR-AU-001A — Unpublished FIXTURE Architecture Spike
 
-## One-click local preview
-
-From this directory:
-
-```bash
-./serve.sh
-```
-
-On Windows:
-
-```bat
-serve.bat
-```
-
-Both serve on port `8765` and open `http://127.0.0.1:8765/` (hub). Override port with `PORT=9000 ./serve.sh` on Unix.
-
-Still local-only / FIXTURE / noindex — not a public deploy.
-
-
-**Status:** Developer preview only. Not live game content. Not for indexing or storefront use.
-
-Banner on every page: `FIXTURE / DEVELOPER PREVIEW — NOT LIVE GAME CONTENT`
-
 ## Local serve
 
 From this directory (`experiments/PP-ELEANOR-AU-001A/` in repo, or `/workspace/PP-ELEANOR-AU-001A/` on the box):
