@@ -1,0 +1,54 @@
+#pp-roscoe-sample .pp-case-room {
+  margin: 20px 0 28px;
+  padding: 20px;
+  border: 1px solid #b4a27e;
+  border-left: 5px solid #17324d;
+  background: linear-gradient(135deg, #f7f1e3 0%, #eee4cf 100%);
+  color: #1f2933;
+  box-shadow: 0 8px 22px rgba(20, 31, 44, 0.08);
+}
+#pp-roscoe-sample .pp-case-room h2 {
+  margin: 2px 0 10px;
+  color: #17283b;
+  font-size: clamp(22px, 4vw, 30px);
+  line-height: 1.15;
+}
+#pp-roscoe-sample .pp-case-room p {
+  max-width: 720px;
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+#pp-roscoe-sample .pp-case-room__eyebrow {
+  margin-bottom: 6px;
+  color: #6e482c;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+#pp-roscoe-sample .pp-case-room__button {
+  display: inline-flex;
+  width: auto;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+#pp-roscoe-sample .pp-case-room__support {
+  margin: 12px 0 0;
+  color: #4f5964;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 13px;
+}
+#pp-roscoe-sample .pp-case-room--compact {
+  margin-top: 24px;
+  padding: 18px;
+}
+@media (max-width: 640px) {
+  #pp-roscoe-sample .pp-case-room {
+    padding: 17px 15px;
+  }
+  #pp-roscoe-sample .pp-case-room__button {
+    width: 100%;
+  }
+}
