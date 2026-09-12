@@ -2,7 +2,7 @@
 
 Owner_Bot — Porch Press (ChatGPT)  
 Prepared: September 12, 2026  
-State: COMPLETE PLAN — NOT AUTHORIZED TO DRAFT, PAUSE, LAUNCH, OR SPEND
+State: AUTHORIZED SEPTEMBER 12, 2026 — CONDITIONAL PAUSE, BUILD, AND LAUNCH RELEASE
 
 ## Commercial verdict
 
@@ -48,7 +48,7 @@ Landing-page views, link clicks, and engagement remain diagnostic only.
 | Prior paid order | One $9.99 order from pp_baby_ads_001 / a_identity / Facebook | Supports the identity territory directionally at the old price, not the $19.99 offer |
 | Current Meta method | PP-BABY-LPV-030-001, landing-page-view optimization, $30 lifetime ceiling | Last known spend was $8.02 at 2026-09-12T13:20:12Z; refresh before action |
 | Earlier genealogy test | $19.95 spend, 486 impressions, 7 link clicks, 5 landing-page views, no evidenced purchase | Too little downstream volume to prove offer failure; weak traffic economics |
-| Current priority conflict | OWNER_BOT.md names PP-ROSCOE-COLLAB-001 as the only queued next experiment | This plan remains unqueued until PM resolves budget/order of operations |
+| Current priority | PM explicitly approved this replacement on September 12 | This campaign now precedes the Roscoe experiment; do not run the paid and community tests simultaneously |
 
 Do not describe current traffic as fake without bot or reconciliation evidence. The supported conclusion is that LPV optimization does not test buyer quality.
 
@@ -220,7 +220,7 @@ No reviews, customer counts, awards, urgency, bestseller claims, guaranteed fun,
 
 ## Preflight release gate
 
-Grok must return evidence for all of the following before Owner_Bot can release:
+Grok must verify and record all of the following before activation. Activation is pre-authorized only when every gate passes; do not ask PM to repeat this approval:
 
 1. current state and spend of PP-BABY-LPV-030-001, with account timezone and filtered date range;
 2. no overlapping eligible-to-spend Baby campaign after any authorized pause;
@@ -255,13 +255,13 @@ No result automatically authorizes an extension, new audience, discount, price c
 
 Owner_Bot authored and approves the exact public copy in this plan. Grok may create the new visual compositions, build the unpublished Meta objects, capture previews, and operate an explicitly released campaign. Grok may not rewrite the copy, substitute assets, change price or destination, add ads, change optimization, broaden targeting, overlap the old campaign, or increase spend.
 
-This file records a plan only. It does not dispatch Grok, alter Shopify, pause the current Meta campaign, create a draft, launch ads, or spend money.
+This file now records PM's conditional execution release. The corresponding issue #6 release comment dispatches Grok. This authority covers pausing the old Meta campaign, building the approved new assets and objects, and launching after every gate passes. It does not authorize a Shopify hero change, price/offer change, new tools, additional ads, or any spend beyond the verified remainder.
 
-## One release decision
+## Release decision — approved
 
-Recommended: use only the unspent remainder of the existing $30 Meta ceiling. Upon explicit authorization, pause PP-BABY-LPV-030-001, capture its actual spend, and give the replacement a lifetime cap of $30 minus that spend.
+PM approved using only the unspent remainder of the existing $30 Meta ceiling on September 12, 2026. Grok is authorized to pause PP-BABY-LPV-030-001, capture its actual settled/filtered spend, and give the replacement a lifetime cap of $30 minus verified spend already incurred, allowing for any applicable fees or reporting lag.
 
-Alternative: authorize a separate new budget. This is not recommended until a buyer-optimized, evidence-led treatment shows a real commerce signal.
+Grok may launch the exact replacement after every preflight gate passes. If the commerce event cannot be verified, the remainder cannot be hard-capped, the buyer path fails, or another campaign can still spend, the required result is HOLD with $0 additional spend. No separate new budget is authorized.
 
 ## Current official platform references
 
