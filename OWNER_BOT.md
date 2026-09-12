@@ -18,6 +18,7 @@
 `PP-ROSCOE-COLLAB-001` is the only queued next experiment: [issue #7](https://github.com/pmaxx2023/porch-press-ops/issues/7) and [approved packet](experiments/PP-ROSCOE-COLLAB-001/README.md).
 
 - State: **PURCHASE-PATH GATE GREEN; BLOCKED ONLY ON VERIFIED REDDIT ACCOUNT CONTROL/PERMISSION BEFORE PUBLICATION.**
+- Shopify draft is complete in unpublished theme `gid://shopify/OnlineStoreTheme/190768349482`. It adds the main and post-finding case-room controls plus the tracked $19.99 Baby bridge. Desktop functional/layout QA passed; live Refresh theme `152900272426` is unchanged. Exact source and receipts are in [issue #7](https://github.com/pmaxx2023/porch-press-ops/issues/7#issuecomment-5646105910). True 390×844 visual acceptance and publication remain open.
 - Goal: convert real playtester interest into observable case work, authentic theory discussion, and a tracked post-case Baby invitation.
 - Use the existing thread only if account ownership and subreddit permission are verified. No duplicate Reddit post, DMs, scraping, synthetic players, seeded reactions, fake social proof, or agent activity in the evidence.
 - Preserve the existing Roscoe case and Baby at $19.99. Add no product, app, discount, campaign, or spend.
@@ -27,7 +28,7 @@
 
 1. Connector_Bot cancels the erroneous Meta pause request; if Grok already paused solely for that request, it resumes the same campaign without extension or other change.
 2. Existing Grok Reddit operator performs read-only ownership/rule verification for issue #7; no public action until control is proved.
-3. Owner_Bot implements and verifies the bounded Shopify case-room layer after the exact permitted thread URL is confirmed.
+3. Owner_Bot's unpublished Shopify case-room draft is complete. After Reddit control is proved, complete 390×844 visual acceptance and publish the exact verified files to the then-current theme.
 4. Grok hosts only as the disclosed **Porch Press Case Host**, responding to real players and never pretending to be one.
 5. Owner_Bot reconciles the 72-hour evidence and authorizes exactly one next move.
 
