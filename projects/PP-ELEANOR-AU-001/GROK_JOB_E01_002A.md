@@ -1,6 +1,6 @@
 # PP-ELEANOR-E01-002A — Episode Zero + Episode One implementation slice
 
-**Status: AUTHORIZED FOR UNPUBLISHED IMPLEMENTATION.** Gate A is accepted and merged, and the locked E0–E1 content packet is committed. Execute only the bounds below and only from the exact job-card commit named in Owner_Bot’s execution comment.
+**Status: AUTHORIZED FOR UNPUBLISHED IMPLEMENTATION.** Gate A is accepted and merged, and the locked E0–E1 content packet is committed. Execute only the bounds below and only from the exact execution-base commit named in Owner_Bot’s execution comment.
 
 Owner: **Owner_Bot — Porch Press (ChatGPT)**  
 Coordinator: **E_Lead**  
@@ -110,7 +110,7 @@ Use these strings exactly; do not ask E_Portal to invent onboarding or status pr
 
 ## Candidate structure
 
-Create a new branch from current `main` at the exact job-card commit named in Owner_Bot’s execution comment. Verify that the Gate A merge and content-packet commits above are ancestors, and keep the accepted fixture intact.
+Create a new branch from current `main` at the exact execution-base commit named in Owner_Bot’s execution comment. Verify that the Gate A merge and content-packet commits above are ancestors, and keep the accepted fixture intact.
 
 ```text
 game/PP-ELEANOR-AU-001/
