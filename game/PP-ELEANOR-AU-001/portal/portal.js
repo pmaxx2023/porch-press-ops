@@ -408,6 +408,57 @@
     setStatus($("claim-status"), "ok", "Ruling saved: " + val + ".");
   }
 
+
+  function applyEvidenceShot() {
+    try {
+      var params = new URLSearchParams(location.search || "");
+      var shot = params.get("evidenceShot");
+      if (!shot) return;
+      if (shot === "invalid") {
+        $("accession-input").value = "BAD-CODE-99";
+        onValidate();
+        $("locker").scrollIntoView();
+      } else if (shot === "duplicate") {
+        state.evidence_tokens = ["CIM-HART-1912-01"];
+        save();
+        renderTokens();
+        $("accession-input").value = "CIM-HART-1912-01";
+        onValidate();
+        $("locker").scrollIntoView();
+      } else if (shot === "focus") {
+        $("validate-btn").focus();
+        $("locker").scrollIntoView();
+      } else if (shot === "comparison" || shot === "trail") {
+        state.active_episode = "E1";
+        state.episode_opened.E1 = true;
+        state.evidence_tokens = ["OIM-HW-1946-07", "BHR-PH-1951-17"];
+        state.scenes_played = ["E1-S01-INTAKE", "E1-S02-ARTICLE_FIRST"];
+        if (shot === "trail") {
+          state.claim_states["E1-C02"] = {
+            status: "supported",
+            history: [
+              { from: "unset", to: "contested", at: "2026-09-12T18:00:00.000Z" },
+              { from: "contested", to: "supported", at: "2026-09-12T18:01:00.000Z" }
+            ]
+          };
+        }
+        save();
+        updateQuestion();
+        pickScene();
+        renderTokens();
+        $("scene").scrollIntoView();
+      } else if (shot === "sticky") {
+        state.active_episode = "E1";
+        state.episode_opened.E1 = true;
+        save();
+        updateQuestion();
+        window.scrollTo(0, 0);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   function bind() {
     $("btn-open-1948").addEventListener("click", function () { openEpisode("E1"); });
     $("btn-need-1912").addEventListener("click", function () { openEpisode("E0"); });
@@ -516,6 +567,7 @@
       updateQuestion();
       pickScene();
       renderHints();
+      applyEvidenceShot();
     }).catch(function (err) {
       setStatus($("validate-status"), "err", "Failed to load locked content JSON.");
       console.error(err);
