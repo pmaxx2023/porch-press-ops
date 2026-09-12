@@ -1,5 +1,36 @@
 # Porch Press — Owner_Bot handoff
 
+## Active checkpoint — September 12, 2026
+
+**Current decision:** repair and prove the live Baby purchase path before releasing more traffic; then run one authentic, zero-new-spend Roscoe collaborative-play pilot. This checkpoint supersedes older “pending” descriptions where later receipts or live observation conflict.
+
+### Confirmed current state
+
+- Shopify has eight active mystery products, each currently listed at **$19.99**. Baby in a Basket remains the paid hero. The ungated Roscoe's Grave browser investigation remains live at [the free investigation](https://porchpress.store/pages/free-investigation).
+- Store evidence for September 8–12 shows one paid order: **$9.99 on September 8**. It does not validate the current $19.99 offer. Later traffic has not produced a confirmed sale.
+- Existing Meta experiment `PP-BABY-LPV-030-001` has a **$30 lifetime ceiling**, LPV optimization, and reported end of September 13 at 9:59 PM PDT. Keep it separate from every Reddit/community result; do not extend or compensate it.
+- On September 12, Owner_Bot inspected both live `/cart/add` forms on [the campaign landing page](https://porchpress.store/pages/genealogy-mystery-case). The buttons displayed Baby and $19.99, but the required hidden values—including variant ID and quantity—were empty. Treat all pre-repair purchase-funnel data from that landing page as invalid measurement.
+- Owner_Bot dispatched `PP-LP-FORM-HOTFIX-002` in [issue #6](https://github.com/pmaxx2023/porch-press-ops/issues/6#issuecomment-5645952748): pause the same Meta campaign, find the regression, repair both forms with Baby variant `52494545486122`, verify a real clean-session cart and checkout, and resume only after a pass. **Dispatch is confirmed; pause and repair completion are not yet confirmed.**
+- A live r/printandplay candidate thread has at least fourteen distinct public expressions of interest but no visible completed-play theories. Account control is unverified. Do not edit, reply, DM, or represent the thread as Porch Press until Grok proves control.
+
+### One queued experiment
+
+`PP-ROSCOE-COLLAB-001` is the only queued next experiment: [issue #7](https://github.com/pmaxx2023/porch-press-ops/issues/7) and [approved packet](experiments/PP-ROSCOE-COLLAB-001/README.md).
+
+- State: **BLOCKED** until the buy-path hotfix is green.
+- Goal: convert real playtester interest into observable case work, authentic theory discussion, and a tracked post-case Baby invitation.
+- Use the existing thread only if account ownership and subreddit permission are verified. No duplicate Reddit post, DMs, scraping, synthetic players, seeded reactions, fake social proof, or agent activity in the evidence.
+- Preserve the existing Roscoe case and Baby at $19.99. Add no product, app, discount, campaign, or spend.
+- Run for 72 hours only after the free case and permitted thread are live and cross-linked. Keep Meta, Reddit, direct, bots, owner, agents, and QA separate. Return one evidence-labeled decision; do not automatically build a broader community platform.
+
+### Agent order of operations
+
+1. Existing Shopify/Meta executor returns **PAUSED + ROOT CAUSE**, then **FORM REPAIR LIVE**, or a precise blocker, in issue #6.
+2. Existing Grok Reddit operator may perform read-only ownership/rule verification for issue #7 while waiting; no public action.
+3. After the hotfix passes, Shopify_Bot implements and verifies the bounded case-room layer from the committed packet.
+4. Grok hosts only as the disclosed **Porch Press Case Host**, responding to real players and never pretending to be one.
+5. Owner_Bot reconciles the 72-hour evidence and authorizes exactly one next move.
+
 ## Roscoe animated folder — designer preview, September 7, 2026
 
 **PP-ROSCOE-FOLDER-DESIGN-001**: PM requested much stronger visual appeal for the animated folder concept and then specified **Roscoe as the example**.
