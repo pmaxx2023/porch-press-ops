@@ -189,6 +189,8 @@ Run clean-session tests with available browsing agents. Test retrieval, quotatio
 
 **Gate D:** every required clue remains reachable without relying on search ranking; no tested agent receives the canonical answer from public implementation material; failures are repaired or covered by hints.
 
+Use [PLAYTEST_PROTOCOL.md](PLAYTEST_PROTOCOL.md) for the blind-human, agent, no-index, mobile, accessibility, and customer-path test requirements. Use [RISK_REGISTER.md](RISK_REGISTER.md) for release blockers and mitigations across all phases.
+
 ### Phase E — commercial packaging
 
 Create the revised product listing, start guide, episode-zero bridge, customer access instructions, spoiler-safe previews, and delivery package. Keep the held current Eleanor product and its assets intact while this is prepared.
