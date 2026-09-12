@@ -200,7 +200,8 @@
     block.hidden = false;
     $("claim-banner").textContent = "CAST CLAIM";
     $("claim-text").textContent = sc.claim_text;
-    $("claim-prompt").textContent = sc.player_ruling || "";
+    var pr = sc.player_ruling;
+      $("claim-prompt").textContent = (pr && typeof pr === "object") ? (pr.prompt || "") : (pr || "");
     var cur = claimObj(sc.claim_id);
     var status = cur ? cur.status : "unset";
     var st = $("claim-current-status");
