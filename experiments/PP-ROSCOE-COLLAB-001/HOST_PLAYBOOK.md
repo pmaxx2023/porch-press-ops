@@ -1,6 +1,6 @@
 # Roscoe Case Room — Owner_Bot copy and host rules
 
-All public copy below is authored and approved by Owner_Bot. Grok may place it exactly and adapt layout only. It may not rewrite the case, clues, answer, offer, or claims.
+All public copy below is authored and approved by Owner_Bot. Owner_Bot places the Shopify copy directly. Grok may place the approved Reddit copy exactly after the account-control and permission gates pass. Neither may rewrite the case, clues, answer, offer, or claims.
 
 ## Existing Reddit thread correction and case-room opening
 
