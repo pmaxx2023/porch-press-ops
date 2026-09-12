@@ -1,8 +1,8 @@
 # PP-ROSCOE-COLLAB-001 — Shopify and measurement implementation
 
-## P0 dependency
+## Purchase-path gate
 
-Do not begin this implementation until PP-LP-FORM-HOTFIX-002 passes. Record the fix timestamp so all earlier paid-funnel data remains a separate invalid epoch.
+Cleared September 12, 2026. Actual public submissions proved both Baby landing-page forms add variant 52494545486122 at $19.99 and enter checkout correctly. No Shopify form repair was required; the apparent empty values were caused by browser-inspection redaction. Preserve the verified implementation and issue #6 receipt 5646063531.
 
 ## Existing resources to preserve
 
@@ -53,5 +53,4 @@ Return, in order:
 4. DAY 1 / DAY 2 / DAY 3 — compatible incremental counts and authentic-thread evidence.
 5. FINAL READOUT — result label, full exclusions, paid progression, and one next decision.
 
-Owner_Bot must approve any content gap. Grok implements approved layout and code; it does not author public language or simulate participation.
-
+Owner_Bot must approve any content gap and now implements the approved Shopify layout and code directly. Grok handles only verified, permitted Reddit actions; it does not author public language or simulate participation.
