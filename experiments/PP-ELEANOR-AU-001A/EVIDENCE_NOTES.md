@@ -51,7 +51,7 @@ Directory: `evidence/63d2da0/`
 Do **not** count as current PASS evidence:
 
 - `evidence/pre-revision/` (includes obsolete common-nav shots and `abbd6c6-reencode/` WebP→PNG copies that were zero-diff re-encodes of pre-`63d2da0` captures)
-- Any former former abbd6c6 evidence directory or former generic current/ evidence directory paths
+- Any former abbd6c6 evidence directory or former generic current/ evidence directory paths
 
 ## Mobile sticky note
 
