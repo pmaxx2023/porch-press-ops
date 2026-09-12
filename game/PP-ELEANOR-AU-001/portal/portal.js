@@ -271,8 +271,8 @@
       art.className = "claim-block";
       var label = document.createElement("p");
       label.className = "claim-banner";
-      var role = (d.role || "").toLowerCase();
-      label.textContent = role.indexOf("cross") !== -1 || role.indexOf("object") !== -1 ? "CROSS-EXAMINATION" : "CAST CLAIM";
+      var mode = String(d.mode || d.role || "").toLowerCase();
+      label.textContent = (mode === "crossfire" || mode.indexOf("cross") !== -1) ? "CROSS-EXAMINATION" : "CAST CLAIM";
       var who = document.createElement("h3");
       who.textContent = (d.speaker || d.cast_id || "Investigator") + (d.lens ? " / " + d.lens : "");
       var body = document.createElement("p");
