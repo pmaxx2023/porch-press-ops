@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "case_id": "PP-ELEANOR-AU-001",
+  "packet_version": "public-episodes-E0-E1-1.0",
+  "release_tiers": [
+    "E0",
+    "E1"
+  ],
+  "confidentiality": "PUBLIC_RELEASE_BATCH",
+  "cast_ids": {
+    "ELAINE": "Elaine Price — provenance editor / Boomer lens",
+    "MORGAN": "Morgan Reed — investigations editor / Gen X lens",
+    "PRIYA": "Priya Shah — forensic genealogist / Millennial lens",
+    "ZURI": "Zuri Chen — OSINT producer / Gen Z lens",
+    "KIT": "Kit Rowan — synthetic pattern analyst / Gen Alpha lens"
+  },
+  "showrunner_rules": {
+    "delivery": "preauthored deterministic branches",
+    "scene_once_default": true,
+    "claim_states": [
+      "supported",
+      "contested",
+      "disproved"
+    ],
+    "priority_rule": "Play the lowest numeric priority among newly eligible scenes; queue the rest; never fire more than one tentpole without returning control to the player.",
+    "knowledge_rule": "A cast member may name only collected artifacts and conclusions settled in prior episode state.",
+    "performance_rule": "Delivery may vary in pace or emphasis but not wording during the first release.",
+    "player_agent_boundary": "Never ingest or quote the player's outside-agent conversation. Ask the player to save the source URL, accession code, and observation instead."
+  },
+  "episodes": [
+    {
+      "id": "E0",
+      "title": "The First Disappearance",
+      "spoiler_tier": 0,
+      "opening_knowledge": [
+        "A modern digitizer has found a later contradiction",
+        "The player may or may not know the existing 1912 case"
+      ],
+      "mission": "Establish what the first disappearance proved and learn how the portal distinguishes a record from an inference.",
+      "player_agent_prompt": "Open the supplied 1912 case overview and notebook source. Return the source URLs and accession codes, then list: what the record directly states, what the historical reconstruction concluded, and what remains unknown after 1912. Do not speculate about the 1948 case.",
+      "allowed_artifact_ids": [
+        "A001",
+        "A015"
+      ],
+      "scenes": [
+        {
+          "id": "E0-S01-COLD",
+          "priority": 10,
+          "trigger": {
+            "episode_opened": true
+          },
+          "display_artifact_id": null,
+          "claim_id": null,
+          "dialogue": [
+            {
+              "speaker": "ELAINE",
+              "mode": "desk",
+              "text": "Before we open a second disappearance, we close the first one correctly."
+            },
+            {
+              "speaker": "MORGAN",
+              "mode": "desk",
+              "text": "And correctly means we inherit the receipts, not the family's version."
+            },
+            {
+              "speaker": "PRIYA",
+              "mode": "desk",
+              "text": "If you already solved 1912, take the recap. If you didn't, the complete printable case is still here. Both routes enter the same record."
+            }
+          ],
+          "next_action": "Choose recap or Episode Zero play route."
+        },
+        {
+          "id": "E0-S02-RECEIPT",
+          "priority": 20,
+          "trigger": {
+            "all_tokens": [
+              "CIM-HART-1912-01",
+              "CIM-EH-1912-NB"
+            ]
+          },
+          "display_artifact_id": "A015",
+          "claim_id": "E0-C01",
+          "claim_text": "The Hart family had already used a false voluntary-departure story to erase Eleanor's agency.",
+          "dialogue": [
+            {
+              "speaker": "PRIYA",
+              "mode": "receipt",
+              "text": "Frank Byrne was Francis Hart. Eleanor did not guess it; she assembled the record that made the names belong to the same person."
+            },
+            {
+              "speaker": "ELAINE",
+              "mode": "receipt",
+              "text": "And James answered evidence with confinement and a false telegram."
+            },
+            {
+              "speaker": "MORGAN",
+              "mode": "confessional",
+              "text": "A family learns a tactic once, and suddenly every later sentence has a shadow."
+            }
+          ],
+          "player_ruling": {
+            "prompt": "Does the 1912 file support this claim?",
+            "expected": "supported",
+            "explanation": "The closed case overview attributes confinement and the false telegram to James."
+          },
+          "next_action": "Open Mara Keene's 1951 photograph lead."
+        }
+      ],
+      "recovery_hints": [
+        {
+          "level": 1,
+          "text": "Find the closed research summary and the dated notebook leaf, not a later family retelling."
+        },
+        {
+          "level": 2,
+          "text": "Both records are in the Cincinnati Industrial Memory Archive's Hart Tool & Pattern collection."
+        },
+        {
+          "level": 3,
+          "text": "Use the direct Episode Zero source links for CIM-HART-1912-01 and CIM-EH-1912-NB."
+        }
+      ],
+      "closing_gate": {
+        "required_tokens": [
+          "CIM-HART-1912-01",
+          "CIM-EH-1912-NB"
+        ],
+        "required_claim_states": {
+          "E0-C01": "supported"
+        }
+      },
+      "cliffhanger": "The label says Eleanor Hart. The photograph says 1951. The disappearance file closes in 1948."
+    },
+    {
+      "id": "E1",
+      "title": "The Photograph",
+      "spoiler_tier": 1,
+      "opening_knowledge": [
+        "Eleanor was born in 1886",
+        "A 1951 Bellwether photograph carries her name",
+        "The reported second disappearance occurred in 1948"
+      ],
+      "mission": "Determine whether the 1951 photograph is reliable evidence that Eleanor survived her 1948 disappearance.",
+      "player_agent_prompt": "Find the Bellwether photograph labeled Eleanor Hart and the latest independently identified pre-disappearance image of Eleanor. Open both records. Return each URL and accession code, identify who supplied each name and when, compare only visible facial and age features, and state what the comparison cannot yet prove.",
+      "allowed_artifact_ids": [
+        "A001",
+        "A002",
+        "A003",
+        "A004"
+      ],
+      "scenes": [
+        {
+          "id": "E1-S01-INTAKE",
+          "priority": 10,
+          "trigger": {
+            "episode_opened": true
+          },
+          "display_artifact_id": "A003",
+          "claim_id": "E1-C01",
+          "claim_text": "The 1951 photograph proves Eleanor survived the 1948 disappearance.",
+          "dialogue": [
+            {
+              "speaker": "ZURI",
+              "mode": "cold_open",
+              "text": "A woman disappears in 1948. Three years later, an archive labels this woman Eleanor. Either the case is wrong, the date is wrong, or the face is wrong."
+            },
+            {
+              "speaker": "ELAINE",
+              "mode": "crossfire",
+              "text": "Or our question is wrong. A label is a source. It is not automatically an identification."
+            },
+            {
+              "speaker": "ZURI",
+              "mode": "confessional",
+              "text": "Elaine says that like it lowers the temperature. It raises it. Somebody wrote the name."
+            }
+          ],
+          "player_ruling": {
+            "prompt": "Classify the survival claim before comparison evidence.",
+            "expected": "contested",
+            "explanation": "The photograph label creates a contradiction but has not been verified."
+          },
+          "next_action": "Find a late verified image of Eleanor and trace the 1951 label's provenance."
+        },
+        {
+          "id": "E1-S02-ARTICLE_FIRST",
+          "priority": 20,
+          "trigger": {
+            "all_tokens": [
+              "RRG-1948-10-18-A"
+            ],
+            "none_tokens": [
+              "OIM-HW-1946-07"
+            ]
+          },
+          "display_artifact_id": "A004",
+          "claim_id": null,
+          "dialogue": [
+            {
+              "speaker": "MORGAN",
+              "mode": "receipt",
+              "text": "Circle the verbs: left, boarded, was seen. Now read the attributed sentences. A coat left. A reservation traveled. A telegram arrived."
+            },
+            {
+              "speaker": "ELAINE",
+              "mode": "desk",
+              "text": "Keep the article. Do not let its headline settle the photograph."
+            }
+          ],
+          "next_action": "Continue to the independently identified 1946 portrait."
+        },
+        {
+          "id": "E1-S03-LOOK",
+          "priority": 30,
+          "trigger": {
+            "all_tokens": [
+              "OIM-HW-1946-07",
+              "BHR-PH-1951-17"
+            ]
+          },
+          "display_artifact_id": "A003",
+          "claim_id": "E1-C02",
+          "claim_text": "The woman in the 1951 print is not Eleanor Hart.",
+          "dialogue": [
+            {
+              "speaker": "ZURI",
+              "mode": "declaration",
+              "text": "LOOK what we found. That label says Eleanor. That face does not match the Eleanor in 1946."
+            },
+            {
+              "speaker": "ELAINE",
+              "mode": "crossfire",
+              "text": "Then the label is in doubt. The woman's identity is not yet solved."
+            },
+            {
+              "speaker": "ZURI",
+              "mode": "confessional",
+              "text": "That distinction is the whole case. Not Eleanor is a finding. Who she is—that's the next search."
+            },
+            {
+              "speaker": "PRIYA",
+              "mode": "desk",
+              "text": "The age difference is too large for the three-year interval, and the identified 1946 portrait has two independent captions. We can reject one identity without naming another."
+            }
+          ],
+          "player_ruling": {
+            "prompt": "Classify the claim that the 1951 woman is not Eleanor.",
+            "expected": "supported",
+            "explanation": "The verified 1946 portrait, age chronology, visible mismatch, and later uncertain label jointly support rejection."
+          },
+          "state_effects": [
+            {
+              "claim_id": "E1-C01",
+              "set_expected": "disproved"
+            }
+          ],
+          "next_action": "Audit what witnesses actually observed on the 1948 departure day."
+        }
+      ],
+      "alternate_order_rule": "If A004 arrives before the comparison images, play E1-S02. If it arrives later, omit that scene and use Morgan's verb distinction in the episode close.",
+      "recovery_hints": [
+        {
+          "level": 1,
+          "text": "A useful comparison image needs a date and an identification independent of the disputed Bellwether label."
+        },
+        {
+          "level": 2,
+          "text": "Search the Ohio River Industrial Memory Project for Hart Works' 1946 anniversary portrait."
+        },
+        {
+          "level": 3,
+          "text": "Open OIM-HW-1946-07 and compare its identified Eleanor with BHR-PH-1951-17, including each record's reverse."
+        }
+      ],
+      "closing_gate": {
+        "required_tokens": [
+          "OIM-HW-1946-07",
+          "BHR-PH-1951-17",
+          "RRG-1948-10-18-A"
+        ],
+        "required_claim_states": {
+          "E1-C01": "disproved",
+          "E1-C02": "supported"
+        }
+      },
+      "cliffhanger": "If the later photograph is wrong, what did anyone truly see on the day Eleanor supposedly left?"
+    }
+  ]
+}
