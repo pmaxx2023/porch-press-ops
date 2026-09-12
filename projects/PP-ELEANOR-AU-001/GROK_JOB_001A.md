@@ -14,6 +14,7 @@ Read completely:
 
 - `projects/PP-ELEANOR-AU-001/MASTER_PLAN.md`
 - `projects/PP-ELEANOR-AU-001/PUBLIC_WORLD_SPEC.md`
+- `projects/PP-ELEANOR-AU-001/DESIGN_DIRECTION.md`
 - `skills/build-agentic-unfiction/SKILL.md`
 - `skills/produce-reality-investigation-episodes/SKILL.md`
 - `skills/audit-agentic-unfiction/SKILL.md`
