@@ -84,6 +84,32 @@ Search all public repository history available to players, generated source, sou
 
 Treat any client-delivered answer as public even if it is hidden, encoded, minified, or unreachable through the interface. Record old public solutions separately; ensure the new game's required endpoint cannot be answered by retrieving them.
 
+## Audit evidence receipts
+
+Treat the QA packet as versioned evidence, not decoration. Every claimed screenshot must represent the exact candidate under review. Pre-revision images may document a regression but cannot prove the repaired state.
+
+Require:
+
+- exact repository-relative paths instead of placeholders;
+- a current-candidate image for every surface used to claim visual acceptance;
+- viewport dimensions where responsive behavior is claimed;
+- file extensions that match image magic bytes;
+- working links at the named commit;
+- explicit `not captured / source-tested` labels for checks without an image;
+- a clearly separated `pre-revision` area that is never counted as final PASS evidence.
+
+When an evidence directory is available, run:
+
+```bash
+python3 scripts/validate_evidence_pack.py \
+  --root /path/to/candidate \
+  --notes /path/to/candidate/EVIDENCE_NOTES.md \
+  --required-current evidence/final/mobile-390.png \
+  --required-current evidence/final/archive-a.png
+```
+
+The script checks placeholders, referenced local paths, required-current placement, and image extension/magic consistency. It does not decide whether an image visually proves the claim; inspect each receipt.
+
 ## Release decision
 
 Return **PASS**, **HOLD**, or **BLOCKED** for each test family with evidence. Any missing required clue, circular route, answer leak, accidental contradiction, premature scene, broken recovery path, or non-unique required conclusion produces **HOLD**.
@@ -96,3 +122,5 @@ Finish with:
 - repairs required before release;
 - retest scope;
 - material residual uncertainty.
+
+An auditor cannot downgrade an explicit Owner or release-gate requirement to a non-blocking residual. Return HOLD until the named evidence is repaired or the requirement owner changes it.

@@ -57,6 +57,10 @@
 ## Visual and accessibility
 
 - Desktop and true mobile viewport review.
+- Screenshots name the exact candidate and use current, not pre-revision, source.
+- Evidence-manifest paths resolve; placeholders are replaced or explicitly marked `not captured / source-tested`.
+- Image extensions match magic bytes and linked files render at the claimed dimensions.
+- Every archive or portal surface used for a visual PASS has a current-candidate receipt; obsolete images are regression context only.
 - Keyboard-only task completion and visible focus.
 - Semantic headings, labels, landmarks, and meaningful link text.
 - Sufficient contrast and reduced-motion behavior.
