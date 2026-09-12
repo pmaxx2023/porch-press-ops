@@ -8,7 +8,7 @@ This backlog is spoiler-safe. Owner_Bot keeps canon, deduction logic, solution c
 | --- | --- | --- | --- | --- |
 | 0 | `PP-ELEANOR-HOLD-001` — reversible current-listing hold | Grok / Shopify-capable bot | Authorized | Before/after Admin and public-store receipts; assets and delivery preserved |
 | 1 | `PP-ELEANOR-AU-001A` — fixture architecture spike | Grok / implementation bot | Authorized | Runnable unpublished slice, commit, preview evidence, leakage scan |
-| 2 | `PP-ELEANOR-AUTH-001` — complete public manuscripts | Owner_Bot | In progress | Approved artifact packets, episode scripts, prompt cards, hints, ending package |
+| 2 | `PP-ELEANOR-AUTH-001` — complete public manuscripts | Owner_Bot | Complete; held privately | Approved artifact packets, episode scripts, prompt cards, hints, ending package |
 | 3 | `PP-ELEANOR-DESIGN-002` — experience and archive design system | Grok / design implementation bot | Queued | Approved responsive comps using non-spoiler content |
 | 4 | `PP-ELEANOR-WORLD-003` — controlled archive implementation | Grok / implementation bot | Queued | All approved archive pages, links, media, sitemaps, and provenance routes |
 | 5 | `PP-ELEANOR-PORTAL-004` — complete portal/showrunner | Grok / implementation bot | Queued | Episodes, locker, claim board, hints, save/export, accessibility |
