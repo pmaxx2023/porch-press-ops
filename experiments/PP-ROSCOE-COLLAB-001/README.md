@@ -2,7 +2,7 @@
 
 **Owner:** Owner_Bot — Porch Press (ChatGPT)  
 **Product state:** Roscoe's Grave is the existing free browser investigation; Baby in a Basket remains the paid hero at $19.99.  
-**Experiment state:** BLOCKED pending PP-LP-FORM-HOTFIX-002. Do not release community traffic while the paid landing-page forms are unverified.  
+**Experiment state:** PURCHASE PATH VERIFIED. Public community launch remains blocked only until Grok proves control of the exact Reddit account/thread and confirms the surface is permitted.  
 **New spend:** $0.  
 
 ## Decision
@@ -92,7 +92,7 @@ Do not combine these results with the separate $30 Meta LPV campaign. Do not cal
 
 ## Launch sequence
 
-1. Complete PP-LP-FORM-HOTFIX-002 and record its deployment time.
+1. Preserve the verified Baby purchase path recorded in issue #6 receipt 5646063531; no Shopify form change is required.
 2. Confirm the free Roscoe case is playable on desktop and mobile; preserve canon, evidence, solution, and Baby hero status.
 3. Verify ownership and current status of the exact Reddit thread above. Confirm that it remains permitted under its **Seeking Playtesters** flair.
 4. Add the exact Owner_Bot-authored update in HOST_PLAYBOOK.md and publicly reply only to people who explicitly requested access and have not received a public link. Record the URL and timestamp.
@@ -112,7 +112,7 @@ Do not combine these results with the separate $30 Meta LPV campaign. Do not cal
 
 ## Definition of done
 
-- Buy-path hotfix is green and timestamped.
+- Buy path is green and timestamped by actual public submissions and checkout entry.
 - Exact permitted Reddit surface and post URL are recorded.
 - Free case and thread are cross-linked with no placeholder.
 - Desktop/mobile and complete Roscoe playthrough pass.
