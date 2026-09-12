@@ -354,18 +354,13 @@ label.btn {
   font-size: 0.8rem;
 }
 
-/* Sticky on phone-sized / ≤844 viewport (390×844 design) */
+/* Sticky on phone-sized / ≤844 viewport (390×844 design).
+   Fixture banner is NOT sticky on portal mobile — only the current-question bar
+   sticks at top:0 to avoid overlapping sticky chrome. */
 @media (max-width: 844px) {
-  .fixture-banner {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
-
   .current-question-bar {
     position: sticky;
-    /* Sit just under sticky fixture banner (~2.6rem typical) */
-    top: 2.6rem;
+    top: 0;
     z-index: 45;
     box-shadow: 0 2px 8px rgba(20, 32, 51, 0.12);
     /* Keep compact: label + ≤2 lines of question; hint may clip visually on tiny screens */
@@ -377,11 +372,11 @@ label.btn {
     display: none; /* keep bar to ~two compact lines on sticky mobile */
   }
 
-  /* Prevent content from vanishing under sticky chrome when jumping to locker */
+  /* Prevent content from vanishing under sticky question bar when jumping to locker */
   #locker-heading,
   #accession-input,
   #validate-btn {
-    scroll-margin-top: 8.5rem;
+    scroll-margin-top: 5.5rem;
   }
 }
 
