@@ -26,7 +26,7 @@ People who can compare theories with other real players will participate more de
 - Canonical case: https://porchpress.store/pages/free-investigation
 - Paid follow-on: https://porchpress.store/products/baby-in-a-basket
 - Primary candidate surface: https://www.reddit.com/r/printandplay/comments/1wbl9l6/playtesters_wanted_a_documentbased_detective/
-- Owner_Bot observed the thread live on September 12, 2026. It was posted by u/Candid_Ad4725 about three days earlier with the **Seeking Playtesters** flair and remained public. It has at least thirteen distinct public expressions of interest, including explicit requests for the link. Replies routed people into DMs; no completed-play feedback was visible.
+- Owner_Bot observed the thread live on September 12, 2026. It was posted by u/Candid_Ad4725 about three days earlier with the **Seeking Playtesters** flair and remained public. It has at least fourteen distinct public expressions of interest, including explicit requests for the link. Replies routed people into DMs; no completed-play feedback was visible.
 - Grok must verify that u/Candid_Ad4725 is the Porch Press-controlled account before editing or replying. If ownership is not verified, do not touch the thread and report the blocker.
 - If ownership is verified, reuse this one live thread. Do not create another Reddit post. Correct the public offer with the update copy in HOST_PLAYBOOK.md and turn the existing interest into an open case-room discussion.
 - Do not DM Reddit users, scrape identities, cross-post, buy promotion, or ask friends/agents to seed responses.
