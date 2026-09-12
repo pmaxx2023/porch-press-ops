@@ -15,7 +15,8 @@ Local base: `http://127.0.0.1:8765` (see README).
 | Non-pair | Add `FIXTURE-NMC-0001` + `FIXTURE-LIL-0001` only | Reveal remains hidden |
 | Two-token reveal | Add `FIXTURE-NMC-0001` + `FIXTURE-CFD-0001` | Reveal unlocks; announce on first unlock; **receipts first** for both tokens; then CAST CLAIM; then CROSS-EXAMINATION |
 | Reversed token order | Reset; add `FIXTURE-CFD-0001` then `FIXTURE-NMC-0001` | Same reveal as above |
-| Classification | Choose supported / contested / disproved | Saved under `claim_states["FX-CLAIM-001"]`; status confirms |
+| Classification | Choose supported / contested / disproved | Saved under `claim_states["FX-CLAIM-001"]` as `{status,history}`; card shows speaker, evidence cited, status; re-classify appends edit trail chips (e.g. CONTESTED → SUPPORTED) |
+| Sticky question (≤844) | View portal at 390×844; scroll | Current-question bar sticks under fixture banner; locker Validate remains reachable |
 | Export | Export JSON | Download with `case_id` + `schema_version` |
 | Import valid | Import prior export | State restored; input cleared |
 | Import malformed | Import non-JSON or wrong case_id/schema | Rejected; **file input cleared** so retry works |

@@ -7,7 +7,7 @@ All content in this tree is **FIXTURE / DEVELOPER PREVIEW**. Accession codes use
 - **case_id:** `PP-ELEANOR-AU-001A-FIXTURE`
 - **schema_version:** `1`
 - **localStorage key:** `pp-eleanor-au-001a-fixture`
-- **known claim ID:** `FX-CLAIM-001` values `{supported, contested, disproved}`
+- **known claim ID:** `FX-CLAIM-001` values `{supported, contested, disproved}`; preferred shape `{ status, history: [{from,to,at}] }` (legacy string upgraded on import; unknown claim IDs dropped)
 - **known episode IDs:** `FX1`
 - **known hint IDs (allowlist):** `FX-HINT-001`, `FX-HINT-002` (none required for spike)
 - **notes max:** 8KB (truncated on normalize/save)

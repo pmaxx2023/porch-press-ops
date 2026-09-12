@@ -317,3 +317,154 @@ label.btn {
 
 #reveal-announce:not([hidden]):empty { display: none; }
 #reveal-announce:not(:empty) { display: block; margin: 1rem 0; }
+
+/* --- HOLD correction: current question bar + claim meta/trail --- */
+.current-question-bar {
+  background: #eef3f8;
+  border: 1px solid #c5d3e0;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.85rem;
+  margin: 0 0 1rem;
+  z-index: 40;
+}
+
+.current-question-bar .cq-label {
+  margin: 0 0 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.current-question-bar .cq-text {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.current-question-bar .cq-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+}
+
+/* Sticky on phone-sized / ≤844 viewport (390×844 design) */
+@media (max-width: 844px) {
+  .fixture-banner {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .current-question-bar {
+    position: sticky;
+    /* Sit just under sticky fixture banner (~2.6rem typical) */
+    top: 2.6rem;
+    z-index: 45;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.12);
+    /* Keep compact: label + ≤2 lines of question; hint may clip visually on tiny screens */
+    max-height: 5.5rem;
+    overflow: hidden;
+  }
+
+  .current-question-bar .cq-hint {
+    display: none; /* keep bar to ~two compact lines on sticky mobile */
+  }
+
+  /* Prevent content from vanishing under sticky chrome when jumping to locker */
+  #locker-heading,
+  #accession-input,
+  #validate-btn {
+    scroll-margin-top: 8.5rem;
+  }
+}
+
+.claim-meta {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.65rem 0 0.85rem;
+  padding: 0.65rem 0.75rem;
+  background: #f3f6f9;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.claim-meta > div {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+}
+
+.claim-meta dt {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.claim-meta dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+#claim-current-status[data-status="unset"] { color: var(--muted); font-style: italic; }
+#claim-current-status[data-status="supported"] { color: var(--ok); font-weight: 700; }
+#claim-current-status[data-status="contested"] { color: var(--warn); font-weight: 700; }
+#claim-current-status[data-status="disproved"] { color: var(--bad); font-weight: 700; }
+
+.claim-edit-trail {
+  margin: 0.75rem 0 0.25rem;
+}
+
+.claim-edit-trail .trail-heading {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.trail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.trail-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.55rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  font-family: ui-monospace, Consolas, monospace;
+  color: var(--ink);
+}
+
+.trail-list .trail-arrow {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+@media (max-width: 390px) {
+  .claim-meta > div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}

@@ -21,6 +21,12 @@
     </nav>
 
     <main id="main">
+      <aside id="current-question-bar" class="current-question-bar" aria-labelledby="current-q-label">
+        <p id="current-q-label" class="cq-label">Current question</p>
+        <p class="cq-text" id="current-q-text">Which fixture accession codes connect Sample Clerk’s notice to Fixture Subject A’s Cedar Fork docket?</p>
+        <p class="cq-hint muted">Primary next step: open Evidence locker below and Validate accession codes.</p>
+      </aside>
+
       <h1>Fixture Case Portal</h1>
       <p class="lead">
         Opening lead (fixture only): Sample Clerk reports that <strong>Fixture Subject A</strong>
@@ -73,10 +79,29 @@
           <article class="claim-block cast-claim" aria-labelledby="claim-a-h">
             <p class="slate-label">CAST CLAIM</p>
             <h3 id="claim-a-h">Synthetic role: Investigations editor / Gen X lens</h3>
+            <dl class="claim-meta">
+              <div>
+                <dt>Speaker</dt>
+                <dd>Investigations editor / Gen X lens (synthetic)</dd>
+              </div>
+              <div>
+                <dt>Evidence cited</dt>
+                <dd><code>FIXTURE-NMC-0001</code> + <code>FIXTURE-CFD-0001</code></dd>
+              </div>
+              <div>
+                <dt>Current status</dt>
+                <dd id="claim-current-status" data-status="unset">Unset</dd>
+              </div>
+            </dl>
             <p>
               Sample Clerk asserts that Fixture Subject A signed a municipal notice <em>before</em>
               the Cedar Fork docket stamp on the paired deed-room slip — suggesting a single continuous errand.
             </p>
+            <div class="claim-edit-trail" id="claim-edit-trail" hidden>
+              <p class="trail-heading" id="claim-trail-heading">Edit trail</p>
+              <ul class="trail-list" id="claim-trail-list" aria-labelledby="claim-trail-heading"></ul>
+              <p class="visually-hidden" id="claim-trail-desc" aria-live="polite"></p>
+            </div>
           </article>
 
           <article class="claim-block contest" aria-labelledby="claim-b-h">

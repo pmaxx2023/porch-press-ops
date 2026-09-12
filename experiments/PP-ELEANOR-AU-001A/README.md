@@ -38,17 +38,17 @@ curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/archives/northbri
 3. Six sample artifact routes using only `FIXTURE-*` accession codes and obviously fake names.
 4. Exact-match evidence-token capture with distinct invalid / new-valid / duplicate feedback.
 5. One pre-authored cast reveal when both `FIXTURE-NMC-0001` and `FIXTURE-CFD-0001` are present (order independent), with receipts before dialogue.
-6. Claim classification: supported | contested | disproved (stored in `claim_states` under `FX-CLAIM-001`).
+6. Claim classification: supported | contested | disproved (stored in `claim_states` under `FX-CLAIM-001` as `{ status, history }`; legacy string status upgraded on import). CAST CLAIM card shows speaker, evidence cited, current status, and edit trail.
 7. Case-state export (JSON download), import (schema + allowlist normalization, never `eval`), and reset with export reminder.
 8. Static HTML, ordinary crawlable links, per-archive `robots.txt` (Disallow all) and absolute-URL `sitemap.xml`.
-9. Desktop layout plus 390px-friendly mobile; shared a11y helpers (`:focus-visible` only, skip link, reduced motion, ≥44px targets, ≥14px secondary metadata).
+9. Desktop layout plus 390×844-friendly mobile with sticky current-question bar; shared a11y helpers (`:focus-visible` only, skip link, reduced motion, ≥44px targets, ≥14px secondary metadata).
 
 ## Archive identity mapping (DESIGN_DIRECTION characters, FIXTURE content)
 
 | Fixture shell | DESIGN_DIRECTION voice | Nav voice |
 | --- | --- | --- |
 | northbridge-municipal-clippings | River & Rail–like newsprint | Browse by Date, City Desk, Rail Files, Reporter Notebooks |
-| cedar-fork-deed-room | Bellwether-like small house | The House, Registers, Photographs, Correspondence, About the Record |
+| cedar-fork-deed-room | small-house register | The House, Registers, Photographs, Correspondence, About the Record |
 | lampblack-industrial-ledger | Ohio River IMP–like industrial DB | Companies, People, Record Groups, Technical Drawings |
 
 Institutional archive nav does **not** include Case Portal or Fixture Hub. Hub→archive and portal→archive links remain. One fixture-only “Dev return: Fixture Hub” link sits inside the red FIXTURE banner on archive pages.

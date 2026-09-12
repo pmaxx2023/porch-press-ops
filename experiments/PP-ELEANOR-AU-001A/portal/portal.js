@@ -75,15 +75,78 @@
     return out;
   }
 
+  function statusLabel(status) {
+    if (!status) return "Unset";
+    return String(status).charAt(0).toUpperCase() + String(status).slice(1);
+  }
+
+  function statusChip(status) {
+    return String(status || "unset").toUpperCase();
+  }
+
+  /** Normalize one claim entry to { status, history: [{from,to,at}] } or null. */
+  function normalizeClaimEntry(cv) {
+    if (typeof cv === "string") {
+      if (KNOWN_CLAIM_VALUES.indexOf(cv) === -1) return null;
+      return { status: cv, history: [] };
+    }
+    if (!cv || typeof cv !== "object") return null;
+    var status = typeof cv.status === "string" ? cv.status : "";
+    if (KNOWN_CLAIM_VALUES.indexOf(status) === -1) return null;
+    var history = [];
+    if (Array.isArray(cv.history)) {
+      cv.history.forEach(function (h) {
+        if (!h || typeof h !== "object") return;
+        var from = h.from;
+        var to = h.to;
+        var at = typeof h.at === "string" ? h.at : "";
+        var fromOk = from === null || from === undefined || from === "" || KNOWN_CLAIM_VALUES.indexOf(from) !== -1;
+        var toOk = KNOWN_CLAIM_VALUES.indexOf(to) !== -1;
+        if (!fromOk || !toOk) return;
+        if (from === "" || from === undefined) from = null;
+        history.push({ from: from, to: to, at: at || new Date().toISOString() });
+      });
+    }
+    return { status: status, history: history };
+  }
+
+  function getClaimStatus(stateObj) {
+    var entry = stateObj.claim_states && stateObj.claim_states[CLAIM_ID];
+    if (!entry) return null;
+    if (typeof entry === "string") return entry;
+    return entry.status || null;
+  }
+
+  function getClaimHistory(stateObj) {
+    var entry = stateObj.claim_states && stateObj.claim_states[CLAIM_ID];
+    if (!entry || typeof entry === "string") return [];
+    return Array.isArray(entry.history) ? entry.history : [];
+  }
+
+  function setClaimRuling(newStatus) {
+    if (KNOWN_CLAIM_VALUES.indexOf(newStatus) === -1) return;
+    var prev = getClaimStatus(state);
+    if (prev === newStatus) return;
+    var history = getClaimHistory(state).slice();
+    history.push({
+      from: prev,
+      to: newStatus,
+      at: new Date().toISOString()
+    });
+    state.claim_states[CLAIM_ID] = { status: newStatus, history: history };
+  }
+
   function normalizeState(s) {
     var out = defaultState();
     out.evidence_tokens = dedupeValidTokens(s.evidence_tokens);
 
     out.claim_states = {};
     if (s.claim_states && typeof s.claim_states === "object") {
+      // Only known claim IDs; drop unknowns
       var cv = s.claim_states[CLAIM_ID];
-      if (typeof cv === "string" && KNOWN_CLAIM_VALUES.indexOf(cv) !== -1) {
-        out.claim_states[CLAIM_ID] = cv;
+      var normalized = normalizeClaimEntry(cv);
+      if (normalized) {
+        out.claim_states[CLAIM_ID] = normalized;
       }
     }
 
@@ -147,6 +210,10 @@
     receiptList: document.getElementById("receipt-list"),
     claimRadios: document.querySelectorAll('input[name="claim-class"]'),
     claimStatus: document.getElementById("claim-status"),
+    claimCurrentStatus: document.getElementById("claim-current-status"),
+    claimEditTrail: document.getElementById("claim-edit-trail"),
+    claimTrailList: document.getElementById("claim-trail-list"),
+    claimTrailDesc: document.getElementById("claim-trail-desc"),
     nextQ: document.getElementById("next-research-q"),
     exportBtn: document.getElementById("export-btn"),
     importInput: document.getElementById("import-input"),
@@ -206,13 +273,56 @@
     });
   }
 
+  function renderClaimCard() {
+    var current = getClaimStatus(state);
+    var history = getClaimHistory(state);
+
+    if (els.claimCurrentStatus) {
+      var label = statusLabel(current);
+      els.claimCurrentStatus.textContent = label;
+      els.claimCurrentStatus.setAttribute("data-status", current || "unset");
+    }
+
+    if (els.claimEditTrail && els.claimTrailList) {
+      els.claimTrailList.innerHTML = "";
+      if (!history.length) {
+        els.claimEditTrail.hidden = true;
+        if (els.claimTrailDesc) els.claimTrailDesc.textContent = "";
+      } else {
+        els.claimEditTrail.hidden = false;
+        var spoken = [];
+        history.forEach(function (h) {
+          var li = document.createElement("li");
+          var fromChip = statusChip(h.from);
+          var toChip = statusChip(h.to);
+          li.innerHTML =
+            '<span class="trail-from">' + fromChip + '</span>' +
+            '<span class="trail-arrow" aria-hidden="true">→</span>' +
+            '<span class="trail-to">' + toChip + '</span>';
+          li.setAttribute(
+            "aria-label",
+            "Ruling changed from " + statusLabel(h.from) + " to " + statusLabel(h.to)
+          );
+          els.claimTrailList.appendChild(li);
+          spoken.push(fromChip + " to " + toChip);
+        });
+        if (els.claimTrailDesc) {
+          els.claimTrailDesc.textContent =
+            "Edit trail: " + spoken.join("; ") + ". Current status: " + statusLabel(current) + ".";
+        }
+      }
+    }
+  }
+
   function renderReveal(announceUnlock) {
+
     if (!els.reveal) return;
     var open = hasRevealPair();
     els.reveal.hidden = !open;
     if (open) {
       renderReceipts();
-      var current = state.claim_states[CLAIM_ID];
+      renderClaimCard();
+      var current = getClaimStatus(state);
       els.claimRadios.forEach(function (r) {
         r.checked = current === r.value;
       });
@@ -310,9 +420,17 @@
   els.claimRadios.forEach(function (radio) {
     radio.addEventListener("change", function () {
       if (!hasRevealPair()) return;
-      state.claim_states[CLAIM_ID] = radio.value;
+      setClaimRuling(radio.value);
       saveState(state);
-      setStatus(els.claimStatus, "ok", "Classification saved: " + radio.value);
+      renderClaimCard();
+      setStatus(
+        els.claimStatus,
+        "ok",
+        "Classification saved: " + radio.value +
+          (getClaimHistory(state).length
+            ? " (edit trail updated)"
+            : "")
+      );
     });
   });
 
