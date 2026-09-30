@@ -1,0 +1,38 @@
+/* Bellwether Historical Register */
+:root {
+  --bg: #f3ebe0; --ink: #2a1f28; --mast: #5c3d52; --moss: #5d7356; --accent: #6e4a62;
+  --panel: #fbf7f0; --border: #c4b5a5; --muted: #5a4e55; --cream: #f8f3eb;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  background: var(--bg); color: var(--ink); line-height: 1.6; font-size: 16px; }
+a { color: var(--accent); }
+.masthead { background: linear-gradient(180deg, var(--cream) 0%, #efe6d8 100%);
+  color: var(--ink); padding: 1.5rem 1rem 1.1rem; text-align: center; border-bottom: 1px solid var(--border); }
+.bookplate { display: inline-block; border: 2px solid var(--mast); outline: 1px solid var(--moss);
+  outline-offset: 4px; padding: 0.85rem 1.25rem 1rem; background: var(--panel); max-width: 28rem; }
+.masthead .name { margin: 0; font-size: clamp(1.15rem, 3.2vw, 1.45rem); font-weight: 700; color: var(--mast); }
+.masthead .tag { margin: 0.45rem 0 0; font-size: 0.875rem; color: var(--muted); font-style: italic; }
+.site-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.2rem; padding: 0.75rem 1rem;
+  background: var(--panel); border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+.site-nav a { color: var(--moss); font-weight: 600; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.site-nav a[aria-current="page"] { border-bottom: 2px solid var(--mast); }
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+.kicker { font-size: 0.8rem; color: var(--moss); font-style: italic; margin: 0 0 0.35rem; }
+h1 { font-size: clamp(1.3rem, 3.5vw, 1.7rem); margin: 0 0 0.65rem; line-height: 1.25; color: var(--mast); }
+h2 { font-size: 1.1rem; margin: 1.75rem 0 0.55rem; color: var(--moss); }
+.panel { background: var(--panel); border: 1px solid var(--border); padding: 1rem 1.1rem; margin: 0.75rem 0; }
+.muted { color: var(--muted); font-size: 0.95rem; }
+.accession { font-family: ui-monospace, Consolas, monospace; font-size: 0.95rem; font-weight: 700; }
+.meta-grid { display: grid; grid-template-columns: 9rem 1fr; gap: 0.4rem 0.75rem; font-size: 0.95rem; }
+.meta-grid dt { font-size: 0.8rem; color: var(--muted); margin: 0; font-style: italic; }
+.meta-grid dd { margin: 0; }
+.transcript { white-space: pre-wrap; font-family: Georgia, serif; font-size: 1rem;
+  background: var(--cream); border: 1px solid var(--border); padding: 0.85rem 1rem; overflow-x: auto; }
+.copy-acc { font: inherit; font-weight: 600; min-height: 44px; min-width: 44px; padding: 0.55rem 1rem;
+  background: var(--mast); color: #fff; border: none; cursor: pointer; margin: 0.5rem 0; }
+.media-slot { border: 1px solid var(--border); background: #ebe3d6; padding: 1.25rem; text-align: center; margin: 0.75rem 0; }
+.media-slot .candidate { font-size: 0.85rem; color: var(--moss); margin: 0 0 0.5rem; font-style: italic; }
+.catalog-list { list-style: none; padding: 0; margin: 0; }
+.catalog-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.footer-note { margin-top: 2.5rem; font-size: 0.875rem; color: var(--muted); font-style: italic; }

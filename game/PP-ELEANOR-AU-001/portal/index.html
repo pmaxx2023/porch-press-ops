@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Case Portal — PP-ELEANOR-AU-001</title>
+  <link rel="stylesheet" href="../shared/a11y.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <p class="dev-banner" role="status">UNPUBLISHED CANDIDATE — NOINDEX <a href="../index.html">Dev return: Case Hub</a></p>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <aside id="current-question-bar" class="current-question-bar" aria-labelledby="current-q-label">
+    <p id="current-q-label" class="cq-label">Current question</p>
+    <p id="cq-text" class="cq-text">Complete onboarding to open a case movement.</p>
+    <p id="cq-hint" class="cq-hint">Save accession codes from archive pages into the evidence locker.</p>
+  </aside>
+
+  <div class="portal-wrap">
+    <nav class="portal-nav" aria-label="Portal">
+      <a href="#onboarding">Start</a>
+      <a href="#locker">Evidence locker</a>
+      <a href="#scene">Scene</a>
+      <a href="#notes">Notes</a>
+      <a href="#transfer">Export / import</a>
+      <a href="../index.html">Case hub</a>
+    </nav>
+
+    <main id="main">
+      <header>
+        <p class="ep-slate" id="ep-slate">Case PP-ELEANOR-AU-001</p>
+        <h1>Investigator portal</h1>
+        <p class="lead muted">Browser-local case desk. Notes never leave this device unless you export them.</p>
+      </header>
+
+      <section id="onboarding" class="panel" aria-labelledby="onboard-h">
+        <h2 id="onboard-h">Start</h2>
+        <div id="onboard-start">
+          <h3 id="start-headline">Eleanor Hart disappeared twice.</h3>
+          <div id="start-body" class="lead">
+            <p>The first time, her family tried to decide the story. The second time, the records did.</p>
+            <p>You are the Lead Investigator. Your research agent can search and compare sources, but it cannot establish a fact without a page you can open. Save accession codes. Separate what a record says from what your investigator thinks it means. When the cast makes a dramatic claim, rule it supported, contested, or disproved.</p>
+          </div>
+          <div class="action-row" role="group" aria-label="Case entry actions">
+            <button type="button" class="btn primary" id="btn-open-1948" data-action="open-1948">Open the 1948 case</button>
+            <button type="button" class="btn" id="btn-need-1912" data-action="need-1912">I need the 1912 case</button>
+            <button type="button" class="btn" id="btn-know-e0" data-action="know-e0">I already know Episode Zero</button>
+            <button type="button" class="btn" id="btn-how-web" data-action="how-web">How the fictional web works</button>
+          </div>
+        </div>
+        <div id="reality-panel" class="panel inset">
+          <h3>Reality and privacy</h3>
+          <p>This is fiction distributed across Porch Press-controlled websites. Archive pages stay in character, while their About pages explain the project provenance. Your notes and case progress stay in this browser unless you export them. The portal does not need or collect the conversation you have with your outside AI agent. Do not paste private or personal material into the evidence locker.</p>
+          <p>Search engines and agents are inconsistent. Every necessary record also has a citation path and a direct recovery hint. A failed search is not a failed game.</p>
+          <p><strong>All five investigators are synthetic produced personas.</strong> This is an authored open-web historical-fiction game.</p>
+        </div>
+        <div id="how-web-panel" class="panel inset" hidden>
+          <h3>How the fictional web works</h3>
+          <p>Four archive institutions publish static records. Copy an accession from a record page into the evidence locker. Scenes unlock from evidence and episode choice—not from chatting with the portal. Use an outside research agent with the standing brief below; never paste private chat into the locker.</p>
+          <button type="button" class="btn" id="btn-dismiss-how">Return to start actions</button>
+        </div>
+      </section>
+
+      <section id="brief" class="panel" aria-labelledby="brief-h">
+        <h2 id="brief-h">Standing outside-agent brief</h2>
+        <pre class="prompt-box" id="research-prompt">Investigate the named person, phrase, place, or accession reference on the public web. Use only sources you can open. Return every relevant URL and accession code. Quote the exact fields that matter. In separate sections, state (1) what each record directly says, (2) what you infer, (3) contradictions or source limits, and (4) what remains unproved. Never invent a missing record, merge similarly named people, or solve beyond the evidence you found.</pre>
+        <button type="button" class="btn" id="copy-prompt-btn">Copy standing brief</button>
+        <p id="prompt-status" class="status" hidden role="status"></p>
+        <div id="episode-prompt-wrap" hidden>
+          <h3>Active episode research prompt</h3>
+          <pre class="prompt-box" id="episode-prompt"></pre>
+        </div>
+      </section>
+
+      <section id="locker" class="panel" aria-labelledby="locker-h">
+        <h2 id="locker-h">Evidence locker</h2>
+        <label for="accession-input">Accession code</label>
+        <div class="row">
+          <input type="text" id="accession-input" autocomplete="off" spellcheck="false" aria-describedby="locker-help">
+          <button type="button" class="btn primary" id="validate-btn">Save to locker</button>
+        </div>
+        <p id="locker-help" class="muted">Exact accession codes from archive record pages.</p>
+        <p id="validate-status" class="status" hidden role="status" aria-live="polite"></p>
+        <h3>Saved accessions</h3>
+        <ul id="token-list" class="token-list"></ul>
+      </section>
+
+      <section id="scene" class="panel" aria-labelledby="scene-h">
+        <h2 id="scene-h">Cast scene</h2>
+        <p id="scene-empty" class="muted">No active scene. Open an episode and collect the required evidence.</p>
+        <div id="scene-stage" hidden>
+          <p class="ep-slate" id="scene-id-label"></p>
+          <div id="receipt-block" hidden>
+            <h3>Evidence receipts</h3>
+            <ul id="receipt-list" class="receipt-list"></ul>
+          </div>
+          <div id="dialogue-block"></div>
+          <div id="claim-block" hidden>
+            <p class="claim-banner" id="claim-banner">CAST CLAIM</p>
+            <p id="claim-text" class="claim-text"></p>
+            <p id="claim-prompt" class="muted"></p>
+            <p>Current ruling: <strong id="claim-current-status" data-status="unset">Unset</strong></p>
+            <fieldset class="claim-fieldset">
+              <legend>Classify this claim</legend>
+              <label><input type="radio" name="claim-class" value="supported"> Supported</label>
+              <label><input type="radio" name="claim-class" value="contested"> Contested</label>
+              <label><input type="radio" name="claim-class" value="disproved"> Disproved</label>
+            </fieldset>
+            <div id="claim-edit-trail" hidden>
+              <h4>Ruling edit trail</h4>
+              <ul id="claim-trail-list"></ul>
+              <p id="claim-trail-desc" class="visually-hidden"></p>
+            </div>
+            <p id="claim-status" class="status" hidden role="status"></p>
+          </div>
+          <p id="next-action" class="next-action"></p>
+          <button type="button" class="btn primary" id="btn-continue-scene">Return to investigation</button>
+        </div>
+        <div id="scene-queue" class="muted" hidden></div>
+      </section>
+
+      <section id="hints" class="panel" aria-labelledby="hints-h">
+        <h2 id="hints-h">Recovery hints</h2>
+        <p id="hints-empty" class="muted">Open an episode to unlock leveled recovery hints.</p>
+        <ol id="hints-list"></ol>
+        <button type="button" class="btn" id="btn-hint" hidden>Reveal next hint</button>
+      </section>
+
+      <section id="notes" class="panel" aria-labelledby="notes-h">
+        <h2 id="notes-h">Investigator notes</h2>
+        <label for="notes-input">Local notes (never uploaded)</label>
+        <textarea id="notes-input" maxlength="8192" rows="5"></textarea>
+      </section>
+
+      <section id="transfer" class="panel" aria-labelledby="transfer-h">
+        <h2 id="transfer-h">Export / import / reset</h2>
+        <div class="action-row">
+          <button type="button" class="btn" id="export-btn">Export case JSON</button>
+          <label class="btn file-label">Import case JSON
+            <input type="file" id="import-input" accept="application/json,.json" class="visually-hidden">
+          </label>
+          <button type="button" class="btn danger" id="reset-btn">Reset case</button>
+        </div>
+        <p id="import-status" class="status" hidden role="status" aria-live="polite"></p>
+      </section>
+    </main>
+  </div>
+  <script src="portal.js"></script>
+</body>
+</html>

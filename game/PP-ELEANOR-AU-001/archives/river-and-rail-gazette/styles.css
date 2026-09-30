@@ -1,0 +1,44 @@
+/* River & Rail Gazette Archive */
+:root {
+  --bg: #f0ebe3; --ink: #111; --mast: #1a1a1a; --accent: #8b1e1e; --panel: #faf7f2;
+  --border: #b8aea0; --muted: #4a4540; --news: #2a2a2a;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: "Times New Roman", Times, Georgia, serif; background: var(--bg);
+  color: var(--ink); line-height: 1.5; font-size: 16px; }
+a { color: var(--accent); }
+.masthead { background: var(--panel); border-bottom: 4px double var(--mast); padding: 1rem 1rem 0.75rem; text-align: center; }
+.masthead .name { margin: 0; font-size: clamp(1.4rem, 4vw, 1.9rem); font-weight: 900;
+  letter-spacing: -0.02em; text-transform: uppercase; }
+.masthead .tag { margin: 0.25rem 0 0; font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.edition-rule { display: flex; justify-content: space-between; max-width: 36rem; margin: 0.65rem auto 0;
+  font-family: system-ui, sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;
+  border-top: 1px solid var(--mast); border-bottom: 1px solid var(--mast); padding: 0.35rem 0; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; padding: 0.65rem 1rem;
+  background: #e8e2d8; border-bottom: 1px solid var(--border); font-family: system-ui, sans-serif; font-size: 0.9rem; }
+.site-nav a { color: var(--news); font-weight: 700; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+.site-nav a[aria-current="page"] { border-bottom: 2px solid var(--accent); color: var(--accent); }
+.wrap { max-width: 38rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+.kicker { font-family: system-ui, sans-serif; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--accent); font-weight: 700; margin: 0 0 0.35rem; }
+h1 { font-size: clamp(1.35rem, 3.5vw, 1.8rem); margin: 0 0 0.65rem; line-height: 1.2; font-weight: 900; }
+h2 { font-size: 1.1rem; margin: 1.75rem 0 0.55rem; border-bottom: 2px solid var(--mast); padding-bottom: 0.2rem; }
+.panel { background: var(--panel); border: 1px solid var(--border); padding: 1rem 1.1rem; margin: 0.75rem 0; }
+.muted { color: var(--muted); font-size: 0.95rem; }
+.accession { font-family: ui-monospace, Consolas, monospace; font-size: 0.95rem; font-weight: 700; }
+.meta-grid { display: grid; grid-template-columns: 9rem 1fr; gap: 0.35rem 0.75rem; font-size: 0.95rem; }
+.meta-grid dt { font-family: system-ui, sans-serif; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--muted); margin: 0; font-weight: 700; }
+.meta-grid dd { margin: 0; }
+.transcript { white-space: pre-wrap; font-family: "Times New Roman", Times, serif; font-size: 1rem;
+  column-count: 1; background: #fff; border: 1px solid var(--border); padding: 0.85rem 1rem; overflow-x: auto; max-width: 36em; }
+.copy-acc { font-family: system-ui, sans-serif; font-weight: 700; min-height: 44px; min-width: 44px;
+  padding: 0.55rem 1rem; background: var(--accent); color: #fff; border: none; cursor: pointer; margin: 0.5rem 0; }
+.media-slot { border: 1px solid var(--border); background: #e5dfd4; padding: 1.25rem; text-align: center; margin: 0.75rem 0; }
+.media-slot .candidate { font-family: system-ui, sans-serif; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--accent); margin: 0 0 0.5rem; font-weight: 700; }
+.catalog-list { list-style: none; padding: 0; margin: 0; }
+.catalog-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 0.5rem; padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border); }
+.catalog-list .date-col { font-family: system-ui, sans-serif; font-size: 0.85rem; font-weight: 700; }
+.footer-note { margin-top: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: system-ui, sans-serif; }

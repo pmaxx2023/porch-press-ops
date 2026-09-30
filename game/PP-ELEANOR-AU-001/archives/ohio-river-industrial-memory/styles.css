@@ -1,0 +1,45 @@
+/* Ohio River Industrial Memory Project */
+:root {
+  --bg: #e8ecf0; --ink: #1a2332; --mast: #0f2c4c; --rust: #8b4513; --accent: #1a4a7a;
+  --panel: #f4f6f8; --border: #9aa3ad; --muted: #4a5564; --rule: #2a3a4a;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg);
+  color: var(--ink); line-height: 1.55; font-size: 16px; }
+a { color: var(--accent); }
+.masthead { background: var(--mast); color: #e8eef4; padding: 1.2rem 1rem;
+  border-bottom: 4px solid var(--rust); }
+.masthead .name { margin: 0; font-size: clamp(1.1rem, 3vw, 1.4rem); font-weight: 800;
+  letter-spacing: 0.04em; text-transform: uppercase; font-stretch: condensed; }
+.masthead .tag { margin: 0.35rem 0 0; font-size: 0.85rem; color: #b8c4d0; font-weight: 500; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; padding: 0.65rem 1rem;
+  background: #d5dde6; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+.site-nav a { color: var(--mast); font-weight: 700; text-decoration: none; text-transform: uppercase;
+  letter-spacing: 0.03em; font-size: 0.8rem; min-height: 44px; display: inline-flex; align-items: center; }
+.site-nav a[aria-current="page"] { border-bottom: 2px solid var(--rust); }
+.wrap { max-width: 48rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+.kicker { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rust);
+  font-weight: 700; margin: 0 0 0.35rem; }
+h1 { font-size: clamp(1.3rem, 3.2vw, 1.65rem); margin: 0 0 0.65rem; font-weight: 800;
+  letter-spacing: -0.01em; line-height: 1.2; }
+h2 { font-size: 1.05rem; margin: 1.75rem 0 0.55rem; text-transform: uppercase; letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--rule); padding-bottom: 0.25rem; }
+.panel { background: var(--panel); border: 1px solid var(--border); border-left: 4px solid var(--rust);
+  padding: 1rem 1.1rem; margin: 0.75rem 0; }
+.muted { color: var(--muted); font-size: 0.9rem; }
+.accession { font-family: ui-monospace, Consolas, monospace; font-size: 0.95rem; font-weight: 700; }
+.meta-grid { display: grid; grid-template-columns: 10rem 1fr; gap: 0.35rem 0.75rem; font-size: 0.9rem; }
+.meta-grid dt { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0; font-weight: 700; }
+.meta-grid dd { margin: 0; }
+.transcript { white-space: pre-wrap; font-family: ui-monospace, Consolas, monospace; font-size: 0.9rem;
+  background: #f0f3f6; border: 1px solid var(--border); padding: 0.85rem 1rem; overflow-x: auto; }
+.copy-acc { font: inherit; font-weight: 700; min-height: 44px; min-width: 44px; padding: 0.55rem 1rem;
+  background: var(--mast); color: #fff; border: none; cursor: pointer; margin: 0.5rem 0; text-transform: uppercase;
+  letter-spacing: 0.04em; font-size: 0.85rem; }
+.media-slot { border: 1px solid var(--border); background: #dde3ea; padding: 1.25rem; text-align: center; margin: 0.75rem 0; }
+.media-slot .candidate { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--rust); margin: 0 0 0.5rem; font-weight: 700; }
+.catalog-list { list-style: none; padding: 0; margin: 0; }
+.catalog-list li { display: grid; grid-template-columns: 10rem 1fr; gap: 0.5rem; padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border); align-items: baseline; }
+.catalog-list .acc-col { font-family: ui-monospace, Consolas, monospace; font-size: 0.85rem; font-weight: 700; }
+.footer-note { margin-top: 2.5rem; font-size: 0.85rem; color: var(--muted); }
