@@ -1,0 +1,37 @@
+{
+  "covers": [
+    {
+      "handle": "the-wrong-widow",
+      "title": "The Wrong Widow",
+      "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/cover-the-wrong-widow_b2db9602-f131-4a39-8fcd-f9cdb182d613.png?v=1788632257"
+    },
+    {
+      "handle": "baby-in-a-basket",
+      "title": "Baby in a Basket",
+      "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/02-who-was-she-before-sutton.png?v=1788632264"
+    },
+    {
+      "handle": "the-inheritance",
+      "title": "The Inheritance",
+      "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/The-Inheritance-Cover.png?v=1788632249"
+    },
+    {
+      "handle": "roscoes-grave",
+      "title": "Roscoe’s Grave",
+      "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/Roscoes-Grave-Cover.png?v=1788632247"
+    }
+  ],
+  "previews": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/Preview-03-Census-Exhibit.png?v=1788998932",
+      "altText": "Spoiler-free fictional census exhibit from Baby in a Basket",
+      "mediaId": "gid://shopify/MediaImage/44640879903018"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/Preview-02-Opening-Story.png?v=1788998933",
+      "altText": "Spoiler-free opening story page from Baby in a Basket",
+      "mediaId": "gid://shopify/MediaImage/44640880066858"
+    }
+  ],
+  "preview_pdf": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/Baby-in-a-Basket-Preview.pdf?v=1788998929"
+}

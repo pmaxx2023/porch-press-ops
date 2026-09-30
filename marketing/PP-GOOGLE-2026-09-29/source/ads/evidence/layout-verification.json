@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "viewport": 320,
+      "scroll": 320,
+      "brokenImages": 0,
+      "cta": [
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 800.703125,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        },
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 6233.90625,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        }
+      ],
+      "h1": 1
+    },
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "brokenImages": 0,
+      "cta": [
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 626.875,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        },
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 5558.3125,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        }
+      ],
+      "h1": 1
+    },
+    {
+      "viewport": 768,
+      "scroll": 768,
+      "brokenImages": 0,
+      "cta": [
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 642.0625,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        },
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 3671.265625,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        }
+      ],
+      "h1": 1
+    },
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "brokenImages": 0,
+      "cta": [
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 664.734375,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        },
+        {
+          "text": "Get all four cases — $39.99",
+          "top": 3643.09375,
+          "href": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true"
+        }
+      ],
+      "h1": 1
+    }
+  ],
+  "faqOpened": true,
+  "keyboardFocusTag": "SUMMARY"
+}

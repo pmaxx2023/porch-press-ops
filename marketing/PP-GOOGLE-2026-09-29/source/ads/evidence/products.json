@@ -1,0 +1,196 @@
+{
+  "verified_at": "2026-09-29",
+  "store": "porchpress.store",
+  "currency": "USD",
+  "products": [
+    {
+      "id": "gid://shopify/Product/10295874388266",
+      "title": "The Wrong Widow",
+      "handle": "the-wrong-widow",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-05T15:05:10Z",
+      "updatedAt": "2026-09-28T00:15:24Z",
+      "productType": "Genealogy mystery",
+      "vendor": "Porch Press",
+      "tags": [
+        "Civil War",
+        "digital download",
+        "genealogy mystery",
+        "historical mystery",
+        "printable mystery"
+      ],
+      "totalInventory": 0,
+      "description": "Two women file for the same Civil War soldier’s widow’s pension. The paper supports both. Two women claim the same soldier’s widow’s pension. Both ...",
+      "featuredMedia": {
+        "preview": {
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/cover-the-wrong-widow_b2db9602-f131-4a39-8fcd-f9cdb182d613.png?v=1788632257"
+          }
+        }
+      },
+      "priceRangeV2": {
+        "minVariantPrice": {
+          "amount": "12.99",
+          "currencyCode": "USD"
+        }
+      },
+      "variantsCount": {
+        "count": 1
+      },
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/52494540570922",
+              "title": "Default Title",
+              "sku": "PP-WRONG-WIDOW",
+              "price": "12.99",
+              "inventoryQuantity": 999
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/10295874814250",
+      "title": "Baby in a Basket",
+      "handle": "baby-in-a-basket",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-05T15:06:17Z",
+      "updatedAt": "2026-09-28T00:15:23Z",
+      "productType": "Genealogy mystery",
+      "vendor": "Porch Press",
+      "tags": [
+        "digital download",
+        "genealogy mystery",
+        "historical mystery",
+        "printable mystery"
+      ],
+      "totalInventory": 0,
+      "description": "A baby was left in a basket. The names of her birth parents never came with her. Mabel Ruth Sutton grew up knowing the family who raised her—but no...",
+      "featuredMedia": {
+        "preview": {
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/02-who-was-she-before-sutton.png?v=1788632264"
+          }
+        }
+      },
+      "priceRangeV2": {
+        "minVariantPrice": {
+          "amount": "12.99",
+          "currencyCode": "USD"
+        }
+      },
+      "variantsCount": {
+        "count": 1
+      },
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/52494545486122",
+              "title": "Default Title",
+              "sku": "PP-BABY-BASKET",
+              "price": "12.99",
+              "inventoryQuantity": 999
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/10295881531690",
+      "title": "The Inheritance",
+      "handle": "the-inheritance",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-05T15:33:09Z",
+      "updatedAt": "2026-09-28T00:15:25Z",
+      "productType": "Genealogy mystery",
+      "vendor": "Porch Press",
+      "tags": [
+        "digital download",
+        "genealogy mystery",
+        "historical mystery",
+        "printable mystery"
+      ],
+      "totalInventory": 0,
+      "description": "A mill inheritance turns on three words in a will — and three living claimants. Henry Vale left words that seemed simple until living people placed...",
+      "featuredMedia": {
+        "preview": {
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/The-Inheritance-Cover.png?v=1788632249"
+          }
+        }
+      },
+      "priceRangeV2": {
+        "minVariantPrice": {
+          "amount": "12.99",
+          "currencyCode": "USD"
+        }
+      },
+      "variantsCount": {
+        "count": 1
+      },
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/52494612300074",
+              "title": "Default Title",
+              "sku": "PP-INHERITANCE",
+              "price": "12.99",
+              "inventoryQuantity": 999
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gid://shopify/Product/10295881662762",
+      "title": "Roscoe’s Grave",
+      "handle": "roscoes-grave",
+      "status": "ACTIVE",
+      "createdAt": "2026-09-05T15:33:51Z",
+      "updatedAt": "2026-09-28T00:15:25Z",
+      "productType": "Genealogy mystery",
+      "vendor": "Porch Press",
+      "tags": [
+        "digital download",
+        "genealogy mystery",
+        "historical mystery",
+        "printable mystery"
+      ],
+      "totalInventory": 0,
+      "description": "The mason is ready to cut the stone — then the burial index shows the wrong surname. Ada Reeve wants her mother’s name beside Roscoe. The order loo...",
+      "featuredMedia": {
+        "preview": {
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0782/2842/2954/files/Roscoes-Grave-Cover.png?v=1788632247"
+          }
+        }
+      },
+      "priceRangeV2": {
+        "minVariantPrice": {
+          "amount": "12.99",
+          "currencyCode": "USD"
+        }
+      },
+      "variantsCount": {
+        "count": 1
+      },
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/52494612627754",
+              "title": "Default Title",
+              "sku": "PP-ROSCOES-GRAVE",
+              "price": "12.99",
+              "inventoryQuantity": 999
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

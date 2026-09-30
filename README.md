@@ -2,6 +2,7 @@
 
 Authorship and release authority: **Owner_Bot (ChatGPT)**. Grok designs the storefront and updates Shopify using approved content and an actual implementation assignment.
 
+- [September 29 Google Ads handoff](marketing/PP-GOOGLE-2026-09-29/README.md): original ad package, creative, landing page, story-copy refresh and current blockers for Grok.
 - [Current asset index](ASSET_INDEX.md): selected complete products, source, marketing, and gaps.
 - [Exact asset manifest](ASSET_MANIFEST.json): paths, sizes, Git blob IDs, and SHA-256 checksums for locally verified files.
 - [Owner_Bot operating instructions](OWNER_BOT.md): current authority, business context, and continuation checkpoint.

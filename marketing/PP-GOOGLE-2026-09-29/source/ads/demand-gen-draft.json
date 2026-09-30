@@ -1,0 +1,263 @@
+{
+  "schema": "porchpress.demand-gen.copy-draft.v1",
+  "prepared_at_local_date": "2026-09-29",
+  "status": "LOCAL_COPY_DRAFT_NOT_STAGED",
+  "purpose": "Separate Demand Gen creative draft; not an Ads Editor import or execution specification. Existing Search archive is unchanged.",
+  "customer_id_from_root_verification": "291-361-5213",
+  "promotion_from_root_verification": {
+    "amount": "1500.00",
+    "currency": "USD",
+    "campaign_type": "DEMAND_GEN_ONLY",
+    "expires_at_date": "2026-11-27",
+    "credit_spend_remaining": "UNVERIFIED",
+    "note": "Promotion eligibility is not a new budget, bid or flight decision."
+  },
+  "offer": {
+    "name": "Four Case Files. One Collection.",
+    "price": "39.99",
+    "currency": "USD",
+    "cases": [
+      "Baby in a Basket",
+      "The Inheritance",
+      "Roscoe\u2019s Grave",
+      "The Wrong Widow"
+    ],
+    "format": "Printable digital PDFs; nothing ships.",
+    "fictional_status": "Fictional family-record investigations.",
+    "supported_use": "Solo or together / small group.",
+    "contents_per_case": [
+      "Player packet",
+      "Progressive hints",
+      "Separate sealed solution",
+      "START-HERE print notes"
+    ],
+    "purchase_url": "https://porchpress.store/cart/52494545486122:1,52494612300074:1,52494612627754:1,52494540570922:1?discount=PORCHFOUR3999&storefront=true",
+    "cart_and_checkout_price": "VERIFIED_39_99_USD_2026_09_29",
+    "customer_receipt_and_delivery": "UNVERIFIED"
+  },
+  "placements_and_targeting": {
+    "campaign_type": "DEMAND_GEN",
+    "keywords": "NOT_SEARCH_KEYWORD_TRIGGERED",
+    "selected_inventory": null,
+    "audience": null,
+    "demographics": null,
+    "note": "These creative angles do not establish targeting, inventory selection, audience demand or demographic evidence."
+  },
+  "authority_and_execution": {
+    "scope": "LOCAL_COPY_AND_IMAGE_BRIEFS_ONLY",
+    "budget": null,
+    "max_cpc": null,
+    "bid_strategy": null,
+    "flight_start": null,
+    "flight_end": null,
+    "campaign_created_by_this_draft": false,
+    "external_mutations": false,
+    "spend": 0,
+    "note": "No budget or bid authority is specified in this draft; root retains current user authorizations separately."
+  },
+  "measurement_readiness_from_root": {
+    "purchase_action": "ABSENT",
+    "google_and_youtube_shopify_app": "ABSENT",
+    "status": "HOLD_FOR_PURCHASE_MEASUREMENT_SETUP_AND_VALIDATION"
+  },
+  "creatives": [
+    {
+      "id": "birth_family",
+      "name": "Who was she before Sutton?",
+      "rationale": "A specific missing identity makes the mystery tangible. The actual Baby cover and census preview show the paper investigation the buyer will receive.",
+      "headlines": [
+        {
+          "text": "Who Was She Before Sutton?",
+          "characters": 26,
+          "limit": 40
+        },
+        {
+          "text": "A Baby. A Basket. A Family Secret.",
+          "characters": 34,
+          "limit": 40
+        },
+        {
+          "text": "Investigate a Lost Birth Family",
+          "characters": 31,
+          "limit": 40
+        },
+        {
+          "text": "Four Case Files. One Collection.",
+          "characters": 32,
+          "limit": 40
+        },
+        {
+          "text": "Four Printable Mysteries for $39.99",
+          "characters": 35,
+          "limit": 40
+        }
+      ],
+      "descriptions": [
+        {
+          "text": "Four fictional family-record cases. Printable PDFs. $39.99. Nothing ships.",
+          "characters": 74,
+          "limit": 90
+        },
+        {
+          "text": "Find her birth family. Four fictional PDF cases. $39.99. Nothing ships.",
+          "characters": 71,
+          "limit": 90
+        },
+        {
+          "text": "Compare census clues. 4 fictional family-record PDF cases. $39.99. Nothing ships.",
+          "characters": 81,
+          "limit": 90
+        },
+        {
+          "text": "Play solo or together. 4 fictional family-record PDF cases. $39.99. Nothing ships.",
+          "characters": 82,
+          "limit": 90
+        }
+      ],
+      "image_brief": {
+        "primary_source": "assets/baby-in-a-basket.png",
+        "document_source": "assets/baby-preview-4.png",
+        "story_overlay": "Who was she before Sutton?",
+        "composition": "Use the existing Baby cover as the main image; use an actual census-preview crop as a secondary panel explicitly labeled Preview from Baby in a Basket. Keep the identity question and Mabel identity card legible. No new handwritten clues or invented records.",
+        "collection_context": "Show a small, legible four-cover strip or collection label so this is clearly an entry point into the four-case offer, not Baby alone at $39.99.",
+        "qualification_band": [
+          "4 fictional family-record cases",
+          "Printable PDFs \u00b7 Nothing ships",
+          "$39.99 for all four"
+        ],
+        "formats": "Design landscape, square and portrait versions from the same authentic source images; verify actual Google crop requirements before upload."
+      },
+      "business_name": {
+        "text": "Porch Press",
+        "characters": 11,
+        "limit": 25
+      },
+      "final_url": "https://porchpress.store/pages/case-file-collection",
+      "cta_intent": "Shop now / explore collection; confirm the supported platform CTA label during staging."
+    },
+    {
+      "id": "grave_identity",
+      "name": "Who is really buried here?",
+      "rationale": "A gravestone and conflicting surname turn abstract document comparison into a concrete decision. The current Roscoe artwork supplies the visual tension without adding an unverified murder claim.",
+      "headlines": [
+        {
+          "text": "Who Is Really Buried Here?",
+          "characters": 26,
+          "limit": 40
+        },
+        {
+          "text": "One Grave. Conflicting Records.",
+          "characters": 31,
+          "limit": 40
+        },
+        {
+          "text": "Follow the Records to an Identity",
+          "characters": 33,
+          "limit": 40
+        },
+        {
+          "text": "Four Case Files. One Collection.",
+          "characters": 32,
+          "limit": 40
+        },
+        {
+          "text": "Four Printable Mysteries for $39.99",
+          "characters": 35,
+          "limit": 40
+        }
+      ],
+      "descriptions": [
+        {
+          "text": "Four fictional family-record cases. Printable PDFs. $39.99. Nothing ships.",
+          "characters": 74,
+          "limit": 90
+        },
+        {
+          "text": "Who lies in that grave? 4 fictional family-record PDF cases. $39.99. Nothing ships.",
+          "characters": 83,
+          "limit": 90
+        },
+        {
+          "text": "Follow conflicting names. 4 fictional family-record PDF cases. $39.99. Nothing ships.",
+          "characters": 85,
+          "limit": 90
+        },
+        {
+          "text": "Hints and sealed solutions. 4 fictional family-record PDF cases. $39.99. Nothing ships.",
+          "characters": 87,
+          "limit": 90
+        }
+      ],
+      "image_brief": {
+        "primary_source": "assets/roscoes-grave.png",
+        "story_overlay": "Who is really buried here?",
+        "composition": "Use the actual Roscoe cover, keeping the gravestone and title legible. Add the story question in clean type beside the artwork, plus the collection label. Do not invent a burial-index page, carve a new name onto the stone, add police evidence or show a fabricated physical product box.",
+        "collection_context": "Show the four included cover thumbnails or a clearly separate four-case collection label. If a Baby census preview is ever used alongside this angle, label its origin; never present it as Roscoe evidence.",
+        "qualification_band": [
+          "4 fictional family-record cases",
+          "Printable PDFs \u00b7 Nothing ships",
+          "$39.99 for all four"
+        ],
+        "formats": "Design landscape, square and portrait versions; retain title, story question and offer/format text in safe crop areas. Confirm actual Google crop requirements before upload."
+      },
+      "business_name": {
+        "text": "Porch Press",
+        "characters": 11,
+        "limit": 25
+      },
+      "final_url": "https://porchpress.store/pages/case-file-collection",
+      "cta_intent": "Shop now / explore collection; confirm the supported platform CTA label during staging."
+    }
+  ],
+  "local_qa": {
+    "status": "PASS_LOCAL_CHARACTER_AND_CLAIM_CHECK",
+    "angles": 2,
+    "headlines": 10,
+    "descriptions": 8,
+    "max_headline_characters": 35,
+    "max_description_characters": 87,
+    "business_name_characters": 11,
+    "headline_limit": 40,
+    "description_limit": 90,
+    "business_name_limit": 25,
+    "every_description_identifies_fictional_pdf_price_and_no_shipping": true,
+    "image_assets_created": false,
+    "google_policy_eligibility": "UNVERIFIED"
+  },
+  "before_staging": [
+    "Complete and verify Google purchase measurement for the correct Porch Press store and Ads account.",
+    "Approve the Demand Gen inventory, audience, budget, bidding and flight separately; do not reuse Search keyword assumptions.",
+    "Produce final image assets from the authentic covers/previews and check crop legibility and policy eligibility.",
+    "Recheck the collection page and correct four-item discounted cart/checkout.",
+    "Confirm customer receipt and access to the four case downloads."
+  ],
+  "sources": [
+    "evidence/product-copy.txt",
+    "evidence/products.json",
+    "evidence/assets.json",
+    "claim-ledger.md",
+    "campaign-draft.json",
+    "Root account/promotion and conversion inspection dated 2026-09-29"
+  ],
+  "image_asset": {
+    "path": "assets/demand-gen-baby-archival-v1.png",
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG",
+    "status": "GENERATED_VISUALLY_REVIEWED_NOT_UPLOADED",
+    "role": "Promotional illustration, not product exhibit proof"
+  },
+  "account_builder_status": "BLOCKED_AT_CONVERSION_GOAL: Google offers Engagements and YouTube follow-on views only; no Purchase goal",
+  "shopify_connection_verification": {
+    "store": "Porch Press",
+    "domain": "porchpress.store",
+    "currency": "USD",
+    "google_and_youtube_present": false,
+    "public_app_count": 9,
+    "channel_count": 6,
+    "private_app_count": 0,
+    "all_pages_complete": true,
+    "user_report": "connected",
+    "status": "USER_REPORT_AND_CURRENT_PLATFORM_STATE_DO_NOT_YET_MATCH"
+  }
+}

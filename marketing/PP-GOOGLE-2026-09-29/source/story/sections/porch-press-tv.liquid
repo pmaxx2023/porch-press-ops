@@ -1,0 +1,1779 @@
+{% comment %}
+  Porch Press TV — homepage episode player (canvas + shoppable hotspots).
+  Cart uses native /cart/VARIANT:qty permalinks. Products may be archived.
+{% endcomment %}
+
+<style id="pp-tv-chrome-hide">
+  .shopify-section-group-header-group,
+  .shopify-section-group-footer-group,
+  .header-wrapper,
+  sticky-header,
+  .announcement-bar,
+  .section-header,
+  .footer,
+  #shopify-section-footer {
+    display: none !important;
+  }
+  body { margin: 0 !important; }
+  #MainContent { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  .pp-tv-root { isolation: isolate; }
+</style>
+
+<div class="pp-tv-root">
+<title>Porch Press TV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700;800;900&family=Special+Elite&display=swap">
+<style>
+:root{
+  --bg:#F2EBDD;
+  --paper:#FBF7EF;
+  --ink:#1C2231;
+  --ink-2:#4A5063;
+  --ink-3:#7C8092;
+  --red:#A3302A;
+  --red-deep:#7E221D;
+  --gold:#B8914A;
+  --manila:#E9D8B4;
+  --line:#DDD1BB;
+  --stage:#0F131C;
+  --soon:#3A5A8C;
+  --soon-deep:#2C4670;
+  --ok:#3F6B3A;
+  --f-display:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --f-ui:"Libre Franklin",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-type:"Special Elite","Courier New",monospace;
+  --f-hand:Caveat,"Segoe Print","Bradley Hand",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--bg)}
+body{
+  margin:0;min-height:100%;
+  background:
+    radial-gradient(880px 560px at 6% -14%, #FFF4DA 0%, rgba(255,244,218,0) 64%),
+    radial-gradient(700px 520px at 104% -6%, #E6E0D2 0%, rgba(230,224,210,0) 60%),
+    var(--bg);
+  color:var(--ink);
+  font:16px/1.55 var(--f-ui);
+  padding-inline:16px;padding-block:0 56px;
+}
+button{font:inherit;color:inherit}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding-block:16px 12px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;min-width:0}
+.brand b{font-family:var(--f-display);font-weight:700;font-size:24px;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+.brand small{font-family:var(--f-display);font-style:italic;font-size:14px;color:var(--ink-2);white-space:nowrap}
+.tv{font-family:var(--f-type);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);padding:4px 10px;border:1.5px dashed var(--red);border-radius:4px;white-space:nowrap;transform:rotate(-2deg)}
+.top .sp{flex:1}
+.bagbtn{display:inline-flex;align-items:center;gap:8px;border:0;background:var(--paper);border-radius:99px;padding:8px 12px;font-weight:700;cursor:pointer;box-shadow:0 1px 0 var(--line),0 8px 20px -14px rgba(28,34,49,.6)}
+.bagbtn svg{width:18px;height:18px}
+.bagbtn:focus-visible,.qadd:focus-visible,.jump:focus-visible,.add:focus-visible,.ghost:focus-visible,.checkout:focus-visible,.ep-btn:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.count{min-width:22px;height:22px;border-radius:99px;background:var(--red);color:#fff;font-size:12px;font-weight:800;display:inline-grid;place-items:center;padding:0 6px;font-variant-numeric:tabular-nums;line-height:1}
+@media (max-width:620px){.brand small{display:none}}
+@media (max-width:460px){.tv{display:none}.brand b{font-size:21px}}
+
+/* layout */
+.stage{display:grid;grid-template-columns:auto minmax(300px,420px);gap:40px;justify-content:center;align-items:start;padding-top:4px}
+.pcol{display:flex;justify-content:center;min-width:0}
+@media (max-width:900px){.stage{grid-template-columns:minmax(0,1fr);gap:26px}}
+
+/* player */
+.player{
+  position:relative;aspect-ratio:9/16;
+  width:calc(min(84vh, 880px) * .5625);
+  border-radius:26px;overflow:hidden;background:var(--stage);
+  box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line),0 44px 80px -40px rgba(28,34,49,.75);
+  user-select:none;-webkit-user-select:none;touch-action:manipulation;outline:none;
+  max-width:100%;
+}
+@supports (height:100svh){.player{width:calc(min(84svh, 880px) * .5625)}}
+.player:focus-visible{box-shadow:0 0 0 6px var(--paper),0 0 0 10px var(--red)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
+
+.tags{position:absolute;inset:0;pointer-events:none;z-index:2}
+.tag{position:absolute;left:0;top:0;width:30px;height:30px;padding:0;border:0;background:transparent;pointer-events:auto;cursor:pointer;will-change:transform}
+.tag::before{content:"";position:absolute;inset:-1px;border-radius:50%;border:2px solid var(--paper);animation:ping 1.8s ease-out infinite;pointer-events:none}
+.tag .dot{position:absolute;inset:0;border-radius:50%;background:var(--paper);display:grid;place-items:center;box-shadow:0 0 0 2.5px var(--red),0 4px 12px rgba(10,12,20,.45);transition:transform .2s,background .2s}
+.tag .dot svg{width:15px;height:15px;color:var(--red)}
+.tag .lbl{position:absolute;top:50%;left:37px;transform:translateY(-50%) scale(.88);transform-origin:left center;white-space:nowrap;background:var(--paper);color:var(--ink);font-weight:700;font-size:13.5px;line-height:1;padding:7px 10px;border-radius:99px;box-shadow:0 6px 16px rgba(10,12,20,.35);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.tag .lbl b{color:var(--red);font-weight:800;margin-left:6px}
+.tag.flip .lbl{left:auto;right:37px;transform-origin:right center}
+.tag.focus .lbl,.tag:hover .lbl,.tag:focus-visible .lbl{opacity:1;transform:translateY(-50%) scale(1)}
+.tag:hover .dot{transform:scale(1.12)}
+.tag:focus-visible{outline:none}
+.tag:focus-visible .dot{box-shadow:0 0 0 3px var(--paper),0 0 0 6px var(--red)}
+.tags.wide .tag .dot{transform:scale(.74)}
+.tags.wide .tag:hover .dot{transform:scale(.9)}
+.tag.on .dot{background:var(--red)}
+.tag.on .dot svg{color:var(--paper)}
+.tag.soon .dot{box-shadow:0 0 0 2.5px var(--soon),0 4px 12px rgba(10,12,20,.45)}
+.tag.soon .dot svg{color:var(--soon)}
+.tag.soon .lbl b{color:var(--soon)}
+.tag.soon.on .dot{background:var(--soon)}
+@keyframes ping{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.05);opacity:0}}
+
+.ptop{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;align-items:center;z-index:4;pointer-events:none}
+.ptop > *{pointer-events:auto}
+.epi{font-family:var(--f-type);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:rgba(10,12,20,.5);padding:7px 11px;border-radius:99px;white-space:nowrap}
+.pbag{position:relative;width:40px;height:40px;border-radius:50%;border:0;background:var(--paper);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px rgba(10,12,20,.4)}
+.pbag svg{width:20px;height:20px;color:var(--ink)}
+.pbag .count{position:absolute;top:-4px;right:-6px;min-width:20px;height:20px;font-size:11px;box-shadow:0 0 0 2px var(--paper)}
+.pbag:focus-visible{outline:3px solid var(--paper);outline-offset:2px}
+.bump{animation:bump .5s}
+@keyframes bump{30%{transform:scale(1.28)}60%{transform:scale(.92)}}
+
+.bigplay{position:absolute;left:50%;bottom:9.5%;transform:translateX(-50%);z-index:4;border:0;border-radius:99px;background:var(--paper);color:var(--ink);font-weight:800;font-size:16px;padding:10px 18px 10px 10px;display:flex;align-items:center;gap:10px;box-shadow:0 16px 34px -12px rgba(0,0,0,.7);cursor:pointer;white-space:nowrap}
+.bigplay .pi{width:34px;height:34px;border-radius:50%;background:var(--red);display:grid;place-items:center}
+.bigplay .pi svg{width:14px;height:14px;color:#fff;margin-left:2px}
+.bigplay small{font-weight:700;color:var(--ink-3);font-size:13px}
+.bigplay:hover .pi{background:var(--red-deep)}
+.bigplay:focus-visible{outline:3px solid var(--paper);outline-offset:3px}
+
+.ctrl{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:0 12px 10px}
+.bar{position:relative;height:24px;cursor:pointer;touch-action:none;outline:none}
+.segs{position:absolute;left:0;right:0;top:10px;height:4px;display:flex;gap:3px;transition:height .15s,top .15s}
+.bar:hover .segs,.bar:focus-visible .segs{height:6px;top:9px}
+.seg{position:relative;height:100%;background:rgba(251,247,239,.3);border-radius:3px;overflow:hidden}
+.seg i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--paper)}
+.dots{position:absolute;left:0;right:0;top:3px;height:0;pointer-events:none}
+.dots b{position:absolute;top:0;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#F3C7C1;box-shadow:0 0 0 1.5px var(--red)}
+.knob{position:absolute;top:12px;left:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--paper);box-shadow:0 2px 6px rgba(0,0,0,.45);pointer-events:none;transition:opacity .2s}
+.bar:focus-visible .knob{box-shadow:0 0 0 3px var(--red)}
+.row{display:flex;align-items:center;gap:4px;color:var(--paper);transition:opacity .3s}
+.ib{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--paper);padding:0}
+.ib:hover{background:rgba(251,247,239,.16)}
+.ib:focus-visible{outline:2px solid var(--paper);outline-offset:1px}
+.ib svg{width:20px;height:20px}
+.ib[aria-pressed="false"]{opacity:.5}
+.time{flex:none;font-weight:700;font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;margin-left:2px}
+.chap{flex:1;min-width:0;font-size:13px;font-weight:500;opacity:.88;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-left:6px}
+.player.idle .row,.player.idle .knob{opacity:0}
+.player.idle .row{pointer-events:none}
+
+.pop{position:absolute;z-index:6;width:min(310px, calc(100% - 16px));background:var(--paper);border-radius:16px;padding:12px;box-shadow:0 26px 56px -16px rgba(0,0,0,.75);color:var(--ink);animation:popin .24s cubic-bezier(.2,1.4,.4,1)}
+@keyframes popin{from{opacity:0;transform:scale(.9)}}
+.pop.sheet{left:8px!important;right:8px;width:auto;top:auto!important;bottom:62px}
+.pop-grid{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;padding-right:26px;align-items:center}
+.pop-img{width:76px;height:76px;border-radius:8px;object-fit:cover;background:var(--manila);display:block;box-shadow:0 0 0 1px var(--line)}
+.pick{display:flex;align-items:center;gap:6px;margin:0;font-family:var(--f-type);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.pick img{width:20px;height:20px;border-radius:50%;flex:none}
+.pop h3{margin:3px 0 2px;font-family:var(--f-display);font-size:16.5px;line-height:1.2;font-weight:700;text-wrap:balance}
+.pop .price{font-weight:800;font-size:15px;margin:2px 0 0;font-variant-numeric:tabular-nums}
+.pop .blurb{margin:10px 0 0;font-size:14.5px;line-height:1.4;color:var(--ink-2)}
+.contents{margin:8px 0 0;font-size:13px;font-weight:600;color:var(--ink-3);line-height:1.35}
+.add{width:100%;margin-top:12px;border:0;border-radius:10px;background:var(--red);color:#fff;font-weight:800;font-size:15px;padding:12px;cursor:pointer;display:block;text-align:center;text-decoration:none}
+.add:hover{background:var(--red-deep)}
+.add.soonbtn{background:var(--soon)}
+.add.soonbtn:hover{background:var(--soon-deep)}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:9px;font-size:13px;color:var(--ink-3)}
+.meta a{color:var(--ink-2);font-weight:700;white-space:nowrap}
+.x{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;border:0;background:var(--bg);display:grid;place-items:center;cursor:pointer;padding:0}
+.x svg{width:14px;height:14px}
+.x:focus-visible{outline:2px solid var(--red)}
+
+.toast{position:absolute;top:62px;left:0;right:0;margin-inline:auto;width:max-content;z-index:10;max-width:calc(100% - 20px);background:var(--ink);color:var(--paper);border-radius:99px;padding:7px 7px 7px 14px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px;box-shadow:0 14px 30px -10px rgba(0,0,0,.6);animation:tin .25s ease-out}
+.toast span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.toast button{flex:none;border:0;background:var(--paper);color:var(--ink);border-radius:99px;padding:5px 11px;font-weight:800;font-size:12px;cursor:pointer}
+@keyframes tin{from{opacity:0;transform:translateY(-8px)}}
+
+.loading{position:absolute;inset:0;z-index:9;display:grid;place-items:center;background:var(--stage);color:var(--manila);font-family:var(--f-type);text-align:center;padding:24px}
+
+.fly{position:fixed;width:46px;height:46px;border-radius:8px;object-fit:cover;z-index:40;box-shadow:0 0 0 3px var(--paper),0 8px 20px rgba(0,0,0,.35);pointer-events:none}
+
+/* shop panel */
+.shop{padding-top:6px;min-width:0}
+.eyebrow{margin:0;font-family:var(--f-type);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.shop h1{margin:6px 0 12px;font-family:var(--f-display);font-weight:700;font-size:clamp(34px,4.6vw,46px);line-height:1.08;letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
+.logline{margin:0 0 12px;font-family:var(--f-display);font-style:italic;font-size:19px;color:var(--ink);line-height:1.35}
+.logline span,.ep-line span{display:block;font-family:var(--f-type);font-style:normal;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+.lede{margin:0 0 22px;color:var(--ink-2);max-width:44ch;font-size:17px}
+.shop h2{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 0 12px;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.shop h2 span{letter-spacing:0;text-transform:none;font-weight:600;color:var(--ink-3);font-size:13px}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.item{position:relative;display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:14px;align-items:center;background:var(--paper);border-radius:12px;padding:10px 12px 10px 10px;box-shadow:0 1px 0 var(--line),0 10px 24px -20px rgba(28,34,49,.7);transition:box-shadow .25s}
+.item.live{box-shadow:0 0 0 2px var(--red),0 12px 26px -16px rgba(28,34,49,.7)}
+.thumb{position:relative;width:62px;height:62px}
+.thumb .ph{width:62px;height:62px;border-radius:8px;object-fit:cover;background:var(--manila);display:block}
+.thumb .av{position:absolute;right:-7px;bottom:-7px;width:28px;height:28px;border-radius:50%;box-shadow:0 0 0 2.5px var(--paper)}
+.item h3{margin:1px 0 0;font-family:var(--f-display);font-size:16.5px;font-weight:700;line-height:1.25}
+.hook{margin:3px 0 0;font-size:14px;color:var(--ink-3);line-height:1.3}
+.act{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.jump{border:0;background:transparent;font-size:13.5px;font-weight:700;color:var(--ink-2);cursor:pointer;display:flex;align-items:center;gap:5px;padding:3px 4px;border-radius:8px;font-variant-numeric:tabular-nums}
+.jump:hover{color:var(--red)}
+.jump svg{width:9px;height:9px}
+.qadd{border:0;border-radius:99px;background:var(--ink);color:var(--paper);font-weight:800;font-size:14px;padding:8px 13px;cursor:pointer;white-space:nowrap;font-variant-numeric:tabular-nums}
+.qadd:hover{background:var(--red)}
+.qadd.inbag{background:var(--bg);color:var(--ink-2);box-shadow:inset 0 0 0 1.5px var(--line)}
+.onair{position:absolute;top:-9px;left:12px;display:none;align-items:center;gap:5px;background:var(--red);color:#fff;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:99px}
+.item.live .onair{display:flex}
+.onair::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;animation:blink 1.1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.facts{margin:18px 0 0;font-size:14.5px;color:var(--ink-3);max-width:44ch}
+
+/* episode guide + cast */
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;margin:64px 0 6px;padding-top:18px;border-top:1.5px solid var(--line)}
+.sec-head h2{margin:0;font-family:var(--f-display);font-weight:700;font-size:clamp(26px,3.4vw,34px);color:var(--ink);line-height:1.15;letter-spacing:-.01em}
+.sec-head p{margin:0;color:var(--ink-2);font-size:15px}
+.row-title{margin:22px 0 10px;font-family:var(--f-type);font-weight:400;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.eps{list-style:none;margin:0 -16px;padding:4px 16px 16px;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,250px);gap:16px;overflow-x:auto;scroll-snap-type:x proximity}
+.ep{scroll-snap-align:start;background:var(--paper);border-radius:14px;padding:10px 10px 14px;box-shadow:0 1px 0 var(--line),0 12px 26px -20px rgba(28,34,49,.7);display:flex;flex-direction:column;min-width:0}
+.ep.now{box-shadow:0 0 0 2px var(--red),0 12px 26px -16px rgba(28,34,49,.7)}
+.ep-art{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--stage)}
+.ep-art img,.ep-art canvas{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;top:8px;left:8px;background:var(--red);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:99px}
+.badge.soft{background:var(--paper);color:var(--ink)}
+.badge.soon{background:var(--soon);color:#fff}
+.ep-no{margin:12px 2px 0;font-family:var(--f-type);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.ep h3{margin:2px 2px 4px;font-family:var(--f-display);font-size:17px;font-weight:700;line-height:1.25}
+.ep-line{margin:0 2px 12px;font-size:15px;color:var(--ink-2);flex:1}
+.ep-btn{display:block;text-align:center;border:0;border-radius:10px;background:var(--red);color:#fff;font-weight:800;font-size:14px;padding:10px;cursor:pointer;text-decoration:none}
+.ep-btn:hover{background:var(--red-deep)}
+.ep-btn.quiet{background:var(--ink)}
+.ep-btn.quiet:hover{background:var(--red)}
+.ep-note{display:block;text-align:center;border-radius:10px;background:var(--bg);color:var(--ink-3);font-weight:700;font-size:13.5px;padding:10px}
+.cast{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.cm{background:var(--paper);border-radius:14px;padding:10px 10px 14px;box-shadow:0 1px 0 var(--line),0 12px 26px -20px rgba(28,34,49,.7)}
+.cm img{width:100%;aspect-ratio:1;border-radius:8px;object-fit:cover;display:block}
+.cm h3{margin:10px 2px 0;font-family:var(--f-display);font-size:18px;font-weight:700}
+.cm-role{margin:0 2px;font-family:var(--f-type);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.cm-bio{margin:4px 2px 0;font-size:15px;color:var(--ink-2)}
+
+/* find your case */
+.quiz{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;padding:62px 18px 16px;overflow:auto;background:radial-gradient(120% 80% at 50% 0%,#FFF8EA 0%,#F2EBDD 55%,#E4D8C0 100%);animation:popin .25s cubic-bezier(.2,1.2,.4,1)}
+.quiz .qx{position:absolute;top:12px;right:12px;width:36px;height:36px;background:var(--paper);box-shadow:0 4px 12px rgba(28,34,49,.2)}
+.q-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.q-step{margin:0;font-family:var(--f-type);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.q-dots{display:flex;gap:6px}
+.q-dots i{width:22px;height:6px;border-radius:3px;background:rgba(163,48,42,.2)}
+.q-dots i.on{background:var(--red)}
+.q-h{margin:14px 0 16px;font-family:var(--f-display);font-weight:700;font-size:25px;line-height:1.2;color:var(--ink);text-wrap:balance}
+.q-opts{display:grid;gap:10px}
+.q-opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;background:var(--paper);border-radius:12px;padding:12px 14px;min-height:60px;font-weight:700;font-size:17px;line-height:1.3;color:var(--ink);cursor:pointer;box-shadow:0 1px 0 var(--line),0 10px 22px -16px rgba(28,34,49,.7);transition:box-shadow .15s,transform .15s}
+.q-opt:hover{box-shadow:0 0 0 2px var(--red),0 10px 22px -16px rgba(28,34,49,.7)}
+.q-opt:active{transform:scale(.98)}
+.q-opt:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.q-opt img{width:40px;height:40px;border-radius:50%;flex:none;box-shadow:0 0 0 2px var(--paper)}
+.q-opt .q-ic{width:40px;height:40px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--manila);color:var(--red)}
+.q-opt .q-ic svg{width:20px;height:20px}
+.q-back{margin-top:auto;align-self:flex-start;border:0;background:transparent;color:var(--ink-2);font-weight:700;font-size:14px;padding:12px 2px 0;cursor:pointer}
+.q-res{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:-8px}
+.q-res .q-step{margin-bottom:10px}
+.q-pic{width:min(56%,200px);aspect-ratio:1;border-radius:10px;object-fit:cover;background:var(--manila);box-shadow:0 0 0 6px var(--paper),0 18px 34px -18px rgba(28,34,49,.8);transform:rotate(-2deg)}
+.q-res h2{margin:18px 0 6px;font-family:var(--f-display);font-weight:700;font-size:24px;line-height:1.2;color:var(--ink);text-wrap:balance}
+.q-twin{display:flex;align-items:center;gap:8px;margin:0;font-size:14px;font-weight:700;color:var(--ink-2)}
+.q-twin img{width:30px;height:30px;border-radius:50%;box-shadow:0 0 0 2px var(--paper)}
+.q-res .blurb{margin:8px 0 4px;max-width:34ch;font-size:15px;line-height:1.4;color:var(--ink-2)}
+.q-res .contents{margin:0 0 6px;max-width:34ch}
+.q-res .price{margin:0;font-weight:800;font-size:16px}
+.q-res .add{max-width:300px}
+.q-links{display:flex;gap:18px;justify-content:center;margin-top:10px}
+.q-links button{border:0;background:none;color:var(--ink-2);font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:6px 2px}
+.findbtn{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;border:0;border-radius:12px;background:var(--ink);color:var(--paper);font-weight:800;font-size:16px;padding:14px 16px;margin:0 0 24px;cursor:pointer;box-shadow:0 12px 26px -18px rgba(28,34,49,.9)}
+.findbtn:hover{background:var(--red-deep)}
+.findbtn:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.findbtn span{font-family:var(--f-type);font-weight:400;background:var(--manila);color:var(--ink);border-radius:4px;padding:3px 9px;font-size:13px;letter-spacing:.04em}
+
+/* bag drawer */
+.scrim{position:fixed;inset:0;background:rgba(15,19,28,.42);z-index:20}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:var(--paper);z-index:21;display:flex;flex-direction:column;box-shadow:-24px 0 60px -24px rgba(15,19,28,.5);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);animation:din .28s cubic-bezier(.2,.9,.3,1)}
+@keyframes din{from{transform:translateX(40px);opacity:0}}
+.drawer header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 8px}
+.drawer h2{margin:0;font-family:var(--f-display);font-weight:700;font-size:28px;color:var(--ink)}
+.drawer header .x{position:static;width:34px;height:34px}
+.bag-list{list-style:none;margin:0;padding:0 20px;overflow:auto;flex:1}
+.bi{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.bi img{width:56px;height:56px;border-radius:8px;object-fit:cover;display:block}
+.bi h4{margin:0;font-family:var(--f-display);font-size:15px;line-height:1.25}
+.bi p{margin:2px 0 0;font-size:14px;color:var(--ink-2)}
+.bi .rm{margin-top:6px;border:0;background:none;padding:2px 0;font-size:14px;font-weight:700;color:var(--red);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.bi .rm:focus-visible{outline:2px solid var(--red)}
+.lp{font-weight:800;font-variant-numeric:tabular-nums}
+.empty{padding:8px 20px;color:var(--ink-2)}
+.drawer footer{padding:16px 20px 20px;border-top:1px solid var(--line);display:grid;gap:10px}
+.sub{display:flex;justify-content:space-between;font-size:16px}
+.sub b{font-variant-numeric:tabular-nums}
+.ship{margin:0;font-size:14px;color:var(--ok);font-weight:700}
+.checkout{display:block;text-align:center;background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:14px;border-radius:10px}
+.checkout:hover{background:var(--red-deep)}
+.checkout[aria-disabled="true"]{background:var(--line);color:var(--ink-3);pointer-events:none}
+.ghost{border:0;background:var(--bg);border-radius:10px;padding:12px;font-weight:800;cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){
+  .tag::before,.onair::before{animation:none}
+  .pop,.drawer,.toast,.quiz{animation:none}
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="https://porchpress.store" target="_blank" rel="noopener"><b>Porch Press</b><small>The book you can play.</small></a>
+    <span class="tv">Porch Press TV</span>
+    <span class="sp"></span>
+    <button class="bagbtn" id="hBag" type="button" aria-label="Open bag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      Bag <span class="count" data-count>0</span>
+    </button>
+  </header>
+
+  <main class="stage">
+    <div class="pcol">
+      <div class="player" id="player" tabindex="0" aria-label="Porch Press TV episode player. Space plays or pauses. Arrow keys skip 5 seconds.">
+        <canvas id="cv" aria-hidden="true"></canvas>
+        <div class="tags" id="tags"></div>
+        <div class="ptop">
+          <span class="epi">Porch Press TV · Ep. 1</span>
+          <button class="pbag" id="pBag" type="button" aria-label="Open bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+            <span class="count" data-count>0</span>
+          </button>
+        </div>
+        <button class="bigplay" id="bigPlay" type="button">
+          <span class="pi"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span>
+          <span id="bigLabel">Play episode</span> <small>2:00</small>
+        </button>
+        <div class="pop" id="pop" hidden role="dialog" aria-label="Case"></div>
+        <div class="toast" id="toast" hidden role="status"><span id="toastText"></span><button type="button" id="toastBag">View bag</button></div>
+        <div class="ctrl" id="ctrl">
+          <div class="bar" id="bar" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="120" aria-valuenow="0" aria-valuetext="0:00">
+            <div class="segs" id="segs"></div>
+            <div class="dots" id="dots"></div>
+            <div class="knob" id="knob"></div>
+          </div>
+          <div class="row">
+            <button class="ib" id="playBtn" type="button" aria-label="Play"></button>
+            <span class="time" id="time">0:00 / 2:00</span>
+            <span class="chap" id="chap">Cold open</span>
+            <button class="ib" id="tagBtn" type="button" aria-pressed="true" aria-label="Shopping tags">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor"/></svg>
+            </button>
+            <button class="ib" id="sndBtn" type="button" aria-pressed="true" aria-label="Sound"></button>
+          </div>
+        </div>
+        <div class="quiz" id="quiz" hidden role="dialog" aria-modal="true" aria-label="Find your case">
+          <button class="x qx" id="quizClose" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+          <div id="quizBody" style="display:flex;flex-direction:column;flex:1;min-height:0"></div>
+        </div>
+        <div class="loading" id="loading">Opening the case file…</div>
+      </div>
+    </div>
+
+    <aside class="shop" aria-label="Shop this episode">
+      <p class="eyebrow">Porch Press TV · The Porch Club · S1 E1</p>
+      <h1>Baby in a Basket</h1>
+      <p class="logline"><span>In this episode</span>A baby left in a basket. Who was she before Sutton?</p>
+      <p class="lede">Mabel Ruth Sutton grew up knowing the family who raised her. The names of her birth parents never came with her. Four possible birth identities emerge from census entries, birth records, and the connections between households. Follow the paper trail and decide who Mabel was before Sutton. Every case on screen has a tag. Tap one to add it to the bag.</p>
+      <button class="findbtn" id="findBtn" type="button">Find your case <span>2 taps</span></button>
+      <h2>Shop the episode <span>6 cases · 5 at $12.99 · Eleanor FREE</span></h2>
+      <ul class="list" id="list"></ul>
+      <p class="facts">Fictional printable mysteries · Digital PDFs · Nothing ships</p>
+    </aside>
+  </main>
+
+  <section class="guide" aria-labelledby="guideTitle">
+    <div class="sec-head"><h2 id="guideTitle">Episode guide</h2><p>One case per episode. Every Friday on the porch.</p></div>
+    <h3 class="row-title">Season 1 · The Porch Club</h3>
+    <ul class="eps" id="s1"></ul>
+    <h3 class="row-title">Coming soon · Not for sale yet</h3>
+    <ul class="eps" id="soonRow"></ul>
+  </section>
+
+  <section class="castsec" aria-labelledby="castTitle">
+    <div class="sec-head"><h2 id="castTitle">The Porch Club</h2><p>Three family historians. Three true crime fans. One porch.</p></div>
+    <ul class="cast" id="cast"></ul>
+  </section>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-labelledby="bagTitle">
+  <header>
+    <h2 id="bagTitle">Your bag</h2>
+    <button class="x" id="bagClose" type="button" aria-label="Close bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </header>
+  <ul class="bag-list" id="bagList"></ul>
+  <p class="empty" id="bagEmpty">The bag is empty. Tap a tag in the episode to add a case.</p>
+  <footer>
+    <div class="sub"><span>Subtotal</span><b id="subtotal">$0.00</b></div>
+    <p class="ship">Digital PDFs · nothing ships</p>
+    <a class="checkout" id="checkout" href="https://porchpress.store/cart" target="_blank" rel="noopener" aria-disabled="true">Checkout on porchpress.store</a>
+    <button class="ghost" id="keepWatching" type="button">Keep watching</button>
+  </footer>
+</aside>
+
+
+<script id="pp-tv-asset-map">
+window.__PP_TV_ASSETS = {
+  hero: {{ 'pp-tv-baby-hero.jpg' | asset_url | json }},
+  pew: {{ 'pp-tv-baby-pew.jpg' | asset_url | json }},
+  census: {{ 'pp-tv-baby-census.jpg' | asset_url | json }},
+  story: {{ 'pp-tv-baby-story.jpg' | asset_url | json }},
+  wall: {{ 'pp-tv-case-wall.jpg' | asset_url | json }},
+  "case-baby": {{ 'pp-tv-case-baby.jpg' | asset_url | json }},
+  "case-eleanor": {{ 'pp-tv-case-eleanor.jpg' | asset_url | json }},
+  "case-widow": {{ 'pp-tv-case-widow.jpg' | asset_url | json }},
+  "case-roscoe": {{ 'pp-tv-case-roscoe.jpg' | asset_url | json }},
+  "case-inheritance": {{ 'pp-tv-case-inheritance.jpg' | asset_url | json }},
+  "case-king": {{ 'pp-tv-case-king.jpg' | asset_url | json }}
+};
+</script>
+
+<script>
+(() => {
+'use strict';
+const W = 540, H = 960, DUR = 120, TAU = Math.PI * 2;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const lerp = (a, b, u) => a + (b - a) * u;
+const ease = u => u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+const eo = u => 1 - Math.pow(1 - u, 3);
+const eob = u => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2); };
+const prog = (t, a, d) => clamp((t - a) / d, 0, 1);
+const hash = n => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
+const fmt = s => { s = Math.max(0, Math.floor(s + 1e-6)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+const money = n => '$' + n.toFixed(2);
+const $ = s => document.querySelector(s);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FD = '"Libre Baskerville", Georgia, serif';
+const FU = '"Libre Franklin", system-ui, sans-serif';
+const FT = '"Special Elite", "Courier New", monospace';
+const FH = 'Caveat, "Segoe Print", cursive';
+const C = { paper: '#FBF7EF', ink: '#1C2231', ink2: '#4A5063', ink3: '#7C8092', red: '#A3302A', redDeep: '#7E221D', gold: '#B8914A', goldLt: '#D9BC7E', manila: '#E9D8B4', soon: '#3A5A8C', line: '#DDD1BB' };
+
+/* ---------- store data ---------- */
+const STORE = 'https://porchpress.store';
+const PRICE = 12.99;
+const priceOf = p => p === 'eleanor' ? 0 : PRICE;
+const priceLabel = p => p === 'eleanor' ? 'FREE' : money(PRICE);
+const P = {
+  baby:        { name: 'Baby in a Basket',        handle: 'baby-in-a-basket',        v: 52494545486122, img: window.__PP_TV_ASSETS['case-baby'],        who: 'wren',    hook: 'Who was she before Sutton?',        blurb: 'Mabel was left in a basket in a church pew. Follow census entries and birth records to find her beginnings.', contents: '36-page player packet · 5-page hints · 8-page sealed solution' },
+  eleanor:     { name: 'Eleanor Hart Is Missing', handle: 'eleanor-hart-is-missing', v: 52494545420586, img: window.__PP_TV_ASSETS['case-eleanor'],     who: 'deb',     hook: 'She’s missing. The paper trail isn’t.', blurb: 'Eleanor Hart is missing from the family story. Follow census sheets, letters, and clippings to build your case.', contents: '30-page player packet · 5-page hints · 8-page sealed solution' },
+  widow:       { name: 'The Wrong Widow',         handle: 'the-wrong-widow',         v: 52494540570922, img: window.__PP_TV_ASSETS['case-widow'],       who: 'marisol', hook: 'Two widows. One pension.',          blurb: 'Two women claim the same Civil War soldier’s widow’s pension. Both files look real. Decide which claim holds.', contents: '27-page player case · 2-page hints · 5-page sealed solution' },
+  roscoe:      { name: 'Roscoe’s Grave',          handle: 'roscoes-grave',           v: 52494612627754, img: window.__PP_TV_ASSETS['case-roscoe'],      who: 'jo',      hook: 'Who is really buried here?',        blurb: 'A headstone tells one story. The cemetery book says someone else is buried there. Find out who.', contents: '26-page player PDF · 4-page hints · 6-page sealed solution' },
+  inheritance: { name: 'The Inheritance',         handle: 'the-inheritance',         v: 52494612300074, img: window.__PP_TV_ASSETS['case-inheritance'], who: 'priya',   hook: 'Three claims. One rightful heir.',  blurb: 'Henry Vale left his estate to his sister’s eldest surviving child. Three people claim it. Find the heir.', contents: '25-page player packet · 4-page hints · 6-page sealed solution' },
+  king:        { name: 'If I Were King',          handle: 'if-i-were-king',          v: 52494612693290, img: window.__PP_TV_ASSETS['case-king'],        who: 'tess',    hook: 'One letter. Second in line.',       blurb: 'A widower gets a letter saying he is second in line for a throne. Trace two family branches to test it.', contents: '29-page player PDF · 4-page hints · 6-page sealed solution' },
+};
+const ORDER = ['baby', 'eleanor', 'widow', 'roscoe', 'inheritance', 'king'];
+const FEATURE = { baby: 44.2, eleanor: 49.0, widow: 53.8, roscoe: 58.6, inheritance: 63.4, king: 68.2 };
+const pdpUrl = p => `${STORE}/products/${P[p].handle}`;
+const SOON = {
+  ticket: { title: 'The Winning Ticket',  tagline: 'He won. They lost him.',        desc: 'He won the lottery. Then he abandoned his family and disappeared. Follow the paper trail to find the man who walked away with everything.', doodle: 'ticket' },
+  pymk:   { title: 'People You May Know', tagline: 'She moved on. He never did.',   desc: 'They dated for a few months in ninth grade. Thirty years later, he is stalking her on Facebook. How did he find her, and what will it take to get away?', doodle: 'profile' },
+};
+const EP = { code: 'S1 · E1', title: 'Baby in a Basket', sub: 'Season 1 · Episode 1 · Baby in a Basket', log: 'A baby left in a basket. Who was she before Sutton?' };
+const GUIDE = [
+  { p: 'eleanor',     code: 'S1 · E2', log: 'Eleanor is missing from the family story. The papers leave a trail.' },
+  { p: 'widow',       code: 'S1 · E3', log: 'Two women claim the same soldier’s widow’s pension. Which claim holds?' },
+  { p: 'roscoe',      code: 'S1 · E4', log: 'The stone is ordered. The burial index gives a different surname.' },
+  { p: 'inheritance', code: 'S1 · E5', log: 'Three people claim a mill. A will makes birth order decisive.' },
+  { p: 'king',        code: 'S1 · E6', log: 'A succession claim arrives. The official letter tells another story.' },
+];
+
+/* ---------- the Porch Club ---------- */
+const CLUB = {
+  wren:    { name: 'Wren',    age: 58, role: 'The host',             hair: 'bun',   tint: '#E8CFC6', color: '#A3302A', pearl: true,  bio: 'Hosts on her porch. Prints everything. Owns a label maker.' },
+  deb:     { name: 'Deb',     age: 61, role: 'The family historian', hair: 'curls', tint: '#CFDCC8', color: '#46703F', glasses: true, bio: 'Six years on one ancestor. Signs every text she sends.' },
+  marisol: { name: 'Marisol', age: 63, role: 'The skeptic',          hair: 'bob',   tint: '#CAD6E8', color: '#34578A', specs: true,   bio: 'Thirty years at the county clerk’s office. Trusts no document.' },
+  jo:      { name: 'Jo',      age: 33, role: 'The true crime fan',   hair: 'puff',  tint: '#DCD1EA', color: '#664A8E', phones: true,  bio: 'Has heard every true crime podcast. Some of them twice.' },
+  priya:   { name: 'Priya',   age: 31, role: 'The evidence board',   hair: 'low',   tint: '#EEDDB2', color: '#855C0E', pencil: true, pearl: true, bio: 'Color-codes every clue. Owns a lot of red string.' },
+  tess:    { name: 'Tess',    age: 34, role: 'The daughter',         hair: 'pony',  tint: '#E3CDB0', color: '#80502A', hoop: true,    bio: 'Deb’s daughter. Came for her mom. Stayed for the case.' },
+};
+const CAST = ['wren', 'deb', 'marisol', 'jo', 'priya', 'tess'];
+
+/* ---------- script ---------- */
+const CHAT = [
+  { t: 5.6,  k: 'deb',     text: 'Update: 6 years on Great-Grandma Hattie. She vanishes between 1880 and 1900. - Deb' },
+  { t: 6.9,  k: 'marisol', text: 'Deb, the 1890 census burned. We have discussed this.' },
+  { t: 8.2,  k: 'tess',    text: 'mom you don’t have to sign your texts' },
+  { t: 9.4,  k: 'deb',     text: 'I KNOW. - Deb' },
+  { t: 10.6, k: 'jo',      text: 'a woman vanishes and the records burn?? that’s a true crime episode' },
+  { t: 11.8, k: 'wren',    photo: true, text: 'Friday. We solve one that ENDS.' },
+  { t: 13.1, k: 'priya',   text: 'a case with an actual answer. bringing the evidence board' },
+];
+const LINES = [
+  [15.3, 18.6, 'wren',    'Tonight’s case. A baby, left in a basket.'],
+  [18.6, 21.5, 'jo',      'In a church pew? I have chills.'],
+  [21.6, 25,   'wren',    'She grew up as Mabel Sutton. Nobody knew her birth name.'],
+  [25,   28,   'deb',     'No name. No parents. That’s my whole week.'],
+  [28.3, 31.4, 'priya',   'We work it like a cold case. Census first.'],
+  [31.4, 34.5, 'marisol', 'Edith Sutton. Number born: zero. Hold on.'],
+  [34.6, 37.4, 'deb',     'And when I get stuck? Because I will.'],
+  [37.4, 41,   'wren',    'Open one hint at a time. The answer stays sealed.'],
+  [41.3, 44,   'deb',     'A brick wall with a door? Okay. Everyone pick a case.'],
+  [44.2, 48.8, 'wren',    'Baby in a Basket. I printed it already. Twice.'],
+  [49.0, 53.6, 'deb',     'Eleanor Hart Is Missing. Gone from the family? Hattie, is that you?'],
+  [53.8, 58.4, 'marisol', 'The Wrong Widow. Thirty years as a clerk. I trust neither claim.'],
+  [58.6, 63.2, 'jo',      'Roscoe’s Grave. Wrong name on a headstone? That’s a whole podcast.'],
+  [63.4, 68,   'priya',   'The Inheritance. Three claims, one heir. The board is ready.'],
+  [68.2, 73,   'tess',    'If I Were King. Second in line for a throne? I’d take it.'],
+  [73.3, 75.4, 'priya',   'Okay. What’s actually in the file?'],
+  [75.4, 77.9, 'wren',    'A 36-page player packet.'],
+  [77.9, 80.4, 'marisol', 'Twenty exhibits. Six deductions.'],
+  [80.4, 82.9, 'deb',     'Five pages of hints. For me.'],
+  [82.9, 85,   'jo',      'And a sealed solution. No peeking.'],
+  [85.3, 89,   'marisol', '$12.99 for most cases. Eleanor is FREE.'],
+  [89,   93,   'tess',    'It’s a download. Nothing ships. The cat is upset.'],
+  [93.3, 96.5, 'wren',    'But wait. There’s more.'],
+  [96.5, 101,  'deb',     'Next episode: Eleanor Hart. She’s my Hattie. I can feel it.'],
+  [101,  106,  'jo',      'And a lottery winner who vanishes. I need that one.'],
+  [113.4, 116, 'deb',     'Okay. Hattie. 1880 to 1900. I’m going back in. - Deb'],
+];
+const INSIDE = [
+  [75.4, '36-page player packet'],
+  [77.9, '20 exhibits · 6 deductions'],
+  [80.4, '5-page hints · one at a time'],
+  [82.9, '8-page sealed solution'],
+  [83.9, 'Or one 52-page print edition'],
+];
+const CUTS = [5, 15, 21.5, 28, 34.5, 41, 73, 85, 93, 106, 116];
+const DOTS = [11.8, 15.3, 22, 29, 44.2, 49.0, 53.8, 58.6, 63.4, 68.2, 75.6, 85.3, 96.8, 107];
+
+/* ---------- tags ---------- */
+const TAGS = [];
+const addTag = o => { o.id = TAGS.length; o.type = o.type || 'shop'; TAGS.push(o); return o; };
+const WALL = { baby: [590, 1000], eleanor: [1680, 1000], widow: [2770, 1000], roscoe: [590, 2090], inheritance: [1680, 2090], king: [2770, 2090] };
+const mkWall = () => ORDER.map(p => addTag({ p, sx: WALL[p][0] - 360, sy: WALL[p][1] + 60, pcx: WALL[p][0] }));
+const WALL_WIDE = (a, b) => [{ t: a, cx: 1680, cy: 1545, hs: 6000 }, { t: b, cx: 1680, cy: 1545, hs: 5750 }];
+const wallPicks = (starts, end) => {
+  const k = [];
+  starts.forEach((s, i) => {
+    const [x, y] = WALL[ORDER[i]], cy = y + 96;
+    k.push({ t: s, cx: x, cy, hs: 1850 });
+    k.push({ t: i < starts.length - 1 ? starts[i + 1] - .8 : end, cx: x, cy, hs: i < starts.length - 1 ? 1790 : 1760 });
+  });
+  return k;
+};
+const SCN = [
+  { id: 'A',  t0: 0,    t1: 5,    chap: 'Cold open', custom: 'title', night: true },
+  { id: 'B',  t0: 5,    t1: 15,   chap: 'The problem', custom: 'chat', night: true },
+  { id: 'C',  t0: 15,   t1: 21.5, chap: 'The case', img: 'pew', sticker: 'Exhibit A: a basket',
+    keys: [{ t: 15, cx: 600, cy: 650, hs: 560 }, { t: 18.5, cx: 540, cy: 645, hs: 530 }, { t: 21.5, cx: 700, cy: 645, hs: 520 }] },
+  { id: 'C2', t0: 21.5, t1: 28,   chap: 'The case', img: 'hero', sticker: 'Birth name: unknown',
+    keys: [{ t: 21.5, cx: 627, cy: 627, hs: 1254 }, { t: 23.4, cx: 520, cy: 640, hs: 600 }, { t: 26, cx: 700, cy: 650, hs: 580 }, { t: 28, cx: 690, cy: 680, hs: 560 }] },
+  { id: 'D',  t0: 28,   t1: 34.5, chap: 'How it plays', img: 'census', sticker: 'A real page from the case',
+    keys: [{ t: 28, cx: 765, cy: 990, hs: 1980 }, { t: 29.6, cx: 480, cy: 760, hs: 1300 }, { t: 32, cx: 480, cy: 790, hs: 1250 }, { t: 33.2, cx: 500, cy: 1180, hs: 1250 }, { t: 34.5, cx: 500, cy: 1190, hs: 1200 }] },
+  { id: 'D2', t0: 34.5, t1: 41,   chap: 'How it plays', img: 'story', sticker: 'The opening story',
+    keys: [{ t: 34.5, cx: 620, cy: 420, hs: 1500 }, { t: 36.2, cx: 520, cy: 640, hs: 1250 }, { t: 41, cx: 510, cy: 660, hs: 1150 }] },
+  { id: 'E',  t0: 41,   t1: 73,   chap: 'The picks', img: 'wall', sticker: 'Pick your case',
+    keys: [...WALL_WIDE(41, 43.6), ...wallPicks([44.6, 49.4, 54.2, 59.0, 63.8, 68.6], 73)] },
+  { id: 'F',  t0: 73,   t1: 85,   chap: 'What’s in the file', custom: 'inside' },
+  { id: 'O',  t0: 85,   t1: 93,   chap: 'The offer', img: 'wall', custom: 'offer', keys: WALL_WIDE(85, 93) },
+  { id: 'M',  t0: 93,   t1: 106,  chap: 'But wait, there’s more', custom: 'more' },
+  { id: 'R',  t0: 106,  t1: 116,  chap: 'Credits', custom: 'credits' },
+  { id: 'I',  t0: 116,  t1: 120,  chap: 'Shop the episode', img: 'hero', custom: 'end', night: true, keys: [{ t: 116, cx: 627, cy: 627, hs: 2844 }, { t: 120, cx: 627, cy: 627, hs: 2700 }] },
+];
+const S = Object.fromEntries(SCN.map(s => [s.id, s]));
+S.A.tags = [addTag({ p: 'baby' })];
+S.C.tags = [addTag({ p: 'baby', sx: 600, sy: 760, pcx: 616 })];
+S.C2.tags = [addTag({ p: 'baby', sx: 430, sy: 520, pcx: 630 })];
+S.D.tags = [addTag({ p: 'baby', sx: 760, sy: 1012, pcx: 500 })];
+S.D2.tags = [addTag({ p: 'baby', sx: 800, sy: 200, pcx: 520 })];
+S.E.tags = mkWall();
+S.O.tags = mkWall();
+S.I.tags = [addTag({ p: 'baby', sx: 330, sy: 470, pcx: 627 })];
+const INSIDE_TAG = addTag({ p: 'baby' });
+const CHAT_TAG = addTag({ p: 'baby' });
+const NEXT_TAG = addTag({ p: 'eleanor' });
+const SOON_TAG = addTag({ type: 'soon', soon: 'ticket' });
+const CREDIT_TAGS = Object.fromEntries(ORDER.map(p => [p, addTag({ p })]));
+
+/* ---------- canvas ---------- */
+const player = $('#player'), cv = $('#cv'), ctx = cv.getContext('2d');
+const IM = {}, BL = {};
+let cssW = 1, cssH = 1, bw = 1, bh = 1;
+
+function dot(c, x, y, r) { c.beginPath(); c.arc(x, y, r, 0, TAU); c.fill(); }
+function rr(c, x, y, w, h, r) {
+  const R = typeof r === 'number' ? [r, r, r, r] : r;
+  c.beginPath(); c.moveTo(x + R[0], y); c.lineTo(x + w - R[1], y); c.arcTo(x + w, y, x + w, y + R[1], R[1]);
+  c.lineTo(x + w, y + h - R[2]); c.arcTo(x + w, y + h, x + w - R[2], y + h, R[2]);
+  c.lineTo(x + R[3], y + h); c.arcTo(x, y + h, x, y + h - R[3], R[3]);
+  c.lineTo(x, y + R[0]); c.arcTo(x, y, x + R[0], y, R[0]); c.closePath();
+}
+function spacing(c, px) { if ('letterSpacing' in c) c.letterSpacing = px + 'px'; }
+
+/* cameo portraits, drawn once at boot */
+const INK = '#1E2433';
+function cameoProfile(g, male, talk) {
+  const o = talk ? 15 : 0;
+  g.beginPath();
+  g.moveTo(140, 512);
+  g.bezierCurveTo(152, 468, 186, 440, 208, 420);
+  g.bezierCurveTo(214, 392, 208, 362, 200, 338);
+  g.bezierCurveTo(168, 300, 160, 200, 205, 136);
+  g.bezierCurveTo(240, 88, 322, 80, 356, 126);
+  g.bezierCurveTo(372, 150, 378, 182, 375, 206);
+  g.bezierCurveTo(373, 216, 378, 224, 383, 232);
+  if (male) g.lineTo(407, 276); else g.lineTo(403, 272);
+  g.bezierCurveTo(408, 281, 402, 287, 391, 287);
+  g.bezierCurveTo(387, 291, 389, 297, 392, 301);
+  g.bezierCurveTo(397, 305, 395, 311, 387, 312);
+  if (talk) { g.lineTo(366, 318); g.lineTo(368, 326); g.lineTo(382, 329); }
+  g.bezierCurveTo(394, 315 + o, 394, 325 + o, 386, 329 + o);
+  g.bezierCurveTo(379, 333 + o, 379, 339 + o, 384, 347 + o);
+  g.bezierCurveTo(389, 363 + o, 375, 376 + o, 352, 378 + o * .6);
+  g.bezierCurveTo(334, 380, 322, 392, 318, 406);
+  g.bezierCurveTo(316, 432, 322, 452, 338, 470);
+  g.bezierCurveTo(372, 490, 404, 500, 440, 512);
+  g.closePath(); g.fill();
+}
+function bumps(g, pts) { pts.forEach(([x, y, r]) => dot(g, x, y, r)); }
+function drawCameo(g, id, talk) {
+  const k = CLUB[id];
+  const bg = g.createRadialGradient(236, 200, 30, 256, 256, 360);
+  bg.addColorStop(0, '#FBF6EC'); bg.addColorStop(.55, k.tint); bg.addColorStop(1, k.tint);
+  g.fillStyle = bg; g.fillRect(0, 0, 512, 512);
+  g.save(); g.strokeStyle = 'rgba(30,36,51,.2)'; g.lineWidth = 3;
+  g.beginPath(); g.ellipse(256, 256, 214, 238, 0, 0, TAU); g.stroke();
+  g.lineWidth = 1.5; g.beginPath(); g.ellipse(256, 256, 204, 228, 0, 0, TAU); g.stroke(); g.restore();
+  g.fillStyle = INK;
+  const h = k.hair;
+  if (h === 'long') {
+    g.beginPath(); g.moveTo(330, 96); g.bezierCurveTo(250, 60, 160, 110, 165, 220);
+    g.bezierCurveTo(168, 320, 150, 400, 128, 470); g.bezierCurveTo(170, 480, 215, 470, 240, 440);
+    g.bezierCurveTo(222, 380, 232, 300, 250, 250); g.bezierCurveTo(300, 160, 350, 150, 362, 140); g.closePath(); g.fill();
+  }
+  if (h === 'puff') bumps(g, [[230, 150, 96], [170, 120, 50], [215, 70, 48], [285, 72, 46], [150, 190, 50], [165, 250, 44], [330, 104, 36], [120, 150, 34], [258, 40, 30]]);
+  cameoProfile(g, false, talk);
+  if (h === 'bun') {
+    g.beginPath(); g.ellipse(262, 170, 112, 96, -.42, 0, TAU); g.fill();
+    dot(g, 186, 118, 52);
+    g.beginPath(); g.moveTo(352, 118); g.quadraticCurveTo(330, 150, 290, 148); g.lineTo(300, 110); g.fill();
+  }
+  if (h === 'curls') bumps(g, [[340, 108, 30], [310, 86, 32], [272, 78, 34], [232, 90, 36], [200, 118, 38], [180, 160, 38], [176, 206, 38], [182, 252, 36], [198, 292, 34], [226, 318, 30], [258, 126, 60], [230, 200, 60], [362, 132, 20]]);
+  if (h === 'long') { g.beginPath(); g.ellipse(262, 160, 108, 86, -.35, 0, TAU); g.fill(); }
+  if (h === 'puff') { g.beginPath(); g.ellipse(262, 150, 100, 80, -.3, 0, TAU); g.fill(); }
+  if (h === 'low') { g.beginPath(); g.ellipse(262, 166, 110, 90, -.42, 0, TAU); g.fill(); dot(g, 188, 318, 46); }
+  if (h === 'bob') {
+    g.beginPath(); g.moveTo(334, 98); g.bezierCurveTo(250, 56, 158, 108, 166, 220);
+    g.bezierCurveTo(170, 300, 186, 344, 252, 348); g.bezierCurveTo(262, 300, 264, 262, 282, 232);
+    g.bezierCurveTo(300, 192, 330, 160, 362, 140); g.closePath(); g.fill();
+  }
+  if (h === 'pony') {
+    g.beginPath(); g.ellipse(262, 168, 110, 92, -.42, 0, TAU); g.fill();
+    g.beginPath(); g.moveTo(222, 100); g.bezierCurveTo(150, 78, 108, 140, 118, 232);
+    g.bezierCurveTo(126, 292, 152, 330, 140, 384); g.bezierCurveTo(172, 352, 188, 300, 182, 250);
+    g.bezierCurveTo(176, 188, 196, 148, 236, 128); g.closePath(); g.fill();
+    g.fillStyle = '#A3302A'; dot(g, 208, 110, 17); g.fillStyle = INK;
+  }
+  if (k.glasses) { g.save(); g.strokeStyle = '#C9A45C'; g.lineWidth = 6; g.beginPath(); g.ellipse(346, 96, 24, 13, -.25, 0, TAU); g.stroke(); g.restore(); }
+  if (k.clip) { g.save(); g.fillStyle = '#C9A45C'; g.translate(236, 112); g.rotate(-.5); g.fillRect(-26, -6, 52, 12); g.restore(); }
+  if (k.pearl) { g.fillStyle = '#FBF6EC'; dot(g, 262, 290, 8); g.fillStyle = 'rgba(30,36,51,.25)'; dot(g, 264, 292, 3); }
+  if (k.specs) {
+    g.save(); g.strokeStyle = '#C9A45C'; g.lineWidth = 4.5;
+    g.beginPath(); g.ellipse(368, 226, 12, 11, 0, 0, TAU); g.stroke();
+    g.beginPath(); g.moveTo(356, 223); g.lineTo(270, 214); g.stroke(); g.restore();
+  }
+  if (k.phones) {
+    g.save(); g.strokeStyle = '#B8914A'; g.lineWidth = 12; g.lineCap = 'round';
+    g.beginPath(); g.moveTo(258, 212); g.bezierCurveTo(250, 150, 244, 96, 262, 40); g.stroke();
+    g.fillStyle = '#B8914A'; g.beginPath(); g.ellipse(256, 244, 30, 38, 0, 0, TAU); g.fill();
+    g.fillStyle = '#8E6E33'; g.beginPath(); g.ellipse(256, 244, 18, 25, 0, 0, TAU); g.fill(); g.restore();
+  }
+  if (k.hoop) { g.save(); g.strokeStyle = '#C9A45C'; g.lineWidth = 5; g.beginPath(); g.arc(262, 300, 16, 0, TAU); g.stroke(); g.restore(); }
+  if (k.pencil) {
+    g.save(); g.translate(262, 214); g.rotate(-.28);
+    g.fillStyle = '#E8B94A'; g.fillRect(-58, -7, 104, 14);
+    g.fillStyle = '#E6A1A1'; g.fillRect(-72, -7, 14, 14);
+    g.fillStyle = '#F4E3C3'; g.beginPath(); g.moveTo(46, -7); g.lineTo(66, 0); g.lineTo(46, 7); g.fill();
+    g.fillStyle = INK; g.beginPath(); g.moveTo(60, -2.5); g.lineTo(66, 0); g.lineTo(60, 2.5); g.fill();
+    g.restore();
+  }
+}
+const KF = {}, AV = {};
+function buildCameos() {
+  CAST.forEach(id => {
+    const mk = talk => { const c = document.createElement('canvas'); c.width = c.height = 512; drawCameo(c.getContext('2d'), id, talk); return c; };
+    KF[id] = { base: mk(false), talk: mk(true) };
+    try { AV[id] = KF[id].base.toDataURL('image/jpeg', .9); } catch (e) { AV[id] = ''; }
+  });
+}
+function avatar(c, id, x, y, R, t, talk = false, ring = true) {
+  const f = KF[id]; if (!f) return;
+  const k = CLUB[id];
+  const img = talk && Math.sin(t * 12.4) + Math.sin(t * 7.3 + id.length) > .35 ? f.talk : f.base;
+  c.save();
+  c.beginPath(); c.arc(x, y, R, 0, TAU); c.fillStyle = k.tint; c.fill(); c.clip();
+  c.drawImage(img, 272 - 216, 236 - 216, 432, 432, x - R, y - R, R * 2, R * 2);
+  c.restore();
+  if (ring) { c.beginPath(); c.arc(x, y, R, 0, TAU); c.lineWidth = Math.max(2, R * .07); c.strokeStyle = C.paper; c.stroke(); }
+}
+
+/* ---------- camera ---------- */
+function camAt(keys, t) {
+  if (t <= keys[0].t) return keys[0];
+  const last = keys[keys.length - 1];
+  if (t >= last.t) return last;
+  for (let i = 0; i < keys.length - 1; i++) {
+    const a = keys[i], b = keys[i + 1];
+    if (t >= a.t && t <= b.t) { const u = ease((t - a.t) / ((b.t - a.t) || 1)); return { cx: lerp(a.cx, b.cx, u), cy: lerp(a.cy, b.cy, u), hs: lerp(a.hs, b.hs, u) }; }
+  }
+  return last;
+}
+function view(img, cam) {
+  const iw = img.naturalWidth, ih = img.naturalHeight, hs = cam.hs, ws = hs * W / H;
+  const cx = ws <= iw ? clamp(cam.cx, ws / 2, iw - ws / 2) : iw / 2;
+  const cy = hs <= ih ? clamp(cam.cy, hs / 2, ih - hs / 2) : ih / 2;
+  const s = H / hs;
+  return { s, iw, ih, hs, x: W / 2 - cx * s, y: H / 2 - cy * s, map: (px, py) => ({ x: W / 2 + (px - cx) * s, y: H / 2 + (py - cy) * s }) };
+}
+function cover(src, zoom, tint) {
+  const sw = src.width || src.naturalWidth, sh = src.height || src.naturalHeight;
+  const s = Math.max(W / sw, H / sh) * zoom;
+  ctx.drawImage(src, (W - sw * s) / 2, (H - sh * s) / 2, sw * s, sh * s);
+  if (tint) { ctx.fillStyle = tint; ctx.fillRect(0, 0, W, H); }
+}
+function fireflies(t) {
+  ctx.save();
+  for (let i = 0; i < 26; i++) {
+    const x = hash(i + 40) * W + Math.sin(t * .6 + i * 1.7) * 18;
+    const y = hash(i + 90) * H + Math.cos(t * .45 + i) * 14;
+    const a = .12 + .7 * Math.max(0, Math.sin(t * 1.3 + i * 2.3));
+    const r = 2 + hash(i + 3) * 2.2;
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r * 5);
+    g.addColorStop(0, `rgba(246,226,122,${a})`); g.addColorStop(.3, `rgba(246,226,122,${a * .35})`); g.addColorStop(1, 'rgba(246,226,122,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r * 5, 0, TAU); ctx.fill();
+  }
+  ctx.restore();
+}
+function plate(key, v, night) {
+  const img = IM[key], w = v.iw * v.s, h = v.ih * v.s;
+  const letter = h < H - 1 || w < W - 1;
+  if (letter) {
+    cover(BL[key], 1.15, night ? 'rgba(10,14,26,.66)' : 'rgba(15,19,28,.42)');
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 34; ctx.shadowOffsetY = 10; ctx.fillStyle = '#0B0E16'; ctx.fillRect(v.x, v.y, w, h); ctx.restore();
+  }
+  ctx.drawImage(img, v.x, v.y, w, h);
+  return !letter;
+}
+function makeBlur(img) {
+  const c = document.createElement('canvas'), g = c.getContext('2d');
+  if (typeof g.filter === 'string') {
+    c.width = 320; c.height = Math.round(320 * img.naturalHeight / img.naturalWidth);
+    g.filter = 'blur(14px) saturate(1.1)'; g.drawImage(img, -20, -20, c.width + 40, c.height + 40); g.filter = 'none';
+    if (g.filter === 'none') return c;
+  }
+  const small = document.createElement('canvas'); small.width = 40; small.height = Math.round(40 * img.naturalHeight / img.naturalWidth);
+  small.getContext('2d').drawImage(img, 0, 0, small.width, small.height);
+  c.width = 160; c.height = Math.round(160 * small.height / small.width);
+  const g2 = c.getContext('2d'); g2.imageSmoothingQuality = 'high'; g2.drawImage(small, 0, 0, c.width, c.height);
+  return c;
+}
+
+/* ---------- text ---------- */
+const wrapCache = new Map();
+function wrap(text, maxW, font) {
+  const key = font + '|' + maxW + '|' + text;
+  if (wrapCache.has(key)) return wrapCache.get(key);
+  ctx.font = font; const words = text.split(' '), out = []; let line = '';
+  for (const w of words) { const test = line ? line + ' ' + w : w; if (ctx.measureText(test).width > maxW && line) { out.push(line); line = w; } else line = test; }
+  if (line) out.push(line); wrapCache.set(key, out); return out;
+}
+function sText(txt, x, y, fill, sh = 'rgba(0,0,0,.6)', blur = 14) {
+  ctx.save(); ctx.shadowColor = sh; ctx.shadowBlur = blur; ctx.shadowOffsetY = 2; ctx.fillStyle = fill; ctx.fillText(txt, x, y); ctx.restore();
+}
+
+/* ---------- scene renderers ---------- */
+const tagPos = new Map();
+let frameZoom = false;
+function placeSceneTags(s, v) {
+  for (const tg of s.tags || []) tagPos.set(tg.id, { ...v.map(tg.sx, tg.sy), pcx: v.map(tg.pcx, 0).x });
+}
+function drawPlateScene(s, t) {
+  const v = view(IM[s.img], camAt(s.keys, t));
+  frameZoom = plate(s.img, v, s.night);
+  placeSceneTags(s, v);
+  return v;
+}
+function paperclip(c, x, y, rot) {
+  c.save(); c.translate(x, y); c.rotate(rot);
+  c.strokeStyle = '#C9CDD6'; c.lineWidth = 4; c.lineCap = 'round';
+  c.beginPath(); c.moveTo(0, 46); c.lineTo(0, 6); c.arc(9, 6, 9, Math.PI, 0); c.lineTo(18, 56); c.arc(9, 56, 9, 0, Math.PI); c.lineTo(0, 22);
+  c.stroke(); c.restore();
+}
+function drawTitle(s, t) {
+  cover(BL.pew, 1.2, 'rgba(10,14,26,.6)'); fireflies(t);
+  const cx = 270, cy = 446, sz = 250, rot = -.045 + Math.sin(t * .8) * .006;
+  ctx.save(); ctx.translate(cx, cy); ctx.rotate(rot);
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 30; ctx.shadowOffsetY = 12; ctx.fillStyle = C.paper; ctx.fillRect(-sz / 2 - 10, -sz / 2 - 10, sz + 20, sz + 20); ctx.restore();
+  ctx.drawImage(IM.hero, -sz / 2, -sz / 2, sz, sz);
+  paperclip(ctx, -sz / 2 + 34, -sz / 2 - 26, -.08);
+  ctx.restore();
+  const lx = -84, ly = 18, cs = Math.cos(rot), sn = Math.sin(rot);
+  tagPos.set(S.A.tags[0].id, { x: cx + lx * cs - ly * sn, y: cy + lx * sn + ly * cs, pcx: null });
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.font = `15px ${FT}`; spacing(ctx, 2); sText('PORCH PRESS TV PRESENTS', W / 2, 96, C.goldLt, 'rgba(0,0,0,.6)', 8); spacing(ctx, 0);
+  ctx.font = `italic 50px ${FD}`; sText('The Porch Club', W / 2, 152, C.paper);
+  ctx.font = `700 19px ${FU}`; sText(`${EP.code} · ${EP.title}`, W / 2, 190, C.manila, 'rgba(0,0,0,.6)', 8);
+  ctx.font = `13px ${FT}`; spacing(ctx, 2); sText('IN THIS EPISODE', W / 2, 226, '#EDA59C', 'rgba(0,0,0,.6)', 8); spacing(ctx, 0);
+  const lf = `700 31px ${FH}`;
+  wrap(EP.log, 440, lf).forEach((l, i) => { ctx.font = lf; sText(l, W / 2, 258 + i * 28, C.paper, 'rgba(0,0,0,.7)', 10); });
+  CAST.forEach((id, i) => {
+    const x = 70 + i * 80, y = 648 + Math.sin(t * 2 + i) * 2;
+    avatar(ctx, id, x, y, 30, t + i * .4);
+    ctx.font = `700 24px ${FH}`; sText(CLUB[id].name, x, 706, C.paper, 'rgba(0,0,0,.7)', 8);
+  });
+  ctx.font = `700 16px ${FU}`;
+  const hint = 'Tap any tag to shop the episode', hw = ctx.measureText(hint).width + 58;
+  ctx.save(); ctx.fillStyle = 'rgba(251,247,239,.96)'; ctx.shadowColor = 'rgba(0,0,0,.4)'; ctx.shadowBlur = 12; rr(ctx, W / 2 - hw / 2, 734, hw, 32, 16); ctx.fill(); ctx.restore();
+  ctx.fillStyle = C.red; dot(ctx, W / 2 - hw / 2 + 18, 750, 10);
+  ctx.fillStyle = C.paper; dot(ctx, W / 2 - hw / 2 + 18, 750, 3.5);
+  ctx.fillStyle = C.ink; ctx.textAlign = 'left'; ctx.fillText(hint, W / 2 - hw / 2 + 36, 755.5);
+  ctx.textAlign = 'center';
+}
+function drawEnd(s, t) {
+  drawPlateScene(s, t); frameZoom = false; fireflies(t);
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  ctx.font = `700 38px ${FD}`; sText('Shop the episode', W / 2, 196, C.paper);
+  ctx.font = `600 19px ${FU}`; sText('Up next: find your case in 2 taps.', W / 2, 236, C.manila, 'rgba(0,0,0,.6)', 8);
+  ctx.font = `italic 36px ${FD}`; sText('porchpress.store', W / 2, 748, C.paper);
+  ctx.font = `600 17px ${FU}`; sText('Digital download · nothing ships', W / 2, 782, C.manila, 'rgba(0,0,0,.6)', 8);
+}
+let chatLayout = null;
+const CHAT_FONT = `500 21px ${FU}`;
+function layoutChat() {
+  let y = 0;
+  chatLayout = CHAT.map((m, i) => {
+    const mine = m.k === 'wren', showName = !mine && (i === 0 || CHAT[i - 1].k !== m.k);
+    const lines = m.photo ? [] : wrap(m.text, 270, CHAT_FONT);
+    ctx.font = CHAT_FONT;
+    const tw = m.photo ? Math.max(176, ctx.measureText(m.text).width) : Math.max(...lines.map(l => ctx.measureText(l).width));
+    const bh = m.photo ? 12 + 221 + 38 : lines.length * 27 + 20;
+    const h = (showName ? 22 : 0) + bh;
+    const o = { ...m, mine, showName, lines, tw, bh, h, y };
+    y += h + 10; return o;
+  });
+}
+function drawChat(s, t) {
+  cover(BL.pew, 1.25, 'rgba(10,14,26,.66)'); fireflies(t);
+  const slide = eo(prog(t, s.t0, .45));
+  const x0 = 34, x1 = 506, y0 = 92, y1 = 896;
+  ctx.save(); ctx.globalAlpha = slide; ctx.translate(0, (1 - slide) * 120);
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = 40; ctx.shadowOffsetY = 16; ctx.fillStyle = C.paper; rr(ctx, x0, y0, x1 - x0, y1 - y0, 26); ctx.fill(); ctx.restore();
+  avatar(ctx, 'tess', 128, 136, 19, t); avatar(ctx, 'deb', 103, 136, 19, t); avatar(ctx, 'wren', 78, 136, 19, t);
+  ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.fillStyle = C.ink; ctx.font = `800 21px ${FU}`; ctx.fillText('Friday Porch Club', 160, 133);
+  ctx.fillStyle = C.ink3; ctx.font = `500 14px ${FU}`; ctx.fillText('Wren, Deb, Marisol, Jo, Priya, Tess', 160, 155);
+  ctx.fillStyle = C.line; ctx.fillRect(x0 + 20, 176, x1 - x0 - 40, 1.5);
+  const aTop = 188, aBot = 882, aH = aBot - aTop;
+  let n = 0; for (const m of chatLayout) if (t >= m.t) n++;
+  const nxt = chatLayout[n];
+  const typing = nxt ? eo(prog(t, nxt.t - .75, .2)) : 0;
+  const hEff = i => { const m = chatLayout[i], p = eo(prog(t, m.t, .28)); return lerp(46, m.h, p); };
+  let yy = 0; const ys = [];
+  for (let i = 0; i < n; i++) { ys.push(yy); yy += hEff(i) + 10; }
+  const typY = yy; yy += typing * 46;
+  const scroll = Math.max(0, yy - aH);
+  ctx.save(); ctx.beginPath(); ctx.rect(x0, aTop, x1 - x0, aH); ctx.clip();
+  for (let i = 0; i < n; i++) drawMsg(chatLayout[i], aTop + ys[i] - scroll, t, x0, x1);
+  if (nxt && typing > 0) drawTyping(nxt, aTop + typY - scroll, t, typing, x0, x1);
+  ctx.restore();
+  ctx.restore();
+}
+function drawMsg(m, y, t, x0, x1) {
+  const p = eo(prog(t, m.t, .28));
+  const k = CLUB[m.k];
+  ctx.save(); ctx.globalAlpha *= p;
+  let by = y;
+  if (m.showName) { ctx.font = `700 14px ${FU}`; ctx.fillStyle = k.color; ctx.textAlign = 'left'; ctx.fillText(k.name, x0 + 66, y + 15); by += 22; }
+  const bw = m.photo ? Math.max(188, m.tw + 28) : m.tw + 28;
+  const bx = m.mine ? x1 - 18 - bw : x0 + 62;
+  const sc = lerp(.86, 1, p);
+  ctx.translate(m.mine ? bx + bw : bx, by + m.bh); ctx.scale(sc, sc); ctx.translate(-(m.mine ? bx + bw : bx), -(by + m.bh));
+  ctx.fillStyle = m.mine ? C.red : '#ECE3D2';
+  rr(ctx, bx, by, bw, m.bh, m.mine ? [18, 18, 5, 18] : [18, 18, 18, 5]); ctx.fill();
+  ctx.fillStyle = m.mine ? C.paper : C.ink; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  if (m.photo) {
+    const ix = bx + 6, iy = by + 6, iw = 176, ih = 221;
+    ctx.save(); rr(ctx, ix, iy, iw, ih, 12); ctx.clip(); ctx.drawImage(IM.hero, 128, 0, 998, 1254, ix, iy, iw, ih); ctx.restore();
+    ctx.font = CHAT_FONT; ctx.fillText(m.text, bx + 14, iy + ih + 21);
+    if (p > .9) tagPos.set(CHAT_TAG.id, { x: ix + 40, y: iy + 104, pcx: null });
+  } else {
+    ctx.font = CHAT_FONT; m.lines.forEach((l, i) => ctx.fillText(l, bx + 14, by + 10 + 13.5 + i * 27 + 1));
+  }
+  ctx.textBaseline = 'alphabetic';
+  ctx.restore();
+  if (!m.mine) { ctx.save(); ctx.globalAlpha *= p; avatar(ctx, m.k, x0 + 36, by + m.bh - 17, 17, t, false, false); ctx.restore(); }
+}
+function drawTyping(m, y, t, a, x0, x1) {
+  ctx.save(); ctx.globalAlpha *= a;
+  const mine = m.k === 'wren';
+  const w = 70, h = 38, bx = mine ? x1 - 18 - w : x0 + 62, by = y + 4;
+  ctx.fillStyle = mine ? C.red : '#ECE3D2'; rr(ctx, bx, by, w, h, 19); ctx.fill();
+  for (let i = 0; i < 3; i++) { ctx.fillStyle = mine ? 'rgba(251,247,239,.9)' : '#A69C8A'; dot(ctx, bx + 20 + i * 15, by + h / 2 + Math.sin(t * 11 - i * .9) * 3, 4.5); }
+  if (!mine) avatar(ctx, m.k, x0 + 36, by + h - 17, 17, t, false, false);
+  ctx.restore();
+}
+function drawInside(s, t) {
+  cover(BL.census, 1.12, 'rgba(12,16,26,.6)');
+  const lt = t - s.t0, rise = eo(clamp(lt / .5, 0, 1));
+  ctx.save(); ctx.translate(0, (1 - rise) * 90); ctx.globalAlpha = rise;
+  const x0 = 46, y0 = 150, w = 448, h = 568;
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 34; ctx.shadowOffsetY = 14;
+  ctx.fillStyle = '#DCC08A'; rr(ctx, x0, y0 - 26, 190, 40, [10, 10, 0, 0]); ctx.fill();
+  ctx.fillStyle = '#E3CC9C'; rr(ctx, x0, y0, w, h, [0, 10, 10, 10]); ctx.fill(); ctx.restore();
+  ctx.fillStyle = C.ink; ctx.font = `14px ${FT}`; ctx.textAlign = 'left'; ctx.fillText('CASE 02 · BABY', x0 + 16, y0 - 6);
+  ctx.save(); ctx.translate(x0 + 22, y0 + 22); ctx.rotate(-.012);
+  ctx.fillStyle = C.paper; ctx.shadowColor = 'rgba(60,40,10,.25)'; ctx.shadowBlur = 10; ctx.fillRect(0, 0, w - 44, h - 44); ctx.shadowBlur = 0;
+  ctx.fillStyle = C.ink; ctx.font = `700 27px ${FD}`; ctx.fillText('What’s in the file', 24, 56);
+  ctx.fillStyle = C.ink3; ctx.font = `500 15px ${FU}`; ctx.fillText('Baby in a Basket · digital download', 24, 84);
+  ctx.fillStyle = C.line; ctx.fillRect(24, 104, w - 92, 1.5);
+  INSIDE.forEach(([at, txt], i) => {
+    const p = eo(prog(t, at, .35)), y = 150 + i * 62;
+    ctx.save(); ctx.globalAlpha *= .35 + .65 * p;
+    ctx.strokeStyle = C.ink2; ctx.lineWidth = 2; ctx.strokeRect(26, y - 18, 24, 24);
+    if (p > 0) {
+      ctx.strokeStyle = C.red; ctx.lineWidth = 4; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.beginPath(); ctx.moveTo(29, y - 6); ctx.lineTo(29 + 8 * Math.min(1, p * 2), y - 6 + 8 * Math.min(1, p * 2));
+      if (p > .5) ctx.lineTo(37 + 16 * (p - .5) * 2, y + 2 - 22 * (p - .5) * 2);
+      ctx.stroke();
+    }
+    ctx.fillStyle = C.ink; ctx.font = `600 21px ${FU}`; ctx.fillText(txt, 66, y + 2 + (1 - p) * 6);
+    ctx.restore();
+  });
+  ctx.fillStyle = C.ink3; ctx.font = `500 15px ${FU}`;
+  ctx.fillText('START-HERE instructions included', 24, h - 92);
+  ctx.fillText('Prints on US Letter or A4', 24, h - 68);
+  ctx.restore();
+  ctx.restore();
+  if (rise >= 1) tagPos.set(INSIDE_TAG.id, { x: x0 + w - 44, y: y0 + 54, pcx: null });
+}
+function drawOffer(s, t) {
+  drawPlateScene(s, t); frameZoom = false;
+  const lt = t - s.t0;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  const p = eob(clamp((lt - .15) / .45, 0, 1));
+  if (p > 0) {
+    ctx.save(); ctx.translate(W / 2, 170); ctx.rotate(-.08 + Math.sin(t * 1.4) * .03); ctx.scale(p, p);
+    ctx.beginPath(); for (let i = 0; i < 32; i++) { const a = i / 32 * TAU, r = i % 2 ? 98 : 118; ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r); } ctx.closePath();
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = 26; ctx.shadowOffsetY = 8; ctx.fillStyle = C.red; ctx.fill(); ctx.restore();
+    ctx.lineWidth = 5; ctx.strokeStyle = C.paper; ctx.stroke();
+    ctx.fillStyle = C.paper; ctx.font = `800 58px ${FU}`; ctx.fillText('$12.99', 0, -4);
+    ctx.font = `700 19px ${FU}`; ctx.fillText('most cases', 0, 40);
+    ctx.restore();
+  }
+  const q = clamp((lt - 1.1) / .35, 0, 1);
+  if (q > 0) {
+    const sc = lerp(1.7, 1, eo(q));
+    ctx.save(); ctx.globalAlpha = q; ctx.translate(W / 2 + 18, 322); ctx.rotate(-.1); ctx.scale(sc, sc);
+    ctx.font = `22px ${FT}`;
+    const txt = 'DIGITAL · NOTHING SHIPS', w = ctx.measureText(txt).width + 40;
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.4)'; ctx.shadowBlur = 14; ctx.fillStyle = C.manila; rr(ctx, -w / 2, -25, w, 50, 6); ctx.fill(); ctx.restore();
+    ctx.lineWidth = 3; ctx.strokeStyle = C.red; rr(ctx, -w / 2 + 6, -19, w - 12, 38, 4); ctx.stroke();
+    ctx.fillStyle = C.red; ctx.fillText(txt, 0, 2); ctx.restore();
+  }
+  if (lt > 2) {
+    ctx.save(); ctx.globalAlpha = clamp((lt - 2) / .4, 0, 1);
+    ctx.font = `600 14px ${FU}`;
+    const fine = 'Fine print: every case is fiction · printable PDFs', fw = ctx.measureText(fine).width + 28;
+    ctx.fillStyle = 'rgba(10,14,26,.72)'; rr(ctx, W / 2 - fw / 2, 674, fw, 30, 15); ctx.fill();
+    ctx.fillStyle = C.paper; ctx.fillText(fine, W / 2, 690); ctx.restore();
+  }
+  ctx.textBaseline = 'alphabetic';
+}
+function doodle(c, kind, x, y, sz) {
+  c.save(); c.translate(x, y);
+  if (kind === 'ticket') {
+    c.rotate(-.12);
+    const w = sz * .78, h = sz * .4;
+    c.fillStyle = C.manila; rr(c, -w / 2, -h / 2, w, h, 8); c.fill();
+    c.fillStyle = '#1C2231'; dot(c, -w / 2, 0, h * .16); dot(c, w / 2, 0, h * .16);
+    c.strokeStyle = C.red; c.setLineDash([5, 5]); c.lineWidth = 2; c.beginPath(); c.moveTo(-w * .22, -h / 2 + 8); c.lineTo(-w * .22, h / 2 - 8); c.stroke(); c.setLineDash([]);
+    c.fillStyle = C.red; c.font = `${Math.round(sz * .08)}px ${FT}`; c.textAlign = 'center'; c.textBaseline = 'middle';
+    c.fillText('WINNER', w * .12, -h * .12); c.fillText('No. 0417', w * .12, h * .18);
+  } else if (kind === 'profile') {
+    c.fillStyle = C.paper; rr(c, -sz * .34, -sz * .3, sz * .68, sz * .6, 10); c.fill();
+    c.fillStyle = '#CAD6E8'; dot(c, -sz * .17, -sz * .04, sz * .1);
+    c.fillStyle = '#1E2433'; dot(c, -sz * .17, -sz * .07, sz * .045); c.beginPath(); c.ellipse(-sz * .17, sz * .03, sz * .07, sz * .04, 0, Math.PI, 0); c.fill();
+    c.fillStyle = C.line; c.fillRect(-sz * .02, -sz * .1, sz * .26, sz * .045); c.fillRect(-sz * .02, -sz * .01, sz * .18, sz * .035);
+    c.fillStyle = C.soon; rr(c, -sz * .02, sz * .1, sz * .26, sz * .1, 5); c.fill();
+    c.fillStyle = C.paper; c.font = `700 ${Math.round(sz * .055)}px ${FU}`; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('Add friend', sz * .11, sz * .15);
+  }
+  c.restore();
+}
+function soonArt(c, key, x, y, w, h, r) {
+  c.save(); rr(c, x, y, w, h, r); c.clip();
+  const g = c.createLinearGradient(x, y, x + w, y + h); g.addColorStop(0, '#26304A'); g.addColorStop(1, '#141A28'); c.fillStyle = g; c.fillRect(x, y, w, h);
+  doodle(c, SOON[key].doodle, x + w / 2, y + h / 2, Math.min(w, h) * .95);
+  c.restore();
+}
+function nextCard(o, y, p, tag) {
+  if (p <= 0) return;
+  const e = eob(p), x = 34, w = 472, h = 222, aw = h - 24;
+  ctx.save(); ctx.globalAlpha = clamp(p * 2, 0, 1);
+  ctx.translate(0, (1 - e) * 70);
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = 26; ctx.shadowOffsetY = 10; ctx.fillStyle = C.paper; rr(ctx, x, y, w, h, 14); ctx.fill(); ctx.restore();
+  if (o.img) { ctx.save(); rr(ctx, x + 12, y + 12, aw, aw, 8); ctx.clip(); ctx.drawImage(IM[o.img], x + 12, y + 12, aw, aw); ctx.restore(); }
+  else soonArt(ctx, o.soon, x + 12, y + 12, aw, aw, 8);
+  const tx = x + aw + 28;
+  ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  ctx.font = `13px ${FT}`;
+  const cw = ctx.measureText(o.chip).width + 20;
+  ctx.fillStyle = o.soon ? C.soon : C.red; rr(ctx, tx, y + 24, cw, 24, 4); ctx.fill();
+  ctx.fillStyle = '#fff'; ctx.fillText(o.chip, tx + 10, y + 37);
+  ctx.textBaseline = 'alphabetic';
+  const tf = `700 23px ${FD}`, tl = wrap(o.title, 222, tf);
+  ctx.font = tf; ctx.fillStyle = C.ink; tl.forEach((l, i) => ctx.fillText(l, tx, y + 84 + i * 28));
+  const lf = `500 15.5px ${FU}`;
+  ctx.font = lf; ctx.fillStyle = C.ink2;
+  wrap(o.line, 224, lf).slice(0, 3).forEach((l, i) => ctx.fillText(l, tx, y + 90 + tl.length * 28 + i * 20));
+  ctx.font = `12.5px ${FT}`; ctx.fillStyle = o.soon ? C.soon : C.red; ctx.fillText(o.foot, tx, y + h - 20);
+  ctx.restore();
+  if (p >= 1) tagPos.set(tag.id, { x: x + 12 + aw - 28, y: y + 12 + 28, pcx: null });
+}
+function drawMore(s, t) {
+  const lt = t - s.t0;
+  const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#111727'); g.addColorStop(1, '#3A1B20'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  ctx.save(); ctx.translate(W / 2, 320); ctx.rotate(t * .1); ctx.fillStyle = 'rgba(233,216,180,.05)';
+  for (let i = 0; i < 18; i++) { ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, 900, i / 18 * TAU, (i + .5) / 18 * TAU); ctx.closePath(); ctx.fill(); }
+  ctx.restore();
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  const a = eob(clamp(lt / .35, 0, 1)), b = eob(clamp((lt - .55) / .35, 0, 1));
+  const sh = ease(clamp((lt - 2.6) / .6, 0, 1));
+  const hy = lerp(360, 120, sh), hs = lerp(1, .4, sh);
+  const shake = lt < 1.6 ? Math.sin(lt * 42) * 3.5 * (1 - lt / 1.6) : 0;
+  ctx.save(); ctx.translate(W / 2 + shake, hy); ctx.scale(hs, hs); ctx.lineJoin = 'round';
+  if (a > 0) { ctx.save(); ctx.scale(a, a); ctx.font = `900 94px ${FU}`; ctx.lineWidth = 16; ctx.strokeStyle = C.red; ctx.strokeText('BUT WAIT', 0, -46); ctx.fillStyle = C.paper; ctx.fillText('BUT WAIT', 0, -46); ctx.restore(); }
+  if (b > 0) { ctx.save(); ctx.scale(b, b); ctx.font = `900 54px ${FU}`; ctx.lineWidth = 12; ctx.strokeStyle = '#1C2231'; ctx.strokeText('THERE’S MORE', 0, 42); ctx.fillStyle = '#E8C77E'; ctx.fillText('THERE’S MORE', 0, 42); ctx.restore(); }
+  ctx.restore();
+  if (lt > 3.1) { ctx.save(); ctx.globalAlpha = clamp((lt - 3.1) / .4, 0, 1); ctx.font = `15px ${FT}`; spacing(ctx, 2); ctx.fillStyle = C.goldLt; ctx.fillText('NEXT ON PORCH PRESS TV', W / 2, 188); spacing(ctx, 0); ctx.restore(); }
+  ctx.textBaseline = 'alphabetic';
+  nextCard({ img: 'c_eleanor', chip: 'S1 · E2', title: 'Eleanor Hart Is Missing', line: 'Deb is sure Eleanor is her Hattie.', foot: 'NEXT EPISODE · TAP TO SHOP' }, 212, prog(t, s.t0 + 3.4, .5), NEXT_TAG);
+  nextCard({ soon: 'ticket', chip: 'COMING SOON', title: 'The Winning Ticket', line: 'He won the lottery. Then he walked out on his family.', foot: 'NOT FOR SALE YET' }, 460, prog(t, s.t0 + 8, .5), SOON_TAG);
+}
+let creditLayout = null;
+function layoutCredits() {
+  const L = []; let y = 0;
+  const push = (o, h) => { o.y = y; L.push(o); y += h; };
+  push({ k: 'title' }, 66); push({ k: 'sub' }, 58); push({ k: 'head', text: 'STARRING' }, 44);
+  CAST.forEach(id => push({ k: 'cast', id }, 118));
+  [['BRICK WALLS BROKEN', 'One. Mabel’s.'], ['BRICK WALLS STILL STANDING', 'One. Deb’s.'], ['TEXTS DEB SIGNED', 'All of them'], ['PODCASTS JO MENTIONED', '11'], ['FILMED ON LOCATION', 'Wren’s porch'], ['FINE PRINT', 'Every case is fiction']].forEach(([h, l]) => { push({ k: 'head', text: h }, 30); push({ k: 'line', text: l }, 52); });
+  creditLayout = { items: L, h: y };
+}
+function drawCredits(s, t) {
+  const lt = t - s.t0;
+  const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#0E121C'); g.addColorStop(1, '#232A3D'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  if (!creditLayout) layoutCredits();
+  const y0 = H * .66 - lt * 138;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  for (const it of creditLayout.items) {
+    const y = y0 + it.y; if (y < -140 || y > H + 20) continue;
+    if (it.k === 'title') { ctx.font = `italic 44px ${FD}`; ctx.fillStyle = C.paper; ctx.fillText('The Porch Club', W / 2, y + 48); }
+    else if (it.k === 'sub') { ctx.font = `600 16px ${FU}`; ctx.fillStyle = C.manila; ctx.fillText(EP.sub, W / 2, y + 26); }
+    else if (it.k === 'head') { ctx.font = `14px ${FT}`; spacing(ctx, 1.5); ctx.fillStyle = C.goldLt; ctx.fillText(it.text, W / 2, y + 22); spacing(ctx, 0); }
+    else if (it.k === 'line') { ctx.font = `700 23px ${FU}`; ctx.fillStyle = C.paper; ctx.fillText(it.text, W / 2, y + 28); }
+    else if (it.k === 'cast') {
+      const k = CLUB[it.id], p = ORDER.find(q => P[q].who === it.id);
+      avatar(ctx, it.id, 88, y + 52, 42, t, false, true);
+      ctx.textAlign = 'left';
+      ctx.font = `800 25px ${FU}`; ctx.fillStyle = C.paper; ctx.fillText(k.name, 146, y + 42);
+      ctx.font = `500 15px ${FU}`; ctx.fillStyle = C.manila;
+      wrap('picks ' + P[p].name, 236, `500 15px ${FU}`).forEach((l, i) => ctx.fillText(l, 146, y + 66 + i * 19));
+      ctx.save(); rr(ctx, 398, y + 6, 96, 96, 8); ctx.clip(); ctx.drawImage(IM['c_' + p], 398, y + 6, 96, 96); ctx.restore();
+      ctx.lineWidth = 3; ctx.strokeStyle = C.paper; rr(ctx, 398, y + 6, 96, 96, 8); ctx.stroke();
+      ctx.textAlign = 'right'; ctx.font = `800 16px ${FU}`; ctx.fillStyle = '#E8C77E'; ctx.fillText(priceLabel(p), 386, y + 98);
+      ctx.textAlign = 'center';
+      tagPos.set(CREDIT_TAGS[p].id, { x: 420, y: y + 76, pcx: null });
+    }
+  }
+}
+
+/* ---------- overlays ---------- */
+function scrims() {
+  let g = ctx.createLinearGradient(0, 0, 0, 150); g.addColorStop(0, 'rgba(8,10,18,.45)'); g.addColorStop(1, 'rgba(8,10,18,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, 150);
+  g = ctx.createLinearGradient(0, H - 320, 0, H); g.addColorStop(0, 'rgba(8,10,18,0)'); g.addColorStop(1, 'rgba(8,10,18,.62)'); ctx.fillStyle = g; ctx.fillRect(0, H - 320, W, 320);
+}
+function dust(t) {
+  const n = reduce ? 6 : 18;
+  ctx.save(); ctx.fillStyle = '#FFF3D6';
+  for (let i = 0; i < n; i++) {
+    const sp = 8 + hash(i) * 16, x = hash(i + 7) * W + Math.sin(t * .5 + i) * 14;
+    const y = (((hash(i + 3) * H - t * sp) % H) + H) % H;
+    ctx.globalAlpha = .08 + .22 * Math.max(0, Math.sin(t * 1.6 + i * 1.7));
+    dot(ctx, x, y, 1.2 + hash(i + 11) * 2.2);
+  }
+  ctx.restore();
+}
+function sticker(text, lt) {
+  const p = clamp(lt / .4, 0, 1); if (p <= 0) return;
+  const e = eob(p);
+  ctx.save(); ctx.translate(22, 104); ctx.rotate(-.04); ctx.scale(e, e);
+  ctx.font = `700 29px ${FH}`; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  const w = ctx.measureText(text).width + 46;
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.4)'; ctx.shadowBlur = 14; ctx.shadowOffsetY = 4; ctx.fillStyle = C.manila; rr(ctx, 0, -23, w, 46, 4); ctx.fill(); ctx.restore();
+  ctx.fillStyle = C.red; dot(ctx, 16, 0, 5.5); ctx.fillStyle = 'rgba(255,255,255,.6)'; dot(ctx, 14.5, -1.5, 1.8);
+  ctx.fillStyle = C.ink; ctx.fillText(text, 30, 1);
+  ctx.restore();
+}
+function speech(t) {
+  const i = LINES.findIndex(l => t >= l[0] && t < l[1]); if (i < 0) return;
+  const [a, b, id, text] = LINES[i], lt = t - a, k = CLUB[id];
+  const prev = LINES[i - 1], next = LINES[i + 1];
+  const cont = prev && prev[2] === id && Math.abs(prev[1] - a) < .05;
+  const contNext = next && Math.abs(next[0] - b) < .05;
+  const alpha = contNext ? 1 : clamp((b - t) / .22, 0, 1);
+  const pop = cont ? 1 : eob(clamp(lt / .32, 0, 1));
+  const cx = 92, cy = 792, R = 56;
+  ctx.save(); ctx.globalAlpha = alpha;
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(pop, pop); ctx.translate(-cx, -cy);
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.5)'; ctx.shadowBlur = 20; ctx.shadowOffsetY = 6; ctx.fillStyle = C.paper; dot(ctx, cx, cy, R + 4); ctx.restore();
+  avatar(ctx, id, cx, cy + Math.sin(t * 3) * 1.2, R, t, true, true);
+  ctx.restore();
+  if (!cont && lt < 1.2 && !reduce) {
+    for (let j = 0; j < 5; j++) {
+      const q = clamp(lt / 1.2, 0, 1), hx = cx - 30 + j * 15 + Math.sin(lt * 6 + j) * 5, hy = cy - 52 - q * (60 + j * 8);
+      ctx.save(); ctx.globalAlpha = alpha * (1 - q) * .9; ctx.fillStyle = j % 2 ? '#E8C77E' : '#FFF3D6'; dot(ctx, hx, hy, 2.5 + (j % 3)); ctx.restore();
+    }
+  }
+  const font = `600 23px ${FU}`;
+  const lines = wrap(text, 318, font);
+  const bx = 166, bw = 350, bh = 40 + lines.length * 29 + 8, by = 852 - bh;
+  const bp = cont ? 1 : eob(clamp((lt - .05) / .3, 0, 1));
+  ctx.save(); ctx.globalAlpha = alpha * clamp(bp * 1.5, 0, 1);
+  const sc = lerp(.82, 1, bp); ctx.translate(bx, by + bh); ctx.scale(sc, sc); ctx.translate(-bx, -(by + bh));
+  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.4)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6; ctx.fillStyle = C.paper;
+  rr(ctx, bx, by, bw, bh, 16); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(bx + 2, by + bh - 44); ctx.lineTo(bx - 14, by + bh - 24); ctx.lineTo(bx + 4, by + bh - 20); ctx.closePath(); ctx.fill(); ctx.restore();
+  ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.font = `800 13.5px ${FU}`; spacing(ctx, 1); ctx.fillStyle = k.color;
+  ctx.fillText(`${k.name.toUpperCase()}  ·  ${k.role.toUpperCase()}`, bx + 18, by + 28); spacing(ctx, 0);
+  ctx.font = font; ctx.fillStyle = C.ink;
+  const total = text.length, shown = reduce ? total : Math.floor(total * clamp((lt - .1) / Math.max(.5, total / 30), 0, 1));
+  let used = 0;
+  lines.forEach((l, j) => { const take = clamp(shown - used, 0, l.length); if (take > 0) ctx.fillText(l.slice(0, take), bx + 18, by + 58 + j * 29); used += l.length + 1; });
+  ctx.restore();
+  ctx.restore();
+}
+function flash(t) {
+  for (const c of CUTS) { const d = Math.abs(t - c); if (d < .3) { ctx.fillStyle = `rgba(251,247,239,${(1 - d / .3) * .85})`; ctx.fillRect(0, 0, W, H); } }
+}
+
+/* ---------- tags DOM ---------- */
+const tagsEl = $('#tags');
+const TAG_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor"/></svg>';
+const SOON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>';
+TAGS.forEach(tg => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.hidden = true;
+  if (tg.type === 'soon') {
+    const s = SOON[tg.soon];
+    b.className = 'tag soon';
+    b.setAttribute('aria-label', `${s.title}, coming soon`);
+    b.innerHTML = `<span class="dot">${SOON_SVG}</span><span class="lbl">${s.title}<b>Soon</b></span>`;
+  } else {
+    b.className = 'tag';
+    b.setAttribute('aria-label', `Shop ${P[tg.p].name}, ${priceLabel(tg.p)}`);
+    b.innerHTML = `<span class="dot">${TAG_SVG}</span><span class="lbl">${P[tg.p].name}<b>${priceLabel(tg.p)}</b></span>`;
+  }
+  b.addEventListener('click', e => { e.stopPropagation(); openPop(tg); });
+  tagsEl.appendChild(b); tg.el = b; tg.vis = false;
+});
+let tagsOn = true, lastLive = '';
+function updateTags() {
+  const kx = cssW / W;
+  let focus = -1, best = 1e9;
+  if (frameZoom) for (const [id, pos] of tagPos) { if (pos.pcx == null || pos.y < 64 || pos.y > H - 86) continue; const d = Math.abs(pos.pcx - W / 2); if (d < 110 && d < best) { best = d; focus = id; } }
+  const sc = sceneAt(t);
+  tagsEl.classList.toggle('wide', !frameZoom && sc.img != null && sc.custom !== 'end');
+  const live = new Set();
+  for (const tg of TAGS) {
+    const pos = tagPos.get(tg.id);
+    const on = tagsOn && !!pos && pos.x > 12 && pos.x < W - 12 && pos.y > 64 && pos.y < H - 86;
+    if (on !== tg.vis) { tg.el.hidden = !on; tg.vis = on; }
+    if (on) {
+      tg.el.style.transform = `translate(${(pos.x * kx - 15).toFixed(1)}px,${(pos.y * kx - 15).toFixed(1)}px)`;
+      tg.el.classList.toggle('focus', tg.id === focus);
+      tg.el.classList.toggle('flip', pos.x > W * .6);
+      tg.el.classList.toggle('on', !!(popState && popState.tag === tg));
+      if (tg.type === 'shop') live.add(tg.p);
+    }
+  }
+  const key = [...live].sort().join(',');
+  if (key !== lastLive) { lastLive = key; document.querySelectorAll('.item').forEach(li => li.classList.toggle('live', live.has(li.dataset.p))); }
+}
+
+/* ---------- playback ---------- */
+let t = 0, playing = false, lastTs = 0, dirty = true, started = false;
+const sceneAt = tt => SCN.find(s => tt >= s.t0 && tt < s.t1) || SCN[SCN.length - 1];
+const segsEl = $('#segs'), dotsEl = $('#dots'), knob = $('#knob'), bar = $('#bar'), timeEl = $('#time'), chapEl = $('#chap');
+SCN.forEach(s => { const d = document.createElement('div'); d.className = 'seg'; d.style.flex = String(s.t1 - s.t0); d.innerHTML = '<i></i>'; segsEl.appendChild(d); s.fill = d.firstChild; });
+DOTS.forEach(d => { const b = document.createElement('b'); b.style.left = (d / DUR * 100) + '%'; dotsEl.appendChild(b); });
+
+function render() {
+  ctx.setTransform(bw / W, 0, 0, bh / H, 0, 0);
+  ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+  tagPos.clear(); frameZoom = false;
+  const s = sceneAt(t);
+  ctx.save();
+  if (s.custom === 'title') drawTitle(s, t);
+  else if (s.custom === 'chat') drawChat(s, t);
+  else if (s.custom === 'inside') drawInside(s, t);
+  else if (s.custom === 'offer') drawOffer(s, t);
+  else if (s.custom === 'more') drawMore(s, t);
+  else if (s.custom === 'credits') drawCredits(s, t);
+  else if (s.custom === 'end') drawEnd(s, t);
+  else drawPlateScene(s, t);
+  ctx.restore();
+  if (s.custom !== 'chat') scrims();
+  if (!s.night) dust(t);
+  if (s.sticker) sticker(s.sticker, t - s.t0);
+  speech(t);
+  flash(t);
+  updateTags();
+  SCN.forEach(sc => { sc.fill.style.width = (clamp((t - sc.t0) / (sc.t1 - sc.t0), 0, 1) * 100) + '%'; });
+  knob.style.left = (t / DUR * 100) + '%';
+  timeEl.textContent = `${fmt(t)} / 2:00`;
+  if (chapEl.textContent !== s.chap) chapEl.textContent = s.chap;
+  bar.setAttribute('aria-valuenow', String(Math.round(t)));
+  bar.setAttribute('aria-valuetext', `${fmt(t)}, ${s.chap}`);
+}
+function loop(ts) {
+  if (playing) {
+    const dt = Math.min(.1, (ts - lastTs) / 1000), prev = t;
+    t = Math.min(DUR, t + dt); fireEvents(prev, t); dirty = true;
+    if (t >= DUR) { pause(); ended(); }
+  }
+  lastTs = ts;
+  if (dirty) { dirty = false; render(); }
+  requestAnimationFrame(loop);
+}
+
+const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>';
+const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4.5" width="4.2" height="15" rx="1.2"/><rect x="13.8" y="4.5" width="4.2" height="15" rx="1.2"/></svg>';
+const ICON_SND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>';
+const ICON_MUTE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg>';
+const playBtn = $('#playBtn'), bigPlay = $('#bigPlay'), bigLabel = $('#bigLabel'), sndBtn = $('#sndBtn'), tagBtn = $('#tagBtn');
+playBtn.innerHTML = ICON_PLAY; sndBtn.innerHTML = ICON_SND;
+
+function play() {
+  if (t >= DUR - .05) t = 0;
+  playing = true; started = true; bigPlay.hidden = true;
+  playBtn.innerHTML = ICON_PAUSE; playBtn.setAttribute('aria-label', 'Pause');
+  Snd.start(); poke(); dirty = true;
+}
+function pause() {
+  playing = false; playBtn.innerHTML = ICON_PLAY; playBtn.setAttribute('aria-label', 'Play');
+  Snd.stop(); player.classList.remove('idle'); dirty = true; syncBig();
+}
+function syncBig() {
+  const atEnd = t >= DUR - .05;
+  bigLabel.textContent = atEnd ? 'Watch again' : 'Play episode';
+  bigPlay.hidden = playing || !(t <= 0 || atEnd);
+}
+function ended() { syncBig(); setTimeout(() => { if (quizEl.hidden && t >= DUR - .05) openQuiz(); }, 500); }
+function toggle() { playing ? pause() : play(); }
+function seek(v) { t = clamp(v, 0, DUR); dirty = true; syncBig(); }
+
+function fireEvents(a, b) {
+  if (!Snd.on || b - a > .5) return;
+  for (const c of CUTS) if (a < c && b >= c) Snd.sfx('page');
+  LINES.forEach((l, i) => { if (a < l[0] && b >= l[0]) { const pv = LINES[i - 1]; if (!(pv && pv[2] === l[2] && Math.abs(pv[1] - l[0]) < .05)) Snd.sfx('pop'); } });
+  for (const m of CHAT) if (a < m.t && b >= m.t) Snd.sfx('blip');
+  for (const [at] of INSIDE) if (a < at && b >= at) Snd.sfx('tick');
+}
+
+let idleTimer = 0;
+function poke() {
+  player.classList.remove('idle'); clearTimeout(idleTimer);
+  idleTimer = setTimeout(() => { if (playing && !popState) player.classList.add('idle'); }, 2600);
+}
+player.addEventListener('pointermove', poke);
+player.addEventListener('pointerdown', poke);
+
+cv.addEventListener('click', () => { if (popState) { closePop(true); return; } toggle(); });
+bigPlay.addEventListener('click', e => { e.stopPropagation(); play(); });
+playBtn.addEventListener('click', e => { e.stopPropagation(); toggle(); });
+tagBtn.addEventListener('click', () => { tagsOn = !tagsOn; tagBtn.setAttribute('aria-pressed', String(tagsOn)); if (!tagsOn) closePop(false); dirty = true; });
+sndBtn.addEventListener('click', () => { Snd.setOn(!Snd.on); sndBtn.innerHTML = Snd.on ? ICON_SND : ICON_MUTE; sndBtn.setAttribute('aria-pressed', String(Snd.on)); });
+
+let scrubbing = false, scrubWasPlaying = false;
+function seekFromEvent(e) { const r = bar.getBoundingClientRect(); seek((e.clientX - r.left) / r.width * DUR); }
+bar.addEventListener('pointerdown', e => { e.preventDefault(); closePop(false); scrubbing = true; scrubWasPlaying = playing; if (playing) pause(); bar.setPointerCapture(e.pointerId); seekFromEvent(e); });
+bar.addEventListener('pointermove', e => { if (scrubbing) seekFromEvent(e); });
+const endScrub = () => { if (!scrubbing) return; scrubbing = false; if (scrubWasPlaying && t < DUR) play(); };
+bar.addEventListener('pointerup', endScrub); bar.addEventListener('pointercancel', endScrub);
+bar.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); e.stopPropagation(); seek(t + (e.key === 'ArrowRight' ? 5 : -5)); }
+  if (e.key === 'Home') { e.preventDefault(); seek(0); } if (e.key === 'End') { e.preventDefault(); seek(DUR); }
+});
+player.addEventListener('keydown', e => {
+  if (e.target.closest('.pop') || e.target.closest('.quiz')) return;
+  if (e.key === ' ' || e.key === 'k') { if (e.target.tagName === 'BUTTON' && e.target !== player) return; e.preventDefault(); toggle(); }
+  else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { if (e.target === bar) return; e.preventDefault(); seek(t + (e.key === 'ArrowRight' ? 5 : -5)); }
+});
+
+/* ---------- popover ---------- */
+const popEl = $('#pop');
+let popState = null, popResume = false;
+const X_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+function openPop(tg) {
+  if (!popState) popResume = playing;
+  pause();
+  popState = tg.type === 'soon' ? { tag: tg, soon: tg.soon } : { tag: tg, p: tg.p };
+  tg.type === 'soon' ? fillSoon() : fillPop();
+  positionPop(); dirty = true;
+}
+function fillPop() {
+  const { p } = popState, pr = P[p], who = pr.who, has = inBag(p);
+  popEl.innerHTML = `
+    <button class="x" type="button" aria-label="Close">${X_SVG}</button>
+    <div class="pop-grid">
+      <img class="pop-img" src="${pr.img}" alt="${pr.name} case art">
+      <div>
+        <p class="pick"><img src="${AV[who] || ''}" alt="">${CLUB[who].name}’s pick</p>
+        <h3>${pr.name}</h3>
+        <p class="price">${priceLabel(p)}</p>
+      </div>
+    </div>
+    <p class="blurb">${pr.blurb}</p>
+    <p class="contents">${pr.contents}</p>
+    <button class="add" type="button">${has ? 'In your bag · View bag' : 'Add to bag'}</button>
+    <div class="meta"><span>Digital PDFs · nothing ships</span><a href="${pdpUrl(p)}" target="_blank" rel="noopener">Details</a></div>`;
+  popEl.querySelector('.x').addEventListener('click', e => { e.stopPropagation(); closePop(true); });
+  const add = popEl.querySelector('.add');
+  add.addEventListener('click', e => { e.stopPropagation(); if (inBag(popState.p)) { closePop(false); openBag(); return; } addToBag(popState.p, add); closePop(true); });
+  popEl.onclick = e => e.stopPropagation();
+}
+function fillSoon() {
+  const s = SOON[popState.soon];
+  popEl.innerHTML = `
+    <button class="x" type="button" aria-label="Close">${X_SVG}</button>
+    <p class="pick">Coming soon · Not for sale yet</p>
+    <h3>${s.title}</h3>
+    <p class="blurb"><b>${s.tagline}</b> ${s.desc}</p>
+    <p class="contents">No release date yet. A future Porch Press mystery.</p>
+    <button class="add soonbtn" type="button">Keep watching</button>`;
+  popEl.querySelector('.x').addEventListener('click', e => { e.stopPropagation(); closePop(true); });
+  popEl.querySelector('.add').addEventListener('click', e => { e.stopPropagation(); closePop(true); });
+  popEl.onclick = e => e.stopPropagation();
+}
+function positionPop() {
+  popEl.hidden = false; popEl.classList.remove('sheet');
+  if (cssW < 330) { popEl.classList.add('sheet'); focusPop(); return; }
+  const pos = tagPos.get(popState.tag.id);
+  const kx = cssW / W, tx = pos ? pos.x * kx : cssW / 2, ty = pos ? pos.y * kx : cssH / 2;
+  const pw = popEl.offsetWidth, ph = popEl.offsetHeight;
+  const left = clamp(tx - pw / 2, 8, cssW - pw - 8);
+  let top = ty > cssH * .5 ? ty - 26 - ph : ty + 26;
+  top = clamp(top, 58, Math.max(58, cssH - ph - 64));
+  popEl.style.left = left + 'px'; popEl.style.top = top + 'px';
+  focusPop();
+}
+function focusPop() { requestAnimationFrame(() => { const a = popEl.querySelector('.add'); if (a) a.focus({ preventScroll: true }); }); }
+function closePop(resume) {
+  if (!popState) return;
+  const tg = popState.tag; popState = null; popEl.hidden = true; popEl.innerHTML = ''; dirty = true;
+  if (tg && tg.el && tg.vis) tg.el.focus({ preventScroll: true }); else player.focus({ preventScroll: true });
+  if (resume && popResume) play();
+  popResume = false;
+}
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (!drawer.hidden) closeBag(); else if (!quizEl.hidden) closeQuiz(true); else if (popState) closePop(true);
+});
+
+/* ---------- bag ---------- */
+const drawer = $('#drawer'), scrim = $('#scrim');
+let bag = [];
+try { const raw = JSON.parse(localStorage.getItem('porch-tv-bag') || '[]'); if (Array.isArray(raw)) bag = [...new Set(raw.filter(p => P[p]))]; } catch (e) { bag = []; }
+const inBag = p => bag.includes(p);
+function saveBag() { try { localStorage.setItem('porch-tv-bag', JSON.stringify(bag)); } catch (e) { } }
+function addToBag(p, fromEl) {
+  if (inBag(p)) { toast(`${P[p].name} is already in your bag`); return; }
+  bag.push(p); saveBag(); renderBag(); Snd.sfx('ding');
+  toast(`Added ${P[p].name}`);
+  fly(fromEl, P[p].img);
+}
+function renderBag() {
+  const n = bag.length, sub = bag.reduce((sum, p) => sum + priceOf(p), 0);
+  document.querySelectorAll('[data-count]').forEach(el => el.textContent = n);
+  $('#hBag').setAttribute('aria-label', `Open bag, ${n} case${n === 1 ? '' : 's'}`);
+  $('#pBag').setAttribute('aria-label', `Open bag, ${n} case${n === 1 ? '' : 's'}`);
+  $('#subtotal').textContent = money(sub);
+  $('#bagEmpty').hidden = n > 0;
+  const co = $('#checkout');
+  if (n) { co.href = `${STORE}/cart/` + bag.map(p => `${P[p].v}:1`).join(','); co.setAttribute('aria-disabled', 'false'); co.removeAttribute('tabindex'); }
+  else { co.href = `${STORE}/cart`; co.setAttribute('aria-disabled', 'true'); co.setAttribute('tabindex', '-1'); }
+  const ul = $('#bagList'); ul.innerHTML = '';
+  bag.forEach(p => {
+    const li = document.createElement('li'); li.className = 'bi';
+    li.innerHTML = `<img src="${P[p].img}" alt="">
+      <div><h4>${P[p].name}</h4><p>Digital download · ${CLUB[P[p].who].name}’s pick</p><button class="rm" type="button">Remove</button></div>
+      <span class="lp">${priceLabel(p)}</span>`;
+    li.querySelector('.rm').addEventListener('click', () => { bag = bag.filter(q => q !== p); saveBag(); renderBag(); syncList(); const f = $('#bagList .rm') || $('#bagClose'); f.focus(); });
+    ul.appendChild(li);
+  });
+  syncList();
+}
+function syncList() {
+  document.querySelectorAll('.item').forEach(li => {
+    const q = li.querySelector('.qadd'), has = inBag(li.dataset.p);
+    q.classList.toggle('inbag', has); q.textContent = has ? 'In bag' : `Add · ${priceLabel(li.dataset.p)}`;
+  });
+}
+let bagResume = false;
+function openBag() {
+  closePop(false);
+  closeQuiz(false);
+  bagResume = playing; if (playing) pause();
+  drawer.hidden = false; scrim.hidden = false;
+  $('#bagClose').focus();
+}
+function closeBag(resume = false) {
+  drawer.hidden = true; scrim.hidden = true;
+  if (resume && bagResume) play();
+  bagResume = false;
+}
+$('#hBag').addEventListener('click', openBag);
+$('#pBag').addEventListener('click', e => { e.stopPropagation(); openBag(); });
+$('#toastBag').addEventListener('click', e => { e.stopPropagation(); openBag(); });
+$('#bagClose').addEventListener('click', () => closeBag(false));
+scrim.addEventListener('click', () => closeBag(false));
+$('#keepWatching').addEventListener('click', () => { const was = bagResume; closeBag(false); if (was || started) play(); player.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); });
+
+let toastTimer = 0;
+function toast(msg) {
+  const el = $('#toast'); $('#toastText').textContent = msg; el.hidden = false;
+  el.style.animation = 'none'; void el.offsetWidth; el.style.animation = '';
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 2600);
+}
+function fly(fromEl, src) {
+  const bagBtns = [$('#pBag'), $('#hBag')];
+  bagBtns.forEach(b => { b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); });
+  if (!fromEl || reduce) return;
+  const a = fromEl.getBoundingClientRect();
+  const pb = $('#pBag').getBoundingClientRect();
+  const inView = pb.top >= 0 && pb.bottom <= innerHeight;
+  const b = (inView ? $('#pBag') : $('#hBag')).getBoundingClientRect();
+  const im = document.createElement('img'); im.src = src; im.className = 'fly'; im.alt = '';
+  im.style.left = (a.left + a.width / 2 - 23) + 'px'; im.style.top = (a.top + a.height / 2 - 23) + 'px';
+  document.body.appendChild(im);
+  const dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
+  const anim = im.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: `translate(${dx}px,${dy}px) scale(.35)`, opacity: .7 }], { duration: 620, easing: 'cubic-bezier(.5,-.35,.7,1)' });
+  anim.onfinish = () => im.remove();
+}
+
+/* ---------- product list ---------- */
+function buildList() {
+  const ul = $('#list');
+  ORDER.forEach(p => {
+    const pr = P[p], who = pr.who;
+    const li = document.createElement('li'); li.className = 'item'; li.dataset.p = p;
+    li.innerHTML = `<span class="onair">On screen</span>
+      <div class="thumb"><img class="ph" src="${pr.img}" alt="${pr.name} case art"><img class="av" src="${AV[who]}" alt=""></div>
+      <div><p class="pick">${CLUB[who].name}’s pick</p><h3>${pr.name}</h3><p class="hook">${pr.hook}</p></div>
+      <div class="act"><button class="jump" type="button" aria-label="Watch ${pr.name} at ${fmt(FEATURE[p])}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17l15-8.5z"/></svg>${fmt(FEATURE[p])}</button><button class="qadd" type="button">Add · ${priceLabel(p)}</button></div>`;
+    const q = li.querySelector('.qadd');
+    q.addEventListener('click', () => { if (inBag(p)) openBag(); else addToBag(p, q); });
+    li.querySelector('.jump').addEventListener('click', () => {
+      closePop(false); seek(FEATURE[p] - .2); play();
+      const r = player.getBoundingClientRect(); if (r.top < 0 || r.bottom > innerHeight) player.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    });
+    ul.appendChild(li);
+  });
+}
+
+/* ---------- episode guide + cast ---------- */
+function buildGuide() {
+  const s1 = $('#s1');
+  const now = document.createElement('li'); now.className = 'ep now';
+  now.innerHTML = `<div class="ep-art"><img src="${window.__PP_TV_ASSETS['case-baby']}" alt="Baby in a Basket case art"><span class="badge">Now playing</span></div>
+    <p class="ep-no">${EP.code} · 2:00</p><h3>${EP.title}</h3><p class="ep-line"><span>In this episode</span>${EP.log}</p>
+    <button type="button" class="ep-btn">Watch and shop</button>`;
+  now.querySelector('.ep-btn').addEventListener('click', () => { closePop(false); seek(0); play(); player.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); });
+  s1.appendChild(now);
+  GUIDE.forEach(g => {
+    const pr = P[g.p], li = document.createElement('li'); li.className = 'ep';
+    li.innerHTML = `<div class="ep-art"><img src="${pr.img}" alt="${pr.name} case art"><span class="badge soft">Episode coming</span></div>
+      <p class="ep-no">${g.code}</p><h3>${pr.name}</h3><p class="ep-line"><span>In this episode</span>${g.log}</p>
+      <a class="ep-btn quiet" href="${pdpUrl(g.p)}" target="_blank" rel="noopener">See the case · ${priceLabel(g.p)}</a>`;
+    s1.appendChild(li);
+  });
+  const soon = $('#soonRow');
+  Object.keys(SOON).forEach(key => {
+    const s = SOON[key], li = document.createElement('li'); li.className = 'ep';
+    li.innerHTML = `<div class="ep-art"><canvas width="320" height="240" aria-hidden="true"></canvas><span class="badge soon">Coming soon</span></div>
+      <p class="ep-no">Porch Press mystery</p><h3>${s.title}</h3><p class="ep-line"><span>${s.tagline}</span>${s.desc}</p>
+      <span class="ep-note">Not for sale yet</span>`;
+    soonArt(li.querySelector('canvas').getContext('2d'), key, 0, 0, 320, 240, 0);
+    soon.appendChild(li);
+  });
+}
+function buildCast() {
+  const ul = $('#cast');
+  CAST.forEach(id => {
+    const k = CLUB[id], li = document.createElement('li'); li.className = 'cm';
+    let src = '';
+    try { src = KF[id].base.toDataURL('image/jpeg', .9); } catch (e) { }
+    li.innerHTML = `<img src="${src}" alt="Cameo portrait of ${k.name}"><h3>${k.name}</h3><p class="cm-role">${k.age} · ${k.role}</p><p class="cm-bio">${k.bio}</p>`;
+    ul.appendChild(li);
+  });
+}
+
+/* ---------- find your case ---------- */
+const IC = {
+  a: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6.5L20.5 7"/></svg>',
+  b: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M5 20h14M4 8h16"/><path d="M6.5 8 4 14a3 3 0 0 0 5 0zM17.5 8 15 14a3 3 0 0 0 5 0z"/></svg>',
+  c: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 17 3 7l5 4 4-6 4 6 5-4-1 10z"/><path d="M4 20h16"/></svg>',
+};
+const QUIZ = {
+  q1: [
+    { t: 'A family secret', k: 'a' },
+    { t: 'A fight over paper', k: 'b' },
+    { t: 'Old stones and old crowns', k: 'c' },
+  ],
+  q2: {
+    a: [{ t: 'Who was she before Sutton?', p: 'baby' }, { t: 'Why is Eleanor missing from the family story?', p: 'eleanor' }],
+    b: [{ t: 'Two widows. Which claim holds?', p: 'widow' }, { t: 'Three claims. Who gets the keys?', p: 'inheritance' }],
+    c: [{ t: 'Who is really buried here?', p: 'roscoe' }, { t: 'Who comes before him in line?', p: 'king' }],
+  },
+};
+const quizEl = $('#quiz'), quizBody = $('#quizBody');
+let quizState = null, quizResume = false;
+function quizHead(step) {
+  return `<div class="q-top"><p class="q-step">Find your case · ${step} of 2</p><div class="q-dots" aria-hidden="true">${[1, 2].map(i => `<i class="${i <= step ? 'on' : ''}"></i>`).join('')}</div></div>`;
+}
+function renderQuiz() {
+  const q = quizState;
+  let h = '';
+  if (q.step === 1) {
+    h = quizHead(1) + `<h2 class="q-h">What kind of mystery tonight?</h2><div class="q-opts">${QUIZ.q1.map(o => `<button class="q-opt" type="button" data-k="${o.k}"><span class="q-ic">${IC[o.k]}</span>${o.t}</button>`).join('')}</div>`;
+  } else if (q.step === 2) {
+    h = quizHead(2) + `<h2 class="q-h">Which question keeps you up at night?</h2><div class="q-opts">${QUIZ.q2[q.a].map(o => `<button class="q-opt" type="button" data-p="${o.p}"><img src="${AV[P[o.p].who]}" alt="">${o.t}</button>`).join('')}</div><button class="q-back" type="button">← Back</button>`;
+  } else {
+    const pr = P[q.p], who = pr.who, has = inBag(q.p);
+    h = `<div class="q-res"><p class="q-step">Your case</p>
+      <img class="q-pic" src="${pr.img}" alt="${pr.name} case art">
+      <h2>Open ${pr.name}</h2>
+      <p class="q-twin"><img src="${AV[who]}" alt="">Same pick as ${CLUB[who].name}</p>
+      <p class="blurb">${pr.blurb}</p>
+      <p class="contents">${pr.contents}</p>
+      <p class="price">${priceLabel(p)}</p>
+      <button class="add" type="button" id="quizAdd">${has ? 'In your bag · View bag' : `Add ${pr.name} to bag`}</button>
+      <div class="q-links"><button type="button" id="quizRetake">Retake</button><button type="button" id="quizWatch">${t >= DUR - .05 ? 'Watch again' : 'Keep watching'}</button></div></div>`;
+  }
+  quizBody.innerHTML = h;
+  quizBody.querySelectorAll('.q-opt').forEach(b => b.addEventListener('click', () => {
+    if (b.dataset.k) { q.a = b.dataset.k; q.step = 2; }
+    else if (b.dataset.p) { q.p = b.dataset.p; q.step = 3; Snd.sfx('sparkle'); }
+    renderQuiz();
+  }));
+  const back = quizBody.querySelector('.q-back'); if (back) back.addEventListener('click', () => { q.step -= 1; renderQuiz(); });
+  const add = $('#quizAdd'); if (add) add.addEventListener('click', () => { if (inBag(q.p)) { openBag(); return; } addToBag(q.p, add); add.textContent = 'In your bag · View bag'; });
+  const re = $('#quizRetake'); if (re) re.addEventListener('click', () => { quizState = { step: 1 }; renderQuiz(); });
+  const w = $('#quizWatch'); if (w) w.addEventListener('click', () => { const again = t >= DUR - .05; closeQuiz(false); if (again) { seek(0); play(); } else play(); });
+  requestAnimationFrame(() => { const f = quizBody.querySelector('.q-opt, #quizAdd'); if (f) f.focus({ preventScroll: true }); });
+}
+function openQuiz() {
+  closePop(false);
+  quizResume = playing && t < DUR - .05;
+  if (playing) pause();
+  quizState = { step: 1 };
+  renderQuiz(); quizEl.hidden = false;
+}
+function closeQuiz(resume) {
+  if (quizEl.hidden) return;
+  quizEl.hidden = true;
+  if (resume && quizResume) play();
+  quizResume = false; player.focus({ preventScroll: true });
+}
+$('#quizClose').addEventListener('click', () => closeQuiz(true));
+$('#findBtn').addEventListener('click', () => {
+  openQuiz();
+  const r = player.getBoundingClientRect(); if (r.top < 0 || r.bottom > innerHeight) player.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+});
+
+/* ---------- sound ---------- */
+const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+const PROG = [
+  { bass: 45, keys: [55, 59, 60, 64] },
+  { bass: 41, keys: [52, 55, 57, 60] },
+  { bass: 38, keys: [53, 57, 60, 64] },
+  { bass: 40, keys: [50, 56, 59, 65] },
+];
+const MEL = { 8: 76, 24: 74, 30: 72, 40: 71, 56: 69 };
+const ARP = [0, 2, 1, 3, 2, 1, 3, 2];
+const Snd = {
+  ac: null, on: true, master: null, bus: null, duck: null, drums: null, noise: null, crackleBuf: null, crk: null, timer: null, next: 0, step: 0,
+  init() {
+    if (this.ac) return true;
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+    try { this.ac = new AC(); } catch (e) { return false; }
+    const ac = this.ac;
+    this.master = ac.createGain(); this.master.gain.value = this.on ? 1.1 : 0; this.master.connect(ac.destination);
+    const warm = ac.createBiquadFilter(); warm.type = 'lowpass'; warm.frequency.value = 3400; warm.Q.value = .5; warm.connect(this.master);
+    this.duck = ac.createGain(); this.duck.connect(warm);
+    this.bus = ac.createGain(); this.bus.gain.value = .7; this.bus.connect(this.duck);
+    const dlp = ac.createBiquadFilter(); dlp.type = 'lowpass'; dlp.frequency.value = 11000; dlp.connect(this.master);
+    this.drums = ac.createGain(); this.drums.gain.value = .56; this.drums.connect(dlp);
+    const n = ac.sampleRate * 2, nb = ac.createBuffer(1, n, ac.sampleRate), nd = nb.getChannelData(0);
+    for (let i = 0; i < n; i++) nd[i] = Math.random() * 2 - 1;
+    this.noise = nb;
+    const cl = ac.sampleRate * 4, cb = ac.createBuffer(1, cl, ac.sampleRate), cd = cb.getChannelData(0);
+    let b0 = 0;
+    for (let i = 0; i < cl; i++) {
+      b0 = .96 * b0 + .04 * (Math.random() * 2 - 1); cd[i] += b0 * .6;
+      if (Math.random() < .0004) { const a = (Math.random() * .7 + .3) * (Math.random() < .5 ? -1 : 1); for (let j = 0; j < 36 && i + j < cl; j++) cd[i + j] += a * Math.exp(-j / 5); }
+    }
+    this.crackleBuf = cb;
+    return true;
+  },
+  start() {
+    if (!this.init()) return;
+    this.ac.resume();
+    if (this.timer) return;
+    const ac = this.ac;
+    this.crk = ac.createBufferSource(); this.crk.buffer = this.crackleBuf; this.crk.loop = true;
+    const hp = ac.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 1100;
+    const cg = ac.createGain(); cg.gain.value = .045;
+    this.crk.connect(hp); hp.connect(cg); cg.connect(this.master); this.crk.start();
+    this.next = ac.currentTime + .08;
+    this.timer = setInterval(() => this.sched(), 50);
+  },
+  stop() {
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    if (this.crk) { try { this.crk.stop(); } catch (e) { } this.crk = null; }
+  },
+  sched() {
+    const sd = 60 / 66 / 4;
+    while (this.next < this.ac.currentTime + .22) {
+      const s = this.step, sw = (s % 2) ? sd * .08 : 0;
+      this.play(s, this.next + sw);
+      this.next += sd; this.step++;
+    }
+  },
+  play(s, t) {
+    const bar = Math.floor(s / 16) % 4, i = s % 16, ch = PROG[bar], loop = Math.floor(s / 64);
+    const hum = () => (Math.random() - .5) * .012;
+    if (i === 0) { this.chord(ch.keys, t + hum(), 3.3, .62); this.bass(ch.bass, t, 3.4, .85); }
+    if (i === 0) this.kick(t, .55);
+    if (i === 3) this.kick(t, .34);
+    if (i % 2 === 0) this.pluck(mtof(ch.keys[ARP[(i / 2) % 8]] + 12), t + hum(), i === 0 ? 1 : .62);
+    if (loop % 2 === 1 && MEL[s % 64]) this.bell(mtof(MEL[s % 64]), t + hum());
+  },
+  pluck(f, t, v) {
+    const ac = this.ac, o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f; o2.type = 'triangle'; o2.frequency.value = f * 2;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.065 * v, t + .004); g.gain.exponentialRampToValueAtTime(.0001, t + .95);
+    g2.gain.value = .3;
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(this.bus);
+    o.start(t); o2.start(t); o.stop(t + 1); o2.stop(t + 1);
+  },
+  ep(f, t, dur, vel) {
+    const ac = this.ac, car = ac.createOscillator(), mod = ac.createOscillator(), mg = ac.createGain(), g = ac.createGain();
+    const dt = (Math.random() - .5) * 12;
+    car.type = 'sine'; mod.type = 'sine';
+    car.frequency.value = f; mod.frequency.value = f;
+    car.detune.setValueAtTime(dt, t); car.detune.linearRampToValueAtTime(dt + 5, t + dur + .8);
+    mg.gain.setValueAtTime(f * 1.5 * vel, t); mg.gain.exponentialRampToValueAtTime(f * .12 + 1, t + .8);
+    mod.connect(mg); mg.connect(car.frequency);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.11 * vel, t + .012);
+    g.gain.setTargetAtTime(.055 * vel, t + .06, .4); g.gain.setTargetAtTime(.0001, t + dur, .28);
+    car.connect(g); g.connect(this.bus);
+    car.start(t); mod.start(t); car.stop(t + dur + 1.4); mod.stop(t + dur + 1.4);
+  },
+  chord(notes, t, dur, vel) { notes.forEach((m, k) => this.ep(mtof(m), t + k * .009, dur, vel * (k ? .82 : 1))); },
+  bass(m, t, dur, vel) {
+    const ac = this.ac, f = mtof(m), o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f; o2.type = 'triangle'; o2.frequency.value = f * 2;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.15 * vel, t + .012); g.gain.setTargetAtTime(.09 * vel, t + .05, .25); g.gain.setTargetAtTime(.0001, t + dur, .09);
+    g2.gain.value = .45;
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(this.bus);
+    o.start(t); o2.start(t); o.stop(t + dur + .6); o2.stop(t + dur + .6);
+  },
+  kick(t, v) {
+    const ac = this.ac, o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(92, t); o.frequency.exponentialRampToValueAtTime(40, t + .16);
+    g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.4 * v, t + .008); g.gain.exponentialRampToValueAtTime(.0001, t + .45);
+    o.connect(g); g.connect(this.drums); o.start(t); o.stop(t + .5);
+    const d = this.duck.gain; d.cancelScheduledValues(t); d.setValueAtTime(.78, t); d.linearRampToValueAtTime(1, t + .35);
+  },
+  bell(f, t) {
+    const ac = this.ac, o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain();
+    o.type = 'sine'; o.frequency.value = f; o2.type = 'sine'; o2.frequency.value = f * 3.01;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.05, t + .006); g.gain.exponentialRampToValueAtTime(.0001, t + 1.4);
+    g2.gain.value = .16;
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(this.bus);
+    o.start(t); o2.start(t); o.stop(t + 1.5); o2.stop(t + 1.5);
+  },
+  tone(type, f, t0, v, dur, dest, f2) {
+    const o = this.ac.createOscillator(), g = this.ac.createGain(); o.type = type; o.frequency.setValueAtTime(f, t0);
+    if (f2) o.frequency.exponentialRampToValueAtTime(f2, t0 + dur * .6);
+    g.gain.setValueAtTime(0, t0); g.gain.linearRampToValueAtTime(v, t0 + .008); g.gain.exponentialRampToValueAtTime(.0001, t0 + dur);
+    o.connect(g); g.connect(dest || this.master); o.start(t0); o.stop(t0 + dur + .05);
+  },
+  swish(t0, v) {
+    const ac = this.ac, src = ac.createBufferSource(), bp = ac.createBiquadFilter(), g = ac.createGain();
+    src.buffer = this.noise; bp.type = 'bandpass'; bp.Q.value = 1.2;
+    bp.frequency.setValueAtTime(900, t0); bp.frequency.exponentialRampToValueAtTime(3800, t0 + .22);
+    g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(v, t0 + .06); g.gain.exponentialRampToValueAtTime(.0001, t0 + .28);
+    src.connect(bp); bp.connect(g); g.connect(this.master); src.start(t0, Math.random()); src.stop(t0 + .3);
+  },
+  sfx(kind) {
+    if (!this.on || !this.init()) return; const n = this.ac.currentTime;
+    if (kind === 'pop') this.tone('sine', 440, n, .07, .14, null, 620);
+    if (kind === 'blip') this.tone('sine', 860, n, .045, .12, null, 1180);
+    if (kind === 'tick') this.tone('square', 1900, n, .02, .04);
+    if (kind === 'page') this.swish(n, .09);
+    if (kind === 'sparkle') [1568, 2093, 2637].forEach((f, i) => this.tone('triangle', f, n + i * .05, .03, .3));
+    if (kind === 'ding') { this.ac.resume(); this.tone('sine', 2093, n, .1, .7); this.tone('sine', 3136, n, .035, .45); }
+  },
+  setOn(v) { this.on = v; if (this.master) this.master.gain.setTargetAtTime(v ? 1.1 : 0, this.ac.currentTime, .02); },
+};
+
+/* ---------- sizing & boot ---------- */
+function resize() {
+  const r = player.getBoundingClientRect();
+  cssW = r.width || 1; cssH = r.height || 1;
+  const dpr = Math.min(2, window.devicePixelRatio || 1);
+  bw = Math.max(1, Math.round(cssW * dpr)); bh = Math.max(1, Math.round(cssH * dpr));
+  if (cv.width !== bw || cv.height !== bh) { cv.width = bw; cv.height = bh; }
+  dirty = true;
+  if (popState) positionPop();
+}
+new ResizeObserver(resize).observe(player);
+
+const SRC = {
+  hero: window.__PP_TV_ASSETS.hero,
+  pew: window.__PP_TV_ASSETS.pew,
+  census: window.__PP_TV_ASSETS.census,
+  story: window.__PP_TV_ASSETS.story,
+  wall: window.__PP_TV_ASSETS.wall
+};
+ORDER.forEach(p => { SRC['c_' + p] = P[p].img; });
+function loadImg(src) { return new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error(src)); im.src = src; }); }
+async function boot() {
+  try {
+    const entries = await Promise.all(Object.entries(SRC).map(async ([k, s]) => [k, await loadImg(s)]));
+    entries.forEach(([k, im]) => { IM[k] = im; });
+  } catch (e) { $('#loading').textContent = 'The case images did not load. Refresh the page to try again.'; return; }
+  ['hero', 'pew', 'census', 'story', 'wall'].forEach(k => { BL[k] = makeBlur(IM[k]); });
+  if (document.fonts && document.fonts.load) {
+    const fl = [`italic 50px ${FD}`, `700 27px ${FD}`, `500 20px ${FU}`, `600 23px ${FU}`, `700 19px ${FU}`, `800 25px ${FU}`, `900 94px ${FU}`, `15px ${FT}`, `700 31px ${FH}`].map(f => document.fonts.load(f).catch(() => null));
+    await Promise.race([Promise.all(fl), new Promise(r => setTimeout(r, 3500))]);
+  }
+  buildCameos();
+  layoutChat(); layoutCredits(); buildList(); buildGuide(); buildCast(); renderBag(); resize();
+  $('#loading').hidden = true; dirty = true;
+  requestAnimationFrame(ts => { lastTs = ts; loop(ts); });
+}
+boot();
+})();
+</script>
+</div>
+
+{% schema %}
+{
+  "name": "Porch Press TV",
+  "tag": "section",
+  "class": "pp-tv-section-wrap",
+  "settings": [],
+  "presets": [
+    { "name": "Porch Press TV" }
+  ]
+}
+{% endschema %}
+
+

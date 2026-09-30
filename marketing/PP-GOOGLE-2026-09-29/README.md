@@ -10,6 +10,9 @@ PM also requested removal of Supermetrics after the failed connection attempts. 
 
 ## Start here
 
+- [Readable Demand Gen ad copy](source/ads/demand-gen-copy.md)
+- [Readable Demand Gen draft and blockers](source/ads/demand-gen-draft.json)
+- [Readable story-copy change log](source/story/Copy-Refresh.md)
 - [Original Google ads, landing page, creative assets and evidence ZIP](Porch-Press-Google-Ads-and-Landing-Page.zip)
 - [Original story-copy refresh, Liquid section, patch and live verification ZIP](Porch-Press-Story-Copy-Refresh.zip)
 - [Latest account inspection](Account-Inspection.md)

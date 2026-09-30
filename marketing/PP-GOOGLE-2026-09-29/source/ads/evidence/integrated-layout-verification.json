@@ -1,0 +1,21 @@
+{
+  "method": "Published HTML and actual theme CSS rendered locally; scripts/analytics disabled",
+  "result": [
+    {
+      "viewport": 390,
+      "scroll": 390,
+      "collectionWidth": 390,
+      "ctaTop": 523.375,
+      "collectionHeadingVisible": true,
+      "duplicateThemeTitleVisible": false
+    },
+    {
+      "viewport": 1440,
+      "scroll": 1440,
+      "collectionWidth": 1440,
+      "ctaTop": 619.234375,
+      "collectionHeadingVisible": true,
+      "duplicateThemeTitleVisible": false
+    }
+  ]
+}

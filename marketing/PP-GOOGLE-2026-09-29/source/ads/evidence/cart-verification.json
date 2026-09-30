@@ -1,0 +1,50 @@
+{
+  "status": 200,
+  "final_url": "https://porchpress.store/cart?cart_link_id=gP2yZScx&discount=PORCHFOUR3999",
+  "currency": "USD",
+  "item_count": 4,
+  "original_total_price": 5196,
+  "total_price": 3999,
+  "total_discount": 1197,
+  "discounts": [],
+  "discount_codes": [
+    {
+      "code": "PORCHFOUR3999",
+      "applicable": true
+    }
+  ],
+  "items": [
+    {
+      "variant_id": 52494540570922,
+      "title": "The Wrong Widow",
+      "quantity": 1,
+      "requires_shipping": false,
+      "price": 1299,
+      "final_line_price": 999
+    },
+    {
+      "variant_id": 52494612627754,
+      "title": "Roscoe\u2019s Grave",
+      "quantity": 1,
+      "requires_shipping": false,
+      "price": 1299,
+      "final_line_price": 1000
+    },
+    {
+      "variant_id": 52494612300074,
+      "title": "The Inheritance",
+      "quantity": 1,
+      "requires_shipping": false,
+      "price": 1299,
+      "final_line_price": 1000
+    },
+    {
+      "variant_id": 52494545486122,
+      "title": "Baby in a Basket",
+      "quantity": 1,
+      "requires_shipping": false,
+      "price": 1299,
+      "final_line_price": 1000
+    }
+  ]
+}

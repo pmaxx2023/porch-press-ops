@@ -1,0 +1,25 @@
+{
+  "task": "PP-GOOGLE-2026-09-29",
+  "repository": "pmaxx2023/porch-press-ops",
+  "original_deliverables_unchanged": true,
+  "files": [
+    {
+      "path": "Porch-Press-Google-Ads-and-Landing-Page.zip",
+      "size_bytes": 11939332,
+      "sha256": "13e3e791654dc1a3aa806bc74a9e2d49c054c5e68043785b35a20ca68c5fee0a",
+      "git_blob_sha": "4518703fc1909c5b1acfd54d73cd52a56de66139"
+    },
+    {
+      "path": "Porch-Press-Story-Copy-Refresh.zip",
+      "size_bytes": 168911,
+      "sha256": "fc00e1e56a79f74cae9251539bc0aac6991b72b9baa06966eb7b488ca2301883",
+      "git_blob_sha": "f8f06b19a618c5182007248556a882f25b31990e"
+    },
+    {
+      "path": "Account-Inspection.md",
+      "size_bytes": 4509,
+      "sha256": "846b8fc0ffe9d0d5ca0d0a97d41bc24849df7641d0f40b72decd9c2c1ec51cb8",
+      "git_blob_sha": "40564ff903f3c96f2feb6deeb4c9e4c3222e2713"
+    }
+  ]
+}

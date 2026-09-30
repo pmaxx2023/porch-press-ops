@@ -1,0 +1,33 @@
+--- sections/porch-press-tv.liquid
++++ sections/porch-press-tv.liquid
+@@ -365,8 +365,8 @@
+     <aside class="shop" aria-label="Shop this episode">
+       <p class="eyebrow">Porch Press TV · The Porch Club · S1 E1</p>
+       <h1>Baby in a Basket</h1>
+-      <p class="logline"><span>In this episode</span>Deb’s family tree hits a brick wall.</p>
+-      <p class="lede">Deb has been stuck on one ancestor for six years. Her daughter Tess calls it a cold case. On Friday night, the Porch Club opens a family mystery that has an answer. Every case on screen has a tag. Tap one to add it to the bag.</p>
++      <p class="logline"><span>In this episode</span>A baby left in a basket. Who was she before Sutton?</p>
++      <p class="lede">Mabel Ruth Sutton grew up knowing the family who raised her. The names of her birth parents never came with her. Four possible birth identities emerge from census entries, birth records, and the connections between households. Follow the paper trail and decide who Mabel was before Sutton. Every case on screen has a tag. Tap one to add it to the bag.</p>
+       <button class="findbtn" id="findBtn" type="button">Find your case <span>2 taps</span></button>
+       <h2>Shop the episode <span>6 cases · 5 at $12.99 · Eleanor FREE</span></h2>
+       <ul class="list" id="list"></ul>
+@@ -462,13 +462,13 @@
+   ticket: { title: 'The Winning Ticket',  tagline: 'He won. They lost him.',        desc: 'He won the lottery. Then he abandoned his family and disappeared. Follow the paper trail to find the man who walked away with everything.', doodle: 'ticket' },
+   pymk:   { title: 'People You May Know', tagline: 'She moved on. He never did.',   desc: 'They dated for a few months in ninth grade. Thirty years later, he is stalking her on Facebook. How did he find her, and what will it take to get away?', doodle: 'profile' },
+ };
+-const EP = { code: 'S1 · E1', title: 'Baby in a Basket', sub: 'Season 1 · Episode 1 · Baby in a Basket', log: 'Deb’s family tree hits a brick wall.' };
++const EP = { code: 'S1 · E1', title: 'Baby in a Basket', sub: 'Season 1 · Episode 1 · Baby in a Basket', log: 'A baby left in a basket. Who was she before Sutton?' };
+ const GUIDE = [
+-  { p: 'eleanor',     code: 'S1 · E2', log: 'Deb is sure Eleanor is her Hattie. She is not.' },
+-  { p: 'widow',       code: 'S1 · E3', log: 'Marisol trusts no document. Two widows test her.' },
+-  { p: 'roscoe',      code: 'S1 · E4', log: 'Jo wanted a spooky night. The headstone delivers.' },
+-  { p: 'inheritance', code: 'S1 · E5', log: 'Priya’s evidence board takes over the whole porch.' },
+-  { p: 'king',        code: 'S1 · E6', log: 'Tess finds out she could be royal. Deb says no.' },
++  { p: 'eleanor',     code: 'S1 · E2', log: 'Eleanor is missing from the family story. The papers leave a trail.' },
++  { p: 'widow',       code: 'S1 · E3', log: 'Two women claim the same soldier’s widow’s pension. Which claim holds?' },
++  { p: 'roscoe',      code: 'S1 · E4', log: 'The stone is ordered. The burial index gives a different surname.' },
++  { p: 'inheritance', code: 'S1 · E5', log: 'Three people claim a mill. A will makes birth order decisive.' },
++  { p: 'king',        code: 'S1 · E6', log: 'A succession claim arrives. The official letter tells another story.' },
+ ];
+ 
+ /* ---------- the Porch Club ---------- */

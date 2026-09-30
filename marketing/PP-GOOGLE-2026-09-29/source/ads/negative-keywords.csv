@@ -1,0 +1,43 @@
+scope,campaign,negative_keyword,match_type,rationale,status
+CAMPAIGN,PP | Four-Case Collection | Search | US,free mystery game,PHRASE,"Finished paid product, not a free game.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,free printable mystery,PHRASE,"Finished paid product, not a free printable.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,free detective game,PHRASE,"Finished paid product, not a free game.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,free case files,PHRASE,"Paid fictional collection, not free files.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,free mystery pdf,PHRASE,"Paid printable collection, not a free PDF.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,mystery game template,PHRASE,"Finished authored cases, not a creation template.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,mystery game generator,PHRASE,"Finished authored cases, not a generation tool.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,make a mystery game,PHRASE,"Product purchase test, not game-design instruction.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,murder mystery party,PHRASE,"Record investigation, not a hosted character-role party.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,murder mystery dinner,PHRASE,"Record investigation, not a dinner-party kit.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,host script,PHRASE,No host-led performance promised by this collection.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,costume party,PHRASE,No costume/party activity promised.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,steam,PHRASE,Video-game platform mismatch.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,roblox,PHRASE,Video-game platform mismatch.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,minecraft,PHRASE,Video-game platform mismatch.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,xbox,PHRASE,Video-game platform mismatch.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,playstation,PHRASE,Video-game platform mismatch.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,ps5,PHRASE,Video-game platform mismatch.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,nintendo switch,PHRASE,Video-game platform mismatch; do not negate generic switch.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,app store,PHRASE,"Printable PDF collection, not an app.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,google play,PHRASE,"Printable PDF collection, not an app.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,android game,PHRASE,"Printable PDF collection, not a mobile game.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,iphone game,PHRASE,"Printable PDF collection, not a mobile game.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,video game,PHRASE,"Printable PDF collection, not a video game.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,pc game,PHRASE,"Printable PDF collection, not a PC game.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,detective jobs,PHRASE,"Employment intent, not game purchase.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,detective salary,PHRASE,"Employment intent, not game purchase.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,private investigator jobs,PHRASE,"Employment intent, not game purchase.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,police recruitment,PHRASE,"Employment intent, not game purchase.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,police reports,PHRASE,"Fictional entertainment, not real police-file retrieval.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,court records,PHRASE,"Fictional entertainment, not real court-record retrieval.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,ancestry dna,PHRASE,"Game purchase, not a DNA testing service.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,census lookup,PHRASE,"Game purchase, not actual census lookup.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,family tree maker,PHRASE,"Game purchase, not genealogy software.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,genealogy research service,PHRASE,"Game purchase, not professional ancestry research.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,lesson plan,PHRASE,"Complete investigation game, not teaching materials.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,mystery worksheet,PHRASE,"Complete investigation game, not a worksheet.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,unsolved case files answers,PHRASE,"Answers to an existing third-party game, not a new purchase.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,unsolved case files solution,PHRASE,"Answers to an existing third-party game, not a new purchase.",PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,mystery game answer key,PHRASE,Answer-search intent; avoid a blanket negative for solution because solutions are included.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,case file walkthrough,PHRASE,Walkthrough-search intent rather than acquiring a fresh case.,PROPOSED_NOT_STAGED
+CAMPAIGN,PP | Four-Case Collection | Search | US,case file spoilers,PHRASE,Spoiler-search intent rather than acquiring a fresh case.,PROPOSED_NOT_STAGED
